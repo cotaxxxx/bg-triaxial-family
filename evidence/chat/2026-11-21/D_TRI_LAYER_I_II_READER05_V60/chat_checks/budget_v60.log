@@ -1,0 +1,19 @@
+r = 1.1828  (PC budget per combo 1064.5 s = 900 container-s)
+status counts: {'BUDGET': 39, 'COVERED': 57}
+layer stratum     n cov  bud unres other  mean_sec_lb(cont)  cells  CPU-years(lb)   | V59/V59-B: cov  CPU-years
+I     axis-face   16  12    4     0     0           527.5     1448       0.77   |  15     0.36
+I     equator     16   2   14     0     0           987.9      770       0.77   |   2     0.52
+I     interior    16  11    5     0     0           580.7    13736       8.09   |  12     5.60
+I     rim         16   4   12     0     0           840.2     2341       1.99   |   4     1.76
+II    interior    16  12    4     0     0           442.2      709       0.32   |   9     0.36
+II    rim         16  16    0     0     0           134.0       61       0.01   |  15     0.01
+V60 total {'I': 11.63, 'II': 0.33} 11.95 | V59/V59-B total 8.62
+combos covered in both (50): median evals ratio V60/V59 0.357, median leaves ratio 0.286, median container-sec ratio 1.793
+V59-B UNRESOLVED six:
+  interior C12 [3, 7] [23, 1] BUDGET 18 38 3 1072.1
+  equator H33 [3, 7] [4, 15, 0] BUDGET 35 76 7 1066.6
+  equator H33 [3, 7] [10, 0, 0] BUDGET 13 31 6 1075.0
+  equator H33 [3, 7] [0, 23, 0] BUDGET 10 27 8 1103.2
+  equator H33 [3, 7] [27, 7, 0] BUDGET 24 61 14 1065.0
+  equator H33 [2, 5] [27, 7, 0] BUDGET 31 71 10 1067.4
+NEGATIVE/INCONSISTENT/KERNEL_LIMIT rows: 0

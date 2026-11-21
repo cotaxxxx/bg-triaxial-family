@@ -1,0 +1,10 @@
+OK   1 manifest 31 files
+OK   1 SHA256SUMS 42 files
+OK   2 selftest_tri 
+OK   2 selftest_tri2 
+OK   2 selftest_tri3 
+OK   2 selftest_tri4 
+OK   3 bench intervals bit-identical 16 copies, sec [45.05, 48.88, 49.68, 50.33, 50.4, 51.0, 51.28, 53.01, 53.68, 53.75, 54.43, 54.5, 55.03, 55.55, 55.84, 56.03]
+OK   4 rows 96 rows
+5 reproduction combos: [(('II', 'rim', 'C12', (3, 7), (11, 29)), 11, 21, '74628127506eb9b0'), (('I', 'interior', 'W3', (2, 5), (19, 8, 14)), 16, 31, 'f29ab11ba6395061')]
+ALL CHECKS PASS
