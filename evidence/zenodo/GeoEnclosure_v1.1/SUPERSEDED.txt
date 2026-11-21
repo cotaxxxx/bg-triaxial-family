@@ -1,0 +1,1 @@
+Superseded on 2026-11-21 by ../GeoEnclosure_v1.0/ (Judge: one GeoEnclosure record with note v1.0, standard v1.1, Reader 0.6.0). Kept as a record.

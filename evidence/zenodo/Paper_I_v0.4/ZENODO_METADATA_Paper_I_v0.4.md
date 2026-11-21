@@ -34,7 +34,7 @@
 | Language | English |
 | Licenses | ★ CC BY 4.0 を案とする。Taylor & Francis は、投稿前の原稿を非営利のサーバーに置くことを認めている |
 | Keywords | spheroid; stationary set; cone volume measure; radial Gauss map; Morse–Bott critical manifold; validated numerics |
-| Related works | References：DOI-A（GeoEnclosure、Resource type：Publication / Standard）。Is supplemented by：https://github.com/cotaxxxx/bg-spheroid-family/tree/a5ab9b5016c8df9b7f94cbfd7cd0e82aeba8dd28/manuscripts/2026-11-20/Paper_I_v0_4（Resource type：Other） |
+| Related works | References：DOI-A（GeoEnclosure、Resource type：Publication / Working paper）。Is supplemented by：https://github.com/cotaxxxx/bg-spheroid-family/tree/a5ab9b5016c8df9b7f94cbfd7cd0e82aeba8dd28/manuscripts/2026-11-20/Paper_I_v0_4（Resource type：Other） |
 
 ## 3. Description（英文。このまま貼る）
 
