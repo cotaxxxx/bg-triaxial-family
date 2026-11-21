@@ -32,7 +32,7 @@ Zenodo の画面で、主文書（default preview）に `GeoEnclosure_Note_v1_0_
 | Languages | Japanese、English |
 | Licenses | ★ CC BY 4.0（文書）と MIT（コード） |
 | Keywords | GeoEnclosure; interval analysis; verified numerical computation; computer-assisted proof; sign determination; parameter space; verification cost; computational design |
-| Related works | Is supplemented by：https://github.com/cotaxxxx/GeoEnclosure（Software）。Is supplemented by：https://github.com/cotaxxxx/bg-spheroid-family/tree/1a4d1f03d261512428562376a03ec3f0328e6f86/manuscripts/2026-11-21/GeoEnclosure_Note_v1_0（Other）。References：第一論文の DOI（Publication / Preprint）。第一論文を先に出したときはここで入れ、後に出したときは Edit で足す |
+| Related works | Is supplemented by：https://github.com/cotaxxxx/GeoEnclosure（Software）。Is supplemented by：https://github.com/cotaxxxx/bg-spheroid-family/tree/1a4d1f03d261512428562376a03ec3f0328e6f86/manuscripts/2026-11-21/GeoEnclosure_Note_v1_0（Other）。References：第一論文の DOI（Publication / Preprint）。第一論文を先に出したときはここで入れ、後に出したときは Edit で足す。Is described by：https://note.com/open_cobra5758/n/n1208d294e040（Other。DAYBREAK のコラム A025「閉じた夜」、2026-11-19。方法が生まれた経緯） |
 
 ## 3. Description（英文。このまま貼る）
 
