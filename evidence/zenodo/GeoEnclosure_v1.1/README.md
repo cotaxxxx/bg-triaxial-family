@@ -12,6 +12,23 @@ This record contains two things:
 
 The standard was written from use, not in advance. It was applied to the stationary points of the energy E(q) = ⟨k arccos²γ⟩ over volume-preserving spheroids and triaxial ellipsoids, and each rule in it corresponds to an error that was actually caught (Appendix A of the standard).
 
+## What is not new
+
+GeoEnclosure introduces no new numerical technique. It is an assembly of established ones, written down as rules and checks for one research programme:
+- outward-rounded interval arithmetic and ball arithmetic;
+- mean-value forms and Taylor forms with explicit remainders;
+- Krawczyk's existence and uniqueness test;
+- adaptive bisection;
+- the separation of producer and independent checker.
+
+What the record adds is the specific combination: an order of audit steps, sampling rules, adoption levels tied to how theorems are stated, and a log of the errors that motivated each rule. It also provides a tool that implements the combination. Standard references for the techniques:
+
+- R. E. Moore, R. B. Kearfott, M. J. Cloud, *Introduction to Interval Analysis*, SIAM, 2009.
+- W. Tucker, *Validated Numerics: A Short Introduction to Rigorous Computations*, Princeton University Press, 2011.
+- S. M. Rump, Verification methods: Rigorous results using floating-point arithmetic, *Acta Numerica* 19 (2010), 287–449.
+- F. Johansson, Arb: efficient arbitrary-precision midpoint-radius interval arithmetic, *IEEE Transactions on Computers* 66 (2017), 1281–1292.
+- R. Krawczyk, Newton-Algorithmen zur Bestimmung von Nullstellen mit Fehlerschranken, *Computing* 4 (1969), 187–201.
+
 ## Files
 
 | File | Content |
@@ -60,5 +77,7 @@ GeoEnclosure は、形についての計算機援用証明の方法論です。�
 この登録物には、二つを収めています。
 - **GeoEnclosure 基準 v1.1：** 「区間計算で確かめた」と言ってよい条件です。日本語が正本で、英訳を付けています。
 - **GeoEncloseReader 0.5.0：** 基準のうち、独立に包み直す部分を担う監査の道具です。
+
+新しい数値の技法は含みません。既にある技法の組み合わせです：外向き丸めの区間演算と球の演算、剰余を明示した平均値形式とテイラー形式、Krawczyk の判定、適応的な二分、作る人と確かめる人の分離。この登録物が加えるのは、その組み合わせ方です。具体的には、監査の順序、抜き取りの規則、定理の書き方と結び付けた採用の水準、そして各規則のもとになった誤りの記録と、それを実装した道具です。
 
 基準の本文と道具のコードは、著者の指示のもとで AI（Claude）が起草しました。方法の命名、採用の判断、内容の責任は著者にあります。
