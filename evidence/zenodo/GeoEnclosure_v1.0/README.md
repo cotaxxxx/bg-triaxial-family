@@ -34,7 +34,7 @@ The standard separates three roles:
 - **Auditor:** Claude (Anthropic, on claude.ai). It drafted the standard and wrote GeoEncloseReader.
 - **Judge:** the author, who decides adoption and is responsible for the content.
 
-Claude Code (Anthropic) reviewed v1.0 of the standard, revised the note to v1.0, and re-ran its checks from the public archive. The disclosure in the note gives the details. No AI decided any adoption.
+The idea of the method came from the author's dialogue with Claude. Claude Code (Anthropic) reviewed v1.0 of the standard, revised the note to v1.0, and re-ran its checks from the public archive. The disclosure in the note gives the details. No AI decided any adoption.
 
 ## Status
 
@@ -51,7 +51,7 @@ Version history of the tool:
 
 | Item | Location |
 |---|---|
-| Research note and check scripts | `cotaxxxx/bg-spheroid-family`, branch `claude/geoenclosure-note-v1.0-20261121`, commit `98264af7dd372b67e06750a2c6c4476c284c4a0e`, `manuscripts/2026-11-21/GeoEnclosure_Note_v1_0/`. The note is byte-identical to that file (sha256 `97a04764…`), which records the author's final check (Appendix A.4: 2026-11-21, claims G01–G18) |
+| Research note and check scripts | `cotaxxxx/bg-spheroid-family`, branch `claude/geoenclosure-note-v1.0-20261121`, commit `1a4d1f03d261512428562376a03ec3f0328e6f86`, `manuscripts/2026-11-21/GeoEnclosure_Note_v1_0/`. The note is byte-identical to that file (sha256 `db152ea3…`), which records the author's final check (Appendix A.4: 2026-11-21, claims G01–G18) |
 | Adopted originals of the standard | `cotaxxxx/bg-triaxial-family`, commit `67eb2afdd3ccc0bb976302dbb68548b256b3fc45`, `evidence/chat-originals/2026-11-20/GEOENCLOSURE_STANDARD/` |
 | Tool | `cotaxxxx/GeoEnclosure` |
 
@@ -68,4 +68,4 @@ GeoEnclosure は、計算機援用証明の作業法です。標語は「何を�
 - **基準 v1.1：** 確かめたと言ってよい条件
 - **GeoEncloseReader 0.6.0：** 監査の道具。学生向けの例題を含む
 
-新しい数値の技法は含みません。既にある技法を組み合わせたものです。基準の本文と道具は、著者の指示のもとで Claude が起草しました。研究ノートは ChatGPT と Claude Code が改訂しました。方法の命名、採用の判断、内容の責任は著者にあります。
+新しい数値の技法は含みません。既にある技法を組み合わせたものです。方法の着想は、著者と Claude との対話から生まれました。基準の本文と道具は、著者の指示のもとで Claude が起草しました。研究ノートは ChatGPT と Claude Code が改訂しました。方法の命名、採用の判断、内容の責任は著者にあります。
