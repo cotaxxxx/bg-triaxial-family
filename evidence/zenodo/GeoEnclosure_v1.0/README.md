@@ -30,7 +30,7 @@ What it adds is the explicit design step of choosing the quantity to be decided,
 ## Roles and use of AI
 
 The standard separates three roles:
-- **Producer:** AI agents, mainly ChatGPT and Codex (OpenAI).
+- **Producer:** AI agents: ChatGPT (OpenAI, GPT-6.2 Astra), using Codex (OpenAI) for the computations.
 - **Auditor:** Claude (Anthropic, on claude.ai). It drafted the standard and wrote GeoEncloseReader.
 - **Judge:** the author, who decides adoption and is responsible for the content.
 
@@ -51,7 +51,7 @@ Version history of the tool:
 
 | Item | Location |
 |---|---|
-| Research note and check scripts | `cotaxxxx/bg-spheroid-family`, branch `claude/geoenclosure-note-v1.0-20261121`, commit `1ec3ec11992ce97b1c468733f00e55d59006e632`, `manuscripts/2026-11-21/GeoEnclosure_Note_v1_0/`. The note is byte-identical to that file (sha256 `d07ed9b4…`), which records the author's final check (Appendix A.4: 2026-11-21, claims G01–G18) |
+| Research note and check scripts | `cotaxxxx/bg-spheroid-family`, branch `claude/geoenclosure-note-v1.0-20261121`, commit `98264af7dd372b67e06750a2c6c4476c284c4a0e`, `manuscripts/2026-11-21/GeoEnclosure_Note_v1_0/`. The note is byte-identical to that file (sha256 `97a04764…`), which records the author's final check (Appendix A.4: 2026-11-21, claims G01–G18) |
 | Adopted originals of the standard | `cotaxxxx/bg-triaxial-family`, commit `67eb2afdd3ccc0bb976302dbb68548b256b3fc45`, `evidence/chat-originals/2026-11-20/GEOENCLOSURE_STANDARD/` |
 | Tool | `cotaxxxx/GeoEnclosure` |
 

@@ -32,7 +32,7 @@ Zenodo の画面で、主文書（default preview）に `GeoEnclosure_Note_v1_0_
 | Languages | Japanese、English |
 | Licenses | ★ CC BY 4.0（文書）と MIT（コード） |
 | Keywords | GeoEnclosure; interval analysis; verified numerical computation; computer-assisted proof; sign determination; parameter space; verification cost; computational design |
-| Related works | Is supplemented by：https://github.com/cotaxxxx/GeoEnclosure（Software）。Is supplemented by：https://github.com/cotaxxxx/bg-spheroid-family/tree/1ec3ec11992ce97b1c468733f00e55d59006e632/manuscripts/2026-11-21/GeoEnclosure_Note_v1_0（Other）。References：第一論文の DOI（Publication / Preprint）。第一論文を先に出したときはここで入れ、後に出したときは Edit で足す |
+| Related works | Is supplemented by：https://github.com/cotaxxxx/GeoEnclosure（Software）。Is supplemented by：https://github.com/cotaxxxx/bg-spheroid-family/tree/98264af7dd372b67e06750a2c6c4476c284c4a0e/manuscripts/2026-11-21/GeoEnclosure_Note_v1_0（Other）。References：第一論文の DOI（Publication / Preprint）。第一論文を先に出したときはここで入れ、後に出したときは Edit で足す |
 
 ## 3. Description（英文。このまま貼る）
 
@@ -47,11 +47,11 @@ GeoEnclosure does not claim a new theory of interval analysis. It is a working p
 - the GeoEnclosure Standard v1.1 (Japanese original, English translation, plain-language explanation), with two adoption levels: A1, a sampled independent audit; A2, a full independent recomputation;
 - GeoEncloseReader 0.6.0, the audit tool, including examples for students that use only the Python standard library.
 
-AI agents took part as producers (ChatGPT and Codex, OpenAI) and as auditor (Claude, Anthropic), and Claude Code (Anthropic) took part in revision and checking. The author made every adoption decision and is responsible for the content. Not peer reviewed.
+AI agents took part as producers (ChatGPT, GPT-6.2 Astra, using Codex; OpenAI) and as auditor (Claude, Anthropic), and Claude Code (Anthropic) took part in revision and checking. The author made every adoption decision and is responsible for the content. Not peer reviewed.
 
 ## 4. 公開の前に必ずすること
 
-1. **研究ノートの補足資料 A.4：記入済み**（2026-11-21、確認範囲 G01〜G18。ブランチの commit `1ec3ec1`）。
-2. **AI 利用の開示：確認済み。** 第一論文の台帳と計算核は ChatGPT（GPT-6.2 Astra、高）が作った（著者、2026-11-21）。ノートの開示の「ChatGPT」で正しく、Codex を足す必要はない。
+1. **研究ノートの補足資料 A.4：記入済み**（2026-11-21、確認範囲 G01〜G18。ブランチの commit `98264af`）。
+2. **AI 利用の開示：反映済み。** 文献［4］の計算（台帳 N3 と計算核を含む）は、ChatGPT（GPT-6.2 Astra）が Codex を用いて作った（著者、2026-11-21）。ノートの開示に、この一文と両方の名前を入れた。
 3. ★ **ライセンスを決めてください。**
 4. **Save draft で画面を確かめてから Publish してください。** DOI は取り消せません。
