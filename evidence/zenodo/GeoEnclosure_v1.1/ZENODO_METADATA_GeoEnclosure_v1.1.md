@@ -19,13 +19,13 @@
 | Resource type | **Publication → Standard**（なければ Publication → Technical note） |
 | Title | GeoEnclosure Standard v1.1: conditions for interval-enclosure verification in computer-assisted proofs, with GeoEncloseReader 0.5.1 |
 | Publication date | 2026-11-21 |
-| Creators | Furuta, Katsushi（Person）。所属（Affiliations）に **DAYBREAK** と入力する（候補に出なくても、そのまま入れて確定できる）。★ ORCID があれば入れる |
+| Creators | Furuta, Katsushi（Person）。所属（Affiliations）に **DAYBREAK** と入力する（候補に出なくても、そのまま入れて確定できる）。ORCID：**0009-0005-3129-8043**（第一論文の表紙の値） |
 | Description | §3 の英文をそのまま貼る |
 | Licenses | ★ Creative Commons Attribution 4.0 International（CC BY 4.0）と MIT License の二つ |
 | Version | 1.1（道具は 0.5.1。題名と説明文に書いてある） |
 | Languages | Japanese、English |
 | Keywords | computer-assisted proof; interval arithmetic; verified computation; experimental mathematics; reproducibility; audit; ellipsoid; stationary points; GeoEnclosure |
-| Related works | Is supplemented by：https://github.com/cotaxxxx/bg-triaxial-family（Resource type：Other） |
+| Related works | Is supplemented by：https://github.com/cotaxxxx/GeoEnclosure（Resource type：Software）と https://github.com/cotaxxxx/bg-triaxial-family（Resource type：Other）。第一論文を公開したあとで Edit し、Is referenced by：第一論文の DOI（Resource type：Publication / Preprint）を足す |
 
 ## 3. Description（英文。このまま貼る）
 
