@@ -52,6 +52,6 @@ AI agents took part as producers (ChatGPT and Codex, OpenAI) and as auditor (Cla
 ## 4. 公開の前に必ずすること
 
 1. **研究ノートの補足資料 A.4：記入済み**（2026-11-21、確認範囲 G01〜G18。ブランチの commit `1ec3ec1`）。
-2. **AI 利用の開示に Codex を加えるかを確かめてください。** ノートは第一論文の台帳と計算核に依拠しています。それを作ったのが Codex なら、ノートの開示にも名前を入れます。上の説明文は、すでに Codex を含めています。
+2. **AI 利用の開示：確認済み。** 第一論文の台帳と計算核は ChatGPT（GPT-6.2 Astra、高）が作った（著者、2026-11-21）。ノートの開示の「ChatGPT」で正しく、Codex を足す必要はない。
 3. ★ **ライセンスを決めてください。**
 4. **Save draft で画面を確かめてから Publish してください。** DOI は取り消せません。
