@@ -1,4 +1,4 @@
-# GeoEnclosure Standard v1.1 and GeoEncloseReader 0.5.0
+# GeoEnclosure Standard v1.1 and GeoEncloseReader 0.5.1
 
 Author: Katsushi Furuta (古田 勝士), DAYBREAK (independent research).
 
@@ -8,7 +8,7 @@ Author: Katsushi Furuta (古田 勝士), DAYBREAK (independent research).
 
 This record contains two things:
 - **The GeoEnclosure Standard v1.1:** the conditions under which a claim may be called "verified by interval computation". It covers rounding and the floating-point environment, quadrature remainders, singularities, plans fixed before running, ledgers and coverings, independent audit, claims about roots, two adoption levels (A1 sampled audit, A2 full independent recomputation) tied to how a theorem is stated, and how results are reported.
-- **GeoEncloseReader 0.5.0:** the audit tool that implements the standard's independent re-enclosure.
+- **GeoEncloseReader 0.5.1:** the audit tool that implements the standard's independent re-enclosure.
 
 The standard was written from use, not in advance. It was applied to the stationary points of the energy E(q) = ⟨k arccos²γ⟩ over volume-preserving spheroids and triaxial ellipsoids, and each rule in it corresponds to an error that was actually caught (Appendix A of the standard).
 
@@ -36,7 +36,7 @@ What the record adds is the specific combination: an order of audit steps, sampl
 | `GeoEnclosure_Standard_v1.1_ja.md` | The standard, Japanese. **Authoritative text**, byte-identical to the adopted original |
 | `GeoEnclosure_Standard_v1.1_en.md` | English translation |
 | `GeoEnclosure_Standard_v1.1_explained_ja.md` | Plain-language explanation for readers outside the project (Japanese) |
-| `GeoEncloseReader-0.5.0.zip` | The audit tool: source, self-tests, reference quadrature |
+| `GeoEncloseReader-0.5.1.zip` | The audit tool: source, self-tests, reference quadrature, and examples for students (`GER2/examples/`) |
 | `SHA256SUMS.txt` | SHA-256 of every file above |
 
 ## Roles in the text
@@ -58,6 +58,7 @@ Claude Code (Anthropic) reviewed v1.0 of the standard. The labels V48, V57, … 
 - The standard v1.1 was adopted by the Judge on 2026-11-20.
 - GeoEncloseReader is research software. All of its outputs are DIAGNOSTIC_ONLY until adopted.
 - Version 0.5.0 adds an enclosure that is second order in the parameters, and corrects error E3 of 0.4.0.
+- Version 0.5.1 adds `examples/`: small examples for students that need only the standard library. The kernels are byte-identical to 0.5.0.
 
 ## Provenance
 
@@ -76,7 +77,7 @@ GeoEnclosure は、形についての計算機援用証明の方法論です。�
 
 この登録物には、二つを収めています。
 - **GeoEnclosure 基準 v1.1：** 「区間計算で確かめた」と言ってよい条件です。日本語が正本で、英訳を付けています。
-- **GeoEncloseReader 0.5.0：** 基準のうち、独立に包み直す部分を担う監査の道具です。
+- **GeoEncloseReader 0.5.1：** 基準のうち、独立に包み直す部分を担う監査の道具です。
 
 新しい数値の技法は含みません。既にある技法の組み合わせです：外向き丸めの区間演算と球の演算、剰余を明示した平均値形式とテイラー形式、Krawczyk の判定、適応的な二分、作る人と確かめる人の分離。この登録物が加えるのは、その組み合わせ方です。具体的には、監査の順序、抜き取りの規則、定理の書き方と結び付けた採用の水準、そして各規則のもとになった誤りの記録と、それを実装した道具です。
 
