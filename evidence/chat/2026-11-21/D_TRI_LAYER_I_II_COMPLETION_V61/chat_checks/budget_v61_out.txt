@@ -1,0 +1,50 @@
+r61 = 1.0958, r60 = 1.1828; V61 budget 15779.3 s
+status (96 final rows): {'BUDGET': 9, 'COVERED': 87}
+layer stratum     n done  mean_evals  mean_sec(cont)  cells  CPU-years   [lower bound if done<n]
+I     axis-face   16   16        80.9           453.3   1448       0.67
+I     equator     16    8       500.5          9826.7    770       7.67
+I     interior    16   16       102.9           472.6  13736       6.58
+I     rim         16   15       805.1          3072.9   2341       7.29
+II    interior    16   16        59.9           592.1    709       0.43
+II    rim         16   16        33.0           134.0     61       0.01
+total CPU-years {'I': 22.21, 'II': 0.43} 22.65
+V61 completed 30/39: evals median 254.5, max 2857; container-sec median 1871.3944759206802
+  BUDGET equator H33 [0, 0] [27, 7, 0] leaves 311 evals 1160 remaining 6 sec 15782.0 last trace [15619, 1122, 302, 5]
+  BUDGET equator H33 [1, 3] [27, 7, 0] leaves 338 evals 700 remaining 7 sec 15787.0 last trace [15601, 686, 331, 7]
+  BUDGET equator H33 [2, 5] [0, 23, 0] leaves 238 evals 480 remaining 5 sec 15780.9 last trace [15605, 470, 232, 7]
+  BUDGET equator H33 [2, 5] [27, 7, 0] leaves 372 evals 751 remaining 8 sec 15780.8 last trace [15604, 725, 358, 10]
+  BUDGET equator H33 [3, 7] [0, 23, 0] leaves 263 evals 531 remaining 6 sec 15786.5 last trace [15608, 521, 257, 8]
+  BUDGET equator H33 [3, 7] [4, 15, 0] leaves 243 evals 489 remaining 4 sec 15787.3 last trace [15603, 479, 237, 6]
+  BUDGET equator H33 [3, 7] [10, 0, 0] leaves 248 evals 496 remaining 1 sec 15781.4 last trace [15610, 479, 239, 2]
+  BUDGET equator H33 [3, 7] [27, 7, 0] leaves 335 evals 686 remaining 17 sec 15786.2 last trace [15606, 672, 328, 17]
+  BUDGET rim W3 [3, 7] [16, 21, 15] leaves 650 evals 1304 remaining 5 sec 15782.2 last trace [15604, 1280, 637, 7]
+  COVERED axis-face W3 [1, 3] [22, 0, 19] leaves 17 evals 38 remaining 0 sec 158.4 last trace None
+  COVERED axis-face W3 [2, 5] [22, 0, 19] leaves 32 evals 63 remaining 0 sec 278.5 last trace None
+  COVERED axis-face W3 [3, 7] [7, 0, 23] leaves 16 evals 31 remaining 0 sec 520.9 last trace [330, 17, 8, 2]
+  COVERED axis-face W3 [3, 7] [22, 0, 19] leaves 32 evals 63 remaining 0 sec 1922.0 last trace [1813, 57, 28, 2]
+  COVERED equator H33 [0, 0] [0, 23, 0] leaves 146 evals 590 remaining 0 sec 549.9 last trace [301, 280, 68, 1]
+  COVERED equator H33 [1, 3] [0, 23, 0] leaves 128 evals 510 remaining 0 sec 12483.9 last trace [12323, 500, 124, 3]
+  COVERED equator H33 [1, 3] [4, 15, 0] leaves 66 evals 262 remaining 0 sec 4122.2 last trace [3907, 242, 60, 2]
+  COVERED equator H33 [1, 3] [10, 0, 0] leaves 64 evals 254 remaining 0 sec 6726.1 last trace [6603, 248, 62, 1]
+  COVERED equator H33 [2, 5] [4, 15, 0] leaves 138 evals 275 remaining 0 sec 9351.5 last trace [9315, 273, 136, 2]
+  COVERED equator H33 [2, 5] [10, 0, 0] leaves 128 evals 255 remaining 0 sec 10673.4 last trace [10503, 250, 124, 3]
+  COVERED interior W3 [1, 3] [1, 14, 4] leaves 40 evals 142 remaining 0 sec 522.4 last trace [303, 76, 18, 5]
+  COVERED interior W3 [2, 5] [1, 14, 4] leaves 39 evals 77 remaining 0 sec 926.0 last trace [902, 75, 37, 2]
+  COVERED interior W3 [3, 7] [1, 14, 4] leaves 56 evals 111 remaining 0 sec 1239.0 last trace [1203, 106, 52, 3]
+  COVERED interior W3 [3, 7] [17, 6, 18] leaves 18 evals 35 remaining 0 sec 365.9 last trace [303, 27, 13, 2]
+  COVERED interior W3 [3, 7] [19, 8, 14] leaves 32 evals 63 remaining 0 sec 535.7 last trace [306, 34, 16, 3]
+  COVERED rim W3 [0, 0] [28, 13, 7] leaves 652 evals 2857 remaining 0 sec 2179.3 last trace [2100, 2771, 630, 4]
+  COVERED rim W3 [1, 3] [16, 21, 15] leaves 139 evals 437 remaining 0 sec 2900.4 last trace [2711, 407, 127, 3]
+  COVERED rim W3 [1, 3] [20, 19, 15] leaves 104 evals 320 remaining 0 sec 2399.5 last trace [2103, 261, 81, 5]
+  COVERED rim W3 [1, 3] [28, 13, 7] leaves 243 evals 750 remaining 0 sec 4346.7 last trace [4212, 722, 231, 4]
+  COVERED rim W3 [2, 5] [16, 21, 15] leaves 197 evals 393 remaining 0 sec 1660.0 last trace [1502, 334, 166, 3]
+  COVERED rim W3 [2, 5] [20, 19, 15] leaves 147 evals 303 remaining 0 sec 4020.3 last trace [3905, 292, 141, 1]
+  COVERED rim W3 [2, 5] [26, 2, 17] leaves 81 evals 161 remaining 0 sec 727.6 last trace [602, 138, 68, 3]
+  COVERED rim W3 [2, 5] [28, 13, 7] leaves 218 evals 449 remaining 0 sec 6651.2 last trace [6604, 446, 216, 1]
+  COVERED rim W3 [3, 7] [20, 19, 15] leaves 362 evals 753 remaining 0 sec 2326.5 last trace [2101, 644, 304, 7]
+  COVERED rim W3 [3, 7] [26, 2, 17] leaves 132 evals 263 remaining 0 sec 4388.2 last trace [4208, 252, 126, 1]
+  COVERED rim W3 [3, 7] [28, 13, 7] leaves 830 evals 1768 remaining 0 sec 4209.9 last trace [4201, 1763, 826, 3]
+  COVERED interior C12 [0, 0] [23, 1] leaves 55 evals 250 remaining 0 sec 1174.0 last trace [916, 158, 35, 1]
+  COVERED interior C12 [1, 3] [23, 1] leaves 32 evals 126 remaining 0 sec 674.1 last trace [600, 110, 27, 2]
+  COVERED interior C12 [2, 5] [23, 1] leaves 32 evals 63 remaining 0 sec 613.8 last trace [602, 62, 31, 1]
+  COVERED interior C12 [3, 7] [23, 1] leaves 60 evals 119 remaining 0 sec 4465.3 last trace [4218, 113, 56, 2]

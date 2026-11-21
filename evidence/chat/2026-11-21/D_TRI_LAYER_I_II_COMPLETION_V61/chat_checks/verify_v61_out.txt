@@ -1,0 +1,13 @@
+OK   1 manifest 40 files
+OK   1 SHA256SUMS 44 files
+OK   2 selftest_tri 
+OK   2 selftest_tri2 
+OK   2 selftest_tri3 
+OK   2 selftest_tri4 
+OK   2 selftest_lazy 
+OK   2 selftest_examples 
+OK   3 bench intervals identical to V60 16 copies, sec [41.54, 41.74, 41.76, 42.4, 44.57, 44.71, 45.02, 45.89, 52.95, 53.07, 53.09, 53.12, 53.7, 53.76, 53.82, 54.01]
+OK   4 rows 39 rows
+5 reproduction combos: [(('I', 'axis-face', 'W3', (3, 7), (7, 0, 23)), 16, 31, 'e518afebc0744320'), (('I', 'interior', 'W3', (3, 7), (17, 6, 18)), 18, 35, '934d62a9732f4cdd')] (candidates 8)
+OK   6 no NEGATIVE / INCONSISTENT / KERNEL_LIMIT []
+ALL CHECKS PASS
