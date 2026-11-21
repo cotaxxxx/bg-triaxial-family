@@ -19,7 +19,7 @@
 | Resource type | **Publication → Standard**（なければ Publication → Technical note） |
 | Title | GeoEnclosure Standard v1.1: conditions for interval-enclosure verification in computer-assisted proofs, with GeoEncloseReader 0.5.0 |
 | Publication date | 2026-11-21 |
-| Creators | Furuta, Katsushi（Person）。★ ORCID があれば入れる。所属は Independent researcher |
+| Creators | Furuta, Katsushi（Person）。所属（Affiliations）に **DAYBREAK** と入力する（候補に出なくても、そのまま入れて確定できる）。★ ORCID があれば入れる |
 | Description | §3 の英文をそのまま貼る |
 | Licenses | ★ Creative Commons Attribution 4.0 International（CC BY 4.0）と MIT License の二つ |
 | Version | 1.1（道具は 0.5.0。題名と説明文に書いてある） |
@@ -49,6 +49,6 @@ The Japanese text is authoritative; an English translation and a plain-language 
 ## 4. 公開の前に確かめること（Zenodo の DOI は取り消せません）
 
 - ★ **ライセンス：** 文書は CC BY 4.0、コードは MIT を案にしています。変えるときは、README.md の「Licence」の節も同じに直してください。直したら chat が SHA256SUMS を作り直します。
-- ★ **名前の表記：** README と作者欄は「Katsushi Furuta（古田 勝士）」にしています。GitHub の表記に合わせました。
+- **名前の表記（決定）：** 作者は Furuta, Katsushi、所属は DAYBREAK（Judge 判断、2026-11-21）。README は「Katsushi Furuta（古田 勝士）, DAYBREAK (independent research)」です。
 - ★ **公開の範囲：** 「Public」で公開すると、すぐに DOI が付いて誰でも読めます。先に「Save draft」で画面を確かめてから「Publish」を押すのが安全です。
 - **査読は要らない：** 既にある技法を組み合わせた道具なので、新しさを主張しません（Judge 判断、2026-11-21）。README と説明文にも「新しい数値の技法は含まない」と書き、技法の標準的な文献を 5 本挙げました。論文では、この DOI を「使った手順と道具」として引用します。

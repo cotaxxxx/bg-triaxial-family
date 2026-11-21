@@ -1,6 +1,6 @@
 # GeoEnclosure Standard v1.1 and GeoEncloseReader 0.5.0
 
-Author: Katsushi Furuta (古田 勝士), independent researcher.
+Author: Katsushi Furuta (古田 勝士), DAYBREAK (independent research).
 
 ## What this is
 
