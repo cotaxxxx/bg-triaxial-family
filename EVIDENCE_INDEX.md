@@ -21,7 +21,8 @@
 ## Distinguish completeness from storage
 - Original documents for V55/V56 and the identified rectangle-interval studies are imported without alteration, with separate source paths above.
 - The V60 input archive includes the Reader 0.5 source and V57 numeric reference scripts.
-- **Complete adopted V57 evidence, V58 and V59/V59-B original receipts/results have NOT been established here.** Those must be located and verified separately before calling this repository a complete V56–V60 evidence archive.
+- **V57 A1 evidence, V58, V59 and V59-B source originals are now imported** into [`evidence/chat-originals/`](evidence/chat-originals/) from `cotaxxxx/bg-spheroid-family` commit `acc24d74f105ecaf7d320378dff819c2e4724050`. See [`PROVENANCE.md`](evidence/chat-originals/PROVENANCE.md). The 110 original files were byte-for-byte checked against the source commit on 2026-11-21. Five folders passed their own `SHA256SUMS.txt` checks; the four files in `GEOENCLOSURE_STANDARD` (which has no folder SHA manifest) were compared directly to the source commit. This confirms file identity, **not** mathematical correctness.
+- **V60 result package and subsequent audit are not yet included here**; the current V60 materials are inputs and calibration plans only.
 - A1 is the user-reported adoption level; no global independent certification is implied. Layers I–III remain open in the main rectangle.
 - This repository is public. Before adding new code or reports, check for credentials and confidential information.
 
