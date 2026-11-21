@@ -32,7 +32,7 @@ Zenodo の画面で、主文書（default preview）に `GeoEnclosure_Note_v1_0_
 | Languages | Japanese、English |
 | Licenses | ★ CC BY 4.0（文書）と MIT（コード） |
 | Keywords | GeoEnclosure; interval analysis; verified numerical computation; computer-assisted proof; sign determination; parameter space; verification cost; computational design |
-| Related works | Is supplemented by：https://github.com/cotaxxxx/GeoEnclosure（Software）。Is supplemented by：https://github.com/cotaxxxx/bg-spheroid-family/tree/d507da0f21362465d6d79311601ae3198449dd90/manuscripts/2026-11-21/GeoEnclosure_Note_v1_0（Other）。References：第一論文の DOI（Publication / Preprint）。第一論文を先に出したときはここで入れ、後に出したときは Edit で足す |
+| Related works | Is supplemented by：https://github.com/cotaxxxx/GeoEnclosure（Software）。Is supplemented by：https://github.com/cotaxxxx/bg-spheroid-family/tree/1ec3ec11992ce97b1c468733f00e55d59006e632/manuscripts/2026-11-21/GeoEnclosure_Note_v1_0（Other）。References：第一論文の DOI（Publication / Preprint）。第一論文を先に出したときはここで入れ、後に出したときは Edit で足す |
 
 ## 3. Description（英文。このまま貼る）
 
@@ -51,7 +51,7 @@ AI agents took part as producers (ChatGPT and Codex, OpenAI) and as auditor (Cla
 
 ## 4. 公開の前に必ずすること
 
-1. **研究ノートの補足資料 A.4 に記入してください。** 確認日と確認範囲を書きます。ノート自身が「未記入のまま公開しない」としています。記入した版を送っていただければ、chat が SHA256SUMS と README の該当行を作り直します。
+1. **研究ノートの補足資料 A.4：記入済み**（2026-11-21、確認範囲 G01〜G18。ブランチの commit `1ec3ec1`）。
 2. **AI 利用の開示に Codex を加えるかを確かめてください。** ノートは第一論文の台帳と計算核に依拠しています。それを作ったのが Codex なら、ノートの開示にも名前を入れます。上の説明文は、すでに Codex を含めています。
 3. ★ **ライセンスを決めてください。**
 4. **Save draft で画面を確かめてから Publish してください。** DOI は取り消せません。

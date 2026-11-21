@@ -38,7 +38,7 @@ Claude Code (Anthropic) reviewed v1.0 of the standard, revised the note to v1.0,
 
 ## Status
 
-- The research note is not peer reviewed, and the author's final check is recorded in its Appendix A.4.
+- The research note is not peer reviewed. The author checked claims G01–G18 on 2026-11-21 (Appendix A.4).
 - The standard v1.1 was adopted by the Judge on 2026-11-20.
 - All outputs of GeoEncloseReader are DIAGNOSTIC_ONLY until adopted.
 
@@ -51,7 +51,7 @@ Version history of the tool:
 
 | Item | Location |
 |---|---|
-| Research note and check scripts | `cotaxxxx/bg-spheroid-family`, branch `claude/geoenclosure-note-v1.0-20261121`, commit `d507da0f21362465d6d79311601ae3198449dd90`, `manuscripts/2026-11-21/GeoEnclosure_Note_v1_0/`. The note is byte-identical to that file (sha256 `9d8e6cbd…`) |
+| Research note and check scripts | `cotaxxxx/bg-spheroid-family`, branch `claude/geoenclosure-note-v1.0-20261121`, commit `1ec3ec11992ce97b1c468733f00e55d59006e632`, `manuscripts/2026-11-21/GeoEnclosure_Note_v1_0/`. The note is byte-identical to that file (sha256 `d07ed9b4…`), which records the author's final check (Appendix A.4: 2026-11-21, claims G01–G18) |
 | Adopted originals of the standard | `cotaxxxx/bg-triaxial-family`, commit `67eb2afdd3ccc0bb976302dbb68548b256b3fc45`, `evidence/chat-originals/2026-11-20/GEOENCLOSURE_STANDARD/` |
 | Tool | `cotaxxxx/GeoEnclosure` |
 
