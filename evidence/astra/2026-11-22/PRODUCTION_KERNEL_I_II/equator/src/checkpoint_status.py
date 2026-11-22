@@ -24,6 +24,19 @@ passed=gate['statuses'].get('PASS',0)
 blocked=gate['reference_gate']=='STOP_REPORT'
 next_action=('未収束または不包含の記録を chat・Judge に報告し、E4 を停止する。' if blocked else
              '完了した80桁・110桁の各組で、絶対差が 10⁻⁵⁵ 未満か、110桁の値を固定済み区間が含むかを判定する。E2c は親箱への包含も照合する。')
+timing=''
+first=path('H',0,80)
+counters=[P/f'progress_Haa_11_{d}.json' for d in (80,110)]
+if first.exists() and first.stat().st_size and all(f.exists() for f in counters):
+    baseline=json.loads(first.read_text())
+    data=[json.loads(f.read_text()) for f in counters]
+    scales=[baseline['quadrature_calls']*row['seconds']/row['evaluations']/3600 for row in data]
+    scenario=(160*baseline['seconds']/3600+8*sum(scales))/9
+    timing=(f'**所要時間の目安**　最初の通常点の80桁は {baseline["seconds"]/60:.1f} 分・'
+            f'{baseline["quadrature_calls"]:,} 評価。通常点・接触点の160本が同じ時間、'
+            f'Hₐₐ の16本が同じ評価数（現在の速度で80桁 {scales[0]:.1f} 時間・110桁 {scales[1]:.1f} 時間／本）と仮定し、'
+            f'9枠に均等配分すると全体で約 {scenario:.0f} 時間。実際の評価数は点と精度で異なり、'
+            '全体には数十時間〜数日を見込む。終了日時は未確定。')
 top=f'''<!-- CURRENT_BEGIN -->
 ## 現在地　{jst}
 
@@ -34,6 +47,8 @@ top=f'''<!-- CURRENT_BEGIN -->
 |E1|測定完了。2,048面の幅は中心 5.99839、全箱 23.39254|
 |E3|**92 / 92 合格**（chat 判定 c157cc6）|
 |E4|**未開始**。監査済みの八組・予算を維持。E2 群と運用条件の充足待ち|
+
+{timing}
 
 **次の判定**　{next_action}
 
