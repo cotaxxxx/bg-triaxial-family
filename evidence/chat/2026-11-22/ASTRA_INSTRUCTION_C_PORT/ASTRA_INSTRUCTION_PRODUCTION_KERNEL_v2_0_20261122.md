@@ -14,7 +14,7 @@
 |---|---|---|
 | 作る | Dig（ChatGPT ＋ Astra、Codex） | **この指示書で Astra が書く核** |
 | 監査する | Claude（chat）＋ Claude Code | GeoEncloseReader（Python と、Claude Code の C 版） |
-| 外部監査 | Muse（範囲は追って決める） | — |
+| 証明の査読 | Fable 5.2（Anthropic） | — （`DERIVATION.md` の導出、剰余の上界、特異点の扱いを読む） |
 | 判定する | Judge | — |
 
 基準 v1.1 の第三原則「作った人とは別の式、別のコードで確かめる」を満たすため、**作る側の核と監査の側の核は、式もコードも別**にします。
@@ -70,7 +70,7 @@ L = diag(1, s, st)、エネルギー E(q) = ⟨k arccos²γ⟩（単位球面上
 
 `evidence/triaxial-chat` 枝の `evidence/astra/2026-11-2x/PRODUCTION_KERNEL_I_II/` に置く。
 
-1. `DERIVATION.md`：定義から核の式までの導出、剰余の上界の証明、特異点の扱い。
+1. `DERIVATION.md`：定義から核の式までの導出、剰余の上界の証明、特異点の扱い。**Fable 5.2 が査読する**ので、一行ずつ追える形で書く（省略した計算は付録に全部書く）。
 2. C のソースと、ビルドの手順（コンパイラの版、フラグ）。
 3. `PLAN_TESTS.md`（流す前に commit）と、試験 A〜D の出力・合否の表。
 4. `SHA256SUMS.txt`。
