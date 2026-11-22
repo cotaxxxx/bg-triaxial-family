@@ -1,0 +1,111 @@
+{
+  "A_total": 68,
+  "A_exceptions": 2,
+  "error_probes": [
+    {
+      "name": "H33(1, 1, 1, 0, 0)",
+      "error": "ValueError",
+      "message": "contact cell in an interior-only kernel"
+    },
+    {
+      "name": "W3(1, 1, 0, 0, 0)",
+      "error": "ValueError",
+      "message": "division by interval containing 0"
+    },
+    {
+      "name": "H33(1, 1, 1, 1, 0)",
+      "error": "ValueError",
+      "message": "box does not meet the ball"
+    },
+    {
+      "name": "injected_empty_intersection",
+      "error": "ValueError",
+      "message": "INCONSISTENT: first- and second-order enclosures do not meet"
+    }
+  ],
+  "branch_cases": 7,
+  "branches": {
+    "contact": [
+      "contact",
+      "p0"
+    ],
+    "coarse": [
+      "coarse"
+    ],
+    "lazy": [
+      "lazy",
+      "lazy-bench"
+    ],
+    "p0": [
+      "p0"
+    ],
+    "outside": [
+      "outside"
+    ],
+    "point": [
+      "contact",
+      "point"
+    ],
+    "graded": [
+      "point",
+      "lazy-bench"
+    ],
+    "kinds": [
+      "C12",
+      "H33",
+      "W3"
+    ]
+  },
+  "B": [
+    {
+      "tree": 0,
+      "backend": "python",
+      "leaves": 18,
+      "evals": 35,
+      "leaf_sha256": "934d62a9732f4cdd6b09b091ebefd60ca7b76aac9feb5c4c20ed29b10c89e5f9",
+      "status": "COVERED",
+      "equal": true
+    },
+    {
+      "tree": 0,
+      "backend": "c",
+      "leaves": 18,
+      "evals": 35,
+      "leaf_sha256": "934d62a9732f4cdd6b09b091ebefd60ca7b76aac9feb5c4c20ed29b10c89e5f9",
+      "status": "COVERED",
+      "equal": true
+    },
+    {
+      "tree": 1,
+      "backend": "python",
+      "leaves": 16,
+      "evals": 31,
+      "leaf_sha256": "e518afebc07443200c1556aedefa2e176bf9f12f9e2a394fbff5d0946d7e8f2b",
+      "status": "COVERED",
+      "equal": true
+    },
+    {
+      "tree": 1,
+      "backend": "c",
+      "leaves": 16,
+      "evals": 31,
+      "leaf_sha256": "e518afebc07443200c1556aedefa2e176bf9f12f9e2a394fbff5d0946d7e8f2b",
+      "status": "COVERED",
+      "equal": true
+    }
+  ],
+  "C": {
+    "tri": "FAILURES 0",
+    "tri2": "FAILURES 0",
+    "tri3": "FAILURES 0",
+    "tri4": "FAILURES 0",
+    "lazy": "FAILURES 0",
+    "examples": "FAILURES 0"
+  },
+  "primitives": {
+    "nextafter": 20018,
+    "fsum": 2030,
+    "mismatches": 0
+  },
+  "errors": []
+}

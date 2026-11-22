@@ -29,6 +29,10 @@ br=lines(d/'branches_c.jsonl')
 branch_table=mdtable(['入力','order','used','接触セル','lazy_skip','確認した分岐'],
     [[r['label'],*[r['outcome'].get('info',{}).get(k,'—') for k in ['order','used','contact_cells','lazy_skip']],
       ', '.join(k for k,v in r['observed'].items() if v) or '—'] for r in br])
+leaf_comparison=[]
+for idx in range(2):
+    a,b=[lines(d/'perf'/f'tree{idx}_{v}.jsonl')[0]['leaf_list'] for v in ('python','c')]
+    if a==b:leaf_comparison.append(str(idx))
 trees=mdtable(['V61 木','葉数','評価数','leaf_sha256'],
               [[v['tree'],v['leaves'],v['evals'],'`'+v['leaf_sha256']+'`'] for v in comparison['B'] if v['backend']=='c'])
 exception_count=comparison['A_exceptions']+sum('exception' in r['outcome'] for r in br)
@@ -51,6 +55,8 @@ print(f"""# 三軸 Reader 0.6.0 の C 移植 · 旧指示書 v1.2 の診断記�
 機械判定の差異記録は {len(errs)} 件。全入力・両実装の端点・幅・terms・used・診断値は results12/ 内の JSONL に残した。省略された幅は欠落のまま比較した。例外に enclose.last を転記すると直前の評価を誤記するので、例外型と文面を比較した。試験例の分類と各結果は comparison.json にもある。
 
 {trees}
+
+追加の直接比較で、今回の両ランナーの順序付き葉リスト（有理箱、N、下端）が一致した木は {", ".join(leaf_comparison)}。過去の葉列ハッシュには下端の値が含まれないため、下端は今回の2出力間で比較した。
 
 ### 分岐の確認
 
