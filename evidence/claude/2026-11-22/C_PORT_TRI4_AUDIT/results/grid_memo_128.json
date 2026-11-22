@@ -1,0 +1,28 @@
+{
+ "N": 128,
+ "grade": 4,
+ "plain_s": [
+  3.02,
+  2.95,
+  2.61,
+  2.73
+ ],
+ "memo_s": [
+  2.75,
+  2.11,
+  1.95,
+  1.96
+ ],
+ "identical": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "digests": [
+  "f2e8d89490189bef1924f90814b5391f272b85cfe8ddf38fbfafedfbc42220b3",
+  "a307549eef481186011c13328e3da7f2bb32a3c255d9ea29f57989f681dc7052",
+  "228e4021a84212fb7ec5bc4f6318dc788b2e08ba4be948b1d206e8ca68767984",
+  "289fce474e6037b48dc6cbf163e88cd12148f6006be261a05becda8c8616a1a4"
+ ]
+}
