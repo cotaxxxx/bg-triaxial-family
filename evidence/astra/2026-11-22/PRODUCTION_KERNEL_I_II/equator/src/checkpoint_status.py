@@ -1,5 +1,6 @@
 """Refresh the single human-readable position and save completed inner integrals."""
 import json
+import hashlib
 from datetime import datetime,timezone,timedelta
 from pathlib import Path
 from samples import ROOT
@@ -9,12 +10,27 @@ from run_references import aggregate,keys,path
 P=ROOT/'results';aggregate()
 gate=json.loads((P/'E2_REFERENCE_GATE.json').read_text())
 done=[f.name for k,i in keys() for d in (80,110) if (f:=path(k,i,d)).exists() and f.stat().st_size]
-lat={}
+lat={};index={};modified=[]
+archive=P/'checkpoints';archive.mkdir(exist_ok=True)
 for f in sorted((P/'ref_work').glob('*.jsonl')):
     raw=f.read_bytes();raw=raw[:raw.rfind(b'\n')+1]
-    (P/'checkpoints').mkdir(exist_ok=True)
-    (P/'checkpoints'/f.name).write_bytes(raw)
-    lat[f.name]=len(raw.splitlines())
+    if not raw:continue
+    lines=raw.splitlines(keepends=True);key=f.stem;lat[f.name]=len(lines)
+    original=archive/f.name;parts=[];offset=0
+    if original.exists():
+        first=original.read_bytes()
+        if not raw.startswith(first):raise ValueError('local records differ from committed prefix')
+        parts.append((f.name,first));offset=len(first.splitlines())
+    for n in range(offset,len(lines),256):
+        rel=f'parts/{key}/{n+1:08d}.jsonl';block=b''.join(lines[n:n+256])
+        dest=archive/rel;dest.parent.mkdir(parents=True,exist_ok=True)
+        if not dest.exists() or dest.read_bytes()!=block:
+            dest.write_bytes(block);modified.append(str(dest.relative_to(ROOT)))
+        parts.append((rel,block))
+    index[key]={'rows':len(lines),'files':[{'path':name,'sha256':hashlib.sha256(block).hexdigest()} for name,block in parts]}
+atomic(archive/'INDEX.json',json.dumps(index,sort_keys=True,indent=2)+'\n')
+# Local publication convenience. The index is the durable source of truth.
+atomic(P/'checkpoint_changed_local.json',json.dumps(modified)+'\n')
 now=datetime.now(timezone.utc);jst=now.astimezone(timezone(timedelta(hours=9))).strftime('%Y-%m-%d %H:%M:%S JST')
 progress={'utc':now.isoformat(timespec='seconds'),'recorded_jst':jst,'completed_pairs':gate['pairs'],'total_pairs':88,
           'completed_precision_runs':len(done),'total_precision_runs':176,'completed_runs':done,

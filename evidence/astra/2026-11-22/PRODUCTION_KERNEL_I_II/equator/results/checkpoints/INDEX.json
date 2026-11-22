@@ -1,0 +1,41 @@
+{
+  "H_2_80": {
+    "files": [
+      {
+        "path": "H_2_80.jsonl",
+        "sha256": "eecd46273246fa3688022b1d1cb64aa3291be2bb69700cd5848b624bc5eedede"
+      },
+      {
+        "path": "parts/H_2_80/00000043.jsonl",
+        "sha256": "8d305e6017880078f6a8115717e589bc8cccac1da9f0bd5da7b8395dc80dc5e9"
+      }
+    ],
+    "rows": 149
+  },
+  "H_36_110": {
+    "files": [
+      {
+        "path": "H_36_110.jsonl",
+        "sha256": "bf38555ba422fc64f7af47b22ae2e5d80ef764313ba9e386e8cf02c01f9bf5d9"
+      },
+      {
+        "path": "parts/H_36_110/00000799.jsonl",
+        "sha256": "63dab146e3db8fd3d188fcc5ea7aa49712a3fdc49162303e8e1726bb446a76d4"
+      }
+    ],
+    "rows": 851
+  },
+  "H_36_80": {
+    "files": [
+      {
+        "path": "H_36_80.jsonl",
+        "sha256": "ec79a3ebb23e899537024ddb8f319203442025d981b6da08d632e44410ad7555"
+      },
+      {
+        "path": "parts/H_36_80/00001276.jsonl",
+        "sha256": "cb4123bb5b55d3fb1ca14f18340ab7cb7803bc77a89112650f81b6d0ff173383"
+      }
+    ],
+    "rows": 1409
+  }
+}
