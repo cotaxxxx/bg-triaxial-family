@@ -1,0 +1,14 @@
+OK  iv: 0.1 + 0.2 enclosure contains the float sum's exact value
+OK  iv: square of [-1, 2] is [0, 4+]
+OK  ex1: E_x and E_y both contain 0 on the square
+OK  ex1: bisection decides every box (9 evaluated, 7 decided)
+OK  ex1: simplified difference is exactly 1
+OK  ex2: expanded [61/100, 141/100]
+OK  ex2: mean-value [49/50, 51/50]
+OK  ex2: completed square [1, 101/100]
+OK  ex2: goal F>0.99 decided only by the third
+OK  ex3: sign change f(2) < 0 < f(3)
+OK  ex3: f' > 0 on [2, 3]
+OK  ex3: located interval contains the reference root and is narrow
+FAILURES 0
+exit 0

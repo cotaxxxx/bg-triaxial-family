@@ -1,0 +1,79 @@
+[
+ {
+  "id": 6,
+  "kind": "E3",
+  "N": 64,
+  "NH": null,
+  "lazy": false,
+  "order": 2,
+  "lazy_skip": false,
+  "cold_s": 2.6684629139999743,
+  "warm_s": 0.9134342090000018
+ },
+ {
+  "id": 81,
+  "kind": "E3",
+  "N": 128,
+  "NH": null,
+  "lazy": false,
+  "order": 2,
+  "lazy_skip": false,
+  "cold_s": 6.055947229000026,
+  "warm_s": 3.3692602229999693
+ },
+ {
+  "id": 84,
+  "kind": "E3",
+  "N": 256,
+  "NH": null,
+  "lazy": false,
+  "order": 2,
+  "lazy_skip": false,
+  "cold_s": 26.07002519799994,
+  "warm_s": 15.31016230800003
+ },
+ {
+  "id": 7,
+  "kind": "T12",
+  "N": 64,
+  "NH": null,
+  "lazy": false,
+  "order": 2,
+  "lazy_skip": false,
+  "cold_s": 0.8709490950000145,
+  "warm_s": 0.7804663610000944
+ },
+ {
+  "id": 85,
+  "kind": "T12",
+  "N": 128,
+  "NH": 128,
+  "lazy": false,
+  "order": 2,
+  "lazy_skip": false,
+  "cold_s": 4.722304276000045,
+  "warm_s": 4.354180444999997
+ },
+ {
+  "id": 88,
+  "kind": "T12",
+  "N": 256,
+  "NH": 256,
+  "lazy": false,
+  "order": 2,
+  "lazy_skip": false,
+  "cold_s": 29.393319622000035,
+  "warm_s": 19.119987283
+ },
+ {
+  "id": 8,
+  "kind": "H33",
+  "N": 64,
+  "NH": null,
+  "lazy": false,
+  "order": 2,
+  "lazy_skip": false,
+  "cold_s": 1.0563460189999887,
+  "warm_s": 0.9829156810000086
+ }
+]

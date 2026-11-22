@@ -1,0 +1,72 @@
+{
+ "summary": {
+  "add": {
+   "arrays": 1200,
+   "both_raised": 0
+  },
+  "sub": {
+   "arrays": 1200,
+   "both_raised": 0
+  },
+  "mul": {
+   "arrays": 1200,
+   "both_raised": 0
+  },
+  "div_any": {
+   "arrays": 800,
+   "both_raised": 699
+  },
+  "div_positive": {
+   "arrays": 800,
+   "both_raised": 191
+  },
+  "div_negative": {
+   "arrays": 400,
+   "both_raised": 86
+  },
+  "sq": {
+   "arrays": 1200,
+   "both_raised": 0
+  },
+  "sqrt_any": {
+   "arrays": 600,
+   "both_raised": 532
+  },
+  "sqrt_nonneg": {
+   "arrays": 800,
+   "both_raised": 0
+  },
+  "neg": {
+   "arrays": 400,
+   "both_raised": 0
+  },
+  "scalar_mul": {
+   "arrays": 400,
+   "both_raised": 0
+  },
+  "scalar_add": {
+   "arrays": 400,
+   "both_raised": 0
+  },
+  "rsub": {
+   "arrays": 400,
+   "both_raised": 0
+  },
+  "rdiv_positive": {
+   "arrays": 400,
+   "both_raised": 90
+  },
+  "broadcast_mul": {
+   "arrays": 400,
+   "both_raised": 0
+  },
+  "fsum": {
+   "arrays": 400
+  },
+  "poly": {
+   "arrays": 200
+  }
+ },
+ "failures": [],
+ "n_failures": 0
+}

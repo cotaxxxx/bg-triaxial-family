@@ -1,0 +1,9 @@
+OK  H33 N=64 r=1/128 skip=True order=2 [0.494813,1.38661] vs [0.372172,1.51176]
+OK  E3 N=64 r=1/16 skip=False order=2 [-4.27233,5.83856] vs [-4.27233,5.83856]
+OK  H33 N=256 r=1/512 skip=True order=2 [1.0514,1.50895] vs [0.640644,1.90309]
+OK  H33 N=256 r=1/64 skip=False order=2 [-47.5314,50.0751] vs [-47.5314,50.0751]
+OK  T12 N=64 r=1/128 skip=True order=2 [0.137988,0.195276] vs [0.129747,0.203337]
+OK  E3 N=64 r=1/64 skip=False order=1 [-0.0458352,0.966091] vs [-0.0458352,0.966091]
+OK  both branches exercised (a skip and a full second-order evaluation) 
+FAILURES 0
+exit 0

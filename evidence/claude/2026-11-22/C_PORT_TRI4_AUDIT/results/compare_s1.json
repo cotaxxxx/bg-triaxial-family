@@ -1,0 +1,51 @@
+{
+ "cases": 18,
+ "identical": 18,
+ "different": 0,
+ "coverage": {
+  "both_computed_first_tighter": 10,
+  "contact_cells": 4,
+  "exception_ValueError: contact cell in an interior-only kernel": 3,
+  "kind_E3": 6,
+  "kind_H33": 6,
+  "kind_T12": 6,
+  "used_second_order": 1
+ },
+ "speed": {
+  "E3 N=32": {
+   "python_s": 0.788,
+   "c_s": 0.849,
+   "ratio": 0.93
+  },
+  "E3 N=64": {
+   "python_s": 3.627,
+   "c_s": 2.305,
+   "ratio": 1.57
+  },
+  "H33 N=32": {
+   "python_s": 0.288,
+   "c_s": 0.208,
+   "ratio": 1.39
+  },
+  "H33 N=64": {
+   "python_s": 2.943,
+   "c_s": 1.661,
+   "ratio": 1.77
+  },
+  "T12 N=32": {
+   "python_s": 0.567,
+   "c_s": 0.466,
+   "ratio": 1.22
+  },
+  "T12 N=64": {
+   "python_s": 2.683,
+   "c_s": 1.641,
+   "ratio": 1.64
+  }
+ },
+ "total": {
+  "python_s": 10.9,
+  "c_s": 7.1
+ },
+ "differences": []
+}

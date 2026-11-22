@@ -1,0 +1,132 @@
+{
+ "cases": 115,
+ "identical": 115,
+ "different": 0,
+ "coverage": {
+  "both_computed_first_tighter": 57,
+  "contact_cells": 17,
+  "exception_ValueError: box does not meet the ball": 3,
+  "exception_ValueError: contact cell in an interior-only kernel": 8,
+  "grade_nonzero": 41,
+  "kind_E3": 39,
+  "kind_H33": 38,
+  "kind_T12": 38,
+  "lazy_skip": 9,
+  "no_active_variable": 3,
+  "p0_displaced": 9,
+  "tiled_jets": 6,
+  "used_second_order": 18
+ },
+ "speed": {
+  "E3 N=16": {
+   "python_s": 1.819,
+   "c_s": 1.31,
+   "ratio": 1.39
+  },
+  "E3 N=32": {
+   "python_s": 6.384,
+   "c_s": 5.105,
+   "ratio": 1.25
+  },
+  "E3 N=64": {
+   "python_s": 10.888,
+   "c_s": 7.551,
+   "ratio": 1.44
+  },
+  "E3 N=128": {
+   "python_s": 7.863,
+   "c_s": 5.228,
+   "ratio": 1.5
+  },
+  "E3 N=160": {
+   "python_s": 1.949,
+   "c_s": 1.217,
+   "ratio": 1.6
+  },
+  "E3 N=200": {
+   "python_s": 16.998,
+   "c_s": 10.673,
+   "ratio": 1.59
+  },
+  "E3 N=256": {
+   "python_s": 40.458,
+   "c_s": 28.635,
+   "ratio": 1.41
+  },
+  "H33 N=16": {
+   "python_s": 1.084,
+   "c_s": 0.889,
+   "ratio": 1.22
+  },
+  "H33 N=32": {
+   "python_s": 5.504,
+   "c_s": 4.111,
+   "ratio": 1.34
+  },
+  "H33 N=64": {
+   "python_s": 12.46,
+   "c_s": 8.395,
+   "ratio": 1.48
+  },
+  "H33 N=128": {
+   "python_s": 1.336,
+   "c_s": 0.726,
+   "ratio": 1.84
+  },
+  "H33 N=160": {
+   "python_s": 8.29,
+   "c_s": 3.53,
+   "ratio": 2.35
+  },
+  "H33 N=200": {
+   "python_s": 26.224,
+   "c_s": 20.06,
+   "ratio": 1.31
+  },
+  "H33 N=256": {
+   "python_s": 15.886,
+   "c_s": 13.204,
+   "ratio": 1.2
+  },
+  "T12 N=16": {
+   "python_s": 1.084,
+   "c_s": 0.804,
+   "ratio": 1.35
+  },
+  "T12 N=32": {
+   "python_s": 5.08,
+   "c_s": 4.039,
+   "ratio": 1.26
+  },
+  "T12 N=64": {
+   "python_s": 11.374,
+   "c_s": 8.649,
+   "ratio": 1.32
+  },
+  "T12 N=128": {
+   "python_s": 4.007,
+   "c_s": 2.175,
+   "ratio": 1.84
+  },
+  "T12 N=160": {
+   "python_s": 13.285,
+   "c_s": 9.772,
+   "ratio": 1.36
+  },
+  "T12 N=200": {
+   "python_s": 11.721,
+   "c_s": 9.52,
+   "ratio": 1.23
+  },
+  "T12 N=256": {
+   "python_s": 28.613,
+   "c_s": 17.437,
+   "ratio": 1.64
+  }
+ },
+ "total": {
+  "python_s": 232.3,
+  "c_s": 163.0
+ },
+ "differences": []
+}
