@@ -1,0 +1,8 @@
+["sqrt_nan", [["3fefffffffffffff", "nan"], ["3ff0000000000001", "nan"]]]
+["sq_nanlo", [["0000000000000000"], ["nan"]]]
+["sq_nanhi", [["3fefffffffffffff"], ["nan"]]]
+["mul_nan", [["nan", "nan"], ["nan", "nan"]]]
+["sqrt_negative", ["ValueError", "sqrt of negative"]]
+["division_mixed", ["ValueError", "division by interval containing 0"]]
+["division_zero", ["ValueError", "division by interval containing 0"]]
+["division_negative", [["bff0000000000002", "bfe0000000000002"], ["bfeffffffffffffe", "bfdffffffffffffe"]]]
