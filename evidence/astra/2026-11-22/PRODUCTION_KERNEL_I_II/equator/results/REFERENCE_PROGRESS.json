@@ -1,39 +1,15 @@
 {
-  "utc": "2026-11-22T10:35:33Z",
+  "utc": "2026-11-22T10:48:47Z",
   "completed_pairs": 0,
   "total_pairs": 88,
-  "completed_precision_runs": 0,
+  "completed_precision_runs": 1,
   "total_precision_runs": 176,
-  "oldest_in_progress_wall_seconds": 1725.6049284934998,
+  "completed_runs": [
+    "reference_H_0_80.json"
+  ],
   "checkpoint_latitudes": {
-    "H_36_80.jsonl": 217,
-    "H_36_110.jsonl": 217
-  },
-  "progress_counters": {
-    "progress_Haa_11_110": {
-      "evaluations": 65536,
-      "seconds": 577.7967449309999
-    },
-    "progress_Haa_11_80": {
-      "evaluations": 131072,
-      "seconds": 821.732672305
-    },
-    "progress_H_36_80": {
-      "evaluations": 720896,
-      "seconds": 611.2283426760005
-    },
-    "progress_H_36_110": {
-      "evaluations": 1507328,
-      "seconds": 656.8771862960002
-    },
-    "progress_contact_0_80": {
-      "evaluations": 1835008,
-      "seconds": 770.2760639239996
-    },
-    "progress_contact_0_110": {
-      "evaluations": 2949120,
-      "seconds": 767.2338744620001
-    }
+    "H_36_80.jsonl": 577,
+    "H_36_110.jsonl": 473
   },
   "status": "IN_PROGRESS",
   "E4": "NOT_STARTED"
