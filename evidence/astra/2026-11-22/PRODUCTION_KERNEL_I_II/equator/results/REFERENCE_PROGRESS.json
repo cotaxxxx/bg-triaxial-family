@@ -1,5 +1,6 @@
 {
-  "utc": "2026-11-22T10:48:47Z",
+  "utc": "2026-11-22T10:54:34+00:00",
+  "recorded_jst": "2026-11-22 19:54:34 JST",
   "completed_pairs": 0,
   "total_pairs": 88,
   "completed_precision_runs": 1,
@@ -8,9 +9,10 @@
     "reference_H_0_80.json"
   ],
   "checkpoint_latitudes": {
-    "H_36_80.jsonl": 577,
-    "H_36_110.jsonl": 473
+    "H_36_110.jsonl": 573,
+    "H_36_80.jsonl": 866
   },
-  "status": "IN_PROGRESS",
+  "reference_gate": "PENDING",
+  "E3": "PASS_92_OF_92",
   "E4": "NOT_STARTED"
 }
