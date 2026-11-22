@@ -1,0 +1,9 @@
+# 実行記録（中間、DIAGNOSTIC_ONLY）
+
+2026-11-22。監査済み計画 276fc3425a4c3077a8ab9c68c8631e24d90dba5c に従い、公開箱の SHA-256、474 葉からの種つき ID 選択、20 行の順位、有理端点の親セルへの包含を検査した。入力は evidence/chat/2026-11-22/E3_INPUT_EQUATOR/E3_BOXES_PUBLIC.jsonl（evidence 枝 950df1a9288ec008c2ea7d4d3b2a09c4f256c290、SHA-256 183bc5412593c223e5b799a8f08b6aec24077e2bbd5860bb02843c2353b04a80）。確認結果は input_check.json。
+
+固定 ξ の mpmath 参照コードを作成し、最初の V62 点 i=0 の 80 桁と 110 桁を別プロセスで開始した。各プロセスは完了時に計算値、関数評価回数、秒数を JSON で記録する。両値の一致・包含、E1 の幅、E2c の結果、E3 の92区間はこの中間記録にない。E4 は開始していない。
+
+作業機は Linux x86_64、利用可能な CPU 9、メモリ約 9.7 GiB、GCC 14.2.0、mpmath 1.3.0。GMP ヘッダと MPFR 共有ライブラリ libmpfr.so.6 が利用可能。MPFR 開発ヘッダがないため C 核は同一の 128-bit MPFR 演算を使う 64-bit GMP 用の宣言も備える。精度・剰余の条件は変更しない。
+
+再開する場合は公開ファイルを inputs/E3_BOXES_PUBLIC.jsonl に置き、作業ルートから python src/samples.py で照合する。参照点の個別計算は python src/reference.py H 0 80（または 110）。入力 ID・精度を変えず、完了出力ごとに保存する。Reader の封印値は開封していない。
