@@ -16,7 +16,12 @@ chat は監査役なので、**設計そのものは示しません。** ここ�
 
 - 束の圧縮ファイル（`*_PC_BUNDLE.tar.gz`、`*.zip`、`generated-c.tar.xz`）。中に Reader（`GER2/`）が入っている。
 - `GER2/`、`geoenclosereader/` のフォルダ。
-- `*.py`、`*.c`、`*.h`、`*.pyx`、`*.sh` などのソース。とくに `evidence/astra/2026-11-22/C_PORT_TRI4/`（旧 v1.2）と、`evidence/claude/`・`evidence/claude-code/` の C 移植のフォルダ。
+- `*.py`、`*.c`、`*.h`、`*.pyx`、`*.sh` などのソース（どのフォルダでも）。
+- **次のフォルダは、`*.md` も含めて丸ごと開かない**（報告書や計画書が Reader の内部の作り、関数名、分かれ道の条件を引用している）：
+  - `evidence/astra/2026-11-22/C_PORT_TRI4/`（旧 v1.2 の C 移植）
+  - `evidence/claude/` の下すべて
+  - `evidence/claude-code/` の下すべて
+  - 枝 `claude/c-port-audit-20261122` と `claude/equator-audit-notes-20261122`（監査の側の参照値を含む）
 - 開いてしまったら、その時点で作業を止め、Judge に報告する。
 
 ## 1. 課題
