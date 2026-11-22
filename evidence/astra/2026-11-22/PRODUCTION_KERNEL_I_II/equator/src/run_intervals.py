@@ -1,5 +1,5 @@
 """Schedule identical integrals once; aggregate using exact fractions and 128-bit outward rounding."""
-import argparse, concurrent.futures as cf, hashlib, json, os, subprocess, time
+import argparse, concurrent.futures as cf, hashlib, json, os, subprocess, tempfile, time
 from fractions import Fraction as F
 from pathlib import Path
 from samples import ROOT, points, contacts, e1, public_boxes, HAA, deg, middle
@@ -28,7 +28,9 @@ def ivjson(iv):return [encode(x) for x in iv]
 def unpack(ab):return tuple(F(int(n))*F(2)**e for n,e in ab)
 def idigest(obj):return hashlib.sha256(json.dumps(obj,separators=(',',':')).encode()).hexdigest()
 def atomic(path,s):
-    tmp=path.with_name(path.name+'.tmp');tmp.write_text(s);os.replace(tmp,path)
+    with tempfile.NamedTemporaryFile(mode='w',dir=path.parent,prefix=path.name+'.',delete=False) as tmp:
+        tmp.write(s);name=tmp.name
+    os.replace(name,path)
 def arr(b):return [str(v) for ab in b for v in ab]
 def tasks():
     jobs={};cases=[]

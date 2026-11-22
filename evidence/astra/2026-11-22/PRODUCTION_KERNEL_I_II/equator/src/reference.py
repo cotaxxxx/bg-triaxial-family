@@ -1,5 +1,6 @@
 """Numerical reference on the fixed unit sphere, independent of interval jets."""
 import argparse
+import fcntl
 import json
 import time
 from functools import lru_cache
@@ -7,7 +8,7 @@ from pathlib import Path
 from mpmath import mp
 from samples import ROOT, points, contacts
 
-def reference(box,order,dps,contact,progress=None):
+def reference(box,order,dps,contact,progress=None,checkpoint=None):
     mp.dps=dps
     five=[mp.mpf(x.numerator)/x.denominator for x,_ in box]
     s,t,x,y,a=five
@@ -65,7 +66,8 @@ def reference(box,order,dps,contact,progress=None):
         rho=mp.sqrt(x*x+y*y+a*a)
         lams=sorted(set(lams+[mp.asin(a/rho)]))
         phis=sorted(set(phis+[mp.atan2(y,x)]))
-    value=mp.quad(latitude,lams,method='tanh-sinh',maxdegree=12)/(4*mp.pi)
+    callback=(lambda lam:checkpoint.evaluate(lam,latitude)) if checkpoint is not None else latitude
+    value=mp.quad(callback,lams,method='tanh-sinh',maxdegree=12)/(4*mp.pi)
     return value,calls
 
 def main():
@@ -74,13 +76,24 @@ def main():
     ap.add_argument('i',type=int); ap.add_argument('dps',type=int,choices=[80,110])
     args=ap.parse_args()
     box=contacts()[args.i//2][0][args.i%2] if args.kind=='contact' else points()[args.i]
+    work=ROOT/'results'/'ref_work';work.mkdir(parents=True,exist_ok=True)
+    lock=(work/f'{args.kind}_{args.i}_{args.dps}.lock').open('a')
+    fcntl.flock(lock,fcntl.LOCK_EX)
+    result_file=ROOT/'results'/f'reference_{args.kind}_{args.i}_{args.dps}.json'
+    if result_file.exists() and result_file.stat().st_size:
+        print(result_file.read_text().strip(),flush=True);return
     start=time.monotonic()
     def progress(calls):
         name=ROOT/'results'/f'progress_{args.kind}_{args.i}_{args.dps}.json'
         name.write_text(json.dumps({'evaluations':calls,'seconds':time.monotonic()-start})+'\n')
-    value,calls=reference(box,4 if args.kind=='Haa' else 2,args.dps,args.kind=='contact',progress)
+    from ref_checkpoint import Latitudes
+    order=4 if args.kind=='Haa' else 2
+    ck=Latitudes(ROOT/'results'/'ref_work'/f'{args.kind}_{args.i}_{args.dps}.jsonl',box,order,args.dps,args.kind=='contact')
+    value,calls=reference(box,order,args.dps,args.kind=='contact',progress,ck)
     row={'id':args.i,'kind':args.kind,'dps':args.dps,'value':mp.nstr(value,args.dps),
          'mpf_binary':[str((-1 if value._mpf_[0] else 1)*value._mpf_[1]),value._mpf_[2]],
          'quadrature_calls':calls,'maxdegree':12,'seconds':time.monotonic()-start}
+    from run_intervals import atomic
+    atomic(result_file,json.dumps(row)+'\n')
     print(json.dumps(row),flush=True)
 if __name__=='__main__':main()
