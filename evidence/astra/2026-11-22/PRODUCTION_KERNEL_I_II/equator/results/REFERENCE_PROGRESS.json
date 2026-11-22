@@ -1,16 +1,18 @@
 {
-  "utc": "2026-11-22T10:57:59+00:00",
-  "recorded_jst": "2026-11-22 19:57:59 JST",
+  "utc": "2026-11-22T11:04:15+00:00",
+  "recorded_jst": "2026-11-22 20:04:15 JST",
   "completed_pairs": 0,
   "total_pairs": 88,
-  "completed_precision_runs": 1,
+  "completed_precision_runs": 2,
   "total_precision_runs": 176,
   "completed_runs": [
-    "reference_H_0_80.json"
+    "reference_H_0_80.json",
+    "reference_H_1_80.json"
   ],
   "checkpoint_latitudes": {
-    "H_36_110.jsonl": 634,
-    "H_36_80.jsonl": 1003
+    "H_2_80.jsonl": 42,
+    "H_36_110.jsonl": 798,
+    "H_36_80.jsonl": 1275
   },
   "reference_gate": "PENDING",
   "E3": "PASS_92_OF_92",
