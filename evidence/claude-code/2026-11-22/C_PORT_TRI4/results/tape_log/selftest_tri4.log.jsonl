@@ -1,0 +1,1 @@
+{"event": "summary", "enclosures": 15, "exceptions": 0, "c_kernel_calls": 59, "fallback_calls": 0, "enclosures_with_fallback": 0, "reasons": {}, "recordings": 21, "all_c_kernel_calls": 59, "all_fallback_calls": 0, "all_reasons": {}, "fallbacks_outside_enclose": 0, "kernel_simd": 4, "tape_enabled": true}

@@ -1,0 +1,18 @@
+{
+ "normal": {
+  "enclosures": 3,
+  "c_kernel_calls": 15,
+  "fallback_calls": 0
+ },
+ "forced": {
+  "enclosures": 3,
+  "c_kernel_calls": 0,
+  "fallback_calls": 15,
+  "reasons": {
+   "test: clip refused": 15
+  }
+ },
+ "fallback_lines": 3,
+ "lines_name_box_kind_N_NH_grade": true,
+ "same_bounds_and_last": true
+}
