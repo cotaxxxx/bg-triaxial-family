@@ -1,0 +1,9 @@
+# tri4 C port · frozen plan 1 · DIAGNOSTIC_ONLY
+
+Source is the V63-A bundle and the V61 completion archive at bg-triaxial-family 558a490e9a39c3681495bb50127aeecb87e212cc. Never run on the research PC. Use the local x86-64 worker. No change to kernel mathematics or decision rules.
+
+A: cases.json contains eight stratified fixed-seed V61 choices, each with its root and two reproducible dyadic descendants. These are geometric test descendants (cyclic s,t,q1,q2,q3 bisection), independent of the adaptive tree tested in B. Each at N=64,256, NH=max(16,N/2), V61 grade, lazy=False; additionally the chat grid_test_box at all six products N=256,512 and NH=128,256,512, grade 4, lazy=False. Compare every binary64 endpoint and all enclose.last diagnostics including the presence of width1/width2, used, terms, B/C, signed zero. Exceptions must agree in class and text. Archive both outcomes per case.
+B: rep.json in canonical order with V61 upper limit 256, NH=max(16,N/2), lazy=True, same DFS and split criteria. Compare each Python and C result with archived lazy_0/1 by leaf_sha256, leaves, evals, also require COVERED. Keep traces and timing.
+C: execute all six named self-tests with the accelerated backend loaded, require exit 0 and final zero failures. Test the native fsum against math.fsum on cancellation, subnormals, ties and seeded random samples.
+
+Before writing native code profile the first selected root per kind at N=64 with grade per V61, eager, cold then warm. Use exclusive nonoverlapping timers for grid, array arithmetic, fsum and remaining control. Report the method of attribution. Benchmark V60 exact cold box sequence and both trees in fresh processes, one thread, same machine. Report elapsed times and process peak RSS including N=512. Run performance pairs without other local test workloads. No speed threshold; any discrepancy prevents equivalence. Decisions in this report are diagnostic. Do not change the workload after seeing results.
