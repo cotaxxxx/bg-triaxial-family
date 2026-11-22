@@ -31,18 +31,20 @@ branch_table=mdtable(['入力','order','used','接触セル','lazy_skip','確認
       ', '.join(k for k,v in r['observed'].items() if v) or '—'] for r in br])
 trees=mdtable(['V61 木','葉数','評価数','leaf_sha256'],
               [[v['tree'],v['leaves'],v['evals'],'`'+v['leaf_sha256']+'`'] for v in comparison['B'] if v['backend']=='c'])
+exception_count=comparison['A_exceptions']+sum('exception' in r['outcome'] for r in br)
+trial_count=comparison['A_total']+len(br)
 errs=comparison['errors']
 verdict='合格' if not errs else '不合格'
 ratio=perf['N512_c']['rss_kib']/perf['N512_python']['rss_kib']
-print(f"""# 三軸 Reader 0.6.0 の C 移植 · 指示書 v1.2
+print(f"""# 三軸 Reader 0.6.0 の C 移植 · 旧指示書 v1.2 の診断記録
 
-**DIAGNOSTIC_ONLY。固定試験の技術判定は{verdict}。** 著者による採否と chat の独立再現は別工程である。
+**DIAGNOSTIC_ONLY。固定試験の技術判定は{verdict}。** Judge の指定により、この成果物は旧 v1.2 の診断記録として保存する。現行の担当分離はコミット db9208b4934fefd11399d4c7cb88c79bc4d1f674 に記録されている。
 
 ## 固定試験の結果
 
 |試験|検査内容|結果|
 |---|---|---|
-|A|8組 × 3位置 × 2格子の48件、chat 箱の6件、分岐7件の計61件。さらに旧計画の幾何深さ12件と球に届かないW3の2件も保持|全{comparison['A_total']+len(br)}件を比較、差異は下の機械判定を参照|
+|A|8組 × 3位置 × 2格子の48件、chat 箱の6件、分岐7件の計61件。さらに旧計画の幾何深さ12件と球に届かないW3の2件も保持|全{trial_count}件を比較（包囲{trial_count-exception_count}件、同一例外の試験{exception_count}件）|
 |B|V61の2本の木。Python、C版双方を記録済みの木と比較|下表に葉列のハッシュと評価数を掲載|
 |C|同じビルド環境で Reader の自己試験6本を完走|{sum(v=='FAILURES 0' for v in comparison['C'].values())}/6本で FAILURES 0|
 
@@ -72,6 +74,8 @@ CPython v3.12.14 の math_fsum と補助関数を含む連続 5,718 バイトの
 
 ## 独立照合と採否
 
-実装とこの検査は Astra/Codex の担当。chat は A・B を独立再現し、Judge が採否を決める。本計算に採用した場合の同式照合は固定種による約1%の Python 再評価で、差異が1件でもあれば該当組を使用しない。Judge の v1.2 §7 による A1 検査は、Astra が別指示で V56 log-chord 等の別表示・別コードを用いて葉を再包囲する。本 C 移植をその核に流用しない。
+この旧版の実装と技術試験は Astra/Codex が担当した。旧 v1.2 §6 は本計算の約1%を同じ Reader の Python 版で包み直し、差異があれば該当組を使わない設計である。その同式照合と、別式による独立検証は異なる。今回の結果について chat の独立再現と Judge による数理的な採否は未実施である。
+
+現行の裁定では、監査用 Reader の C 移植は Claude Code の v1.3 が担当する。Astra の本計算核 v2.0 は、Reader の実装を読んでいない別セッションに分け、別の表示・別のコードから開発する。今回のセッションでは旧 v1.2 のために Reader の実装を読んだ。この成果物は v2.0 の入力や独立核へ引き継ぐコードには含めない。
 """)
 if errs: print(json.dumps(errs,indent=2))

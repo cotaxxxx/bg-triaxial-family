@@ -19,7 +19,7 @@ The build checks the original Python sources against reader_hashes.json. It puts
 
 Explicit compile flags: `-std=c11 -O2 -ffp-contract=off -fno-fast-math -msse2 -mfpmath=sse -fPIC -shared`. Finite nextafter toward infinity is implemented using adjacent binary64 encodings and special values use libm nextafter. The comparison to math.nextafter covers signed zero, subnormals, finite extremes, infinities and seeded bit patterns. Array reductions call the verbatim math_fsum source and supporting macro/reallocator copied from CPython v3.12.14 commit 2abcf904b8dac8c999d2b3aac76681abb333798a, Modules/mathmodule.c (see CPYTHON_LICENSE.txt). ctypes.PyDLL passes a contiguous vector memoryview as an iterator and preserves its exceptions. Reader moves the result one unit outward separately. No cell parallelism is enabled.
 
-The runner exposes both grid policies through its command line. For example, with a new result file per run:
+The runner exposes both grid policies through its command line. A fixed integer such as `--nh 128` is also accepted. For example, with a new result file per run:
 
 ```sh
 python run_tree.py /path/to/V63A_PC_BUNDLE /path/to/new-build/GER2 refs/rep.json 0 tree0.jsonl --nmax 256 --nh half
