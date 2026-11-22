@@ -29,6 +29,8 @@ python "$here/select_v2.py" out/res_v61.jsonl > extra.json
 cmp extra.json "$here/cases_v2_extra.json"
 python "$here/branch_cases.py" > branches.json
 cmp branches.json "$here/branch_cases.json"
+python "$here/inball.py" > inball.json
+cmp inball.json "$here/inball.json"
 PYTHONPATH="$ref" python "$here/profile_ref.py" > results/profile.jsonl
 python "$here/build.py" "$ref" "$native" > results/build.log 2>&1
 PYTHONPATH="$native" python "$here/test_primitives.py" > results/primitives.json
@@ -37,6 +39,7 @@ for backend in python c; do
   if [[ $backend == c ]]; then reader=$native; fi
   PYTHONPATH="$reader" python "$here/cases_run.py" > "results/A_${backend}.jsonl"
   PYTHONPATH="$reader" python "$here/cases_extra.py" > "results/A_extra_${backend}.jsonl"
+  PYTHONPATH="$reader" python "$here/run_inball.py" > "results/inball_${backend}.jsonl"
   PYTHONPATH="$reader" python "$here/run_branches.py" > "results/branches_${backend}.jsonl"
   PYTHONPATH="$reader" python "$here/test_array.py" > "results/array_${backend}.jsonl"
   PYTHONPATH="$reader" python "$here/test_errors.py" > "results/errors_${backend}.jsonl"
