@@ -7,7 +7,7 @@ from pathlib import Path
 from mpmath import mp
 from samples import ROOT, points, contacts
 
-def reference(box,order,dps,contact):
+def reference(box,order,dps,contact,progress=None):
     mp.dps=dps
     five=[mp.mpf(x.numerator)/x.denominator for x,_ in box]
     s,t,x,y,a=five
@@ -20,6 +20,8 @@ def reference(box,order,dps,contact):
         def longitude(phi):
             nonlocal calls
             calls+=1
+            if progress and calls%65536==0:
+                progress(calls)
             co,si=az(phi)
             X,Y=c*co,c*si
             n=(X,Y/s,z/ell)
@@ -72,7 +74,10 @@ def main():
     args=ap.parse_args()
     box=contacts()[args.i//2][0][args.i%2] if args.kind=='contact' else points()[args.i]
     start=time.monotonic()
-    value,calls=reference(box,4 if args.kind=='Haa' else 2,args.dps,args.kind=='contact')
+    def progress(calls):
+        name=ROOT/'results'/f'progress_{args.kind}_{args.i}_{args.dps}.json'
+        name.write_text(json.dumps({'evaluations':calls,'seconds':time.monotonic()-start})+'\n')
+    value,calls=reference(box,4 if args.kind=='Haa' else 2,args.dps,args.kind=='contact',progress)
     row={'id':args.i,'kind':args.kind,'dps':args.dps,'value':mp.nstr(value,args.dps),
          'quadrature_calls':calls,'maxdegree':12,'seconds':time.monotonic()-start}
     print(json.dumps(row),flush=True)

@@ -46,7 +46,7 @@ static inline Num rational(mpq_t q,mpfr_rnd_t r){Num o={0};__mpfr_struct z=view(
 static inline Num circle(mpfr_rnd_t r){Num o={0};__mpfr_struct z=view(&o);mpfr_const_pi(&z,r);return finish(&o,z);}
 static inline int cmp(Num x,Num y){__mpfr_struct a=view(&x),b=view(&y);return mpfr_cmp(&a,&b);}
 static inline int sgn(Num x){__mpfr_struct v=view(&x);return mpfr_cmp_si(&v,0);}
-static inline int finite(Num x){__mpfr_struct v=view(&x);return mpfr_number_p(&v);}
+static inline int numfinite(Num x){__mpfr_struct v=view(&x);return mpfr_number_p(&v);}
 static inline Num min2(Num a,Num b){return cmp(a,b)<=0?a:b;}
 static inline Num max2(Num a,Num b){return cmp(a,b)>=0?a:b;}
 static I iz,one,pii;
@@ -76,8 +76,13 @@ static inline Num mag(I x){return max2(rn_abs(x.lo,UP),rn_abs(x.hi,UP));}
 static inline Num width(I x){return rn_sub(x.hi,x.lo,UP);}
 static inline I meet(I a,I b){
  I v={max2(a.lo,b.lo),min2(a.hi,b.hi)};
- if(!finite(v.lo)||!finite(v.hi)||cmp(v.lo,v.hi)>0){fputs("INCONSISTENT: invalid interval intersection\n",stderr);exit(3);}return v;
+ if(!numfinite(v.lo)||!numfinite(v.hi)||cmp(v.lo,v.hi)>0){fputs("INCONSISTENT: invalid interval intersection\n",stderr);exit(3);}return v;
 }
 static inline I valueq(const char*s){mpq_t q;mpq_init(q);if(mpq_set_str(q,s,10)!=0)exit(2);mpq_canonicalize(q);I v={rational(q,DOWN),rational(q,UP)};mpq_clear(q);return v;}
-static inline void printnum(Num x){mpz_t m;mpz_init(m);__mpfr_struct z=view(&x);if(!finite(x))exit(2);if(mpfr_zero_p(&z)){printf("[\"0\",0]");}else{long e=mpfr_get_z_2exp(m,&z);gmp_printf("[\"%Zd\",%ld]",m,e);}mpz_clear(m);}
+static inline void printnum(Num x){mpz_t m;mpz_init(m);__mpfr_struct z=view(&x);if(!numfinite(x))exit(2);if(mpfr_zero_p(&z)){printf("[\"0\",0]");}else{long e=mpfr_get_z_2exp(m,&z);gmp_printf("[\"%Zd\",%ld]",m,e);}mpz_clear(m);}
 static inline void printi(I x){putchar('[');printnum(x.lo);putchar(',');printnum(x.hi);putchar(']');}
+extern int mpfr_sinpi(mpfr_ptr,mpfr_srcptr,mpfr_rnd_t);
+extern int mpfr_cospi(mpfr_ptr,mpfr_srcptr,mpfr_rnd_t);
+extern int mpfr_set_d(mpfr_ptr,double,mpfr_rnd_t);
+UNARY(sinpi) UNARY(cospi)
+static inline I dyadic(double x){Num out={0};__mpfr_struct z=view(&out);mpfr_set_d(&z,x,MPFR_RNDN);return pt(finish(&out,z));}
