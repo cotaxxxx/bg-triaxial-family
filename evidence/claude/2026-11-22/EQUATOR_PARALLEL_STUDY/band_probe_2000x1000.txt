@@ -1,0 +1,36 @@
+L3=14.61 q3=0.00000 n=0 | usual: int +1.39065e+00  mean|.| 1.3906e+00  max 3.003e+00 | chord: int +1.39064e+00  mean|.| 1.3906e+00  max 1.004e+01
+L3=14.61 q3=0.00000 n=2 | usual: int +1.47191e+00  mean|.| 8.0922e+00  max 3.168e+03 | chord: int +1.47191e+00  mean|.| 5.3981e+00  max 7.345e+02
+L3=14.61 q3=0.00000 n=3 | usual: int -2.85357e-12  mean|.| 1.6801e+02  max 5.917e+05 | chord: int -3.25949e-11  mean|.| 5.0801e+01  max 1.854e+04
+L3=14.61 q3=0.00000 n=4 | usual: int -4.23711e+00  mean|.| 1.6572e+04  max 1.853e+08 | chord: int -4.23715e+00  mean|.| 1.2354e+03  max 9.036e+05
+L3=14.61 q3=0.01562 n=0 | usual: int +1.39083e+00  mean|.| 1.3908e+00  max 3.041e+00 | chord: int +1.39082e+00  mean|.| 1.3908e+00  max 1.021e+01
+L3=14.61 q3=0.01562 n=2 | usual: int +1.47140e+00  mean|.| 8.0908e+00  max 3.208e+03 | chord: int +1.47140e+00  mean|.| 5.4001e+00  max 7.379e+02
+L3=14.61 q3=0.01562 n=3 | usual: int -6.62182e-02  mean|.| 1.6777e+02  max 5.910e+05 | chord: int -6.62188e-02  mean|.| 5.0843e+01  max 1.893e+04
+L3=14.61 q3=0.01562 n=4 | usual: int -4.23978e+00  mean|.| 1.6576e+04  max 1.895e+08 | chord: int -4.23982e+00  mean|.| 1.2372e+03  max 9.377e+05
+L3=14.61 q3=0.03125 n=0 | usual: int +1.39137e+00  mean|.| 1.3914e+00  max 3.078e+00 | chord: int +1.39136e+00  mean|.| 1.3914e+00  max 1.038e+01
+L3=14.61 q3=0.03125 n=2 | usual: int +1.46984e+00  mean|.| 8.0869e+00  max 3.208e+03 | chord: int +1.46984e+00  mean|.| 5.4062e+00  max 7.424e+02
+L3=14.61 q3=0.03125 n=3 | usual: int -1.32520e-01  mean|.| 1.6784e+02  max 5.957e+05 | chord: int -1.32521e-01  mean|.| 5.0967e+01  max 1.933e+04
+L3=14.61 q3=0.03125 n=4 | usual: int -4.24779e+00  mean|.| 1.6597e+04  max 1.898e+08 | chord: int -4.24783e+00  mean|.| 1.2427e+03  max 9.720e+05
+L3= 1.69 q3=0.00000 n=0 | usual: int +2.84402e-01  mean|.| 2.8440e-01  max 6.283e-01 | chord: int +2.84402e-01  mean|.| 2.8440e-01  max 1.204e+00
+L3= 1.69 q3=0.00000 n=2 | usual: int +1.22200e+00  mean|.| 1.2818e+00  max 4.565e+01 | chord: int +1.22200e+00  mean|.| 2.0038e+00  max 1.062e+01
+L3= 1.69 q3=0.00000 n=3 | usual: int +4.23088e-11  mean|.| 3.6735e+00  max 1.108e+03 | chord: int +1.02415e-11  mean|.| 5.0389e+00  max 5.856e+01
+L3= 1.69 q3=0.00000 n=4 | usual: int -7.86936e+00  mean|.| 7.1834e+01  max 6.760e+04 | chord: int -7.86939e+00  mean|.| 2.1375e+01  max 1.971e+02
+L3= 1.69 q3=0.01562 n=0 | usual: int +2.84551e-01  mean|.| 2.8455e-01  max 6.360e-01 | chord: int +2.84552e-01  mean|.| 2.8455e-01  max 1.218e+00
+L3= 1.69 q3=0.01562 n=2 | usual: int +1.22104e+00  mean|.| 1.2811e+00  max 4.570e+01 | chord: int +1.22104e+00  mean|.| 2.0052e+00  max 1.077e+01
+L3= 1.69 q3=0.01562 n=3 | usual: int -1.22985e-01  mean|.| 3.6744e+00  max 1.113e+03 | chord: int -1.22985e-01  mean|.| 5.0500e+00  max 5.962e+01
+L3= 1.69 q3=0.01562 n=4 | usual: int -7.87453e+00  mean|.| 7.1915e+01  max 6.780e+04 | chord: int -7.87457e+00  mean|.| 2.1423e+01  max 2.040e+02
+L3= 1.69 q3=0.03125 n=0 | usual: int +2.84999e-01  mean|.| 2.8500e-01  max 6.440e-01 | chord: int +2.84999e-01  mean|.| 2.8500e-01  max 1.235e+00
+L3= 1.69 q3=0.03125 n=2 | usual: int +1.21816e+00  mean|.| 1.2788e+00  max 4.582e+01 | chord: int +1.21816e+00  mean|.| 2.0091e+00  max 1.091e+01
+L3= 1.69 q3=0.03125 n=3 | usual: int -2.46131e-01  mean|.| 3.6771e+00  max 1.122e+03 | chord: int -2.46132e-01  mean|.| 5.0799e+00  max 6.074e+01
+L3= 1.69 q3=0.03125 n=4 | usual: int -7.89007e+00  mean|.| 7.2162e+01  max 6.843e+04 | chord: int -7.89011e+00  mean|.| 2.1571e+01  max 2.112e+02
+L3= 6.00 q3=0.00000 n=0 | usual: int +8.18474e-01  mean|.| 8.1847e-01  max 1.791e+00 | chord: int +8.18473e-01  mean|.| 8.1847e-01  max 5.833e+00
+L3= 6.00 q3=0.00000 n=2 | usual: int +1.84633e+00  mean|.| 3.2179e+00  max 5.614e+02 | chord: int +1.84633e+00  mean|.| 3.6689e+00  max 1.268e+02
+L3= 6.00 q3=0.00000 n=3 | usual: int +9.62615e-12  mean|.| 3.7650e+01  max 4.736e+04 | chord: int -5.68493e-11  mean|.| 1.8367e+01  max 1.519e+03
+L3= 6.00 q3=0.00000 n=4 | usual: int -6.29234e+00  mean|.| 1.9216e+03  max 9.114e+06 | chord: int -6.29238e+00  mean|.| 1.7093e+02  max 2.642e+04
+L3= 6.00 q3=0.01562 n=0 | usual: int +8.18700e-01  mean|.| 8.1870e-01  max 1.829e+00 | chord: int +8.18698e-01  mean|.| 8.1870e-01  max 5.986e+00
+L3= 6.00 q3=0.01562 n=2 | usual: int +1.84556e+00  mean|.| 3.2177e+00  max 5.630e+02 | chord: int +1.84556e+00  mean|.| 3.6704e+00  max 1.272e+02
+L3= 6.00 q3=0.01562 n=3 | usual: int -9.83409e-02  mean|.| 3.7642e+01  max 4.760e+04 | chord: int -9.83415e-02  mean|.| 1.8386e+01  max 1.551e+03
+L3= 6.00 q3=0.01562 n=4 | usual: int -6.29695e+00  mean|.| 1.9237e+03  max 9.187e+06 | chord: int -6.29700e+00  mean|.| 1.7121e+02  max 2.741e+04
+L3= 6.00 q3=0.03125 n=0 | usual: int +8.19376e-01  mean|.| 8.1938e-01  max 1.866e+00 | chord: int +8.19374e-01  mean|.| 8.1937e-01  max 6.141e+00
+L3= 6.00 q3=0.03125 n=2 | usual: int +1.84326e+00  mean|.| 3.2169e+00  max 5.645e+02 | chord: int +1.84326e+00  mean|.| 3.6747e+00  max 1.277e+02
+L3= 6.00 q3=0.03125 n=3 | usual: int -1.96826e-01  mean|.| 3.7640e+01  max 4.787e+04 | chord: int -1.96827e-01  mean|.| 1.8444e+01  max 1.584e+03
+L3= 6.00 q3=0.03125 n=4 | usual: int -6.31083e+00  mean|.| 1.9282e+03  max 9.257e+06 | chord: int -6.31087e+00  mean|.| 1.7205e+02  max 2.846e+04

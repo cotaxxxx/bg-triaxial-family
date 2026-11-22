@@ -1,0 +1,118 @@
+{
+ "NZ": 4000,
+ "NPHI": 2000,
+ "rows": [
+  {
+   "s": 2.68,
+   "t": 5.45,
+   "L3": 14.606000000000002,
+   "q": [
+    0.85,
+    0.22,
+    0.015625
+   ],
+   "n": 2,
+   "usual": {
+    "integral": 1.4713951098275222,
+    "mean_abs": 8.090848662200093,
+    "mean_abs_gradient": 172.7529184468111,
+    "fraction_of_sphere_with_half_the_variation": 0.007087625,
+    "predicted_width_N256": 2.1199972635886657,
+    "predicted_width_N512": 1.0599986317943328
+   },
+   "chord": {
+    "integral": 1.4713955613070793,
+    "mean_abs": 5.400140804812025,
+    "mean_abs_gradient": 112.00959597382021,
+    "fraction_of_sphere_with_half_the_variation": 0.003907125,
+    "predicted_width_N256": 1.3745645462613845,
+    "predicted_width_N512": 0.6872822731306922
+   },
+   "ratio_usual_over_chord": 1.5423046297496539
+  },
+  {
+   "s": 2.68,
+   "t": 5.45,
+   "L3": 14.606000000000002,
+   "q": [
+    0.85,
+    0.22,
+    0.015625
+   ],
+   "n": 3,
+   "usual": {
+    "integral": -0.06621816128610075,
+    "mean_abs": 167.8630856744723,
+    "mean_abs_gradient": 19275.06463284155,
+    "fraction_of_sphere_with_half_the_variation": 9.6e-05,
+    "predicted_width_N256": 236.5406306562635,
+    "predicted_width_N512": 118.27031532813174
+   },
+   "chord": {
+    "integral": -0.06621833065505325,
+    "mean_abs": 50.84392318464193,
+    "mean_abs_gradient": 2643.1338386279363,
+    "fraction_of_sphere_with_half_the_variation": 0.001823125,
+    "predicted_width_N256": 32.436132226125444,
+    "predicted_width_N512": 16.218066113062722
+   },
+   "ratio_usual_over_chord": 7.292504205101975
+  },
+  {
+   "s": 2.0,
+   "t": 3.0,
+   "L3": 6.0,
+   "q": [
+    0.85,
+    0.22,
+    0.015625
+   ],
+   "n": 2,
+   "usual": {
+    "integral": 1.84556118306256,
+    "mean_abs": 3.2176810441465067,
+    "mean_abs_gradient": 37.93549419912864,
+    "fraction_of_sphere_with_half_the_variation": 0.014273,
+    "predicted_width_N256": 0.46553855424328416,
+    "predicted_width_N512": 0.23276927712164208
+   },
+   "chord": {
+    "integral": 1.8455614888240164,
+    "mean_abs": 3.6703726004811017,
+    "mean_abs_gradient": 40.84853219728664,
+    "fraction_of_sphere_with_half_the_variation": 0.02389775,
+    "predicted_width_N256": 0.5012869088317259,
+    "predicted_width_N512": 0.25064345441586294
+   },
+   "ratio_usual_over_chord": 0.9286868378993678
+  },
+  {
+   "s": 2.0,
+   "t": 3.0,
+   "L3": 6.0,
+   "q": [
+    0.85,
+    0.22,
+    0.015625
+   ],
+   "n": 3,
+   "usual": {
+    "integral": -0.09834084980687499,
+    "mean_abs": 37.64299706774633,
+    "mean_abs_gradient": 2038.0260843851327,
+    "fraction_of_sphere_with_half_the_variation": 0.000293875,
+    "predicted_width_N256": 25.010342869252753,
+    "predicted_width_N512": 12.505171434626376
+   },
+   "chord": {
+    "integral": -0.09834102454426023,
+    "mean_abs": 18.386506970377972,
+    "mean_abs_gradient": 370.47464166131255,
+    "fraction_of_sphere_with_half_the_variation": 0.008582125,
+    "predicted_width_N256": 4.5464078616581665,
+    "predicted_width_N512": 2.2732039308290832
+   },
+   "ratio_usual_over_chord": 5.501121683379057
+  }
+ ]
+}
