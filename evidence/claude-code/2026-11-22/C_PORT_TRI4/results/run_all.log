@@ -1,0 +1,4 @@
+[05:23:25] phase 1: tests A, D, E, C, profile
+[05:37:07] phase 2: test B (4 processes)
+[05:44:36] phase 3: bench (alone, 3 times each)
+[05:47:36] done

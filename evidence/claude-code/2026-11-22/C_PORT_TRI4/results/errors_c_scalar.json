@@ -1,0 +1,727 @@
+{
+ "simd": 1,
+ "checks": 51,
+ "not_identical": 0,
+ "outcomes": {
+  "ok": 27,
+  "ValueError: sqrt of negative": 18,
+  "ValueError: division by interval containing 0": 6
+ },
+ "fallbacks": 0,
+ "rows": [
+  {
+   "kind": "E3",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I",
+   "zero_in_st": true,
+   "c": "ValueError: division by interval containing 0",
+   "python": "ValueError: division by interval containing 0",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "E3",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "D",
+   "zero_in_st": true,
+   "c": "ValueError: division by interval containing 0",
+   "python": "ValueError: division by interval containing 0",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I",
+   "zero_in_st": true,
+   "c": "ValueError: division by interval containing 0",
+   "python": "ValueError: division by interval containing 0",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "T12",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "D",
+   "zero_in_st": true,
+   "c": "ValueError: division by interval containing 0",
+   "python": "ValueError: division by interval containing 0",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "0",
+    "0",
+    "1"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "1",
+    "0",
+    "0"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "3/5",
+    "4/5",
+    "0"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ValueError: sqrt of negative",
+   "python": "ValueError: sqrt of negative",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I-cells",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "D",
+   "zero_in_st": false,
+   "c": "ok",
+   "python": "ok",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "I",
+   "zero_in_st": true,
+   "c": "ValueError: division by interval containing 0",
+   "python": "ValueError: division by interval containing 0",
+   "kernel_calls": 1,
+   "identical": true
+  },
+  {
+   "kind": "H33",
+   "q": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "form": "D",
+   "zero_in_st": true,
+   "c": "ValueError: division by interval containing 0",
+   "python": "ValueError: division by interval containing 0",
+   "kernel_calls": 1,
+   "identical": true
+  }
+ ]
+}

@@ -37,7 +37,7 @@ for i in (0, 1):
 out["B"] = dict(trees=B, ok=all(b["c_equals_chat_record"] and b["c_equals_python_here"] for b in B))
 # test C
 names = ["selftest_tri", "selftest_tri2", "selftest_tri3", "selftest_tri4", "selftest_lazy", "selftest_examples"]; C = []
-strip = lambda s: re.sub(r"\d+\.\d+ ?s\b|\d+\.\d+ sec\w*|[0-9.]+ ?ms\b|\(\d+\.\d+s\)", "<t>", s)
+strip = lambda s: re.sub(r"\btime \d+(?:\.\d+)?|\d+\.\d+ ?s\b|\d+\.\d+ sec\w*|[0-9.]+ ?ms\b|\(\d+\.\d+s\)", "<t>", s)
 for n in names:
     c = open(W/"st_c"/f"{n}.out").read(); p = open(W/"st_py"/f"{n}.out").read()
     C.append(dict(test=n, c_failures_0="FAILURES 0" in c and "exit 0" in c, python_failures_0="FAILURES 0" in p, same_output_apart_from_times=strip(c) == strip(p), identical_output=c == p))

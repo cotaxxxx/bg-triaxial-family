@@ -1,0 +1,1691 @@
+{
+ "simd": 4,
+ "checks": 96,
+ "not_identical": 0,
+ "fallbacks": 54,
+ "fallback_reasons": {
+  "argument shapes": 54
+ },
+ "rows": [
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "cells": 1,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 0,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "cells": 3,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    3,
+    5
+   ],
+   "cells": 15,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    5,
+    7
+   ],
+   "cells": 35,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    9,
+    15
+   ],
+   "cells": 135,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    11,
+    13
+   ],
+   "cells": 143,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    31
+   ],
+   "cells": 496,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "E3",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "E3",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "T12",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "T12",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 55,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "H33",
+   "maker": "tri4",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 25,
+   "kernel_calls": 6,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "arrays": 10,
+   "kernel_calls": 3,
+   "identical": true
+  },
+  {
+   "shape": [
+    16,
+    32
+   ],
+   "cells": 512,
+   "kind": "H33",
+   "maker": "tri3+mask",
+   "act": [
+    1,
+    4
+   ],
+   "arrays": 7,
+   "kernel_calls": 3,
+   "identical": true
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+[
+ {
+  "id": 2009,
+  "kind": "H33",
+  "N": 64,
+  "grade": 4,
+  "order": 2,
+  "warm_s": 0.173,
+  "profiled_total_s": 0.184,
+  "c_kernel_s": 0.148,
+  "fsum_s": 0.005,
+  "mv_cells_s": 0.013,
+  "other_python_s": 0.018
+ },
+ {
+  "id": 2011,
+  "kind": "H33",
+  "N": 256,
+  "grade": 4,
+  "order": 2,
+  "warm_s": 2.739,
+  "profiled_total_s": 3.074,
+  "c_kernel_s": 2.576,
+  "fsum_s": 0.115,
+  "mv_cells_s": 0.245,
+  "other_python_s": 0.138
+ },
+ {
+  "id": 2018,
+  "kind": "E3",
+  "N": 64,
+  "grade": 2,
+  "order": 1,
+  "warm_s": 0.072,
+  "profiled_total_s": 0.075,
+  "c_kernel_s": 0.059,
+  "fsum_s": 0.003,
+  "mv_cells_s": 0.002,
+  "other_python_s": 0.012
+ },
+ {
+  "id": 2020,
+  "kind": "E3",
+  "N": 256,
+  "grade": 2,
+  "order": 1,
+  "warm_s": 1.119,
+  "profiled_total_s": 1.181,
+  "c_kernel_s": 0.983,
+  "fsum_s": 0.039,
+  "mv_cells_s": 0.033,
+  "other_python_s": 0.126
+ },
+ {
+  "id": 2036,
+  "kind": "T12",
+  "N": 64,
+  "grade": 0,
+  "order": 2,
+  "warm_s": 0.156,
+  "profiled_total_s": 0.16,
+  "c_kernel_s": 0.136,
+  "fsum_s": 0.005,
+  "mv_cells_s": 0.01,
+  "other_python_s": 0.01
+ },
+ {
+  "id": 2038,
+  "kind": "T12",
+  "N": 256,
+  "grade": 0,
+  "order": 2,
+  "warm_s": 2.345,
+  "profiled_total_s": 2.349,
+  "c_kernel_s": 2.019,
+  "fsum_s": 0.069,
+  "mv_cells_s": 0.169,
+  "other_python_s": 0.092
+ }
+]

@@ -1,0 +1,387 @@
+{
+ "A": {
+  "cases": 228,
+  "identical": 228,
+  "different": 0,
+  "required_branches": {
+   "contact_cells": 43,
+   "order1_no_contact_active": 18,
+   "lazy_skip": 9,
+   "p0_displaced": 18,
+   "exception_ValueError: box does not meet the ball": 3,
+   "no_active_variable": 3,
+   "grade_nonzero": 100,
+   "kind_E3": 87,
+   "kind_T12": 68,
+   "kind_H33": 73
+  },
+  "all_required_branches_seen": true,
+  "c_kernel_calls": 1095,
+  "python_fallbacks": 0,
+  "coverage": {
+   "both_computed_first_tighter": 108,
+   "contact_cells": 43,
+   "exception_ValueError: box does not meet the ball": 3,
+   "exception_ValueError: contact cell in an interior-only kernel": 11,
+   "grade_nonzero": 100,
+   "kind_E3": 87,
+   "kind_H33": 73,
+   "kind_T12": 68,
+   "lazy_skip": 9,
+   "no_active_variable": 3,
+   "order1_no_contact_active": 18,
+   "order2": 150,
+   "p0_displaced": 18,
+   "tiled_jets": 29,
+   "used_second_order": 33
+  },
+  "A1": true,
+  "A2": true,
+  "A3": true
+ },
+ "E": {
+  "cases": 151,
+  "identical": 151,
+  "different": 0,
+  "python_fallbacks": 0,
+  "simd_width": [
+   1
+  ],
+  "ok": true
+ },
+ "B": {
+  "trees": [
+   {
+    "tree": 0,
+    "kind": "W3",
+    "cell": [
+     17,
+     6,
+     18
+    ],
+    "chat_record": {
+     "leaf_sha256": "934d62a9732f4cdd6b09b091ebefd60ca7b76aac9feb5c4c20ed29b10c89e5f9",
+     "leaves": 18,
+     "evals": 35
+    },
+    "python_here": {
+     "leaf_sha256": "934d62a9732f4cdd6b09b091ebefd60ca7b76aac9feb5c4c20ed29b10c89e5f9",
+     "leaves": 18,
+     "evals": 35,
+     "status": "COVERED",
+     "used2": 0,
+     "lazy_skips": 18,
+     "maxdepth": 5,
+     "min_leaf_lo": 0.0053276490775418005,
+     "skipped": 0,
+     "remaining": 0
+    },
+    "c_here": {
+     "leaf_sha256": "934d62a9732f4cdd6b09b091ebefd60ca7b76aac9feb5c4c20ed29b10c89e5f9",
+     "leaves": 18,
+     "evals": 35,
+     "status": "COVERED",
+     "used2": 0,
+     "lazy_skips": 18,
+     "maxdepth": 5,
+     "min_leaf_lo": 0.0053276490775418005,
+     "skipped": 0,
+     "remaining": 0
+    },
+    "c_equals_chat_record": true,
+    "c_equals_python_here": true,
+    "sec": {
+     "chat_record": 1043.8,
+     "python_here": 446.8,
+     "c_here": 146.7
+    }
+   },
+   {
+    "tree": 1,
+    "kind": "W3",
+    "cell": [
+     7,
+     0,
+     23
+    ],
+    "chat_record": {
+     "leaf_sha256": "e518afebc07443200c1556aedefa2e176bf9f12f9e2a394fbff5d0946d7e8f2b",
+     "leaves": 16,
+     "evals": 31
+    },
+    "python_here": {
+     "leaf_sha256": "e518afebc07443200c1556aedefa2e176bf9f12f9e2a394fbff5d0946d7e8f2b",
+     "leaves": 16,
+     "evals": 31,
+     "status": "COVERED",
+     "used2": 7,
+     "lazy_skips": 16,
+     "maxdepth": 4,
+     "min_leaf_lo": 0.18989879680310986,
+     "skipped": 0,
+     "remaining": 0
+    },
+    "c_here": {
+     "leaf_sha256": "e518afebc07443200c1556aedefa2e176bf9f12f9e2a394fbff5d0946d7e8f2b",
+     "leaves": 16,
+     "evals": 31,
+     "status": "COVERED",
+     "used2": 7,
+     "lazy_skips": 16,
+     "maxdepth": 4,
+     "min_leaf_lo": 0.18989879680310986,
+     "skipped": 0,
+     "remaining": 0
+    },
+    "c_equals_chat_record": true,
+    "c_equals_python_here": true,
+    "sec": {
+     "chat_record": 968.6,
+     "python_here": 410.5,
+     "c_here": 135.9
+    }
+   }
+  ],
+  "ok": true
+ },
+ "C": {
+  "tests": [
+   {
+    "test": "selftest_tri",
+    "c_failures_0": true,
+    "python_failures_0": true,
+    "same_output_apart_from_times": true,
+    "identical_output": false
+   },
+   {
+    "test": "selftest_tri2",
+    "c_failures_0": true,
+    "python_failures_0": true,
+    "same_output_apart_from_times": true,
+    "identical_output": false
+   },
+   {
+    "test": "selftest_tri3",
+    "c_failures_0": true,
+    "python_failures_0": true,
+    "same_output_apart_from_times": true,
+    "identical_output": false
+   },
+   {
+    "test": "selftest_tri4",
+    "c_failures_0": true,
+    "python_failures_0": true,
+    "same_output_apart_from_times": true,
+    "identical_output": false
+   },
+   {
+    "test": "selftest_lazy",
+    "c_failures_0": true,
+    "python_failures_0": true,
+    "same_output_apart_from_times": true,
+    "identical_output": true
+   },
+   {
+    "test": "selftest_examples",
+    "c_failures_0": true,
+    "python_failures_0": true,
+    "same_output_apart_from_times": true,
+    "identical_output": true
+   }
+  ],
+  "ok": true
+ },
+ "D": {
+  "builds": {
+   "avx2": {
+    "simd": 4,
+    "checks": 96,
+    "not_identical": 0,
+    "fallbacks": 54,
+    "arrays": 2328,
+    "kernel_calls": 378
+   },
+   "scalar": {
+    "simd": 1,
+    "checks": 96,
+    "not_identical": 0,
+    "fallbacks": 54,
+    "arrays": 2328,
+    "kernel_calls": 378
+   }
+  },
+  "ok": true
+ },
+ "overall_all_conditions_met": true,
+ "bench_v60": {
+  "python_s": [
+   36.42,
+   37.7,
+   36.19
+  ],
+  "c_s": [
+   20.12,
+   20.6,
+   21.38
+  ],
+  "python_median_s": 36.42,
+  "c_median_s": 20.6,
+  "python_maxrss_mb": 1000.2,
+  "c_maxrss_mb": 434.0,
+  "same_values": true
+ },
+ "A2_chat_box": [
+  {
+   "id": 3000,
+   "N": 256,
+   "NH": 128,
+   "python_s": 28.6,
+   "c_s": 15.4,
+   "ratio": 1.86,
+   "python_maxrss_mb": 1006.1,
+   "c_maxrss_mb": 398.4
+  },
+  {
+   "id": 3001,
+   "N": 256,
+   "NH": 256,
+   "python_s": 22.6,
+   "c_s": 3.5,
+   "ratio": 6.39,
+   "python_maxrss_mb": 1104.5,
+   "c_maxrss_mb": 448.1
+  },
+  {
+   "id": 3002,
+   "N": 512,
+   "NH": 128,
+   "python_s": 100.2,
+   "c_s": 40.8,
+   "ratio": 2.46,
+   "python_maxrss_mb": 3537.7,
+   "c_maxrss_mb": 1111.3
+  },
+  {
+   "id": 3003,
+   "N": 512,
+   "NH": 256,
+   "python_s": 71.2,
+   "c_s": 11.5,
+   "ratio": 6.22,
+   "python_maxrss_mb": 3553.1,
+   "c_maxrss_mb": 1123.3
+  },
+  {
+   "id": 3004,
+   "N": 512,
+   "NH": 512,
+   "python_s": 94.8,
+   "c_s": 13.7,
+   "ratio": 6.92,
+   "python_maxrss_mb": 3953.9,
+   "c_maxrss_mb": 1308.3
+  }
+ ],
+ "A_total_seconds": {
+  "python": 1136.7,
+  "c": 482.8
+ },
+ "profile": [
+  {
+   "id": 2009,
+   "kind": "H33",
+   "N": 64,
+   "NH": 32,
+   "grade": 4,
+   "lazy": false,
+   "order": 2,
+   "used": 1,
+   "grid_cold_s": 1.749,
+   "enclose_warm_s": 0.978,
+   "profiled_total_s": 1.12,
+   "array_s": 0.882,
+   "fsum_s": 0.006,
+   "control_s": 0.232
+  },
+  {
+   "id": 2011,
+   "kind": "H33",
+   "N": 256,
+   "NH": 128,
+   "grade": 4,
+   "lazy": false,
+   "order": 2,
+   "used": 1,
+   "grid_cold_s": 13.285,
+   "enclose_warm_s": 17.34,
+   "profiled_total_s": 17.054,
+   "array_s": 14.41,
+   "fsum_s": 0.095,
+   "control_s": 2.549
+  },
+  {
+   "id": 2018,
+   "kind": "E3",
+   "N": 64,
+   "NH": 32,
+   "grade": 2,
+   "lazy": false,
+   "order": 1,
+   "used": 1,
+   "grid_cold_s": 1.393,
+   "enclose_warm_s": 0.456,
+   "profiled_total_s": 0.362,
+   "array_s": 0.278,
+   "fsum_s": 0.003,
+   "control_s": 0.081
+  },
+  {
+   "id": 2020,
+   "kind": "E3",
+   "N": 256,
+   "NH": 128,
+   "grade": 2,
+   "lazy": false,
+   "order": 1,
+   "used": 1,
+   "grid_cold_s": 11.738,
+   "enclose_warm_s": 5.567,
+   "profiled_total_s": 5.794,
+   "array_s": 4.885,
+   "fsum_s": 0.038,
+   "control_s": 0.87
+  },
+  {
+   "id": 2036,
+   "kind": "T12",
+   "N": 64,
+   "NH": 32,
+   "grade": 0,
+   "lazy": false,
+   "order": 2,
+   "used": 1,
+   "grid_cold_s": 1.157,
+   "enclose_warm_s": 0.71,
+   "profiled_total_s": 0.826,
+   "array_s": 0.662,
+   "fsum_s": 0.005,
+   "control_s": 0.159
+  },
+  {
+   "id": 2038,
+   "kind": "T12",
+   "N": 256,
+   "NH": 128,
+   "grade": 0,
+   "lazy": false,
+   "order": 2,
+   "used": 1,
+   "grid_cold_s": 10.224,
+   "enclose_warm_s": 14.334,
+   "profiled_total_s": 13.775,
+   "array_s": 11.811,
+   "fsum_s": 0.076,
+   "control_s": 1.889
+  }
+ ]
+}

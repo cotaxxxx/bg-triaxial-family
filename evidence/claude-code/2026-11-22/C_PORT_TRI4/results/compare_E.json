@@ -1,0 +1,153 @@
+{
+ "c_kernel_calls": 699,
+ "python_fallbacks": 0,
+ "peak_mb": {
+  "python": 2788.1,
+  "c": 1459.8
+ },
+ "required_branches": {
+  "contact_cells": 21,
+  "order1_no_contact_active": 18,
+  "lazy_skip": 9,
+  "p0_displaced": 9,
+  "exception_ValueError: box does not meet the ball": 3,
+  "no_active_variable": 3,
+  "grade_nonzero": 41,
+  "kind_E3": 51,
+  "kind_T12": 50,
+  "kind_H33": 50
+ },
+ "all_required_branches_seen": true,
+ "cases": 151,
+ "identical": 151,
+ "different": 0,
+ "coverage": {
+  "both_computed_first_tighter": 67,
+  "contact_cells": 21,
+  "exception_ValueError: box does not meet the ball": 3,
+  "exception_ValueError: contact cell in an interior-only kernel": 11,
+  "grade_nonzero": 41,
+  "kind_E3": 51,
+  "kind_H33": 50,
+  "kind_T12": 50,
+  "lazy_skip": 9,
+  "no_active_variable": 3,
+  "order1_no_contact_active": 18,
+  "order2": 95,
+  "p0_displaced": 9,
+  "tiled_jets": 6,
+  "used_second_order": 19
+ },
+ "speed": {
+  "E3 N=16": {
+   "python_s": 2.055,
+   "c_s": 1.021,
+   "ratio": 2.01
+  },
+  "E3 N=32": {
+   "python_s": 7.941,
+   "c_s": 6.359,
+   "ratio": 1.25
+  },
+  "E3 N=64": {
+   "python_s": 14.348,
+   "c_s": 10.79,
+   "ratio": 1.33
+  },
+  "E3 N=128": {
+   "python_s": 15.913,
+   "c_s": 14.936,
+   "ratio": 1.07
+  },
+  "E3 N=160": {
+   "python_s": 2.033,
+   "c_s": 1.487,
+   "ratio": 1.37
+  },
+  "E3 N=200": {
+   "python_s": 17.793,
+   "c_s": 10.959,
+   "ratio": 1.62
+  },
+  "E3 N=256": {
+   "python_s": 43.474,
+   "c_s": 30.343,
+   "ratio": 1.43
+  },
+  "H33 N=16": {
+   "python_s": 1.226,
+   "c_s": 0.652,
+   "ratio": 1.88
+  },
+  "H33 N=32": {
+   "python_s": 6.349,
+   "c_s": 4.451,
+   "ratio": 1.43
+  },
+  "H33 N=64": {
+   "python_s": 15.514,
+   "c_s": 10.872,
+   "ratio": 1.43
+  },
+  "H33 N=128": {
+   "python_s": 9.499,
+   "c_s": 6.72,
+   "ratio": 1.41
+  },
+  "H33 N=160": {
+   "python_s": 8.704,
+   "c_s": 4.295,
+   "ratio": 2.03
+  },
+  "H33 N=200": {
+   "python_s": 26.801,
+   "c_s": 23.744,
+   "ratio": 1.13
+  },
+  "H33 N=256": {
+   "python_s": 17.543,
+   "c_s": 15.137,
+   "ratio": 1.16
+  },
+  "T12 N=16": {
+   "python_s": 1.249,
+   "c_s": 0.739,
+   "ratio": 1.69
+  },
+  "T12 N=32": {
+   "python_s": 6.05,
+   "c_s": 4.766,
+   "ratio": 1.27
+  },
+  "T12 N=64": {
+   "python_s": 14.293,
+   "c_s": 11.059,
+   "ratio": 1.29
+  },
+  "T12 N=128": {
+   "python_s": 12.853,
+   "c_s": 8.919,
+   "ratio": 1.44
+  },
+  "T12 N=160": {
+   "python_s": 15.398,
+   "c_s": 11.037,
+   "ratio": 1.4
+  },
+  "T12 N=200": {
+   "python_s": 11.623,
+   "c_s": 9.298,
+   "ratio": 1.25
+  },
+  "T12 N=256": {
+   "python_s": 27.372,
+   "c_s": 18.051,
+   "ratio": 1.52
+  }
+ },
+ "total": {
+  "python_s": 278.0,
+  "c_s": 205.6
+ },
+ "differences": []
+}
