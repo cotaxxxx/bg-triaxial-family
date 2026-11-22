@@ -1,0 +1,27 @@
+{
+  "kernel_sha256": "393cd0919c6edeee57f7c4351f5721756a2b00d376e9c01a87eb4963827fdd7a",
+  "planned_unique_integrals": 311,
+  "completed_unique_integrals": 311,
+  "stages_per_integral": [
+    128,
+    512,
+    2048
+  ],
+  "distinct_measured_rows": {
+    "E1_stages.jsonl": 2,
+    "H_stages.jsonl": 92,
+    "Haa_stages.jsonl": 8,
+    "E2c_stages.jsonl": 12,
+    "E3_ASTRA_ENDPOINTS.jsonl": 92
+  },
+  "wall_seconds_per_integral": {
+    "min": 4.140613755999766,
+    "median": 10.79312706699966,
+    "max": 33.09251968499939,
+    "sum_over_simultaneous_jobs": 3559.750801854998
+  },
+  "E3_status": "ENCLOSED_PENDING_CHAT",
+  "E2_status": "REFERENCE_IN_PROGRESS",
+  "Haa_status": "REFERENCE_IN_PROGRESS",
+  "E2c_status": "CONTACT_12_FINITE_REFERENCE_IN_PROGRESS"
+}
