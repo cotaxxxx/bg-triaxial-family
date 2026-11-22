@@ -65,7 +65,8 @@ def reference(box,order,dps,contact,progress=None):
         rho=mp.sqrt(x*x+y*y+a*a)
         lams=sorted(set(lams+[mp.asin(a/rho)]))
         phis=sorted(set(phis+[mp.atan2(y,x)]))
-    return mp.quad(latitude,lams,method='tanh-sinh',maxdegree=12)/(4*mp.pi),calls
+    value=mp.quad(latitude,lams,method='tanh-sinh',maxdegree=12)/(4*mp.pi)
+    return value,calls
 
 def main():
     ap=argparse.ArgumentParser()
@@ -79,6 +80,7 @@ def main():
         name.write_text(json.dumps({'evaluations':calls,'seconds':time.monotonic()-start})+'\n')
     value,calls=reference(box,4 if args.kind=='Haa' else 2,args.dps,args.kind=='contact',progress)
     row={'id':args.i,'kind':args.kind,'dps':args.dps,'value':mp.nstr(value,args.dps),
+         'mpf_binary':[str((-1 if value._mpf_[0] else 1)*value._mpf_[1]),value._mpf_[2]],
          'quadrature_calls':calls,'maxdegree':12,'seconds':time.monotonic()-start}
     print(json.dumps(row),flush=True)
 if __name__=='__main__':main()
