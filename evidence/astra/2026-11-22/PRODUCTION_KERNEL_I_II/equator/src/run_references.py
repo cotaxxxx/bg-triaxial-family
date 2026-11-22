@@ -30,6 +30,10 @@ def aggregate():
         ps=[path(k,i,d) for d in (80,110)]
         if any(not p.exists() or not p.stat().st_size for p in ps):continue
         aa,bb=[json.loads(p.read_text()) for p in ps]
+        if any(x.get('status')=='REFERENCE_UNRESOLVED' for x in (aa,bb)):
+            rows.append(dict(kind=k,id=i,status='REFERENCE_UNRESOLVED',value80=aa['value'],
+                             value110=bb['value'],seconds=[aa['seconds'],bb['seconds']]))
+            continue
         def original(obj):
             if 'mpf_binary' in obj:
                 n,e=obj['mpf_binary'];return F(int(n))*F(2)**e,F(0)

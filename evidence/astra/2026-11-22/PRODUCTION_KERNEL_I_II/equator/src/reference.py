@@ -91,8 +91,12 @@ def main():
     ck=Latitudes(ROOT/'results'/'ref_work'/f'{args.kind}_{args.i}_{args.dps}.jsonl',box,order,args.dps,args.kind=='contact')
     value,calls=reference(box,order,args.dps,args.kind=='contact',progress,ck)
     row={'id':args.i,'kind':args.kind,'dps':args.dps,'value':mp.nstr(value,args.dps),
-         'mpf_binary':[str((-1 if value._mpf_[0] else 1)*value._mpf_[1]),value._mpf_[2]],
          'quadrature_calls':calls,'maxdegree':12,'seconds':time.monotonic()-start}
+    if not mp.isfinite(value) or mp.im(value):
+        row['status']='REFERENCE_UNRESOLVED'
+    else:
+        raw=mp.re(value)._mpf_
+        row['mpf_binary']=[str((-1 if raw[0] else 1)*raw[1]),raw[2]]
     from run_intervals import atomic
     atomic(result_file,json.dumps(row)+'\n')
     print(json.dumps(row),flush=True)
