@@ -1,0 +1,8 @@
+{"name": "bench_python", "sec": 32.27083317300003, "rss_kib": 861996, "returncode": 0}
+{"name": "bench_c", "sec": 22.133641831999967, "rss_kib": 479484, "returncode": 0}
+{"name": "tree0_python", "sec": 452.6305352720001, "rss_kib": 1483580, "returncode": 0}
+{"name": "tree0_c", "sec": 285.3305611349999, "rss_kib": 1171664, "returncode": 0}
+{"name": "tree1_python", "sec": 468.8088568420003, "rss_kib": 1458192, "returncode": 0}
+{"name": "tree1_c", "sec": 326.1407776670003, "rss_kib": 1166524, "returncode": 0}
+{"name": "N512_python", "sec": 100.95997528599992, "rss_kib": 3570968, "returncode": 0}
+{"name": "N512_c", "sec": 50.78396868500022, "rss_kib": 1613800, "returncode": 0}

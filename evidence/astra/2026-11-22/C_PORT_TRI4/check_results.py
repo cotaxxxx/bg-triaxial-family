@@ -10,11 +10,14 @@ a=p.parse_args();d=a.results
 load=lambda path:[json.loads(s) for s in path.read_text().splitlines()]
 left=load(d/'A_python.jsonl');right=load(d/'A_c.jsonl')
 left += load(d/'A_extra_python.jsonl');right += load(d/'A_extra_c.jsonl')
-if [r['index'] for r in left]!=list(range(66)) or [r['index'] for r in right]!=list(range(66)):
+inball_ref=load(d/'inball_python.jsonl');inball_c=load(d/'inball_c.jsonl')
+left+=inball_ref;right+=inball_c
+if [r['index'] for r in left]!=list(range(68)) or [r['index'] for r in right]!=list(range(68)):
     raise ValueError('missing, duplicate, or reordered fixed cases')
 omit={'sec','rss_kib'}
 from validate_extra import validate
 branches,errors=validate(d)
+if any("exception" in r["outcome"] for r in inball_ref+inball_c):errors.append(dict(test="nonempty depth",python=inball_ref,c=inball_c))
 for x,y in zip(left,right):
     if any(x.get(k)!=y.get(k) for k in (x.keys()|y.keys())-omit):
         errors.append(dict(test='A',python=x,c=y))

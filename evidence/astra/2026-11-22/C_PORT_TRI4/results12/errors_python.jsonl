@@ -1,0 +1,4 @@
+{"name": "H33(1, 1, 1, 0, 0)", "error": "ValueError", "message": "contact cell in an interior-only kernel"}
+{"name": "W3(1, 1, 0, 0, 0)", "error": "ValueError", "message": "division by interval containing 0"}
+{"name": "H33(1, 1, 1, 1, 0)", "error": "ValueError", "message": "box does not meet the ball"}
+{"name": "injected_empty_intersection", "error": "ValueError", "message": "INCONSISTENT: first- and second-order enclosures do not meet"}
