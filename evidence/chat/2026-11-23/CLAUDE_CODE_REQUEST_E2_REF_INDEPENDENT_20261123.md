@@ -2,6 +2,7 @@
 
 2026-11-23、Claude（通常監査）作成。Judge（古田勝士）の承認（2026-11-23）による。
 状態：**DIAGNOSTIC_ONLY**（監査のための検算。数学的な採否は Judge が決める）。
+**改訂 r2（2026-11-23）：** 最初に受けた Claude Code のセッションは、前日の査読で Astra の `DERIVATION.md` と `DESIGN_EQUATOR.md` を読んでいたため、§3 に従って止まった。Judge の裁定により、**Astra の文書を一度も読んでいない新しい Claude Code のセッション**に頼む。§3 を下のとおり改めた。
 守るもの：REDDS v1.0（`64115f7`）、GeoEnclosure Standard v1.1 の第三原則（作った人とは別の式、別のコードで確かめる）。
 
 ---
@@ -26,7 +27,7 @@
 | E2c の点 | E2c_point_7、E2c_point_2 | E2c の 8 点から先頭 2 点（ID は `E2c_point_k`） | 縁の近く |
 
 - V62 の点の座標 (s, t, q₁, q₂, q₃) は、`evidence/chat/2026-11-22/D_TRI_H33_EQUATOR_DIAG_V62/out_A.jsonl` の `p` を正確な有理数として使う。
-- E2c の点の定義（セル、h の値、|q|² の条件）は、計画 `evidence/astra/2026-11-22/PRODUCTION_KERNEL_I_II/equator/PLAN_TESTS_EQUATOR.md`（`276fc34`）の R3 の節にある。
+- E2c の点の定義（セル、h の値、|q|² の条件）は、計画 `evidence/astra/2026-11-22/PRODUCTION_KERNEL_I_II/equator/PLAN_TESTS_EQUATOR.md`（`276fc34`）の R3（E2c）の節にある。**この計画で読んでよいのは、E2c の点の定義の節だけ**（§3 を見よ）。
 
 ## 2. 量の定義（ここから自分で導く）
 
@@ -44,13 +45,17 @@
 - Astra の equator フォルダの `src/`、`results/reference_*.json`、`results/checkpoints/`、`DERIVATION.md`、`DESIGN_EQUATOR.md`
 - Dig の研究 PC の結果（`evidence/dig/…/E2_REFERENCE_PC/`）
 - Astra の区間の結果（`results/*_stages.jsonl`、`E3_ASTRA_ENDPOINTS.jsonl`）
+- 計画 `PLAN_TESTS_EQUATOR.md` の、E2c の点の定義の節**以外**（E2 の節には Astra の参照値の作り方が書いてある）
+- Claude Code の査読の枝 `claude/equator-audit-notes-20261122`（Astra の導出を引用し、検算のコードを含む）と、旧 C 移植の枝 `claude/c-port-audit-20261122`
+- chat の照合記録 `evidence/chat/2026-11-22/E3_INPUT_EQUATOR/CHAT_VERIFY_E3.md`（Astra の包囲の幅の要約を含む）
 
 読んでよいもの：
 - §2 の定義の出典
-- 計画 `PLAN_TESTS_EQUATOR.md`（点の定義と合否の条件のため）
+- 計画 `PLAN_TESTS_EQUATOR.md` の E2c の点の定義の節だけ
+- この依頼書と、正典 REDDS v1.0（`experimental-mathematics-ai-collaboration` の `64115f7`、`docs/REDDS_RESEARCH_GOVERNANCE_v1.0.md`）
 - V62 の `out_A.jsonl`。Reader の値が載っているが、それを答えとして使わないこと。
 
-Reader のコードを以前に読んでいることは構わない（Astra から独立していればよい）。開いてしまったら、その時点で止めて報告する。
+Reader のコードは読んでもよいが、Reader の値を答えとして使わないこと（Astra から独立していればよい）。開いてしまったら、その時点で止めて報告する。**作業を始める前に、上の禁止物をこれまでに一つも開いていないことを、最初の報告で自己申告する。**
 
 ## 4. 精度と自己検査（流す前に固定）
 
