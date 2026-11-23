@@ -1,4 +1,4 @@
-# Dig への実行指示 v2：E2 系の参照の計算を研究 PC で流す
+# Dig への実行指示 v2.1：E2 系の参照の計算を研究 PC で流す
 
 2026-11-23、Claude（通常監査）作成。Judge の承認（2026-11-23）による。
 - 三軸の再開裁定：`7ce6f1e`。再開の理由：`9dfa228`。
@@ -29,15 +29,22 @@ cp repo/evidence/chat/2026-11-22/E3_INPUT_EQUATOR/E3_BOXES_PUBLIC.jsonl work/inp
 cd work
 sha256sum -c results/IMPLEMENTATION_SHA256SUMS.txt     # 全部 OK のときだけ先へ
 sha256sum inputs/E3_BOXES_PUBLIC.jsonl                  # 183bc541…4a80 と一致すること
-python3 -m venv ~/e2ref/venv && ~/e2ref/venv/bin/pip install mpmath==1.3.0   # この指示書で許可する追加はこれだけ
-~/e2ref/venv/bin/python -c "import mpmath,sys; print(mpmath.__version__, mpmath.libmp.BACKEND, sys.version)" > ~/e2ref/env.txt
+# 改訂 v2.1（2026-11-23、Judge 承認）：venv は使わない。システムには何も入れない。既存の python3.13 と、展開した mpmath 1.3.0 を使う。
+mkdir -p ~/e2ref/whl ~/e2ref/lib
+curl -fsSL -o ~/e2ref/whl/mpmath-1.3.0-py3-none-any.whl https://files.pythonhosted.org/packages/py3/m/mpmath/mpmath-1.3.0-py3-none-any.whl
+echo "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c  $HOME/e2ref/whl/mpmath-1.3.0-py3-none-any.whl" | sha256sum -c -   # OK のときだけ先へ
+python3.13 -c "import zipfile,os; zipfile.ZipFile(os.path.expanduser('~/e2ref/whl/mpmath-1.3.0-py3-none-any.whl')).extractall(os.path.expanduser('~/e2ref/lib'))"
+export PYTHONPATH=$HOME/e2ref/lib
+python3.13 -c "import mpmath,sys; print(mpmath.__version__, mpmath.libmp.BACKEND, mpmath.__file__, sys.version)" > ~/e2ref/env.txt   # 1.3.0、python、~/e2ref/lib の下であること
 cd src
-for c in H_2_80 H_36_80 H_36_110; do ~/e2ref/venv/bin/python restore_ref_checkpoints.py $c; done   # 登録された途中の記録を復元（SHA-256 と行数を検査する）
+for c in H_2_80 H_36_80 H_36_110; do python3.13 restore_ref_checkpoints.py $c; done   # 登録された途中の記録を復元（SHA-256 と行数を検査する）
 cd ..
 ```
 
 - 照合や復元が一つでも合わなければ、流さずに報告する。
 - gmpy2 は入れない。
+- 前回の作成に失敗した `~/e2ref/venv` は、使わず、消さずに残す。
+- 子プロセスも同じ `python3.13` と `PYTHONPATH` で動く（`run_references.py` は `sys.executable` で子を起動する）。`python3 -I` は使わない（`PYTHONPATH` が無視されるため）。
 
 `~/e2ref` が前回の準備で残っていたら、消さずに Judge に確かめる。v1 は実行していないので、残っていないはずである。
 
@@ -45,7 +52,7 @@ cd ..
 
 ```bash
 cd ~/e2ref/work
-nohup ~/e2ref/venv/bin/python src/run_references.py --workers 20 > ~/e2ref/run.log 2>&1 &
+PYTHONPATH=$HOME/e2ref/lib nohup python3.13 src/run_references.py --workers 20 > ~/e2ref/run.log 2>&1 &
 ```
 
 - **同時に流す本数は 20 本**で、変えない。研究 PC は 24 スレッドで、4 スレッドを残す。
