@@ -1,24 +1,20 @@
-# 独立核のビルドと E1–E3 の実行
+# 改訂角度核　研究 PC の区間側手順
 
-計画 276fc34、差分監査 b81df96。DIAGNOSTIC_ONLY。作業ディレクトリはこの文書のある equator/。E4 の運用は別工程。
+2026-11-23、DIAGNOSTIC_ONLY。以下は Dig 用の事前登録。実行には改訂計画の commit、chat の差分監査、条件固定と実行許可を要する。E4 は別途 Judge の明示承認を要する。旧版の手順全文は b9b0483 の同名ファイルに残る。
 
-1. 公開幾何 JSONL を inputs/E3_BOXES_PUBLIC.jsonl に置く。python src/samples.py は入力 SHA-256、全 ID、順位、厳密な有理数での親包含を照合する。
-2. 64-bit GMP limb の Linux で次を実行する。MPFR と GMP をリンクし、全区間端点を MPFR 128-bit で外向きに計算する。本実行は GCC 14.2.0、MPFR の soname 6、mpmath 1.3.0。MPFR ヘッダが提供される環境ではそのヘッダを優先する。
-3. 角度二分木は緯度・方位を π 単位で表す。二節点の積分と四階剰余を直接包囲と交差させる。角度微分のスケーリングと面積に π を含めている。計算の履歴は異なるパラメータ箱、各式の各積分で独立。各組の内部は一スレッドで処理する。
-4. 組み合わせの最後は Python の有理算術で演算し、各積・和を128ビットの下向き／上向き二進値に変換する。記録の端点 [m,e] は正確な整数 m×2ᵉ。C 核のハッシュの異なる中間積分を混用しない。E3 は全92行がそろって初めて出力する。
-5. E2 の固定球面の参照は別の数値実装。i と精度ごとに完了値と秒数を保存し、80桁と110桁の差・包囲への包含を照合する。E2c は親箱への包含も照合する。参照値は証明用の区間に使わない。
+1. Dig は監査を通った commit の equator ディレクトリを新規の作業先に置き、既存の参照計算・既存の結果とは別にする。新しい束の SHA-256、内部マニフェスト、ソース・計画・入力の固定 commit を照合する。入力は `c157cc661dab02ddd2b8936868f9ecad74a9e25f` の `evidence/chat/2026-11-22/E3_INPUT_EQUATOR/E3_BOXES_PUBLIC.jsonl` を `inputs/E3_BOXES_PUBLIC.jsonl` に置く。幾何の SHA-256 は計画 §4。研究 PC 上の参照ジョブとは重ねない。
+2. 64-bit GMP limb、正規 MPFR ヘッダと同一環境のライブラリを使う。ビルドと実行は equator ディレクトリを作業場所とする。コンパイラ・GMP・MPFR・Python・CPU・OS・ビルドフラグ・各 SHA-256・開始終了時刻・実行ログを保存する。以下は区間側だけを扱う。
 
 ```sh
-gcc -O2 -std=gnu17 -Wall -Wextra -Wno-enum-conversion -fno-fast-math src/kernel.c -o kernel -l:libmpfr.so.6 -lgmp
-python src/samples.py
-python src/run_intervals.py --workers 6
-python src/run_references.py --workers 6
-python src/run_intervals.py --aggregate
-python src/run_references.py --aggregate
+sha256sum -c SHA256SUMS.txt
+gcc -O2 -std=gnu17 -Wall -Wextra -Wno-enum-conversion -fno-fast-math \
+  -Werror=implicit-function-declaration -Werror=incompatible-pointer-types \
+  -Werror=int-conversion -include mpfr.h src/kernel.c -o kernel -lmpfr -lgmp
+ldd ./kernel
+sha256sum ./kernel
+python3 src/samples.py
+python3 src/run_intervals.py --workers 6
 ```
 
-長時間ジョブ中は --aggregate で揃った実測だけを集計できる。results/integrals/ のキャッシュは入力、実行ファイル SHA、各段階、時刻を照合できる。正式な結果の原本はそれぞれの集計 JSONL。Reader の封印値の照合は chat が行う。
-
-高精度の参照は点・精度ごとに完了出力を保存する。追加された再開機構は、固定した緯度で経度全体の純 mpmath 積分が返った時点で、緯度、作業精度、内側積分値を mpmath の正確な二進仮数と指数で results/ref_work/ に追記する。同じ入力・同じ精度を再開した際にその値を復元する。外側の適応則は同じである。再開用の台帳は部分データであり、E2 の参照値や合格を表さない。旧版ですでに動いていた計算は完了時に精度別の結果を保存する。実行機・セッションの終了後の稼働を前提にしない。
-
-継続時の部分データは results/checkpoints/INDEX.json に、ケースごとの順序、行数、SHA-256 とともに登録する。例えば停止中の H36・80桁は `python src/restore_ref_checkpoints.py H_36_80` で復元してから参照計算を再開できる。既にある作業記録が登録版より先に進んでいる場合は保持する。長い記録は256緯度ずつに分ける。これは再開用ファイルの区切りであり、積分の分割・適応則には影響しない。
+3. E1、E2 区間72点、Hₐₐ 8点、E2c 8点と4箱、E3 92件で共通する積分は一度だけ計算する。各積分内の順序は並列数に依存しない。改訂の出力は `results/revision_20261123/<kernel SHA-256>/` 以下。キャッシュはさらに `integrals/` 以下にあり、命令・段階・秒数と核の SHA を記録する。必須積分が欠けている場合、集計は PARTIAL として停止する。実行終了後、完全な集計原本とキャッシュのマニフェスト・SHA-256 を採取し、Dig が新しい結果として登録する。旧結果を置換しない。
+4. E2 の独立参照は既存の指示 5220d70 の88組×2精度を使う。新たに参照を起動しない。元の参照 gate を改訂結果として流用しない。新しい区間と既存参照原本の照合・E3 の公開値との非盲検照合は計画 §§3–4 に従って chat が行う。E4 の8組・予算・個別承認は計画 §5 に従う。

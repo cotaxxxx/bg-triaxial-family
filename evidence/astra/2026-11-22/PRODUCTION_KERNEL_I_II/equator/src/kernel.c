@@ -1,4 +1,4 @@
-/* Independent equator quadrature, at fixed audited resolution and precision. */
+/* Independent equator quadrature, pre-registered angular revision at fixed precision. */
 #include "jets.h"
 #include <time.h>
 typedef struct {
@@ -64,17 +64,71 @@ static I integrand(Problem *p,I u,I v,int angular){
  // combine with 1/(4*pi), and jets are factorial-normalized.
  return times(times(times(coef,fact[na]),fact[nv]),times(pii,dyadic(.25)));
 }
-typedef struct {double x0,x1,y0,y1;int root;uint64_t path;int depth;I sum;Num wid;} Cell;
+typedef struct {double x0,x1,y0,y1;int root;uint64_t path;int depth;I sum,legacy;Num wid, legacy_radius, micro_radius; int nx;} Cell;
 static I span(double x,double y){return (I){dyadic(x).lo,dyadic(y).hi};}
 static I gl[2];
 static I node(double x,double y,int k){return plus(times(plus(dyadic(x),dyadic(y)),dyadic(.5)),times(times(minus(dyadic(y),dyadic(x)),dyadic(.5)),gl[k]));}
-static void cell_eval(Problem *p,Cell *c){
- I u=span(c->x0,c->x1),v=span(c->y0,c->y1),d=minus(dyadic(c->x1),dyadic(c->x0)),e=minus(dyadic(c->y1),dyadic(c->y0)),area=times(d,e);
+/* Positive Peano weights fix the sign of the normalized Gaussian error.
+ * Preserve the original symmetric enclosure and its width for tree ordering. */
+typedef struct {I legacy, signed_sum, dx4, dy4; Num radius;} Panel;
+static Panel panel(Problem *p,double x0,double x1,double y0,double y1){
+ I u=span(x0,x1),v=span(y0,y1);
+ I d=minus(dyadic(x1),dyadic(x0)),e=minus(dyadic(y1),dyadic(y0)),area=times(d,e);
  I natural=times(area,integrand(p,u,v,-1));
- I ml=pt(mag(integrand(p,u,v,0))),mr=pt(mag(integrand(p,u,v,1)));
- I R=quotient(times(area,plus(times(square(square(d)),ml),times(square(square(e)),mr))),integer(4320));
- I q=iz;for(int j=0;j<2;j++)for(int k=0;k<2;k++)q=plus(q,integrand(p,node(c->x0,c->x1,j),node(c->y0,c->y1,k),-1));
- q=plus(times(times(area,dyadic(.25)),q),(I){rn_neg(R.hi,DOWN),R.hi});c->sum=meet(natural,q);c->wid=width(c->sum);
+ I fx=integrand(p,u,v,0),fy=integrand(p,u,v,1);
+ I d4=square(square(d)),e4=square(square(e));
+ I wx=times(d4,pt(mag(fx))),wy=times(e4,pt(mag(fy)));
+ I radius=quotient(times(area,plus(wx,wy)),integer(4320));
+ I q=iz;
+ for(int j=0;j<2;j++)for(int k=0;k<2;k++)
+  q=plus(q,integrand(p,node(x0,x1,j),node(y0,y1,k),-1));
+ q=times(times(area,dyadic(.25)),q);
+ I legacy=meet(natural,plus(q,(I){rn_neg(radius.hi,DOWN),radius.hi}));
+ if(p->contact)return (Panel){legacy,legacy,wx,wy,radius.hi};
+ I correction=quotient(times(area,plus(times(d4,fx),times(e4,fy))),integer(4320));
+ return (Panel){legacy,meet(legacy,plus(q,correction)),wx,wy,radius.hi};
+}
+
+/* Work at dyadic cuts. If binary64 cannot represent a cut exactly, stop
+ * before constructing a purported partition of that parent interval. */
+static void cuts(double lo,double hi,int n,double out[5]){
+ out[0]=lo;out[n]=hi;
+ for(int step=n;step>1;step/=2)for(int j=0;j<n;j+=step){
+  double mid=(out[j]+out[j+step])*.5;
+  I exact=midpoint(span(out[j],out[j+step]));
+  if(cmp(dyadic(mid).lo,exact.lo)||cmp(dyadic(mid).hi,exact.hi)){
+   fputs("angular subdivision precision exhausted\n",stderr);exit(4);
+  }
+  out[j+step/2]=mid;
+ }
+}
+
+static unsigned long panel_calls;
+static void cell_eval(Problem *p,Cell *c){
+ Panel coarse=panel(p,c->x0,c->x1,c->y0,c->y1);
+ panel_calls++;
+ c->legacy=coarse.legacy;c->wid=width(coarse.legacy);
+ c->legacy_radius=coarse.radius;
+ if(p->contact){c->sum=coarse.legacy;c->micro_radius=coarse.radius;c->nx=0;return;}
+
+ /* Minimize wx/nx^4 + wy/ny^4 at nx*ny=4. The equivalent
+  * thresholds are 16 wx vs wy and wx vs 16 wy; ties favor 2x2. */
+ Num wx=coarse.dx4.hi,wy=coarse.dy4.hi;
+ int nx=2;
+ if(cmp(wx,rn_mul(num(16),wy,UP))>0)nx=4;
+ if(cmp(wy,rn_mul(num(16),wx,UP))>0)nx=1;
+ int ny=4/nx;
+ double x[5],y[5];cuts(c->x0,c->x1,nx,x);cuts(c->y0,c->y1,ny,y);
+ I composite=iz;
+ Num remainder=num(0);
+ for(int i=0;i<nx;i++)for(int j=0;j<ny;j++){
+  Panel child=panel(p,x[i],x[i+1],y[j],y[j+1]);
+  panel_calls++;
+  composite=plus(composite,child.signed_sum);
+  remainder=rn_add(remainder,child.radius,UP);
+ }
+ c->sum=meet(coarse.signed_sum,composite);
+ c->micro_radius=remainder;c->nx=nx;
 }
 static int cellkey(const void *a,const void *b){
  const Cell *c=a,*d=b;if(c->root!=d->root)return c->root<d->root?-1:1;
@@ -91,9 +145,22 @@ static void solve(Problem *p){
  }
  while(1){
   if(q==128||q==512||q==2048){
-   memcpy(sorted,active,sizeof(Cell)*q);qsort(sorted,q,sizeof(Cell),cellkey);I sum=iz;
-   for(int j=0;j<q;j++)sum=plus(sum,sorted[j].sum);
+   memcpy(sorted,active,sizeof(Cell)*q);qsort(sorted,q,sizeof(Cell),cellkey);I sum=iz,legacy_sum=iz;
+   Num base_r=num(0),micro_r=num(0);int grids[5]={0};
+   for(int j=0;j<q;j++){
+    sum=plus(sum,sorted[j].sum);legacy_sum=plus(legacy_sum,sorted[j].legacy);
+    base_r=rn_add(base_r,sorted[j].legacy_radius,UP);
+    micro_r=rn_add(micro_r,sorted[j].micro_radius,UP);
+    grids[sorted[j].nx]++;
+   }
+   if(cmp(sum.lo,legacy_sum.lo)<0||cmp(sum.hi,legacy_sum.hi)>0){
+    fputs("INCONSISTENT: revised outer interval exceeds legacy interval\n",stderr);exit(3);
+   }
    printf("{\"panels\":%d,\"outer\":",q);printi(sum);
+   printf(",\"legacy_outer\":");printi(legacy_sum);
+   printf(",\"panel_calls\":%lu,\"grids\":{\"contact\":%d,\"1x4\":%d,\"2x2\":%d,\"4x1\":%d}",panel_calls,grids[0],grids[1],grids[2],grids[4]);
+   printf(",\"coarse_2R_sum\":");printnum(rn_mul(num(2),base_r,UP));
+   printf(",\"composite_2R_sum\":");printnum(rn_mul(num(2),micro_r,UP));
    if(p->contact){printf(",\"rho\":");printi(p->rho);printf(",\"eta\":");printi(p->eta);printf(",\"delta\":");printi(p->delta);printf(",\"cap\":");printi(p->cap);sum=plus(sum,(I){rn_neg(p->cap.hi,DOWN),p->cap.hi});}
    printf(",\"interval\":");printi(sum);printf("}\n");fflush(stdout);if(q==2048)return;
   }

@@ -3,7 +3,7 @@ import argparse, concurrent.futures as cf, hashlib, json, os, subprocess, tempfi
 from fractions import Fraction as F
 from pathlib import Path
 from samples import ROOT, points, contacts, e1, public_boxes, HAA, deg, middle
-OUT=ROOT/'results'
+OUT=ROOT/'results'/'revision_20261123'
 MAXSTAGES=(128,512,2048)
 def rounded(x,up):
     if not x:return F(0)
@@ -67,7 +67,8 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--workers',type=int,default=6);ap.add_argument('--aggregate',action='store_true')
     args=ap.parse_args()
     jobs,cases=tasks();kernel=ROOT/'kernel';binhash=hashlib.sha256(kernel.read_bytes()).hexdigest()
-    cache=OUT/'integrals'/binhash;cache.mkdir(parents=True,exist_ok=True)
+    destination=OUT/binhash
+    cache=destination/'integrals';cache.mkdir(parents=True,exist_ok=True)
     atomic(cache/'jobs.json',json.dumps(jobs,sort_keys=True)+'\n')
     def run(k):
         path=cache/(k+'.json')
@@ -82,7 +83,16 @@ def main():
     if not args.aggregate:
         with cf.ThreadPoolExecutor(args.workers) as pool:
             for _ in pool.map(run,jobs):pass
-    result={k:json.loads((cache/(k+'.json')).read_text())['stages'] for k in jobs if (cache/(k+'.json')).exists()}
+    result={}
+    for k,expected in jobs.items():
+        path=cache/(k+'.json')
+        if not path.exists():continue
+        record=json.loads(path.read_text())
+        if record['args']!=expected or [row['panels'] for row in record['stages']]!=list(MAXSTAGES):
+            raise ValueError(f'invalid cached integral {k}')
+        result[k]=record['stages']
+    if len(result)!=len(jobs):
+        raise SystemExit(f'PARTIAL: {len(result)}/{len(jobs)} integrals; aggregate withheld')
     rows=[]
     for c in cases:
         cumulative=None;stages=[]
@@ -95,10 +105,10 @@ def main():
         except KeyError:continue
         rows.append(dict(id=c['id'],kind=c['kind'],box=arr(c['box']),stages=stages,precision_bits=128))
     for name,subset in [('E1',[r for r in rows if r['kind']=='E1']),('E2c',[r for r in rows if r['kind'].startswith('contact')]),('Haa',[r for r in rows if r['kind']=='Haa']),('H',[r for r in rows if r['kind']=='H'])]:
-        if subset:atomic(OUT/(name+'_stages.jsonl'),''.join(json.dumps(r,separators=(',',':'))+'\n' for r in subset))
+        if subset:atomic(destination/(name+'_stages.jsonl'),''.join(json.dumps(r,separators=(',',':'))+'\n' for r in subset))
     H=[r for r in rows if r['kind']=='H']
     if len(H)==92:
-        f=OUT/'E3_ASTRA_ENDPOINTS.jsonl'
+        f=destination/'E3_ASTRA_ENDPOINTS.jsonl'
         public_hash='183bc5412593c223e5b799a8f08b6aec24077e2bbd5860bb02843c2353b04a80'
         lines=[]
         for r in H:
