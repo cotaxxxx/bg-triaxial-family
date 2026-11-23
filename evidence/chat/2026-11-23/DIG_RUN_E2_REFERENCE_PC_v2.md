@@ -21,7 +21,7 @@
 ```bash
 mkdir -p ~/e2ref && cd ~/e2ref
 git clone --branch evidence/triaxial-chat https://github.com/cotaxxxx/bg-triaxial-family.git repo
-cd repo && git checkout <この指示書の commit>
+cd repo && git checkout 9cba7f2c8ec99abbdf2e86ef5c79a2425199b03a
 cd ~/e2ref
 cp -r repo/evidence/astra/2026-11-22/PRODUCTION_KERNEL_I_II/equator work
 mkdir -p work/inputs
