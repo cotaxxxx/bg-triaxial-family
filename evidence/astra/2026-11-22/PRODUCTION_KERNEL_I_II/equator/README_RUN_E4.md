@@ -1,6 +1,6 @@
 # E4 研究 PC 用手順書　2026-11-22 の履歴
 
-**2026-11-23 改訂。以下の「旧計画で初回測定」の選択と旧 E3 の完了記録は旧核に対する履歴である。** 現行の条件は同じディレクトリの PLAN_TESTS_EQUATOR.md §§1–5 と BUILD_EQUATOR.md に従う。改訂核の E1–E3、chat 差分監査、Judge の E4 実行承認は未了。
+**2026-11-23 改訂。以下の「旧計画で初回測定」の選択と旧 E3 の完了記録は旧核に対する履歴である。** 現行の条件は同じディレクトリの [PLAN_TESTS_EQUATOR.md](PLAN_TESTS_EQUATOR.md) §§1–5 と [BUILD_EQUATOR.md](BUILD_EQUATOR.md) に従う。chat の差分監査は条件付きの判定であり、改訂核の E1〜E3 と Judge の E4 実行承認は今後の条件である。
 
 2026-11-22。DIAGNOSTIC_ONLY。Judge 判定 9ca65e664d5005e33f494db0e041d90c2f6da49e を受けた Astra の選択。**E4 の初回測定には監査済みの計画 276fc34 をそのまま用いる。** 現時点では純 mpmath の参照が計算中であり、実行用の束は未発行である。
 
@@ -12,25 +12,13 @@ chat は E3 の72点と20箱すべてで交差を確認した（c157cc6）。2,0
 
 全八組を既定の角度段階・同じ予算で初回の基準測定にかける。完走できた組だけを選別して流すことはしない。最終段階で符号未決なら、R2 の六つの幅（五パラメータと角度・剰余）と未処理箱を報告する。新たな角度段階、積分式、パラメータ選択則は導入しない。将来変更を提案する場合は実行前に計画を commit して chat の差分監査を受け、核を変える場合は E2・E3 を再実行する。
 
-## Dig が確認する開始条件
+## 旧計画で Dig が確認した開始条件（履歴）
 
-- E1 の測定、E2 の72点・Hₐₐの8点・E2c の8点と4箱の全条件、chat による E3 の照合、Dig の研究 PC 運用指示の監査条件が必要。E3 は92/92合格。E2 群の未完、参照未収束、不包含があれば E4 を開始しない。
+- E1 の測定、E2 の72点・Hₐₐの8点・E2c の8点と4箱の全条件、chat による E3 の照合、Dig の研究 PC 運用指示の監査条件が必要。旧核の E3 は92/92合格だった。E2 群の未完、参照未収束、不包含があれば E4 を開始しない。
 - 監査済み計画、実行ファイルをビルドするソース、全八組の入力、R2 の台帳出力を備えたランナー、bench・環境記録・SHA 照合の手順を最終の束に含める。束の SHA-256 と MANIFEST を照合した後に実行する。ここでの選択は研究 PC の開始指示ではない。
 
-## 正規 MPFR ヘッダを必須とするビルド
+## 現行の研究 PC 手順
 
-研究 PC（Debian/Ubuntu 系）では運用担当がディストリビューションの **libmpfr-dev** と libgmp-dev を導入する。C コンパイラ、MPFR ヘッダ・共有ライブラリ、GMP 開発パッケージを同じ環境にそろえ、パッケージ版とコンパイラの版を環境台帳に保存する。依存関係の導入に必要な権限は研究 PC の通常の運用に従う。
-
-```sh
-sudo apt-get install libmpfr-dev libgmp-dev
-dpkg-query -W libmpfr-dev libgmp-dev
-gcc --version
-printf '#include <mpfr.h>\n' | gcc -E -x c - >/dev/null
-gcc -O2 -std=gnu17 -Wall -Wextra -Wno-enum-conversion -fno-fast-math \
-  -Werror=implicit-function-declaration -Werror=incompatible-pointer-types \
-  -Werror=int-conversion -include mpfr.h src/kernel.c -o kernel -lmpfr -lgmp
-ldd ./kernel
-sha256sum ./kernel
-```
-
-`-include mpfr.h` により、正規ヘッダがなければ翻訳の先頭でビルドが失敗する。同じ強制 include とリンク要件を束の全 C 翻訳単位に適用する。自作の ABI 宣言を研究 PC 用の代替に使わない。ヘッダ検査、型検査、リンクのいずれかが失敗した場合は、その出力を保存して実行を止める。研究 PC でのビルドと動作はまだ実測していない。
+- MPFR・GMP の開発用パッケージの確認、欠けている場合の Judge 承認と導入手順は、[BUILD_EQUATOR.md の K1](BUILD_EQUATOR.md) に従う。正規の MPFR ヘッダと同一環境のライブラリを使う。
+- 区間側 E1〜E3 の開始は、E2 の参照の終了・登録後とする（K2）。区間側の目安は約 50 分、停止条件は 100 分（K3）。[研究 PC の区間側手順](BUILD_EQUATOR.md)
+- E4 を開始するには改訂後の E1〜E3 の条件と Judge の明示的な E4 実行承認を要する。E4 の予算は [試験計画 §5](PLAN_TESTS_EQUATOR.md) に従う。
