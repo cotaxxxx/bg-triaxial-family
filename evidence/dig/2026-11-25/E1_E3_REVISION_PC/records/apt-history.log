@@ -1,0 +1,6 @@
+
+Start-Date: 2026-11-25  20:24:05
+Commandline: apt-get install --no-install-recommends libmpfr-dev libgmp-dev
+Requested-By: daybreak (1000)
+Install: libgmpxx4ldbl:amd64 (2:6.3.0+dfsg-5ubuntu2, automatic), libmpfr-dev:amd64 (4.2.2-3), libgmp-dev:amd64 (2:6.3.0+dfsg-5ubuntu2)
+End-Date: 2026-11-25  20:24:05

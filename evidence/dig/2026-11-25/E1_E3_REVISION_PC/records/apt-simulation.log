@@ -1,0 +1,22 @@
+# 2026-11-25 20:20:30 JST: apt-get -s output captured in Dig remote-tool response; transcribed verbatim below.
+注意: これはシミュレーションにすぎません!
+      apt-get は実際の実行に root 権限を必要とします。
+      ロックが非アクティブであることから、今この時点の状態に妥当性が
+      あるとは言い切れないことに注意してください!
+パッケージリストを読み込んでいます...
+依存関係ツリーを作成しています...
+状態情報を読み取っています...
+Solving dependencies...
+以下の追加パッケージがインストールされます:
+  libgmpxx4ldbl
+提案パッケージ:
+  gmp-doc libgmp10-doc libmpfr-doc
+以下のパッケージが新たにインストールされます:
+  libgmp-dev libgmpxx4ldbl libmpfr-dev
+アップグレード: 0 個、新規インストール: 3 個、削除: 0 個、保留: 91 個。
+Inst libgmpxx4ldbl (2:6.3.0+dfsg-5ubuntu2 Ubuntu:26.04/resolute [amd64])
+Inst libgmp-dev (2:6.3.0+dfsg-5ubuntu2 Ubuntu:26.04/resolute [amd64])
+Inst libmpfr-dev (4.2.2-3 Ubuntu:26.04/resolute [amd64])
+Conf libgmpxx4ldbl (2:6.3.0+dfsg-5ubuntu2 Ubuntu:26.04/resolute [amd64])
+Conf libgmp-dev (2:6.3.0+dfsg-5ubuntu2 Ubuntu:26.04/resolute [amd64])
+Conf libmpfr-dev (4.2.2-3 Ubuntu:26.04/resolute [amd64])

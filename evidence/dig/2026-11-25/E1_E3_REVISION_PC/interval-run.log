@@ -1,0 +1,7 @@
+started_at=2026-11-25T20:25:14+09:00
+timeout_pid=1890699
+{"completed": 311, "planned": 311, "finished_cases": 114, "total_cases": 114, "kernel_sha256": "ec6b0f68af615bd7fc8561307c8a33ee898cafcfb325ea8399c2cfcfe64a33df"}
+finished_at=2026-11-25T20:37:17+09:00
+exit_status=0
+remaining_process_group_members:
+remaining_kernel_or_runner_processes:

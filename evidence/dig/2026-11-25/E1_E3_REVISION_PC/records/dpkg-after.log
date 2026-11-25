@@ -1,0 +1,8 @@
++-- Desired=Unknown/Install/Remove/Purge/Hold
+|+- Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+||+ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||| 名前                バージョン            アーキテクチ 説明
++++-===================-=====================-============-==============================================================
+ii  libgmp-dev:amd64    2:6.3.0+dfsg-5ubuntu2 amd64        Multiprecision arithmetic library developers tools
+ii  libgmpxx4ldbl:amd64 2:6.3.0+dfsg-5ubuntu2 amd64        Multiprecision arithmetic library (C++ bindings)
+ii  libmpfr-dev:amd64   4.2.2-3               amd64        multiple precision floating-point computation developers tools

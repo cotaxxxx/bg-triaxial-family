@@ -1,0 +1,19 @@
+DESIGN_EQUATOR.md: OK
+DERIVATION.md: OK
+PLAN_TESTS_EQUATOR.md: OK
+BUILD_EQUATOR.md: OK
+README_RUN_E4.md: OK
+src/kernel.c: OK
+src/interval.h: OK
+src/jets.h: OK
+src/run_intervals.py: OK
+src/samples.py: OK
+inputs/E3_BOXES_PUBLIC.jsonl: OK
+K1 header/64-bit GMP limb PASS
+	linux-vdso.so.1 (0x0000770fa1e30000)
+	libmpfr.so.6 => /usr/lib/x86_64-linux-gnu/libmpfr.so.6 (0x0000770fa1c0a000)
+	libgmp.so.10 => /usr/lib/x86_64-linux-gnu/libgmp.so.10 (0x0000770fa1b84000)
+	libc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x0000770fa1800000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000770fa1e32000)
+ec6b0f68af615bd7fc8561307c8a33ee898cafcfb325ea8399c2cfcfe64a33df  ./kernel
+{"public_boxes": 20, "V62_points": 72, "contact_boxes": 4, "Haa_ids": [11, 62, 60, 8, 53, 29, 42, 43]}
