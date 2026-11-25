@@ -1,0 +1,18 @@
+{
+  "host": "",
+  "operator": "",
+  "workers": 8,
+  "cold_start": false,
+  "evaluations": ["h33", "w3"],
+  "comparison_record": "",
+  "rows": [
+    {"worker": 1, "v60_seconds": "", "same_interval_bits": {"h33": false, "w3": false}},
+    {"worker": 2, "v60_seconds": "", "same_interval_bits": {"h33": false, "w3": false}},
+    {"worker": 3, "v60_seconds": "", "same_interval_bits": {"h33": false, "w3": false}},
+    {"worker": 4, "v60_seconds": "", "same_interval_bits": {"h33": false, "w3": false}},
+    {"worker": 5, "v60_seconds": "", "same_interval_bits": {"h33": false, "w3": false}},
+    {"worker": 6, "v60_seconds": "", "same_interval_bits": {"h33": false, "w3": false}},
+    {"worker": 7, "v60_seconds": "", "same_interval_bits": {"h33": false, "w3": false}},
+    {"worker": 8, "v60_seconds": "", "same_interval_bits": {"h33": false, "w3": false}}
+  ]
+}
