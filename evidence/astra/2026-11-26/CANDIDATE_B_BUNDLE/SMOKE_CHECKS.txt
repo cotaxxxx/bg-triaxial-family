@@ -1,0 +1,23 @@
+DIAGNOSTIC_ONLY
+Work-machine checks: synthetic certificates and spherical containment only.
+No P0-P7 pilot phase, production run, or research PC connection.
+Compiler: cc (Debian 14.2.0-19) 14.2.0
+Native headers: GNU MPFR 4.2.2 release src/mpfr.h and system gmp.h.
+https://www.mpfr.org/mpfr-4.2.2/mpfr-4.2.2.tar.xz
+MPFR source archive SHA-256: b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01
+Build used -include mpfr.h -lmpfr -lgmp, with the genuine MPFR header
+and system runtime library exposed from a temporary directory on the work machine.
+Sphere intervals below are displayed as decimals. Inclusion used exact endpoints.
+
+Synthetic crossing, strict derivative and face checks, union, split and pending: matched
+Synthetic ledger mean-value reconstruction: valid bound read, narrowed bound rejected
+MPFR 4.2.2 GMP 6.3.0
+Sphere Z1 128 bits, 64 leaves: [1.33333333332436, 1.3333333333423] contains analytic value
+Sphere Z2 128 bits, 64 leaves: [1.33333333332885, 1.33333333333782] contains analytic value
+Sphere D1 128 bits, 64 leaves: [0.308425120121647, 0.308425155069765] contains analytic value
+Sphere D2 128 bits, 64 leaves: [0.300242980630078, 0.316595074442394] contains analytic value
+Sphere Z1 256 bits, 64 leaves: [1.33333333332436, 1.3333333333423] contains analytic value
+Sphere Z2 256 bits, 64 leaves: [1.33333333332885, 1.33333333333782] contains analytic value
+Sphere D1 256 bits, 64 leaves: [0.308425120121647, 0.308425155069765] contains analytic value
+Sphere D2 256 bits, 64 leaves: [0.300242980630078, 0.316595074442394] contains analytic value
+Sphere interrupted one-cell request: no usable interval emitted
