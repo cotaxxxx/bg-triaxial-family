@@ -1,0 +1,9 @@
+DIAGNOSTIC_ONLY. Synthetic rational fixtures, no numerical H33 evaluations.
+Positive quadratic fixture: [3/32, 29/32]
+Independent remainder hull: [-5/32, 29/32]
+Opposite signed curvatures and unequal widths: [-25/12, 49/24]
+Zero shape width: [1, 2]
+Quadratic extrema: rank one [0, 4], saddle [-4/9, 4/9], affine [3, 5]
+s direction: P, P', P'', normalized bounds and chain rule agree exactly
+t direction: P, P', P'', normalized bounds and chain rule agree exactly
+Shape factor on the synthetic triangle: boundary values -25/12 and 2
