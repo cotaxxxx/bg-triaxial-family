@@ -1,0 +1,8 @@
+{"compute_ended_utc":"2026-11-25T16:42:06.622395+00:00","evaluations":203,"id":"3,7,0,23,0","leaves":31,"pending_boxes":6,"status":"BUDGET"}
+{"compute_ended_utc":"2026-11-25T16:42:06.624458+00:00","evaluations":202,"id":"2,5,0,23,0","leaves":30,"pending_boxes":8,"status":"BUDGET"}
+{"compute_ended_utc":"2026-11-25T16:42:06.625288+00:00","evaluations":200,"id":"3,7,27,7,0","leaves":29,"pending_boxes":9,"status":"BUDGET"}
+{"compute_ended_utc":"2026-11-25T16:42:06.626461+00:00","evaluations":250,"id":"1,3,27,7,0","leaves":44,"pending_boxes":9,"status":"BUDGET"}
+{"compute_ended_utc":"2026-11-25T16:42:06.629520+00:00","evaluations":254,"id":"0,0,27,7,0","leaves":43,"pending_boxes":14,"status":"BUDGET"}
+{"compute_ended_utc":"2026-11-25T16:42:06.633724+00:00","evaluations":202,"id":"3,7,10,0,0","leaves":30,"pending_boxes":8,"status":"BUDGET"}
+{"compute_ended_utc":"2026-11-25T16:42:06.633768+00:00","evaluations":202,"id":"3,7,4,15,0","leaves":30,"pending_boxes":8,"status":"BUDGET"}
+{"compute_ended_utc":"2026-11-25T16:42:06.633775+00:00","evaluations":258,"id":"2,5,27,7,0","leaves":48,"pending_boxes":6,"status":"BUDGET"}

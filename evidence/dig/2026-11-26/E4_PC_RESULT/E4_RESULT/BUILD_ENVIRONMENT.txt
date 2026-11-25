@@ -1,0 +1,85 @@
+build_started_utc=2026-11-25T14:06:00Z
+libgmp-dev:amd64	installed	2:6.3.0+dfsg-5ubuntu2
+libmpfr-dev:amd64	installed	4.2.2-3
+Linux daybreak-works 7.0.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 26.04 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+VERSION="26.04 LTS (Resolute Raccoon)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=resolute
+LOGO=ubuntu-logo
+アーキテクチャ:                      x86_64
+CPU 操作モード:                      32-bit, 64-bit
+アドレスサイズ:                      48 bits physical, 48 bits virtual
+バイト順序:                          Little Endian
+CPU:                                 24
+オンラインになっている CPU のリスト: 0-23
+ベンダー ID:                         AuthenticAMD
+モデル名:                            AMD Ryzen 9 9900X 12-Core Processor
+CPU ファミリー:                      26
+モデル:                              68
+コアあたりのスレッド数:              2
+ソケットあたりのコア数:              12
+ソケット数:                          1
+ステッピング:                        0
+周波数ブースト:                      使用する
+CPU スケーリング MHz:                66%
+CPU 最大 MHz:                        5662.0161
+CPU 最小 MHz:                        613.9540
+BogoMIPS:                            8799.99
+フラグ:                              fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpuid_fault cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d amd_lbr_pmc_freeze
+仮想化:                              AMD-V
+L1d キャッシュ:                      576 KiB (12 インスタンス)
+L1i キャッシュ:                      384 KiB (12 インスタンス)
+L2 キャッシュ:                       12 MiB (12 インスタンス)
+L3 キャッシュ:                       64 MiB (2 インスタンス)
+NUMA ノード数:                       1
+NUMA ノード 0 CPU:                   0-23
+脆弱性 Gather data sampling:         Not affected
+脆弱性 Ghostwrite:                   Not affected
+脆弱性 Indirect target selection:    Not affected
+脆弱性 Itlb multihit:                Not affected
+脆弱性 L1tf:                         Not affected
+脆弱性 Mds:                          Not affected
+脆弱性 Meltdown:                     Not affected
+脆弱性 Mmio stale data:              Not affected
+脆弱性 Old microcode:                Not affected
+脆弱性 Reg file data sampling:       Not affected
+脆弱性 Retbleed:                     Not affected
+脆弱性 Spec rstack overflow:         Mitigation; IBPB on VMEXIT only
+脆弱性 Spec store bypass:            Mitigation; Speculative Store Bypass disabled via prctl
+脆弱性 Spectre v1:                   Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+脆弱性 Spectre v2:                   Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected
+脆弱性 Srbds:                        Not affected
+脆弱性 Tsa:                          Not affected
+脆弱性 Tsx async abort:              Not affected
+脆弱性 Vmscape:                      Mitigation; IBPB on VMEXIT
+MemTotal:       31352464 kB
+MemAvailable:   25798172 kB
+gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Python 3.14.4
+kernel compile flags: -O2 -std=gnu17 -Wall -Wextra -Wno-enum-conversion -fno-fast-math -Werror=implicit-function-declaration -Werror=incompatible-pointer-types -Werror=int-conversion -include mpfr.h src/kernel.c -o build/kernel -lmpfr -lgmp
+stage I/O compile flags: -O2 -std=gnu17 -Wall -Wextra -Werror -fPIC -shared src/stage_io.c -o build/stage_io.so -ldl
+	linux-vdso.so.1 (0x000074d372456000)
+	libmpfr.so.6 => /usr/lib/x86_64-linux-gnu/libmpfr.so.6 (0x000074d372230000)
+	libgmp.so.10 => /usr/lib/x86_64-linux-gnu/libgmp.so.10 (0x000074d3721aa000)
+	libc.so.6 => /usr/lib/x86_64-linux-gnu/libc.so.6 (0x000074d371e00000)
+	/lib64/ld-linux-x86-64.so.2 (0x000074d372458000)
+MPFR header=4.2.2 runtime=4.2.2
+GMP header=6.3.0 runtime=6.3.0 limb_bits=64
+precision_bits=128 round_lower=RNDD round_upper=RNDU workers=8
+build_finished_utc=2026-11-25T14:06:00Z
+ec6b0f68af615bd7fc8561307c8a33ee898cafcfb325ea8399c2cfcfe64a33df  kernel
+c25a3d4ea8e69700c8953ce82eacf5c3dcdb349f89b343011b65dab0e97be9a6  stage_io.so
+36485b65fe6395ca03a2378522403300789afd2b36d200313e6ed52abcb06107  versions

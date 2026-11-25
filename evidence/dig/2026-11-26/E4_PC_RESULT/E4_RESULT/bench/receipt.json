@@ -1,0 +1,77 @@
+{
+  "host": "daybreak-works",
+  "operator": "Dig",
+  "workers": 8,
+  "cold_start": true,
+  "evaluations": [
+    "h33",
+    "w3"
+  ],
+  "comparison_record": "V60_ENDPOINT_COMPARISON.json; fixed c25ba7bc2b044356896e948f6201f8ade77eb06d chat_checks/bench_here.jsonl",
+  "rows": [
+    {
+      "worker": 1,
+      "v60_seconds": "28.91",
+      "same_interval_bits": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 2,
+      "v60_seconds": "28.96",
+      "same_interval_bits": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 3,
+      "v60_seconds": "29.01",
+      "same_interval_bits": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 4,
+      "v60_seconds": "20.94",
+      "same_interval_bits": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 5,
+      "v60_seconds": "29.03",
+      "same_interval_bits": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 6,
+      "v60_seconds": "29.06",
+      "same_interval_bits": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 7,
+      "v60_seconds": "20.87",
+      "same_interval_bits": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 8,
+      "v60_seconds": "28.61",
+      "same_interval_bits": {
+        "h33": true,
+        "w3": true
+      }
+    }
+  ]
+}

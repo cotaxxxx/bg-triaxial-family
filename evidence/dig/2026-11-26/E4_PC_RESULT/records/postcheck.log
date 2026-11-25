@@ -1,0 +1,73 @@
+{"id": "0,0,27,7,0", "status": "BUDGET", "leaves": 43, "pending": 14}
+{"id": "1,3,27,7,0", "status": "BUDGET", "leaves": 44, "pending": 9}
+{"id": "2,5,0,23,0", "status": "BUDGET", "leaves": 30, "pending": 8}
+{"id": "2,5,27,7,0", "status": "BUDGET", "leaves": 48, "pending": 6}
+{"id": "3,7,0,23,0", "status": "BUDGET", "leaves": 31, "pending": 6}
+{"id": "3,7,4,15,0", "status": "BUDGET", "leaves": 30, "pending": 8}
+{"id": "3,7,10,0,0", "status": "BUDGET", "leaves": 30, "pending": 8}
+{"id": "3,7,27,7,0", "status": "BUDGET", "leaves": 29, "pending": 9}
+BUILD.sha256: OK
+BUILD_ENVIRONMENT.txt: OK
+E4_CASES.json: OK
+RUN.json: OK
+SUMMARY.json: OK
+bench/BUDGET.json: OK
+bench/V60_ENDPOINT_COMPARISON.json: OK
+bench/bench_1.log: OK
+bench/bench_2.log: OK
+bench/bench_3.log: OK
+bench/bench_4.log: OK
+bench/bench_5.log: OK
+bench/bench_6.log: OK
+bench/bench_7.log: OK
+bench/bench_8.log: OK
+bench/capture.json: OK
+bench/receipt.json: OK
+cases/0,0,27,7,0/input.json: OK
+cases/0,0,27,7,0/leaves.jsonl: OK
+cases/0,0,27,7,0/partition.jsonl: OK
+cases/0,0,27,7,0/pending.jsonl: OK
+cases/0,0,27,7,0/r2.jsonl: OK
+cases/0,0,27,7,0/summary.json: OK
+cases/1,3,27,7,0/input.json: OK
+cases/1,3,27,7,0/leaves.jsonl: OK
+cases/1,3,27,7,0/partition.jsonl: OK
+cases/1,3,27,7,0/pending.jsonl: OK
+cases/1,3,27,7,0/r2.jsonl: OK
+cases/1,3,27,7,0/summary.json: OK
+cases/2,5,0,23,0/input.json: OK
+cases/2,5,0,23,0/leaves.jsonl: OK
+cases/2,5,0,23,0/partition.jsonl: OK
+cases/2,5,0,23,0/pending.jsonl: OK
+cases/2,5,0,23,0/r2.jsonl: OK
+cases/2,5,0,23,0/summary.json: OK
+cases/2,5,27,7,0/input.json: OK
+cases/2,5,27,7,0/leaves.jsonl: OK
+cases/2,5,27,7,0/partition.jsonl: OK
+cases/2,5,27,7,0/pending.jsonl: OK
+cases/2,5,27,7,0/r2.jsonl: OK
+cases/2,5,27,7,0/summary.json: OK
+cases/3,7,0,23,0/input.json: OK
+cases/3,7,0,23,0/leaves.jsonl: OK
+cases/3,7,0,23,0/partition.jsonl: OK
+cases/3,7,0,23,0/pending.jsonl: OK
+cases/3,7,0,23,0/r2.jsonl: OK
+cases/3,7,0,23,0/summary.json: OK
+cases/3,7,10,0,0/input.json: OK
+cases/3,7,10,0,0/leaves.jsonl: OK
+cases/3,7,10,0,0/partition.jsonl: OK
+cases/3,7,10,0,0/pending.jsonl: OK
+cases/3,7,10,0,0/r2.jsonl: OK
+cases/3,7,10,0,0/summary.json: OK
+cases/3,7,27,7,0/input.json: OK
+cases/3,7,27,7,0/leaves.jsonl: OK
+cases/3,7,27,7,0/partition.jsonl: OK
+cases/3,7,27,7,0/pending.jsonl: OK
+cases/3,7,27,7,0/r2.jsonl: OK
+cases/3,7,27,7,0/summary.json: OK
+cases/3,7,4,15,0/input.json: OK
+cases/3,7,4,15,0/leaves.jsonl: OK
+cases/3,7,4,15,0/partition.jsonl: OK
+cases/3,7,4,15,0/pending.jsonl: OK
+cases/3,7,4,15,0/r2.jsonl: OK
+cases/3,7,4,15,0/summary.json: OK

@@ -1,0 +1,20 @@
+{
+  "started": "2026-11-25T23:08:07.856631+09:00",
+  "parent_pid": 1898140,
+  "process_group": 1898140,
+  "wall_budget_seconds": "4166640/451",
+  "outer_limit_seconds": "5790240/451",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "src/run_e4.py",
+    "--bench",
+    "/home/daybreak/e4-pc-20261125/bench",
+    "--output",
+    "/home/daybreak/e4-pc-20261125/E4_RESULT",
+    "--bundle-audit",
+    "57f08eb3499f8273dcb602a8d3f7b82f80ab5bb6",
+    "--judge-execution-approval",
+    "e4ee768238aa3436f38381698af21dad31199b77"
+  ]
+}

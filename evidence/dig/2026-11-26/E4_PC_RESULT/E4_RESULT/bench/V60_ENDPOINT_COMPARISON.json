@@ -1,0 +1,167 @@
+{
+  "reference_binary64_hex": {
+    "h33": [
+      "3ff0d288b85f90e4",
+      "3ff824ac4a12c003"
+    ],
+    "w3": [
+      "3ff595bf7c62d237",
+      "3ff91bf6a80c0273"
+    ]
+  },
+  "reference_commit": "c25ba7bc2b044356896e948f6201f8ade77eb06d",
+  "rows": [
+    {
+      "worker": 1,
+      "seconds": "28.91",
+      "maxrss_mb": "1004.7",
+      "endpoints_binary64_hex": {
+        "h33": [
+          "3ff0d288b85f90e4",
+          "3ff824ac4a12c003"
+        ],
+        "w3": [
+          "3ff595bf7c62d237",
+          "3ff91bf6a80c0273"
+        ]
+      },
+      "checks": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 2,
+      "seconds": "28.96",
+      "maxrss_mb": "1004.2",
+      "endpoints_binary64_hex": {
+        "h33": [
+          "3ff0d288b85f90e4",
+          "3ff824ac4a12c003"
+        ],
+        "w3": [
+          "3ff595bf7c62d237",
+          "3ff91bf6a80c0273"
+        ]
+      },
+      "checks": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 3,
+      "seconds": "29.01",
+      "maxrss_mb": "1004.3",
+      "endpoints_binary64_hex": {
+        "h33": [
+          "3ff0d288b85f90e4",
+          "3ff824ac4a12c003"
+        ],
+        "w3": [
+          "3ff595bf7c62d237",
+          "3ff91bf6a80c0273"
+        ]
+      },
+      "checks": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 4,
+      "seconds": "20.94",
+      "maxrss_mb": "1003.8",
+      "endpoints_binary64_hex": {
+        "h33": [
+          "3ff0d288b85f90e4",
+          "3ff824ac4a12c003"
+        ],
+        "w3": [
+          "3ff595bf7c62d237",
+          "3ff91bf6a80c0273"
+        ]
+      },
+      "checks": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 5,
+      "seconds": "29.03",
+      "maxrss_mb": "1004.0",
+      "endpoints_binary64_hex": {
+        "h33": [
+          "3ff0d288b85f90e4",
+          "3ff824ac4a12c003"
+        ],
+        "w3": [
+          "3ff595bf7c62d237",
+          "3ff91bf6a80c0273"
+        ]
+      },
+      "checks": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 6,
+      "seconds": "29.06",
+      "maxrss_mb": "1004.1",
+      "endpoints_binary64_hex": {
+        "h33": [
+          "3ff0d288b85f90e4",
+          "3ff824ac4a12c003"
+        ],
+        "w3": [
+          "3ff595bf7c62d237",
+          "3ff91bf6a80c0273"
+        ]
+      },
+      "checks": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 7,
+      "seconds": "20.87",
+      "maxrss_mb": "1003.6",
+      "endpoints_binary64_hex": {
+        "h33": [
+          "3ff0d288b85f90e4",
+          "3ff824ac4a12c003"
+        ],
+        "w3": [
+          "3ff595bf7c62d237",
+          "3ff91bf6a80c0273"
+        ]
+      },
+      "checks": {
+        "h33": true,
+        "w3": true
+      }
+    },
+    {
+      "worker": 8,
+      "seconds": "28.61",
+      "maxrss_mb": "1004.2",
+      "endpoints_binary64_hex": {
+        "h33": [
+          "3ff0d288b85f90e4",
+          "3ff824ac4a12c003"
+        ],
+        "w3": [
+          "3ff595bf7c62d237",
+          "3ff91bf6a80c0273"
+        ]
+      },
+      "checks": {
+        "h33": true,
+        "w3": true
+      }
+    }
+  ]
+}
