@@ -1,11 +1,11 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>論文II 日本語通読用 v0.8</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>論文II 日本語通読用 v0.9</title><style>
 body{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;line-height:1.9;max-width:44em;margin:0 auto;padding:24px 16px;color:#1a1a1a;background:#fff}
 h1{font-size:1.5em;line-height:1.4}h2{font-size:1.2em;margin-top:2.2em;border-bottom:1px solid #ccc;padding-bottom:.2em}
 table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0;font-size:.93em}th,td{border:1px solid #bbb;padding:.35em .6em;vertical-align:top}th{background:#f2f2f2}
 figure{margin:1.5em 0;text-align:center}img{max-width:100%;height:auto}li{margin:.3em 0}
 @media(prefers-color-scheme:dark){body{background:#fff;color:#1a1a1a}}
-</style></head><body><h1>三軸楕円体の角度エネルギー地図 ― 停留点が出入りする四本の境目</h1>
-<p>日本語の通読用の訳。正本は英語草稿 v0.8（ファイル CHAT_DRAFT_PAPER_II_v0_8_EN.md、SHA-256 d9db0248dbb584ca3770dba3a93d8a815d683d04cd302f94310e23914b58e41f。同じコミットに登録）。この通読用では、文献は略記、付録 A は式を省いた要約である。著者：古田勝士（DAYBREAK）。著者の通読・承認の前。</p>
+</style></head><body><h1>三軸楕円体の角度エネルギー地図 ― 停留点が出入りする四本の境目（再現コード付き）</h1>
+<p>日本語の通読用の訳。正本は英語草稿 v0.9（ファイル CHAT_DRAFT_PAPER_II_v0_9_EN.md、SHA-256 f415a9f99d13b6a48bc92cbd492504ee2e8003bd2a8044fd71e8736afda21a91。同じコミットに登録）。この通読用では、文献は略記、付録 A は式を省いた要約である。著者：古田勝士（DAYBREAK）。著者の通読・承認の前。</p>
 <h2>要旨</h2>
 <p>凸体とその内部の一点に対して、角度エネルギーを次のように定める。その点から境界の点を見る向きと、そこでの外向き法線とがなす角の二乗を、錐体積の重みで平均したものである。回転楕円体でのこのエネルギーの停留点は、この連作の第一論文（古田勝士『Saddle pairs, a saddle circle, and nothing else: stationary points of an angle energy across all spheroid shapes』2026 年、doi:10.5281/zenodo.24495446。以下「論文 I」）で分類した（そこに述べた六つの計算主張を条件とする）。そこには四つの閾値の形が現れた。本論文は、三本の軸がすべて違う楕円体を扱う。半軸を y ≤ 1 ≤ z と書き、形の長方形 R = [1/4, 1] × [1, 7] の上で、四つの量を考える。最長軸以外の二本の軸それぞれについて、中心でのエネルギーの二階微分と、その軸の端でのエネルギーの動径方向の微分である。</p>
 <p>次のことを証明する。R の中で、四つの量それぞれの零集合は一本の弧である。四本の弧が出会うのは、辺 y = 1 の上の二つの扁長側の閾値の形と、もう一点だけである。その一点は内部にあり、二本の弧が横断的に交わる（y ≈ 0.6382、z ≈ 2.2966）。回転楕円体の四つの閾値は、これらの弧の端点である。残る二つの端は辺 y = 1/4 の上にある。次に、各弧が次の局所的な意味で境目であることを証明する。形が弧を横切るとき、エネルギーの停留点がちょうど一対、中心を通って、または向かい合う一対の極を通って、出入りする。どちら側に対があるかも決める。これは、二つの扁長側の閾値の形を除く、弧の上のすべての点で成り立つ。その二つの形では、形が辺 y = 1 に沿って動くとき、対の代わりに一つの停留円が出入りする。</p>
