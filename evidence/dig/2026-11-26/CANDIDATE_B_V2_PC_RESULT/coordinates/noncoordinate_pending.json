@@ -1,0 +1,23 @@
+[
+  {
+    "id": "main.Z1.pending.5488",
+    "quantity": "Z1",
+    "phase": "boxes",
+    "reason": "CELL_BUDGET"
+  },
+  {
+    "id": "main.Z2.pending.1121",
+    "quantity": "Z2",
+    "phase": "boxes",
+    "reason": "CELL_BUDGET"
+  },
+  {
+    "id": "compare.pending.1",
+    "phase": "intersections",
+    "pair": [
+      "Z1",
+      "D2"
+    ],
+    "reason": "CELL_BUDGET"
+  }
+]

@@ -1,0 +1,237 @@
+{
+  "status": "PARTIAL",
+  "diagnostic_only": true,
+  "quantities": {
+    "Z1": {
+      "boxes": {
+        "SIGN_NEG": 870,
+        "SPLIT": 8617,
+        "IN_CHART_UNION": 748,
+        "SIGN_POS": 1800,
+        "PENDING": 5487
+      },
+      "edges": {
+        "y_min": {
+          "SIGN_NEG": 24
+        },
+        "y_max": {
+          "SIGN_NEG": 10,
+          "SPLIT": 4,
+          "IN_ROOT": 1,
+          "SIGN_POS": 17
+        },
+        "z_min": {
+          "SIGN_POS": 12,
+          "SPLIT": 7,
+          "IN_ROOT": 1,
+          "SIGN_NEG": 6
+        },
+        "z_max": {
+          "SIGN_NEG": 12
+        }
+      },
+      "roots": {
+        "y_min": 0,
+        "y_max": 1,
+        "z_min": 1,
+        "z_max": 0
+      },
+      "components": 1,
+      "open": 5487,
+      "signed_area": "18793975/4194304",
+      "expected_edge_counts": true,
+      "anchor_signs": true,
+      "all_corners_nonzero": true,
+      "linked_edge_roots": 2,
+      "arc_conditions": false
+    },
+    "Z2": {
+      "boxes": {
+        "SIGN_NEG": 474,
+        "SPLIT": 2058,
+        "PENDING": 1120,
+        "IN_CHART_UNION": 133,
+        "SIGN_POS": 619
+      },
+      "edges": {
+        "y_min": {
+          "SIGN_NEG": 6,
+          "SPLIT": 4,
+          "IN_ROOT": 1,
+          "SIGN_POS": 21
+        },
+        "y_max": {
+          "SIGN_NEG": 10,
+          "SPLIT": 4,
+          "IN_ROOT": 1,
+          "SIGN_POS": 17
+        },
+        "z_min": {
+          "SIGN_POS": 12
+        },
+        "z_max": {
+          "SIGN_NEG": 13,
+          "SPLIT": 1
+        }
+      },
+      "roots": {
+        "y_min": 1,
+        "y_max": 1,
+        "z_min": 0,
+        "z_max": 0
+      },
+      "components": 1,
+      "open": 1120,
+      "signed_area": "146289/32768",
+      "expected_edge_counts": true,
+      "anchor_signs": true,
+      "all_corners_nonzero": true,
+      "linked_edge_roots": 2,
+      "arc_conditions": false
+    },
+    "D1": {
+      "boxes": {
+        "SIGN_NEG": 667,
+        "SPLIT": 3355,
+        "IN_CHART_UNION": 453,
+        "SIGN_POS": 1078,
+        "UNRESOLVED": 1445
+      },
+      "edges": {
+        "y_min": {
+          "SIGN_NEG": 24
+        },
+        "y_max": {
+          "SIGN_NEG": 21,
+          "SPLIT": 5,
+          "IN_ROOT": 1,
+          "SIGN_POS": 7
+        },
+        "z_min": {
+          "SIGN_POS": 8,
+          "SPLIT": 6,
+          "IN_ROOT": 1,
+          "SIGN_NEG": 9
+        },
+        "z_max": {
+          "SIGN_NEG": 12
+        }
+      },
+      "roots": {
+        "y_min": 0,
+        "y_max": 1,
+        "z_min": 1,
+        "z_max": 0
+      },
+      "components": 1,
+      "open": 1445,
+      "signed_area": "75366011/16777216",
+      "expected_edge_counts": true,
+      "anchor_signs": true,
+      "all_corners_nonzero": true,
+      "linked_edge_roots": 2,
+      "arc_conditions": false
+    },
+    "D2": {
+      "boxes": {
+        "SIGN_NEG": 982,
+        "SPLIT": 2378,
+        "IN_CHART_UNION": 490,
+        "SIGN_POS": 572,
+        "UNRESOLVED": 622
+      },
+      "edges": {
+        "y_min": {
+          "SIGN_NEG": 22,
+          "SPLIT": 5,
+          "IN_ROOT": 1,
+          "SIGN_POS": 6
+        },
+        "y_max": {
+          "SIGN_NEG": 21,
+          "SPLIT": 5,
+          "IN_ROOT": 1,
+          "SIGN_POS": 7
+        },
+        "z_min": {
+          "SIGN_POS": 12
+        },
+        "z_max": {
+          "SIGN_NEG": 12
+        }
+      },
+      "roots": {
+        "y_min": 1,
+        "y_max": 1,
+        "z_min": 0,
+        "z_max": 0
+      },
+      "components": 1,
+      "open": 622,
+      "signed_area": "37625337/8388608",
+      "expected_edge_counts": true,
+      "anchor_signs": true,
+      "all_corners_nonzero": true,
+      "linked_edge_roots": 2,
+      "arc_conditions": false
+    }
+  },
+  "intersections": {
+    "Z1+Z2": {
+      "overlaps": 4,
+      "accounted": 4,
+      "comparison_required": true,
+      "graph_comparison": true,
+      "conditions_met": true
+    },
+    "Z1+D1": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": false,
+      "graph_comparison": false,
+      "conditions_met": true
+    },
+    "Z1+D2": {
+      "overlaps": 4,
+      "accounted": 1,
+      "comparison_required": true,
+      "graph_comparison": false,
+      "conditions_met": false
+    },
+    "Z2+D1": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": false,
+      "graph_comparison": false,
+      "conditions_met": true
+    },
+    "Z2+D2": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": false,
+      "graph_comparison": false,
+      "conditions_met": true
+    },
+    "D1+D2": {
+      "overlaps": 3,
+      "accounted": 0,
+      "comparison_required": true,
+      "graph_comparison": false,
+      "conditions_met": false
+    }
+  },
+  "pilot_eligible": true,
+  "root_visits": {
+    "Z1": 288,
+    "Z2": 288,
+    "D1": 288,
+    "D2": 288
+  },
+  "trace_formula_calls": {
+    "Z1": 2662240,
+    "Z2": 6525696,
+    "D1": 1151952,
+    "D2": 2633616
+  },
+  "run_errors": []
+}

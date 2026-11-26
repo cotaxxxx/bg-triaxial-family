@@ -1,0 +1,15 @@
+    PID    PPID %CPU %MEM     ELAPSED COMMAND
+   9542    8999  3.0  1.2 36-17:28:24 gnome-shell
+1894257    9542  1.4  2.4    13:12:25 firefox
+1895190 1894494  0.9  2.8    13:12:24 Isolated Web Co
+1895234 1894494  0.3  2.5    13:12:24 Isolated Web Co
+   9948    8999  0.1  0.1 36-17:28:23 localsearch-3
+     15       2  0.0  0.0 36-17:28:50 rcu_preempt
+1136376 1136375  0.0  0.3 15-10:07:17 node
+    646       1  0.0  0.0 36-17:28:45 systemd-oomd
+1894497 1894494  0.0  0.1    13:12:25 Socket Process
+1912727       2  0.0  0.0    01:07:08 kworker/u96:1-gfx_0.0.0
+1912869       2  0.0  0.0       47:41 kworker/u96:3-dm_vblank_control_workqueue
+1136433 1136376  0.0  0.4 15-10:07:16 node
+ 103509  103430  0.0  0.0 32-20:44:13 copilot-desktop
+1136112    8999  0.0  0.2 15-10:09:54 ptyxis

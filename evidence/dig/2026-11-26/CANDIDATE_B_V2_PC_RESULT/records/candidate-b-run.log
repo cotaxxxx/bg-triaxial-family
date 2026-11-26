@@ -1,0 +1,451 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "main_started": true,
+  "child_exit": {
+    "Z2": 0,
+    "D1": 0,
+    "D2": 0
+  },
+  "operator_stop": false,
+  "deadline_reached": false,
+  "elapsed_ns": 14707943147271,
+  "rows": {
+    "boxes": 27361,
+    "edges": 400,
+    "charts": 732,
+    "links": 622,
+    "intersections": 9,
+    "pending": 8677,
+    "enclosures": 35762,
+    "integrals": 220694,
+    "events": 1775
+  },
+  "comparison": "STOPPED",
+  "finalization_errors": [],
+  "formula_calls": 93135344,
+  "journal_totals": {
+    "counts": {
+      "Z1": {
+        "SIGN_NEG": 870,
+        "SIGN_POS": 1800,
+        "SPLIT": 8617,
+        "IN_CHART_UNION": 748
+      },
+      "Z2": {
+        "SIGN_POS": 619,
+        "SIGN_NEG": 474,
+        "SPLIT": 2058,
+        "IN_CHART_UNION": 133
+      },
+      "D1": {
+        "SIGN_NEG": 667,
+        "SPLIT": 3355,
+        "SIGN_POS": 1078,
+        "IN_CHART_UNION": 453,
+        "UNRESOLVED": 1445
+      },
+      "D2": {
+        "SIGN_POS": 572,
+        "SIGN_NEG": 982,
+        "SPLIT": 2378,
+        "IN_CHART_UNION": 490,
+        "UNRESOLVED": 622
+      }
+    },
+    "signed_area": {
+      "Z1": "18793975/4194304",
+      "Z2": "146289/32768",
+      "D1": "75366011/16777216",
+      "D2": "37625337/8388608"
+    },
+    "workers": [
+      {
+        "id": "pilot.Z1.events.25",
+        "record": "worker_outcome",
+        "phase": "pilot",
+        "quantity": "Z1",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 9824,
+        "wall_ns": 3454941734,
+        "cpu_ns": 3454795893,
+        "peak_rss_kib": 28600,
+        "reuse": 0,
+        "shape_trials": 0,
+        "chart_trials": 0
+      },
+      {
+        "id": "pilot.Z2.events.25",
+        "record": "worker_outcome",
+        "phase": "pilot",
+        "quantity": "Z2",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 9824,
+        "wall_ns": 3250586711,
+        "cpu_ns": 3250557925,
+        "peak_rss_kib": 21780,
+        "reuse": 0,
+        "shape_trials": 0,
+        "chart_trials": 0
+      },
+      {
+        "id": "pilot.D1.events.25",
+        "record": "worker_outcome",
+        "phase": "pilot",
+        "quantity": "D1",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 9024,
+        "wall_ns": 3237651724,
+        "cpu_ns": 3237622773,
+        "peak_rss_kib": 21720,
+        "reuse": 0,
+        "shape_trials": 0,
+        "chart_trials": 0
+      },
+      {
+        "id": "pilot.D2.events.25",
+        "record": "worker_outcome",
+        "phase": "pilot",
+        "quantity": "D2",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 8064,
+        "wall_ns": 3599951542,
+        "cpu_ns": 3598900998,
+        "peak_rss_kib": 21720,
+        "reuse": 0,
+        "shape_trials": 0,
+        "chart_trials": 0
+      },
+      {
+        "id": "main.Z1.events.565",
+        "record": "worker_outcome",
+        "phase": "main",
+        "quantity": "Z1",
+        "status": "STOPPED",
+        "detail": null,
+        "formula_calls": 24000000,
+        "wall_ns": 11313274683508,
+        "cpu_ns": 11311130775574,
+        "peak_rss_kib": 47200,
+        "reuse": 5,
+        "shape_trials": 12138,
+        "chart_trials": 284
+      },
+      {
+        "id": "main.Z2.events.391",
+        "record": "worker_outcome",
+        "phase": "main",
+        "quantity": "Z2",
+        "status": "STOPPED",
+        "detail": null,
+        "formula_calls": 24000000,
+        "wall_ns": 11067397739061,
+        "cpu_ns": 11066567686428,
+        "peak_rss_kib": 28908,
+        "reuse": 27,
+        "shape_trials": 3381,
+        "chart_trials": 213
+      },
+      {
+        "id": "main.D1.events.408",
+        "record": "worker_outcome",
+        "phase": "main",
+        "quantity": "D1",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 15778208,
+        "wall_ns": 6423886294579,
+        "cpu_ns": 6422820528230,
+        "peak_rss_kib": 31552,
+        "reuse": 2,
+        "shape_trials": 7100,
+        "chart_trials": 111
+      },
+      {
+        "id": "main.D2.events.310",
+        "record": "worker_outcome",
+        "phase": "main",
+        "quantity": "D2",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 21357136,
+        "wall_ns": 9030922983517,
+        "cpu_ns": 9030126796199,
+        "peak_rss_kib": 28172,
+        "reuse": 8,
+        "shape_trials": 5142,
+        "chart_trials": 124
+      },
+      {
+        "id": "compare.events.1",
+        "record": "comparison_outcome",
+        "status": "STOPPED",
+        "formula_calls": 7963264,
+        "detail": null,
+        "wall_ns": 3391045131058,
+        "cpu_ns": 3390183881661,
+        "peak_rss_kib": 47200
+      }
+    ],
+    "root_visits": {
+      "Z1": 288,
+      "Z2": 288,
+      "D1": 288,
+      "D2": 288
+    },
+    "trace": {
+      "Z1": {
+        "status": "RECORDED",
+        "formula_calls": 2662240
+      },
+      "Z2": {
+        "status": "RECORDED",
+        "formula_calls": 6525696
+      },
+      "D1": {
+        "status": "RECORDED",
+        "formula_calls": 1151952
+      },
+      "D2": {
+        "status": "RECORDED",
+        "formula_calls": 2633616
+      }
+    },
+    "unresolved_reasons": {
+      "Z1": {},
+      "Z2": {},
+      "D1": {
+        "DEPTH_LIMIT": 1445
+      },
+      "D2": {
+        "DEPTH_LIMIT": 622
+      }
+    }
+  },
+  "inspection": "PARTIAL",
+  "verified_conditions": {
+    "quantities": {
+      "Z1": {
+        "boxes": {
+          "SIGN_NEG": 870,
+          "SPLIT": 8617,
+          "IN_CHART_UNION": 748,
+          "SIGN_POS": 1800,
+          "PENDING": 5487
+        },
+        "edges": {
+          "y_min": {
+            "SIGN_NEG": 24
+          },
+          "y_max": {
+            "SIGN_NEG": 10,
+            "SPLIT": 4,
+            "IN_ROOT": 1,
+            "SIGN_POS": 17
+          },
+          "z_min": {
+            "SIGN_POS": 12,
+            "SPLIT": 7,
+            "IN_ROOT": 1,
+            "SIGN_NEG": 6
+          },
+          "z_max": {
+            "SIGN_NEG": 12
+          }
+        },
+        "roots": {
+          "y_min": 0,
+          "y_max": 1,
+          "z_min": 1,
+          "z_max": 0
+        },
+        "components": 1,
+        "open": 5487,
+        "signed_area": "18793975/4194304",
+        "expected_edge_counts": true,
+        "anchor_signs": true,
+        "all_corners_nonzero": true,
+        "linked_edge_roots": 2,
+        "arc_conditions": false
+      },
+      "Z2": {
+        "boxes": {
+          "SIGN_NEG": 474,
+          "SPLIT": 2058,
+          "PENDING": 1120,
+          "IN_CHART_UNION": 133,
+          "SIGN_POS": 619
+        },
+        "edges": {
+          "y_min": {
+            "SIGN_NEG": 6,
+            "SPLIT": 4,
+            "IN_ROOT": 1,
+            "SIGN_POS": 21
+          },
+          "y_max": {
+            "SIGN_NEG": 10,
+            "SPLIT": 4,
+            "IN_ROOT": 1,
+            "SIGN_POS": 17
+          },
+          "z_min": {
+            "SIGN_POS": 12
+          },
+          "z_max": {
+            "SIGN_NEG": 13,
+            "SPLIT": 1
+          }
+        },
+        "roots": {
+          "y_min": 1,
+          "y_max": 1,
+          "z_min": 0,
+          "z_max": 0
+        },
+        "components": 1,
+        "open": 1120,
+        "signed_area": "146289/32768",
+        "expected_edge_counts": true,
+        "anchor_signs": true,
+        "all_corners_nonzero": true,
+        "linked_edge_roots": 2,
+        "arc_conditions": false
+      },
+      "D1": {
+        "boxes": {
+          "SIGN_NEG": 667,
+          "SPLIT": 3355,
+          "IN_CHART_UNION": 453,
+          "SIGN_POS": 1078,
+          "UNRESOLVED": 1445
+        },
+        "edges": {
+          "y_min": {
+            "SIGN_NEG": 24
+          },
+          "y_max": {
+            "SIGN_NEG": 21,
+            "SPLIT": 5,
+            "IN_ROOT": 1,
+            "SIGN_POS": 7
+          },
+          "z_min": {
+            "SIGN_POS": 8,
+            "SPLIT": 6,
+            "IN_ROOT": 1,
+            "SIGN_NEG": 9
+          },
+          "z_max": {
+            "SIGN_NEG": 12
+          }
+        },
+        "roots": {
+          "y_min": 0,
+          "y_max": 1,
+          "z_min": 1,
+          "z_max": 0
+        },
+        "components": 1,
+        "open": 1445,
+        "signed_area": "75366011/16777216",
+        "expected_edge_counts": true,
+        "anchor_signs": true,
+        "all_corners_nonzero": true,
+        "linked_edge_roots": 2,
+        "arc_conditions": false
+      },
+      "D2": {
+        "boxes": {
+          "SIGN_NEG": 982,
+          "SPLIT": 2378,
+          "IN_CHART_UNION": 490,
+          "SIGN_POS": 572,
+          "UNRESOLVED": 622
+        },
+        "edges": {
+          "y_min": {
+            "SIGN_NEG": 22,
+            "SPLIT": 5,
+            "IN_ROOT": 1,
+            "SIGN_POS": 6
+          },
+          "y_max": {
+            "SIGN_NEG": 21,
+            "SPLIT": 5,
+            "IN_ROOT": 1,
+            "SIGN_POS": 7
+          },
+          "z_min": {
+            "SIGN_POS": 12
+          },
+          "z_max": {
+            "SIGN_NEG": 12
+          }
+        },
+        "roots": {
+          "y_min": 1,
+          "y_max": 1,
+          "z_min": 0,
+          "z_max": 0
+        },
+        "components": 1,
+        "open": 622,
+        "signed_area": "37625337/8388608",
+        "expected_edge_counts": true,
+        "anchor_signs": true,
+        "all_corners_nonzero": true,
+        "linked_edge_roots": 2,
+        "arc_conditions": false
+      }
+    },
+    "intersections": {
+      "Z1+Z2": {
+        "overlaps": 4,
+        "accounted": 4,
+        "comparison_required": true,
+        "graph_comparison": true,
+        "conditions_met": true
+      },
+      "Z1+D1": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": false,
+        "graph_comparison": false,
+        "conditions_met": true
+      },
+      "Z1+D2": {
+        "overlaps": 4,
+        "accounted": 1,
+        "comparison_required": true,
+        "graph_comparison": false,
+        "conditions_met": false
+      },
+      "Z2+D1": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": false,
+        "graph_comparison": false,
+        "conditions_met": true
+      },
+      "Z2+D2": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": false,
+        "graph_comparison": false,
+        "conditions_met": true
+      },
+      "D1+D2": {
+        "overlaps": 3,
+        "accounted": 0,
+        "comparison_required": true,
+        "graph_comparison": false,
+        "conditions_met": false
+      }
+    }
+  },
+  "elapsed_through_inspection_ns": 14720043257250
+}

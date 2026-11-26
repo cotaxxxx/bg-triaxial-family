@@ -1,0 +1,22 @@
+{
+  "Z1": {
+    "PENDING": 5487,
+    "UNRESOLVED_DEPTH_LIMIT": 0,
+    "total": 5487
+  },
+  "Z2": {
+    "PENDING": 1120,
+    "UNRESOLVED_DEPTH_LIMIT": 0,
+    "total": 1120
+  },
+  "D1": {
+    "PENDING": 0,
+    "UNRESOLVED_DEPTH_LIMIT": 1445,
+    "total": 1445
+  },
+  "D2": {
+    "PENDING": 0,
+    "UNRESOLVED_DEPTH_LIMIT": 622,
+    "total": 622
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "started": "2026-11-26T12:13:54.668632+09:00",
+  "parent_pid": 1914118,
+  "process_group": 1914118,
+  "limit_seconds": 21600,
+  "pilot_limit_seconds": 1800,
+  "bundle_audit": "4ffdc9dcd9a676b45830863b4fea543d18540f45",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "run_candidate_b.py",
+    "--bundle-commit",
+    "bb50c85c1bff93e3e04b54c5cbd218dcb3768a96",
+    "--judge-execution",
+    "e501da8e234704eb21e162c6b3f640ef22abe861",
+    "/home/daybreak/candidate-b-v2-pc-20261126/RESULT"
+  ]
+}
