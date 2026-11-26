@@ -1,0 +1,16 @@
+2026-11-27 JST | DIAGNOSTIC_ONLY | preregistration checks
+
+Exact replay on the existing result records:
+Frozen geometry: 276 and 72 zero supports, exactly four prescribed overlaps inside X.
+Frozen geometry: three Z1 and two D2 clipped strips tile the prescribed faces.
+Frozen v3 Jacobian: both oriented diagonal signs and slope product bound < 3/4.
+Frozen v3 trial 1: exact Newton-centre rounding gives the three prescribed small-box centres.
+
+python3 -B smoke_v4.py:
+Artificial faces: both orientations, full strips and rejection of a seam gap.
+Artificial Krawczyk: first successful cap, centre reuse, norm tamper and gate rejection.
+Artificial exhaustion: all 9 trials and the exact 76,384-panel cap.
+
+Python syntax, CLI help and shell syntax checked.
+Candidate kernel, build files and engine match the v2 and v3 sources byte for byte.
+Full input-original sealing and new physical MPFR evaluations await the Dig run.
