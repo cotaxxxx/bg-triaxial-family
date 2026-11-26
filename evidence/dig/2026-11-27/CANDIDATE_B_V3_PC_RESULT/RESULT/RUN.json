@@ -1,0 +1,26 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "main_authorized_by_pilot": true,
+  "exits": {
+    "pilot": {
+      "Z1": 0,
+      "Z2": 0,
+      "D1": 0,
+      "D2": 0
+    },
+    "local": {
+      "proof": 0
+    },
+    "main": {
+      "Z1": 0,
+      "Z2": 0,
+      "D1": 0,
+      "D2": 0
+    },
+    "compare": {
+      "proof": 0
+    }
+  },
+  "stopped": false,
+  "evaluation_deadline": false
+}

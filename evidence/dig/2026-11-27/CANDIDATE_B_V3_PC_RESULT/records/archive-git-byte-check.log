@@ -1,0 +1,24 @@
+DERIVATION.md BYTE_MATCH
+DERIVATION_V1.md BYTE_MATCH
+DIFF_V2_TO_V3.md BYTE_MATCH
+INPUTS.json BYTE_MATCH
+MANIFEST.json BYTE_MATCH
+PLAN.md BYTE_MATCH
+README_RUN_CANDIDATE_B_V3.md BYTE_MATCH
+SHA256SUMS.txt BYTE_MATCH
+SMOKE_V3.txt BYTE_MATCH
+V2_RESULT_SHA256SUMS.txt BYTE_MATCH
+V3_INPUTS.json BYTE_MATCH
+build.sh BYTE_MATCH
+engine.py BYTE_MATCH
+method_v3.py BYTE_MATCH
+run_candidate_b_v3.py BYTE_MATCH
+smoke_v3.py BYTE_MATCH
+src/build_probe.c BYTE_MATCH
+src/candidate.c BYTE_MATCH
+src/interval.h BYTE_MATCH
+src/jets.h BYTE_MATCH
+v2_lock.py BYTE_MATCH
+verify_v2.py BYTE_MATCH
+verify_v3.py BYTE_MATCH
+23 archive files equal pinned Git originals; safe paths; root: CANDIDATE_B_PC_BUNDLE_V3

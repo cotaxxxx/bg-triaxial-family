@@ -1,0 +1,96 @@
+{
+  "status": "PARTIAL",
+  "diagnostic_only": true,
+  "quantities": {
+    "Z1": {
+      "v2_open": 5487,
+      "open_leaves": 0,
+      "decisions": {
+        "COVERED": 5487
+      },
+      "cover_supports": 349,
+      "zero_supports": 276,
+      "arc_covered": true
+    },
+    "Z2": {
+      "v2_open": 1120,
+      "open_leaves": 0,
+      "decisions": {
+        "COVERED": 1120
+      },
+      "cover_supports": 292,
+      "zero_supports": 154,
+      "arc_covered": true
+    },
+    "D1": {
+      "v2_open": 1445,
+      "open_leaves": 0,
+      "decisions": {
+        "COVERED": 1445
+      },
+      "cover_supports": 141,
+      "zero_supports": 112,
+      "arc_covered": true
+    },
+    "D2": {
+      "v2_open": 622,
+      "open_leaves": 0,
+      "decisions": {
+        "COVERED": 622
+      },
+      "cover_supports": 74,
+      "zero_supports": 72,
+      "arc_covered": true
+    }
+  },
+  "intersections": {
+    "Z1+Z2": {
+      "status": "SHARED_ENDPOINT_ONLY",
+      "overlaps": 4,
+      "accounted": 4
+    },
+    "Z1+D1": {
+      "status": "DISJOINT",
+      "overlaps": 0,
+      "accounted": 0
+    },
+    "Z1+D2": {
+      "status": "UNRESOLVED",
+      "overlaps": 4,
+      "accounted": 0
+    },
+    "Z2+D1": {
+      "status": "DISJOINT",
+      "overlaps": 0,
+      "accounted": 0
+    },
+    "Z2+D2": {
+      "status": "DISJOINT",
+      "overlaps": 0,
+      "accounted": 0
+    },
+    "D1+D2": {
+      "status": "SHARED_ENDPOINT_ONLY",
+      "overlaps": 11,
+      "accounted": 11
+    }
+  },
+  "local_supported_pairs": [
+    "D1+D2",
+    "Z1+Z2"
+  ],
+  "interior_image": null,
+  "formula_calls": {
+    "pilot.Z1": 9824,
+    "pilot.Z2": 9824,
+    "pilot.D1": 9024,
+    "pilot.D2": 8064,
+    "local.proof": 172256,
+    "main.Z1": 24528,
+    "main.Z2": 138528,
+    "main.D1": 9744,
+    "main.D2": 672,
+    "compare.proof": 10880
+  },
+  "run_errors": []
+}

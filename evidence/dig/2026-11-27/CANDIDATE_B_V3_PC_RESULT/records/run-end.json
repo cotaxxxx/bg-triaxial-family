@@ -1,0 +1,10 @@
+{
+  "started": "2026-11-26T19:45:28.316861+09:00",
+  "finished": "2026-11-26T19:48:24.504526+09:00",
+  "elapsed_seconds": 176.1877039577812,
+  "exit_status": 0,
+  "outer_timeout": false,
+  "remaining_process_group_members": [],
+  "cleanup": [],
+  "operational_status": "RUNNER_FINISHED"
+}

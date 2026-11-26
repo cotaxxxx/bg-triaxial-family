@@ -1,0 +1,13 @@
+Auxiliary: 8 planned pieces, 1 quantity attempted at 3 stages, 12 original integral records, others NOT_EVALUATED
+AUX 256 {'lower_face': 'CONTAINS_ZERO', 'upper_face': 'CONTAINS_ZERO', 'y_derivative': '+', 'z_derivative': '-'} {'lower_face_positive': False, 'upper_face_negative': False, 'transverse_z_negative': True}
+AUX 1024 {'lower_face': 'CONTAINS_ZERO', 'upper_face': 'CONTAINS_ZERO', 'y_derivative': '+', 'z_derivative': '-'} {'lower_face_positive': False, 'upper_face_negative': False, 'transverse_z_negative': True}
+AUX 4096 {'lower_face': 'CONTAINS_ZERO', 'upper_face': 'CONTAINS_ZERO', 'y_derivative': '+', 'z_derivative': '-'} {'lower_face_positive': False, 'upper_face_negative': False, 'transverse_z_negative': True}
+KRAWCZYK 1 256 q 2.26800197658 failed ['q_less_than_1', 'strict_inclusion_y', 'strict_inclusion_z']
+KRAWCZYK 2 1024 q 1.31861459517 failed ['q_less_than_1', 'strict_inclusion_y']
+KRAWCZYK 3 4096 q 1.29856496103 failed ['q_less_than_1', 'strict_inclusion_y']
+KRAWCZYK 4 256 q 1.46666341213 failed ['q_less_than_1', 'strict_inclusion_y', 'strict_inclusion_z']
+KRAWCZYK 5 1024 q 0.664477163633 failed ['strict_inclusion_y', 'strict_inclusion_z']
+KRAWCZYK 6 4096 q 0.651211423239 failed ['strict_inclusion_y', 'strict_inclusion_z']
+KRAWCZYK 7 256 q 4.16124095015 failed ['q_less_than_1', 'strict_inclusion_y', 'strict_inclusion_z']
+KRAWCZYK 8 1024 q 2.75191683526 failed ['q_less_than_1', 'strict_inclusion_y']
+KRAWCZYK 9 4096 q 2.72168529427 failed ['q_less_than_1', 'strict_inclusion_y']

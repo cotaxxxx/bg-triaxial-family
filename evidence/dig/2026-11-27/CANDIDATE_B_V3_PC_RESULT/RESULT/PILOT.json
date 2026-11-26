@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "samples": 36736,
+  "p90_ns": 580636,
+  "price_ns": 580636,
+  "forecast_cells": 27000000,
+  "forecast_ns": 15677172000000,
+  "available_ns": 20996031587722,
+  "allowed": true
+}

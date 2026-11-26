@@ -1,0 +1,831 @@
+{
+  "source": "v3.local.proof.intersections.3",
+  "original_graphs": null,
+  "scope": "Actual recorded evaluations only. auxiliary() returns None on first failed band. No slope difference or endpoint order was reached. NOT_EVALUATED is not FAIL.",
+  "pieces": [
+    {
+      "piece": 1,
+      "y_span": [
+        "5/8",
+        "161/256"
+      ],
+      "quantities": {
+        "Z1": {
+          "box": [
+            "5/8",
+            "161/256",
+            "69/32",
+            "147/64"
+          ],
+          "stages": [
+            {
+              "target": 256,
+              "records": {
+                "lower_face": {
+                  "id": "v3.local.proof.integrals.21",
+                  "tree": "v3.local.proof.tree.21",
+                  "quantity": "Z1",
+                  "derivative": 0,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 256,
+                  "cells": 256,
+                  "dimension": 2,
+                  "total_calls": 336,
+                  "formula_calls": 336,
+                  "wall_ns": 121603623,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-143994492013685774335545389040186461387",
+                      "e": -134
+                    },
+                    {
+                      "n": "27528478795229209662706302241828114149",
+                      "e": -129
+                    }
+                  ]
+                },
+                "upper_face": {
+                  "id": "v3.local.proof.integrals.22",
+                  "tree": "v3.local.proof.tree.22",
+                  "quantity": "Z1",
+                  "derivative": 0,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 256,
+                  "cells": 256,
+                  "dimension": 2,
+                  "total_calls": 336,
+                  "formula_calls": 336,
+                  "wall_ns": 121220206,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-209627643545649058605995882367484642761",
+                      "e": -132
+                    },
+                    {
+                      "n": "288218430689579455496115657863212970683",
+                      "e": -135
+                    }
+                  ]
+                },
+                "y_derivative": {
+                  "id": "v3.local.proof.integrals.23",
+                  "tree": "v3.local.proof.tree.23",
+                  "quantity": "Z1",
+                  "derivative": 1,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 256,
+                  "cells": 256,
+                  "dimension": 2,
+                  "total_calls": 336,
+                  "formula_calls": 336,
+                  "wall_ns": 186631745,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "314133153608196636840105150649450988879",
+                      "e": -128
+                    },
+                    {
+                      "n": "334179204169810479128281199044105790205",
+                      "e": -127
+                    }
+                  ]
+                },
+                "z_derivative": {
+                  "id": "v3.local.proof.integrals.24",
+                  "tree": "v3.local.proof.tree.24",
+                  "quantity": "Z1",
+                  "derivative": 2,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 256,
+                  "cells": 256,
+                  "dimension": 2,
+                  "total_calls": 336,
+                  "formula_calls": 336,
+                  "wall_ns": 187076991,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-122802639869041122313617751853756936627",
+                      "e": -128
+                    },
+                    {
+                      "n": "-150864092638855989270311500854479271255",
+                      "e": -130
+                    }
+                  ]
+                }
+              },
+              "signs": {
+                "lower_face": "CONTAINS_ZERO",
+                "upper_face": "CONTAINS_ZERO",
+                "y_derivative": "+",
+                "z_derivative": "-"
+              },
+              "conditions": {
+                "lower_face_positive": false,
+                "upper_face_negative": false,
+                "transverse_z_negative": true
+              },
+              "gate": false
+            },
+            {
+              "target": 1024,
+              "records": {
+                "lower_face": {
+                  "id": "v3.local.proof.integrals.25",
+                  "tree": "v3.local.proof.tree.25",
+                  "quantity": "Z1",
+                  "derivative": 0,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 1024,
+                  "cells": 1024,
+                  "dimension": 2,
+                  "total_calls": 1360,
+                  "formula_calls": 1360,
+                  "wall_ns": 486869788,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-109266625492504218182746624854234477811",
+                      "e": -134
+                    },
+                    {
+                      "n": "213428016619628634713388126558001498177",
+                      "e": -132
+                    }
+                  ]
+                },
+                "upper_face": {
+                  "id": "v3.local.proof.integrals.26",
+                  "tree": "v3.local.proof.tree.26",
+                  "quantity": "Z1",
+                  "derivative": 0,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 1024,
+                  "cells": 1024,
+                  "dimension": 2,
+                  "total_calls": 1360,
+                  "formula_calls": 1360,
+                  "wall_ns": 487569033,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-25022088275416208972485273416694060129",
+                      "e": -129
+                    },
+                    {
+                      "n": "224064549753984513168493022041569726931",
+                      "e": -135
+                    }
+                  ]
+                },
+                "y_derivative": {
+                  "id": "v3.local.proof.integrals.27",
+                  "tree": "v3.local.proof.tree.27",
+                  "quantity": "Z1",
+                  "derivative": 1,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 1024,
+                  "cells": 1024,
+                  "dimension": 2,
+                  "total_calls": 1360,
+                  "formula_calls": 1360,
+                  "wall_ns": 751097583,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "20225705594774412007815093313665308799",
+                      "e": -124
+                    },
+                    {
+                      "n": "10268110815634060406220142872392686859",
+                      "e": -122
+                    }
+                  ]
+                },
+                "z_derivative": {
+                  "id": "v3.local.proof.integrals.28",
+                  "tree": "v3.local.proof.tree.28",
+                  "quantity": "Z1",
+                  "derivative": 2,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 1024,
+                  "cells": 1024,
+                  "dimension": 2,
+                  "total_calls": 1360,
+                  "formula_calls": 1360,
+                  "wall_ns": 748035908,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-236546671973622015406368127199866400789",
+                      "e": -129
+                    },
+                    {
+                      "n": "-338038689328009416473201056360344016505",
+                      "e": -131
+                    }
+                  ]
+                }
+              },
+              "signs": {
+                "lower_face": "CONTAINS_ZERO",
+                "upper_face": "CONTAINS_ZERO",
+                "y_derivative": "+",
+                "z_derivative": "-"
+              },
+              "conditions": {
+                "lower_face_positive": false,
+                "upper_face_negative": false,
+                "transverse_z_negative": true
+              },
+              "gate": false
+            },
+            {
+              "target": 4096,
+              "records": {
+                "lower_face": {
+                  "id": "v3.local.proof.integrals.29",
+                  "tree": "v3.local.proof.tree.29",
+                  "quantity": "Z1",
+                  "derivative": 0,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 4096,
+                  "cells": 4096,
+                  "dimension": 2,
+                  "total_calls": 5456,
+                  "formula_calls": 5456,
+                  "wall_ns": 1950436948,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-107383249863491595503765227859080541283",
+                      "e": -134
+                    },
+                    {
+                      "n": "106476503204868053604578731527047172369",
+                      "e": -131
+                    }
+                  ]
+                },
+                "upper_face": {
+                  "id": "v3.local.proof.integrals.30",
+                  "tree": "v3.local.proof.tree.30",
+                  "quantity": "Z1",
+                  "derivative": 0,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 4096,
+                  "cells": 4096,
+                  "dimension": 2,
+                  "total_calls": 5456,
+                  "formula_calls": 5456,
+                  "wall_ns": 1954824242,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-99794697523023163911331744803349644697",
+                      "e": -131
+                    },
+                    {
+                      "n": "219367590190886539271137030080816800581",
+                      "e": -135
+                    }
+                  ]
+                },
+                "y_derivative": {
+                  "id": "v3.local.proof.integrals.31",
+                  "tree": "v3.local.proof.tree.31",
+                  "quantity": "Z1",
+                  "derivative": 1,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 4096,
+                  "cells": 4096,
+                  "dimension": 2,
+                  "total_calls": 5456,
+                  "formula_calls": 5456,
+                  "wall_ns": 3005644703,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "323992454150385747823392792309545109121",
+                      "e": -128
+                    },
+                    {
+                      "n": "328357123740632230315610305334197984361",
+                      "e": -127
+                    }
+                  ]
+                },
+                "z_derivative": {
+                  "id": "v3.local.proof.integrals.32",
+                  "tree": "v3.local.proof.tree.32",
+                  "quantity": "Z1",
+                  "derivative": 2,
+                  "box": [
+                    {
+                      "n": "5",
+                      "e": -3
+                    },
+                    {
+                      "n": "161",
+                      "e": -8
+                    },
+                    {
+                      "n": "69",
+                      "e": -5
+                    },
+                    {
+                      "n": "147",
+                      "e": -6
+                    }
+                  ],
+                  "precision": 128,
+                  "target": 4096,
+                  "cells": 4096,
+                  "dimension": 2,
+                  "total_calls": 5456,
+                  "formula_calls": 5456,
+                  "wall_ns": 3027752434,
+                  "trace": false,
+                  "status": "COMPLETE",
+                  "interval": [
+                    {
+                      "n": "-118047794012096654062841904560418503511",
+                      "e": -128
+                    },
+                    {
+                      "n": "-21223559499600144293351505021878155069",
+                      "e": -127
+                    }
+                  ]
+                }
+              },
+              "signs": {
+                "lower_face": "CONTAINS_ZERO",
+                "upper_face": "CONTAINS_ZERO",
+                "y_derivative": "+",
+                "z_derivative": "-"
+              },
+              "conditions": {
+                "lower_face_positive": false,
+                "upper_face_negative": false,
+                "transverse_z_negative": true
+              },
+              "gate": false
+            }
+          ],
+          "status": "FACE_OR_TRANSVERSE_FAIL"
+        },
+        "D2": {
+          "box": [
+            "5/8",
+            "161/256",
+            "71/32",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        }
+      },
+      "slope_difference": "NOT_EVALUATED",
+      "endpoint_order": "NOT_EVALUATED",
+      "status": "STOPPED_AT_FIRST_FAILED_BAND"
+    },
+    {
+      "piece": 2,
+      "y_span": [
+        "161/256",
+        "81/128"
+      ],
+      "quantities": {
+        "Z1": {
+          "box": [
+            "161/256",
+            "81/128",
+            "35/16",
+            "149/64"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        },
+        "D2": {
+          "box": [
+            "161/256",
+            "81/128",
+            "71/32",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        }
+      },
+      "slope_difference": "NOT_EVALUATED",
+      "endpoint_order": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "piece": 3,
+      "y_span": [
+        "81/128",
+        "163/256"
+      ],
+      "quantities": {
+        "Z1": {
+          "box": [
+            "81/128",
+            "163/256",
+            "71/32",
+            "151/64"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        },
+        "D2": {
+          "box": [
+            "81/128",
+            "163/256",
+            "71/32",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        }
+      },
+      "slope_difference": "NOT_EVALUATED",
+      "endpoint_order": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "piece": 4,
+      "y_span": [
+        "163/256",
+        "41/64"
+      ],
+      "quantities": {
+        "Z1": {
+          "box": [
+            "163/256",
+            "41/64",
+            "143/64",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        },
+        "D2": {
+          "box": [
+            "163/256",
+            "41/64",
+            "71/32",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        }
+      },
+      "slope_difference": "NOT_EVALUATED",
+      "endpoint_order": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "piece": 5,
+      "y_span": [
+        "41/64",
+        "165/256"
+      ],
+      "quantities": {
+        "Z1": {
+          "box": [
+            "41/64",
+            "165/256",
+            "145/64",
+            "77/32"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        },
+        "D2": {
+          "box": [
+            "41/64",
+            "165/256",
+            "71/32",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        }
+      },
+      "slope_difference": "NOT_EVALUATED",
+      "endpoint_order": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "piece": 6,
+      "y_span": [
+        "165/256",
+        "83/128"
+      ],
+      "quantities": {
+        "Z1": {
+          "box": [
+            "165/256",
+            "83/128",
+            "73/32",
+            "155/64"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        },
+        "D2": {
+          "box": [
+            "165/256",
+            "83/128",
+            "71/32",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        }
+      },
+      "slope_difference": "NOT_EVALUATED",
+      "endpoint_order": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "piece": 7,
+      "y_span": [
+        "83/128",
+        "167/256"
+      ],
+      "quantities": {
+        "Z1": {
+          "box": [
+            "83/128",
+            "167/256",
+            "37/16",
+            "157/64"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        },
+        "D2": {
+          "box": [
+            "83/128",
+            "167/256",
+            "71/32",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        }
+      },
+      "slope_difference": "NOT_EVALUATED",
+      "endpoint_order": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "piece": 8,
+      "y_span": [
+        "167/256",
+        "21/32"
+      ],
+      "quantities": {
+        "Z1": {
+          "box": [
+            "167/256",
+            "21/32",
+            "75/32",
+            "159/64"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        },
+        "D2": {
+          "box": [
+            "167/256",
+            "21/32",
+            "71/32",
+            "19/8"
+          ],
+          "stages": [],
+          "status": "NOT_EVALUATED"
+        }
+      },
+      "slope_difference": "NOT_EVALUATED",
+      "endpoint_order": "NOT_EVALUATED",
+      "status": "NOT_EVALUATED"
+    }
+  ]
+}

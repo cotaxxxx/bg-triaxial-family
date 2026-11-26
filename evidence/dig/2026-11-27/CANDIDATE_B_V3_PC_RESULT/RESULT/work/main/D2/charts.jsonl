@@ -1,0 +1,2 @@
+{"id":"v3.main.D2.charts.1","record":"extension","quantity":"D2","parent":"main.D2.charts.5","box":[{"n":"31","e":-5},{"n":"63","e":-6},{"n":"65","e":-5},{"n":"17","e":-3}],"derivative":"v3.main.D2.integrals.2","status":"CHART"}
+{"id":"v3.main.D2.charts.2","record":"extension","quantity":"D2","parent":"main.D2.charts.8","box":[{"n":"61","e":-6},{"n":"31","e":-5},{"n":"523","e":-8},{"n":"547","e":-8}],"derivative":"v3.main.D2.integrals.4","status":"CHART"}

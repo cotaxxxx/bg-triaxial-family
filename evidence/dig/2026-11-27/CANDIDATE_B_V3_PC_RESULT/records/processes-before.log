@@ -1,0 +1,15 @@
+    PID    PPID    PGID %CPU %MEM     ELAPSED COMMAND
+1920609    9542    9542 11.1  2.9    01:09:16 firefox
+1921547 1920841    9542  6.0  3.7    01:09:15 Isolated Web Co
+1921592 1920841    9542  5.2  3.5    01:09:14 Isolated Web Co
+   9542    8999    9542  3.0  1.2 37-00:59:57 gnome-shell
+1921803 1920841    9542  1.3  2.0    01:08:25 Isolated Web Co
+1922271 1920841    9542  0.7  1.2    01:00:20 Isolated Web Co
+1922609 1920841    9542  0.7  1.3       53:49 Isolated Web Co
+   9948    8999    9948  0.1  0.1 37-00:59:57 localsearch-3
+1922222       2       0  0.0  0.0    01:03:34 kworker/u96:0-gfx_0.1.0
+1923621       2       0  0.0  0.0       01:00 kworker/u96:2-gfx_0.0.0
+1922205       2       0  0.0  0.0    01:04:41 kworker/u98:4-events_unbound
+1920865 1920841    9542  0.0  0.7    01:09:15 Privileged Cont
+1922459 1920841    9542  0.0  0.6       54:12 Isolated Web Co
+1923420       2       0  0.0  0.0       15:11 kworker/u98:1-events_unbound

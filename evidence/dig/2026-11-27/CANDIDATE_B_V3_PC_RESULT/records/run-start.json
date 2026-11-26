@@ -1,0 +1,29 @@
+{
+  "started": "2026-11-26T19:45:28.316861+09:00",
+  "timeout_pid": 1924478,
+  "process_group": 1924478,
+  "limit_seconds": 21600,
+  "seal_reserve_seconds": 600,
+  "pilot_limit_seconds": 1800,
+  "bundle_audit": "e76ac9fe9bbe9e60cd9671b9593155196b86cdbe",
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=8s",
+    "21592s",
+    "python3",
+    "-B",
+    "run_candidate_b_v3.py",
+    "--bundle-commit",
+    "cdd885b5ff0fa31408f08a97c382f230f24bab04",
+    "--judge-execution",
+    "6ebfd9dba7e6c4741b12508904aa5181e86edb57",
+    "--v2-result",
+    "/home/daybreak/candidate-b-v2-pc-20261126/RESULT",
+    "--jacobi-ended-at",
+    "2026-11-26T18:15:40.143981+09:00",
+    "--jacobi-end-record",
+    "/home/daybreak/maclaurin-jacobi-pc-20261126/records/run-end.json",
+    "/home/daybreak/candidate-b-v3-pc-20261126/RESULT"
+  ]
+}
