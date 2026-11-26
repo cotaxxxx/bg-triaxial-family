@@ -1,0 +1,1577 @@
+--- a/INPUTS.json
++++ b/INPUTS.json
+@@ -1,49 +1,233 @@
+ {
+-  "schema": 1,
+-  "quantities": ["Z1", "Z2", "D1", "D2"],
+-  "axes": {"Z1": "y", "Z2": "x", "D1": "y", "D2": "x"},
+-  "region": ["1/4", "1", "1", "7"],
+-  "shape_grid": [12, 24],
+-  "transverse_width": ["1/128", "1/32"],
++  "schema": 2,
++  "quantities": [
++    "Z1",
++    "Z2",
++    "D1",
++    "D2"
++  ],
++  "axes": {
++    "Z1": "y",
++    "Z2": "x",
++    "D1": "y",
++    "D2": "x"
++  },
++  "region": [
++    "1/4",
++    "1",
++    "1",
++    "7"
++  ],
++  "shape_grid": [
++    12,
++    24
++  ],
++  "transverse_width": [
++    "1/128",
++    "1/32"
++  ],
+   "expected_edges": {
+-    "Z1": {"y_max": "cp", "z_min": "co"},
+-    "Z2": {"y_min": null, "y_max": "cp"},
+-    "D1": {"y_max": "bp", "z_min": "bo"},
+-    "D2": {"y_min": null, "y_max": "bp"}
++    "Z1": {
++      "y_max": "cp",
++      "z_min": "co"
++    },
++    "Z2": {
++      "y_min": null,
++      "y_max": "cp"
++    },
++    "D1": {
++      "y_max": "bp",
++      "z_min": "bo"
++    },
++    "D2": {
++      "y_min": null,
++      "y_max": "bp"
++    }
+   },
+   "anchors": {
+-    "co": {"edge": "z_min", "interval": ["2/5", "83/200"], "signs": [-1, 1],
+-      "paper": ["407958860300/1000000000000", "407958860301/1000000000000"]},
+-    "bo": {"edge": "z_min", "interval": ["5/8", "21/32"], "signs": [-1, 1],
+-      "paper": ["674802/1048576", "674811/1048576"]},
+-    "bp": {"edge": "y_max", "interval": ["2", "17/8"], "signs": [1, -1],
+-      "paper": ["34651360/16777216", "34651369/16777216"]},
+-    "cp": {"edge": "y_max", "interval": ["75/16", "19/4"], "signs": [1, -1],
+-      "paper": ["79261996/16777216", "79262005/16777216"]}
+-  },
+-  "interior_crossing": {"pair": ["Z1", "D2"], "window": ["5/8", "21/32", "2", "5/2"]},
+-  "shared_end": {"pairs": [["Z1", "Z2"], ["D1", "D2"]], "y": ["31/32", "1"]},
++    "co": {
++      "edge": "z_min",
++      "interval": [
++        "2/5",
++        "83/200"
++      ],
++      "signs": [
++        -1,
++        1
++      ],
++      "paper": [
++        "407958860300/1000000000000",
++        "407958860301/1000000000000"
++      ]
++    },
++    "bo": {
++      "edge": "z_min",
++      "interval": [
++        "5/8",
++        "21/32"
++      ],
++      "signs": [
++        -1,
++        1
++      ],
++      "paper": [
++        "674802/1048576",
++        "674811/1048576"
++      ]
++    },
++    "bp": {
++      "edge": "y_max",
++      "interval": [
++        "2",
++        "17/8"
++      ],
++      "signs": [
++        1,
++        -1
++      ],
++      "paper": [
++        "34651360/16777216",
++        "34651369/16777216"
++      ]
++    },
++    "cp": {
++      "edge": "y_max",
++      "interval": [
++        "75/16",
++        "19/4"
++      ],
++      "signs": [
++        1,
++        -1
++      ],
++      "paper": [
++        "79261996/16777216",
++        "79262005/16777216"
++      ]
++    }
++  },
++  "interior_crossing": {
++    "pair": [
++      "Z1",
++      "D2"
++    ],
++    "window": [
++      "5/8",
++      "21/32",
++      "2",
++      "5/2"
++    ]
++  },
++  "shared_end": {
++    "pairs": [
++      [
++        "Z1",
++        "Z2"
++      ],
++      [
++        "D1",
++        "D2"
++      ]
++    ],
++    "y": [
++      "31/32",
++      "1"
++    ]
++  },
+   "pilot": [
+-    ["1", "1", "1", "1"],
+-    ["2/5", "83/200", "1", "1"],
+-    ["5/8", "21/32", "1", "1"],
+-    ["1", "1", "2", "17/8"],
+-    ["1", "1", "75/16", "19/4"],
+-    ["5/8", "21/32", "2", "5/2"],
+-    ["5/16", "3/8", "23/4", "6"],
+-    ["1/4", "5/16", "27/4", "7"]
++    [
++      "1",
++      "1",
++      "1",
++      "1"
++    ],
++    [
++      "2/5",
++      "83/200",
++      "1",
++      "1"
++    ],
++    [
++      "5/8",
++      "21/32",
++      "1",
++      "1"
++    ],
++    [
++      "1",
++      "1",
++      "2",
++      "17/8"
++    ],
++    [
++      "1",
++      "1",
++      "75/16",
++      "19/4"
++    ],
++    [
++      "5/8",
++      "21/32",
++      "2",
++      "5/2"
++    ],
++    [
++      "5/16",
++      "3/8",
++      "23/4",
++      "6"
++    ],
++    [
++      "1/4",
++      "5/16",
++      "27/4",
++      "7"
++    ]
+   ],
+   "angular": {
+-    "precision": 128, "stages": [64, 256, 1024],
+-    "edge_precision": 256, "edge_stage": 4096,
++    "precision": 128,
++    "stages": [
++      64,
++      256,
++      1024
++    ],
++    "edge_precision": 256,
++    "edge_stage": 4096,
+     "initial_cells": 16
+   },
+   "budget": {
+-    "shape_depth": 18, "edge_depth": 24, "boxes_per_quantity": 10000,
++    "shape_depth": 18,
++    "edge_depth": 24,
++    "boxes_per_quantity": 100000,
+     "chart_trials_per_quantity": 4096,
+-    "cells_per_quantity": 900000, "cells_other": 400000, "cells_total": 4000000,
+-    "pilot_stage": 256, "pilot_seconds": 1800, "total_seconds": 21600,
+-    "pilot_estimate_cells": 3000000, "pilot_estimate_cores": 3,
+-    "pilot_estimate_max_seconds": 18000, "processes": 4
++    "cells_per_quantity": 24000000,
++    "cells_other": 8000000,
++    "cells_total": 104000000,
++    "pilot_stage": 256,
++    "pilot_seconds": 1800,
++    "total_seconds": 21600,
++    "pilot_estimate_max_seconds": 19800,
++    "processes": 4,
++    "trace_cells_per_quantity": 8000000
++  },
++  "policy": {
++    "stages": [
++      64,
++      256,
++      1024,
++      4096
++    ],
++    "midpoint_absolute": "1/256",
++    "midpoint_relative": "1/8",
++    "root_block": [
++      3,
++      4
++    ],
++    "trace_step": [
++      "1/32",
++      "1/8"
++    ],
++    "trace_halvings": 8,
++    "trace_gate_fraction": "1/4"
+   }
+ }
+--- a/engine.py
++++ b/engine.py
+@@ -11,6 +11,7 @@
+ 
+ HERE = Path(__file__).resolve().parent
+ INPUTS = json.loads((HERE / "INPUTS.json").read_text())
++POLICY = INPUTS["policy"]
+ QUANTITIES = INPUTS["quantities"]
+ REGION = tuple(map(Q, INPUTS["region"]))
+ WIDTH = tuple(map(Q, INPUTS["transverse_width"]))
+@@ -114,6 +115,17 @@
+             for i in range(ny) for j in range(nz)]
+ 
+ 
++def spread_roots():
++    """Visit one root per macroblock before advancing its local offset."""
++    ny,nz = INPUTS["shape_grid"]
++    sy,sz = POLICY["root_block"]
++    if ny%sy or nz%sz:
++        raise Inconsistent("root blocks must tile the fixed initial grid")
++    grid = roots()
++    return [grid[i*nz+j] for di in range(sy) for dj in range(sz)
++            for i in range(di,ny,sy) for j in range(dj,nz,sz)]
++
++
+ def edge_box(edge, lo, hi):
+     axis, position = EDGES[edge]
+     return replace(replace(REGION,axis,position,position),1-axis,lo,hi)
+@@ -146,6 +158,12 @@
+ 
+ def sign(value):
+     return 1 if value[0] > 0 else -1 if value[1] < 0 else 0
++
++
++def midpoint_limit(value):
++    low,high = value
++    distance = max(Q(0),low,-high)
++    return max(Q(POLICY["midpoint_absolute"]),Q(POLICY["midpoint_relative"])*distance)
+ 
+ 
+ def meet(a,b):
+@@ -296,7 +314,8 @@
+             raise Inconsistent("kernel cell count contradicts allocation")
+         raw = dict(tree=self.tree_id,quantity=self.f,derivative=self.d,box=pack(self.box),precision=self.bits,
+                    target=target,cells=out.leaves,dimension=out.dim,total_calls=out.calls,
+-                   formula_calls=out.calls-self.calls,wall_ns=time.monotonic_ns()-started)
++                   formula_calls=out.calls-self.calls,wall_ns=time.monotonic_ns()-started,
++                   trace=e.in_trace)
+         e.budget.cells += raw["formula_calls"]
+         if e.measure:
+             raw["cell_ns"] = [e.kernel.lib.cb_cell_ns(self.handle,k)
+@@ -321,18 +340,26 @@
+         self.cache = {}
+         self.hits = 0
+         self.tree_serial = 0
+-
+-    def value(self, quantity, box, derivative=0, *, edge=False, shortcut=False):
++        self.split_ready = set()
++        self.in_trace = False
++
++    def value(self, quantity, box, derivative=0, *, edge=False, policy="default"):
+         self.budget.guard()
+-        key = (quantity,box,derivative,edge,shortcut)
++        if (policy not in ("default","shape","trace") or
++                (edge and policy!="default") or (policy=="shape" and derivative)):
++            raise Inconsistent("invalid enclosure scheduling policy")
++        key = (quantity,box,derivative,edge,policy)
+         if key in self.cache:
+             self.hits += 1
+             return self.cache[key]
+         cfg = INPUTS["angular"]
+-        stages = [(cfg["precision"],n) for n in cfg["stages"]]
++        caps = cfg["stages"] if policy=="default" else POLICY["stages"]
++        stages = [(cfg["precision"],n) for n in caps]
+         if edge:
+             stages.append((cfg["edge_precision"],cfg["edge_stage"]))
+         current = None
++        centre = None
++        ready = False
+         steps = []
+         started = time.monotonic_ns()
+         start_calls = self.budget.cells
+@@ -353,10 +380,18 @@
+                 steps.append(step)
+                 if sign(current):
+                     break
+-                terms = []
+                 if derivative == 0 and (box[0] < box[1] or box[2] < box[3]):
+                     mid_id, mid = evaluate(point(*m),0,bits,cap)
+                     step["midpoint"] = mid_id
++                    if policy=="shape":
++                        centre = mid if centre is None else meet(centre,mid)
++                        limit = midpoint_limit(centre)
++                        ready = interval_width(centre)<=limit
++                        step.update(midpoint_interval=pack(centre),midpoint_limit=rational(limit),
++                                    midpoint_ok=ready)
++                        if not ready:
++                            continue
++                        mid = centre
+                     mode_ids = []
+                     mv = mid
+                     for axis,center in enumerate(m):
+@@ -366,21 +401,19 @@
+                             continue
+                         ident, grad = evaluate(box,axis+1,bits,cap)
+                         part = multiply((lo-center,hi-center),grad)
+-                        terms.append(interval_width(part))
+                         mode_ids.append(ident)
+                         mv = add(mv,part)
+                     mv = (outward(mv[0],bits,False),outward(mv[1],bits,True))
+                     step["gradients"],step["mean"] = mode_ids,pack(mv)
+                     current = meet(current,mv)
+-                    if shortcut and not sign(current) and sum(terms)>2*interval_width(mid):
+-                        step["shape_width_stop"] = True
+-                        break
+-                if sign(current):
++                if sign(current) or ready:
+                     break
+         row = self.journal.row("enclosures",quantity=quantity,box=pack(box),derivative=derivative,
+-                               edge_retry=edge,shape_shortcut=shortcut,stages=steps,
++                               edge_retry=edge,policy=policy,split_ready=ready,stages=steps,
+                                interval=pack(current),wall_ns=time.monotonic_ns()-started,
+                                formula_calls=self.budget.cells-start_calls)
+         answer = (row["id"],current)
++        if ready:
++            self.split_ready.add(row["id"])
+         self.cache[key] = answer
+         return answer
+--- a/shape.py
++++ b/shape.py
+@@ -1,12 +1,14 @@
+ """Candidate B shape, boundary, chart and connection searches."""
+ 
++from collections import deque
+ from dataclasses import dataclass
+ from itertools import combinations, product
+ 
+ from engine import (EDGES, INPUTS, REGION, WIDTH, Inconsistent, Stop, covered,
+                     cut, edge_box, edge_roots, extensions, inside, midpoint,
+-                    overlay, pack, point, replace, roots, section, sign,
++                    overlay, pack, point, replace, section, sign, spread_roots,
+                     split_axis, unpack, Q)
++from trace_bands import Trace
+ 
+ 
+ def signed_pair(lo,hi,gradient):
+@@ -50,14 +52,17 @@
+         self.budget = engine.budget
+         self.emit = engine.journal.row
+         self.chart_rows = []
++        self.trace_links = []
++        self.linked_pairs = set()
+         self.edge_rows = {edge: [] for edge in EDGES}
+         self.tried = set()
+         self.examined = 0
+         self.task_count = INPUTS["budget"]["boxes_per_quantity"]
+         self.chart_count = INPUTS["budget"]["chart_trials_per_quantity"]
+         edge_queue = [Task(n,n,b,edge=edge) for edge in EDGES for n,b in edge_roots(edge)]
+-        box_queue = [Task(n,n,b) for n,b in roots()]
+-        self.queue = list(reversed(edge_queue+box_queue))
++        box_queue = [Task(n,n,b) for n,b in spread_roots()]
++        self.queue = deque(edge_queue+box_queue)
++        self.deferred = {}
+         self.phase = "anchors"
+ 
+     def next_trial(self):
+@@ -138,13 +143,14 @@
+             if not signed_pair(a,b,grad):
+                 continue
+             root = self.emit("edges",record="root_interval",quantity=self.f,edge=edge,
+-                             box=pack(box),faces=[left,right],tangent=tangent,status="ROOT")
++                             box=pack(box),faces=[left,right],tangent=tangent,
++                             direction=sign(b),status="ROOT")
+             known.append(root)
+             self.node(task,"IN_ROOT",root_interval=root["id"],evaluation=proof)
+             return []
+         return self.subdivide(task,axis,proof)
+ 
+-    def chart(self, box, cross):
++    def chart(self, box, cross, continuation):
+         key = (box,cross)
+         if key in self.tried:
+             return None
+@@ -152,16 +158,17 @@
+             raise Stop("CHART_TRIAL_BUDGET")
+         self.tried.add(key)
+         left,right = chart_faces(box,cross)
+-        l,a = self.e.value(self.f,left)
+-        r,b = self.e.value(self.f,right)
++        l,a = self.e.value(self.f,left,policy="trace")
++        r,b = self.e.value(self.f,right,policy="trace")
+         gradient = None
+         ok = False
+         if sign(a) and sign(a) == -sign(b):
+-            gradient,d = self.e.value(self.f,box,cross+1)
++            gradient,d = self.e.value(self.f,box,cross+1,policy="trace")
+             ok = signed_pair(a,b,d)
+         row = self.emit("charts",record="chart",quantity=self.f,box=pack(box),
+                         cross=cross,base=1-cross,faces=[l,r],transverse=gradient,
+                         direction=sign(b) if ok else 0,
++                        continuation=continuation,
+                         width=pack((section(box,cross)[1]-section(box,cross)[0],))[0],
+                         status="CHART" if ok else "REJECTED")
+         if ok:
+@@ -169,8 +176,8 @@
+             return row
+         return None
+ 
+-    def shape_task(self, task):
+-        proof,i = self.e.value(self.f,task.box,shortcut=True)
++    def shape_task(self, task, evaluation):
++        proof,i = evaluation
+         if sign(i):
+             self.node(task,"SIGN_POS" if sign(i)>0 else "SIGN_NEG",evaluation=proof)
+             return []
+@@ -183,15 +190,26 @@
+         if covered(task.box,[b for _,b in relevant]):
+             self.node(task,"IN_CHART_UNION",evaluation=proof,charts=[name for name,_ in relevant])
+             return []
+-        first = 0 if self.f in ("Z1","D1") and task.box[2] == REGION[2] else 1
+-        for cross in (first,1-first):
+-            for lo,hi in extensions(section(task.box,cross),section(REGION,cross),cross):
+-                candidate = replace(task.box,cross,lo,hi)
+-                row = self.chart(candidate,cross)
+-                if row:
+-                    self.node(task,"IN_CHART_UNION",evaluation=proof,charts=[row["id"]])
+-                    return []
++        if proof not in self.e.split_ready:
++            reason = "MIDPOINT_ANGLE_LIMIT"
++            self.node(task,"UNRESOLVED",evaluation=proof,reason=reason)
++            self.emit("pending",quantity=self.f,phase="boxes",reason=reason,**task.fields())
++            return []
+         return self.subdivide(task,split_axis(task.box),proof)
++
++    def record_link(self, origin, chart, witness):
++        overlap = overlay(unpack(origin["box"]),unpack(chart["box"]))
++        if overlap is None:
++            raise Inconsistent("trace link has no common rectangle")
++        edge = origin["record"]=="root_interval"
++        a,b = (chart["id"],origin["id"]) if edge else (origin["id"],chart["id"])
++        key = frozenset((a,b))
++        if key in self.linked_pairs:
++            return
++        self.linked_pairs.add(key)
++        self.trace_links.append((a,b,edge))
++        self.emit("links",record="edge_link" if edge else "chart_link",quantity=self.f,a=a,b=b,
++                  overlap=pack(overlap),witness=witness,status="LINKED")
+ 
+     def connect(self):
+         ids = {row["id"]: row["id"] for row in self.chart_rows}
+@@ -201,6 +219,12 @@
+                 name = ids[name]
+             return name
+ 
++        linked_edges = set()
++        for a,b,edge in self.trace_links:
++            if edge:
++                linked_edges.add(b)
++            else:
++                ids[group(a)] = group(b)
+         for a,b in combinations(self.chart_rows,2):
+             self.budget.guard()
+             if group(a["id"]) == group(b["id"]):
+@@ -215,6 +239,8 @@
+                 ids[group(a["id"])] = group(b["id"])
+         for roots_on_edge in self.edge_rows.values():
+             for root in roots_on_edge:
++                if root["id"] in linked_edges:
++                    continue
+                 for chart in self.chart_rows:
+                     self.budget.guard()
+                     overlap = overlay(unpack(chart["box"]),unpack(root["box"]))
+@@ -229,20 +255,74 @@
+         self.emit("links",record="components",quantity=self.f,
+                   groups={name:group(name) for name in ids},status="RECORDED")
+ 
++    def run_trace(self):
++        start = self.budget.cells
++        total = self.budget.max_cells
++        cap = INPUTS["budget"]["trace_cells_per_quantity"]
++        self.budget.max_cells = min(total,start+cap)
++        self.e.in_trace = True
++        outcome = "RECORDED"
++        try:
++            Trace(self).run()
++            self.connect()
++        except Stop as exc:
++            outcome = str(exc)
++            if not (outcome=="CHART_TRIAL_BUDGET" or
++                    (outcome=="CELL_BUDGET" and self.budget.max_cells<total)):
++                raise
++            self.emit("pending",quantity=self.f,phase="trace",reason=outcome)
++        except Inconsistent:
++            outcome = "INCONSISTENT"
++            raise
++        finally:
++            self.e.in_trace = False
++            self.budget.max_cells = total
++            self.emit("events",record="trace_budget",quantity=self.f,formula_calls=self.budget.cells-start,
++                      status=outcome)
++
+     def run(self):
+         try:
+             self.prepare_edges()
++            self.phase = "edges"
++            while self.queue and self.queue[0].edge:
++                task = self.queue[0]
++                self.next_trial()
++                children = self.edge_task(task)
++                self.queue.popleft()
++                self.queue.extendleft(reversed(children))
++            self.phase = "sweep"
++            waiting = deque()
+             while self.queue:
+-                task = self.queue[-1]
+-                self.phase = "edges" if task.edge else "boxes"
++                task = self.queue[0]
+                 self.next_trial()
+-                children = self.edge_task(task) if task.edge else self.shape_task(task)
+-                self.queue.pop()
+-                self.queue.extend(reversed(children))
+-            self.phase = "links"
+-            self.connect()
++                proof,i = self.e.value(self.f,task.box,policy="shape")
++                self.emit("events",record="root_visit",quantity=self.f,node=task.name,
++                          box=pack(task.box),evaluation=proof,status="VISITED")
++                if sign(i):
++                    self.node(task,"SIGN_POS" if sign(i)>0 else "SIGN_NEG",evaluation=proof)
++                else:
++                    self.deferred[task.name] = (task,(proof,i))
++                    waiting.append(task)
++                self.queue.popleft()
++            self.queue = waiting
++            self.phase = "trace"
++            self.run_trace()
++            self.phase = "boxes"
++            while self.queue:
++                task = self.queue[0]
++                if task.name in self.deferred:
++                    _,evaluation = self.deferred[task.name]
++                else:
++                    self.next_trial()
++                    evaluation = self.e.value(self.f,task.box,policy="shape")
++                children = self.shape_task(task,evaluation)
++                self.queue.popleft()
++                self.deferred.pop(task.name,None)
++                self.queue.extend(children)
+         except (Stop,Inconsistent) as problem:
+-            for task in reversed(self.queue):
++            pending = {task.name:task for task in self.queue}
++            pending.update({name:task for name,(task,_) in self.deferred.items()})
++            for task in pending.values():
+                 self.emit("pending",quantity=self.f,phase="edges" if task.edge else "boxes",
+                           reason=str(problem),**task.fields())
+             self.emit("pending",quantity=self.f,phase=self.phase,reason=str(problem))
+--- /dev/null
++++ b/trace_bands.py
+@@ -0,0 +1,153 @@
++"""Walk certified edge roots into the interior using signed transverse gates."""
++
++from collections import deque
++from dataclasses import dataclass, replace as updated
++
++from engine import EDGES, POLICY, REGION, WIDTH, Q, Stop, inside, pack, point, section, sign, unpack
++
++
++def station_point(base, u, v):
++    return point(u,v) if base==0 else point(v,u)
++
++
++def support(base, u, v):
++    return (*u,*v) if base==0 else (*v,*u)
++
++
++@dataclass(frozen=True)
++class Frontier:
++    origin: dict
++    base: int
++    u: Q
++    advance: int
++    bounds: tuple
++    refs: tuple
++    direction: int
++    step: Q
++
++    def gate(self):
++        return testimony(self.base,self.u,self.bounds,self.refs)
++
++
++def testimony(base, u, bounds, refs):
++    return dict(points=[pack(station_point(base,u,v)) for v in bounds],evaluation=list(refs))
++
++
++class Trace:
++    def __init__(self, family):
++        self.family = family
++        self.e,self.f,self.emit = family.e,family.f,family.emit
++        self.max_steps = tuple(map(Q,POLICY["trace_step"]))
++        self.halvings = POLICY["trace_halvings"]
++        self.gate_fraction = Q(POLICY["trace_gate_fraction"])
++
++    def seed(self, edge, root):
++        base,u = EDGES[edge]
++        v = 1-base
++        low,high = section(unpack(root["box"]),v)
++        # Reuse the two edge point evaluations already certified by edge_task.
++        advance = 1 if edge.endswith("_min") else -1
++        return Frontier(root,base,u,advance,(low,high),tuple(root["faces"]),
++                        root["direction"],self.max_steps[base])
++
++    def tighten(self, front):
++        low,high = front.bounds
++        left,right = front.refs
++        goal = WIDTH[1-front.base]*self.gate_fraction
++        while high-low>goal:
++            old = (low,high)
++            mid = (low+high)/2
++            for v in (mid,(low+mid)/2,(mid+high)/2):
++                if not low<v<high:
++                    continue
++                proof,f = self.e.value(self.f,station_point(front.base,front.u,v),policy="trace")
++                s = sign(f)
++                if s==-front.direction:
++                    low,left = v,proof
++                elif s==front.direction:
++                    high,right = v,proof
++                if s and v==mid:
++                    break
++            if old==(low,high):
++                break
++        return updated(front,bounds=(low,high),refs=(left,right))
++
++    def existing(self, front):
++        gate = support(front.base,(front.u,)*2,front.bounds)
++        for previous in self.family.chart_rows:
++            if previous["id"]==front.origin["id"]:
++                continue
++            box = unpack(previous["box"])
++            a,b = section(box,front.base)
++            moves_ahead = front.u<b if front.advance>0 else a<front.u
++            if moves_ahead and inside(gate,box):
++                self.family.record_link(front.origin,previous,front.gate())
++                return previous["id"]
++        return None
++
++    def advance(self, front):
++        a,b = section(REGION,front.base)
++        distance = b-front.u if front.advance>0 else front.u-a
++        if not distance:
++            return None,"DOMAIN_BOUNDARY"
++        front = self.tighten(front)
++        if self.existing(front):
++            return None,"JOINED"
++        cross = 1-front.base
++        lo,hi = section(REGION,cross)
++        width = WIDTH[cross]
++        low = min(max(lo, sum(front.bounds)/2-width/2),hi-width)
++        bounds = (low,low+width)
++        first = min(front.step,distance)
++        minimum = self.max_steps[front.base]/(2**self.halvings)
++        for k in range(self.halvings+1):
++            step = first/(2**k)
++            if k and step<minimum:
++                break
++            far = front.u+front.advance*step
++            refs = []
++            for j,v in enumerate(bounds):
++                proof,f = self.e.value(self.f,station_point(front.base,far,v),policy="trace")
++                refs.append(proof)
++                if sign(f)!=(-1 if j==0 else 1)*front.direction:
++                    break
++            else:
++                footprint = support(front.base,tuple(sorted((front.u,far))),bounds)
++                continuation = dict(origin=front.origin["id"],from_u=pack((front.u,))[0],
++                                    to_u=pack((far,))[0],entry=front.gate(),
++                                    exit=testimony(front.base,far,bounds,refs))
++                row = self.family.chart(footprint,cross,continuation)
++                if row:
++                    self.family.record_link(front.origin,row,front.gate())
++                    return Frontier(row,front.base,far,front.advance,bounds,tuple(refs),
++                                    front.direction,min(2*step,self.max_steps[front.base])),"EXTENDED"
++                continue
++            self.emit("events",record="trace_probe",quantity=self.f,origin=front.origin["id"],
++                      cross=cross,at=pack((far,))[0],bounds=pack(bounds),evaluations=refs,
++                      status="NO_OPPOSITE_SIGNS")
++        return None,"STEP_LIMIT"
++
++    def run(self):
++        fronts = deque(self.seed(e,r) for e,listed in self.family.edge_rows.items() for r in listed)
++        current = None
++        try:
++            while fronts:
++                current = fronts.popleft()
++                self.e.budget.guard()
++                moved,outcome = self.advance(current)
++                if moved:
++                    fronts.append(moved)
++                else:
++                    self.emit("events",record="trace_end",quantity=self.f,origin=current.origin["id"],
++                              at=pack((current.u,))[0],status=outcome)
++                    if outcome=="STEP_LIMIT":
++                        self.emit("pending",quantity=self.f,phase="trace",origin=current.origin["id"],
++                                  at=pack((current.u,))[0],reason=outcome)
++                current = None
++        except Stop as problem:
++            if current is not None:
++                fronts.appendleft(current)
++            for front in fronts:
++                self.emit("pending",quantity=self.f,phase="trace",origin=front.origin["id"],
++                          at=pack((front.u,))[0],reason=str(problem))
++            raise
+--- a/crossings.py
++++ b/crossings.py
+@@ -2,10 +2,9 @@
+ 
+ from itertools import combinations
+ 
+-from engine import (INPUTS, QUANTITIES, REGION, WIDTH, Stop, covered, cut, divide,
+-                    interval_width, midpoint, overlay, pack, point, replace,
++from engine import (INPUTS, QUANTITIES, REGION, Stop, covered, cut, divide,
++                    midpoint, overlay, pack, point, replace,
+                     section, sign, split_axis, subtract, unpack, Q)
+-from shape import chart_faces, signed_pair
+ 
+ 
+ def face_sample(chart, index):
+@@ -23,63 +22,16 @@
+ 
+ 
+ class Crossings:
+-    def __init__(self, engine, rows, attempted):
++    def __init__(self, engine, rows):
+         self.e = engine
+         self.emit = engine.journal.row
+         self.budget = engine.budget
+         self.primary = {f:[r for r in rows if r["quantity"]==f and r["status"]=="CHART"]
+                         for f in QUANTITIES}
+-        self.tries = {f:max(attempted.get(f,0),sum(r["quantity"]==f for r in rows))
+-                      for f in QUANTITIES}
+-        self.auxiliary = {f:[] for f in QUANTITIES}
+         self.directions = {r["id"]:r["direction"] for r in rows if r["status"]=="CHART"}
+ 
+-    def bracket(self, f, span, bounds):
+-        """Find a narrow transverse gate on the whole y slab."""
+-        if self.tries[f] >= INPUTS["budget"]["chart_trials_per_quantity"]:
+-            return None
+-        self.tries[f] += 1
+-        lo,hi = bounds
+-        left,a = self.e.value(f,(*span,lo,lo))
+-        right,b = self.e.value(f,(*span,hi,hi))
+-        direction = sign(b)
+-        if not direction or sign(a) != -direction:
+-            self.emit("charts",record="comparison_trial",quantity=f,box=pack((*span,lo,hi)),
+-                      cross=1,status="REJECTED",reason="FACES",faces=[left,right])
+-            return None
+-        original = (*span,lo,hi)
+-        while hi-lo > WIDTH[1]:
+-            mid = (lo+hi)/2
+-            before = (lo,hi)
+-            for x in (mid,(lo+mid)/2,(mid+hi)/2):
+-                if not lo < x < hi:
+-                    continue
+-                ident,val = self.e.value(f,(*span,x,x))
+-                if sign(val) == -direction:
+-                    lo,left,a = x,ident,val
+-                if sign(val) == direction:
+-                    hi,right,b = x,ident,val
+-                if x == mid and sign(val):
+-                    break
+-            if (lo,hi) == before:
+-                self.emit("charts",record="comparison_trial",quantity=f,box=pack(original),
+-                          cross=1,status="REJECTED",reason="WIDE_GATE",faces=[left,right])
+-                return None
+-        box = (*span,lo,hi)
+-        derivative,di = self.e.value(f,box,2)
+-        ok = signed_pair(a,b,di)
+-        row = self.emit("charts",record="comparison_chart" if ok else "comparison_trial",
+-                        quantity=f,box=pack(box),source_box=pack(original),cross=1,base=0,
+-                        faces=[left,right],transverse=derivative,width=pack((hi-lo,))[0],
+-                        direction=direction if ok else 0,status="CHART" if ok else "REJECTED")
+-        if ok:
+-            self.auxiliary[f].append(row)
+-            self.directions[row["id"]] = direction
+-            return row
+-        return None
+-
+     def atlas_chart(self,f,span,z_bounds,previous):
+-        for chart in self.primary[f]+self.auxiliary[f]:
++        for chart in self.primary[f]:
+             if chart["cross"] != 1:
+                 continue
+             a,b,c,d = unpack(chart["box"])
+@@ -87,9 +39,6 @@
+                 continue
+             if previous and not self.can_join(previous,chart,span[0]):
+                 continue
+-            return chart
+-        chart = self.bracket(f,span,z_bounds)
+-        if chart and (not previous or self.can_join(previous,chart,span[0])):
+             return chart
+         return None
+ 
+@@ -103,11 +52,11 @@
+         for chart in charts:
+             box = replace(unpack(chart["box"]),0,*span)
+             f = chart["quantity"]
+-            dy,iv_y = self.e.value(f,box,1)
+-            dz,iv_z = self.e.value(f,box,2)
++            dy,iv_y = self.e.value(f,box,1,policy="trace")
++            dz,iv_z = self.e.value(f,box,2,policy="trace")
+             if not sign(iv_z):
+                 # Transverse derivative is already strict on the containing chart.
+-                dz,iv_z = self.e.value(f,unpack(chart["box"]),2)
++                dz,iv_z = self.e.value(f,unpack(chart["box"]),2,policy="trace")
+             if not sign(iv_z):
+                 return None
+             d = divide(iv_y,iv_z)
+@@ -129,7 +78,7 @@
+                 for x in (middle,(lo+middle)/2,(middle+hi)/2):
+                     if not lo < x < hi:
+                         continue
+-                    ident,value = self.e.value(f,point(y,x))
++                    ident,value = self.e.value(f,point(y,x),policy="trace")
+                     s = sign(value)
+                     if s == -direction:
+                         lo,left = x,ident
+@@ -246,21 +195,25 @@
+             if comparison and covered(b,footprint):
+                 row.update(status="REGION",comparison=comparison)
+             else:
++                evaluations = []
+                 for f in pair:
+-                    proof,i = self.e.value(f,b,shortcut=True)
++                    proof,i = self.e.value(f,b,policy="shape")
++                    evaluations.append(proof)
+                     if sign(i):
+                         row.update(status="SIGN",evaluation=proof)
+                         break
+                 else:
+                     axis = split_axis(b)
+                     a,z = section(b,axis)
+-                    if depth < INPUTS["budget"]["shape_depth"] and a<z:
++                    ready = all(proof in self.e.split_ready for proof in evaluations)
++                    if depth < INPUTS["budget"]["shape_depth"] and a<z and ready:
+                         middle = midpoint((a,z))
+-                        row.update(status="SPLIT",axis=axis)
++                        row.update(status="SPLIT",axis=axis,evaluations=evaluations)
+                         children = cut(b,axis,middle)
+                         pending.extend([(name+str(k),children[k],depth+1) for k in (1,0)])
+                     else:
+-                        row["status"] = "UNRESOLVED"
++                        row.update(status="UNRESOLVED",evaluations=evaluations,
++                                   reason="DEPTH_OR_POINT" if ready else "MIDPOINT_ANGLE_LIMIT")
+             nodes.append(row)
+         self.emit("intersections",record="overlap",pair=list(pair),charts=[left["id"],right["id"]],
+                   nodes=nodes,status="UNRESOLVED" if any(r["status"]=="UNRESOLVED" for r in nodes)
+--- a/run_candidate_b.py
++++ b/run_candidate_b.py
+@@ -176,14 +176,16 @@
+                      [r["sphere_contains"] for r in values if not r["sample"] and not r["derivative"]]==[True])
+     ordered = sorted(samples)
+     p90 = ordered[(9*len(ordered)+9)//10-1] if ordered else None
+-    estimate = Q(p90*BUDGET["pilot_estimate_cells"],NS*BUDGET["pilot_estimate_cores"]) if p90 is not None else None
+-    allowed = (complete and len(samples)==totals and estimate is not None and
+-               estimate<=BUDGET["pilot_estimate_max_seconds"])
++    forecast_cells = BUDGET["cells_per_quantity"]+BUDGET["cells_other"]-totals
++    estimate_ns = p90*forecast_cells if p90 is not None else None
++    allowed = (complete and len(samples)==totals and estimate_ns is not None and
++               estimate_ns<=NS*BUDGET["pilot_estimate_max_seconds"])
+     by_kind = [dict(quantity=f,dimension=d,stage=n,derivative=k,cells=len(a),
+                     median_ns=statistics.median(a),p90_ns=sorted(a)[(9*len(a)+9)//10-1])
+                for (f,d,n,k),a in sorted(counts.items()) if a]
+     return dict(allowed=bool(allowed),complete=bool(complete),formula_calls=totals,p90_ns=p90,
+-                estimate_seconds=float(estimate) if estimate is not None else None,by_kind=by_kind)
++                forecast_cells=forecast_cells,estimate_ns=estimate_ns,
++                estimate_seconds=estimate_ns/NS if estimate_ns is not None else None,by_kind=by_kind)
+ 
+ 
+ def run_intersections(path,library,deadline,flag,gate,main_folder):
+@@ -197,9 +199,7 @@
+     reason = None
+     try:
+         charts = [r for f in QUANTITIES for r in read_lines(main_folder/f/"charts.jsonl")]
+-        attempted = {f:r["chart_trials"] for f in QUANTITIES
+-                     for r in read_lines(main_folder/f/"events.jsonl") if r["record"]=="worker_outcome"}
+-        status = Crossings(engine,charts,attempted).run()
++        status = Crossings(engine,charts).run()
+     except Exception:
+         status,reason = "INCONSISTENT",traceback.format_exc()
+         log.row("pending",phase="intersections",reason="INTERSECTION_EXCEPTION")
+@@ -271,16 +271,26 @@
+ def summarize_journals(output):
+     from collections import Counter
+     shape = {f:Counter() for f in QUANTITIES}
++    unresolved = {f:Counter() for f in QUANTITIES}
+     signed = dict.fromkeys(QUANTITIES,Q(0))
+     for r in read_lines(output/"boxes.jsonl"):
+         f = r["quantity"]
+         shape[f][r["status"]] += 1
++        if r["status"]=="UNRESOLVED":
++            unresolved[f][r["reason"]] += 1
+         if r["status"] in ("SIGN_POS","SIGN_NEG"):
+             y0,y1,z0,z1 = unpack(r["box"])
+             signed[f] += (y1-y0)*(z1-z0)
+-    workers = [r for r in read_lines(output/"events.jsonl")
+-               if r["record"] in ("worker_outcome","comparison_outcome")]
+-    return dict(counts=shape,signed_area={f:str(a) for f,a in signed.items()},workers=workers)
++    workers,visits,trace = [],dict.fromkeys(QUANTITIES,0),{}
++    for r in read_lines(output/"events.jsonl"):
++        if r["record"] in ("worker_outcome","comparison_outcome"):
++            workers.append(r)
++        if r["record"]=="root_visit":
++            visits[r["quantity"]] += 1
++        if r["record"]=="trace_budget":
++            trace[r["quantity"]] = dict(status=r["status"],formula_calls=r["formula_calls"])
++    return dict(counts=shape,signed_area={f:str(a) for f,a in signed.items()},workers=workers,
++                root_visits=visits,trace=trace,unresolved_reasons=unresolved)
+ 
+ 
+ def run(args):
+@@ -301,6 +311,7 @@
+         gate = pilot_gate(pilot_folder)
+     except (ValueError,Inconsistent,OSError) as exc:
+         gate = dict(allowed=False,complete=False,formula_calls=0,p90_ns=None,
++                    forecast_cells=None,estimate_ns=None,
+                     estimate_seconds=None,by_kind=[],receipt_error=str(exc))
+     gate["child_exit"] = pilot_return
+     proceeded = (gate["allowed"] and all(x==0 for x in pilot_return.values()) and
+--- a/verify_ledgers.py
++++ b/verify_ledgers.py
+@@ -161,13 +161,17 @@
+                       "z_min":(1,self.domain[2]),"z_max":(1,self.domain[3])}
+         self.raw = {}
+         self.proofs = {}
++        self.split_ready = set()
++        self.enclosure_policy = {}
+         self.charts = {}
+         self.primary = defaultdict(list)
+         self.roots = defaultdict(list)
+         self.root_ids = {}
++        self.root_signs = {}
+         self.links = defaultdict(list)
+         self.edge_links = set()
+         self.cells = Counter()
++        self.trace_cells = Counter()
+         self.anchors = {}
+         self.corners = {}
+         self.trials = Counter()
+@@ -187,7 +191,8 @@
+             need(f in self.families and kind in (0,1,2) and contains(self.domain,b),
+                  f"bad integral arguments at {r['id']}")
+             need(phase in ("pilot","main","compare"),"unknown integral phase")
+-            need((bits==a["precision"] and cap in a["stages"]) or
++            caps = a["stages"] if phase=="pilot" else self.cfg["policy"]["stages"]
++            need((bits==a["precision"] and cap in caps) or
+                  (bits==a["edge_precision"] and cap==a["edge_stage"] and phase=="main"
+                   and any(b==self.edge_box(side,*spans(b,1-axis))
+                           for side,(axis,_) in self.edges.items())),
+@@ -203,6 +208,10 @@
+                  "inconsistent angular tree continuation or cell count")
+             states[r["tree"]] = (key,cumulative,cap,r["status"])
+             self.cells[(phase,f)] += count
++            need(type(r["trace"]) is bool and (not r["trace"] or phase=="main"),
++                 "trace panel outside the main worker")
++            if r["trace"]:
++                self.trace_cells[f] += count
+             if r["status"]=="INCONSISTENT":
+                 self.failures.append(r["id"])
+             if r["status"]=="COMPLETE":
+@@ -221,6 +230,7 @@
+         need(sum(self.cells.values())<=budget["cells_total"],"total panel budget exceeded")
+         for f in self.families:
+             need(self.cells["main",f]<=budget["cells_per_quantity"],"quantity budget exceeded")
++            need(self.trace_cells[f]<=budget["trace_cells_per_quantity"],"trace budget exceeded")
+         need(sum(n for (phase,_),n in self.cells.items() if phase!="main")<=budget["cells_other"],
+              "pilot and assembly budget exceeded")
+ 
+@@ -229,7 +239,12 @@
+         for row in rows(self.folder,"enclosures"):
+             f,b,kind = row["quantity"],rect(row["box"]),row["derivative"]
+             phase = row["id"].split(".")[0]
+-            planned = [(a["precision"],x) for x in a["stages"]]
++            policy = row["policy"]
++            need(policy in ("default","shape","trace") and
++                 (not row["edge_retry"] or policy=="default") and
++                 (policy!="shape" or kind==0),"invalid enclosure policy")
++            caps = a["stages"] if policy=="default" else self.cfg["policy"]["stages"]
++            planned = [(a["precision"],x) for x in caps]
+             if row["edge_retry"]:
+                 planned.append((a["edge_precision"],a["edge_stage"]))
+             seen_raw = set()
+@@ -245,6 +260,8 @@
+                 return value
+ 
+             accum = None
++            centre = None
++            ready = False
+             finished = False
+             m = ((b[0]+b[1])/2,(b[2]+b[3])/2)
+             for i,step in enumerate(row["stages"]):
+@@ -253,14 +270,24 @@
+                      "unexpected enclosure stage")
+                 direct = primitive(step["direct"],b,kind,p,n)
+                 accum = direct if accum is None else intersect_intervals(accum,direct)
+-                need(("mean" in step)==(not strict(accum) and kind==0 and
+-                                         (b[0]<b[1] or b[2]<b[3])),
+-                     "mean-value stage does not follow the schedule")
+-                shortcut = False
+-                if "mean" in step:
+-                    centre = primitive(step["midpoint"],corner(*m),0,p,n)
+-                    exact_lo,exact_hi = centre
+-                    shape_width = F(0)
++                wants_midpoint = not strict(accum) and kind==0 and (b[0]<b[1] or b[2]<b[3])
++                need(("midpoint" in step)==wants_midpoint,"misplaced midpoint evaluation")
++                if wants_midpoint:
++                    current_centre = primitive(step["midpoint"],corner(*m),0,p,n)
++                    if policy=="shape":
++                        centre = current_centre if centre is None else intersect_intervals(centre,current_centre)
++                        near = (min(abs(centre[0]),abs(centre[1])) if strict(centre) else F(0))
++                        cfg = self.cfg["policy"]
++                        bound = max(F(cfg["midpoint_absolute"]),near*F(cfg["midpoint_relative"]))
++                        ready = centre[1]-centre[0]<=bound
++                        need(interval(step["midpoint_interval"])==centre and
++                             q(step["midpoint_limit"])==bound and step["midpoint_ok"] is ready,
++                             "incorrect numerical midpoint gate")
++                        current_centre = centre
++                uses_mean = wants_midpoint and (policy!="shape" or ready)
++                need(("mean" in step)==uses_mean,"mean-value stage does not follow the schedule")
++                if uses_mean:
++                    exact_lo,exact_hi = current_centre
+                     for axis in (0,1):
+                         lo,hi = spans(b,axis)
+                         ident = step["gradients"][axis]
+@@ -269,20 +296,20 @@
+                             continue
+                         derivative = primitive(ident,b,axis+1,p,n)
+                         c,d = mul_range((lo-m[axis],hi-m[axis]),derivative)
+-                        exact_lo+=c; exact_hi+=d; shape_width+=d-c
++                        exact_lo+=c; exact_hi+=d
+                     enclosure = interval(step["mean"])
+                     need(enclosure[0]<=exact_lo<=exact_hi<=enclosure[1],
+                          "mean-value bounds omit an independently recomputed term")
+                     accum = intersect_intervals(accum,enclosure)
+-                    shortcut = (row["shape_shortcut"] and not strict(accum) and
+-                                shape_width>2*(centre[1]-centre[0]))
+-                need(bool(step.get("shape_width_stop",False))==bool(shortcut),
+-                     "incorrect shape-width shortcut")
+-                finished = bool(strict(accum) or shortcut)
++                finished = bool(strict(accum) or ready)
+             need(accum is not None and (finished or len(row["stages"])==len(planned)) and
+-                 count==row["formula_calls"] and interval(row["interval"])==accum,
++                 count==row["formula_calls"] and interval(row["interval"])==accum and
++                 row["split_ready"] is ready,
+                  "enclosure does not equal its verified intersection")
+             self.proofs[row["id"]] = (f,b,kind,accum)
++            self.enclosure_policy[row["id"]] = policy
++            if ready:
++                self.split_ready.add(row["id"])
+ 
+     def value(self, ident, f, where, mode=0):
+         g,b,d,i = self.proofs[ident]
+@@ -303,17 +330,60 @@
+              "chart faces or transverse derivative do not have the required signs")
+         return f,b
+ 
++    def signed_station(self,gate,f,base,u,rectangles):
++        points = [rect(x) for x in gate["points"]]
++        refs = gate["evaluation"]
++        need(len(points)==len(refs)==2 and all(
++             spans(t,base)==(u,u) and spans(t,1-base)[0]==spans(t,1-base)[1] and
++             all(contains(b,t) for b in rectangles) for t in points),
++             "gate endpoints are outside their certified support")
++        lo,hi = (spans(t,1-base)[0] for t in points)
++        signs = [strict(self.value(ref,f,where)) for ref,where in zip(refs,points)]
++        need(lo<hi and signs[0]==-signs[1]!=0,"gate has no strict sign change")
++        return (lo,hi),signs[1]
++
++    def trace_condition(self,row):
++        f = row["quantity"]
++        b = rect(row["box"])
++        base = row["base"]
++        need(row["record"]=="chart" and f in self.families and base in (0,1) and
++             row["cross"]==1-base and contains(self.domain,b),"invalid trace proposal")
++        step = row["continuation"]
++        u,z = q(step["from_u"]),q(step["to_u"])
++        need(u!=z and spans(b,base)==tuple(sorted((u,z))) and
++             abs(z-u)<=F(self.cfg["policy"]["trace_step"][base]) and
++             spans(b,1-base)[1]-spans(b,1-base)[0]==self.bands[1-base],
++             "trace step outside the planned strip")
++        origin = step["origin"]
++        if origin in self.root_ids:
++            g,edge,old = self.root_ids[origin]
++            expected_base,expected_u = self.edges[edge]
++            expected_direction = self.root_signs[origin]
++            need((g,expected_base,expected_u)==(f,base,u) and
++                 ((z>u)==edge.endswith("_min")),"trace did not enter from a certified edge root")
++        else:
++            earlier = self.charts[origin]
++            old = rect(earlier["box"])
++            expected_direction = earlier["direction"]
++            previous = earlier["continuation"]
++            need((earlier["quantity"],earlier["base"],q(previous["to_u"]))==(f,base,u) and
++                 ((z>u)==(u>q(previous["from_u"]))),"trace is not a continuation of a certified chart")
++        _,entry_dir = self.signed_station(step["entry"],f,base,u,(b,old))
++        ends,exit_dir = self.signed_station(step["exit"],f,base,z,(b,))
++        need(ends==spans(b,1-base) and expected_direction==entry_dir==exit_dir and
++             (row["status"]!="CHART" or row["direction"]==exit_dir),
++             "trace lacks sign changes in a consistent direction")
++
+     def read_charts(self):
+         for row in rows(self.folder,"charts"):
++            self.trace_condition(row)
+             self.trials[row["quantity"]] += 1
+             if row["status"]!="CHART":
+                 need(row["status"]=="REJECTED","unknown chart state")
+                 continue
+             f,b = self.chart_condition(row)
+-            need(row["record"] in ("chart","comparison_chart"),"unknown accepted chart type")
+             self.charts[row["id"]] = row
+-            if row["record"]=="chart":
+-                self.primary[f].append(row["id"])
++            self.primary[f].append(row["id"])
+         need(all(n<=self.cfg["budget"]["chart_trials_per_quantity"] for n in self.trials.values()),
+              "chart trial budget exceeded")
+ 
+@@ -352,10 +422,12 @@
+             vals = [self.value(i,f,self.edge_box(side,x,x)) for i,x in zip(record["faces"],(lo,hi))]
+             d = self.value(record["tangent"],f,b,axis+1)
+             need(strict(vals[0])==-strict(vals[1])!=0 and strict(d)==strict(vals[1]) and
+-                 record["status"]=="ROOT","edge root lacks uniqueness or existence proof")
++                 record["status"]=="ROOT" and record["direction"]==strict(vals[1]),
++                 "edge root lacks uniqueness or existence proof")
+             need(all(clip(b,x[1]) is None for x in self.roots[f,side]),"edge root brackets overlap")
+             self.roots[f,side].append((record["id"],b))
+             self.root_ids[record["id"]] = (f,side,b)
++            self.root_signs[record["id"]] = strict(vals[1])
+         else:
+             need(record["record"]=="node","unknown edge row type")
+ 
+@@ -432,6 +504,8 @@
+                 else:
+                     need(location==sum(spans(b,axis))/2 and
+                          not strict(self.value(row["evaluation"],f,b)),"split wrongly motivated")
++                    if not side:
++                        need(row["evaluation"] in self.split_ready,"shape split without a narrow midpoint")
+                 children = [node+"/0",node+"/1"]
+                 need(row["children"]==children,"split children do not form a full binary partition")
+                 pending.extend((c,g,root,node,depth+1)
+@@ -450,7 +524,14 @@
+                 h,e,outer = self.root_ids[row["root_interval"]]
+                 need((h,e)==(f,side) and contains(outer,b),"edge leaf outside its bracket")
+             else:
+-                need(state=="UNRESOLVED" and depth==dmax and row["reason"]=="DEPTH_LIMIT",
++                depth_stop = depth==dmax and row["reason"]=="DEPTH_LIMIT"
++                if depth_stop and not side:
++                    need(row["evaluation"] in self.split_ready,"depth stop omitted the midpoint gate")
++                angle_stop = (not side and row["reason"]=="MIDPOINT_ANGLE_LIMIT" and
++                              self.enclosure_policy.get(row["evaluation"])=="shape" and
++                              row["evaluation"] not in self.split_ready and
++                              not strict(self.value(row["evaluation"],f,b)))
++                need(state=="UNRESOLVED" and (depth_stop or angle_stop),
+                      "unknown or premature unresolved shape leaf")
+         need(not index,"orphan shape nodes")
+         return dict(counts),signed_area
+@@ -614,6 +695,10 @@
+                 axis = r["axis"]
+                 need(axis==plan_axis(b) and len(name)<self.cfg["budget"]["shape_depth"],
+                      "unplanned overlap split")
++                refs = r["evaluations"]
++                need(len(refs)==2 and all(ref in self.split_ready and
++                     not strict(self.value(ref,f,b)) for f,ref in zip(pair,refs)),
++                     "overlap split without both midpoint gates")
+                 split = partition(b,axis,sum(spans(b,axis))/2)
+                 pending.extend((name+str(k),child) for k,child in enumerate(split))
+             elif status=="REGION":
+@@ -709,25 +794,64 @@
+         complete = (len(found)==len(self.families)*len(self.cfg["pilot"])*3 and
+                     len(spheres)==len(self.families) and
+                     all(outcomes.get(f)=="RECORDED" for f in self.families))
+-        allowed = (complete and count==len(samples) and p90 is not None and
+-                   p90*b["pilot_estimate_cells"]<=10**9*b["pilot_estimate_cores"]*
+-                   b["pilot_estimate_max_seconds"])
++        forecast = b["cells_per_quantity"]+b["cells_other"]-count
++        projection = p90*forecast if p90 is not None else None
++        allowed = (complete and count==len(samples) and projection is not None and
++                   projection<=10**9*b["pilot_estimate_max_seconds"])
+         need(report["formula_calls"]==count and report["p90_ns"]==p90 and
++             report["forecast_cells"]==forecast and report["estimate_ns"]==projection and
+              report["complete"]==complete and report["allowed"]==allowed,"pilot gate differs from receipts")
+         need(allowed or not any(n for (phase,_),n in self.cells.items() if phase!="pilot"),
+              "main evaluation recorded without an eligible pilot")
+         return bool(allowed)
+ 
++    def review_schedule(self,box_rows):
++        grid = dict(self.initial_rectangles())
++        ny,nz = self.cfg["shape_grid"]
++        sy,sz = self.cfg["policy"]["root_block"]
++        need(ny%sy==nz%sz==0,"partial root-visit macroblocks")
++        order = []
++        for di,dj in product(range(sy),range(sz)):
++            for mi,mj in product(range(ny//sy),range(nz//sz)):
++                order.append(f"B{mi*sy+di:02d}.{mj*sz+dj:02d}")
++        visited = Counter()
++        receipt = set()
++        for row in rows(self.folder,"events"):
++            if row["record"]=="root_visit":
++                f = row["quantity"]
++                n = visited[f]
++                name = row["node"]
++                proof = row["evaluation"]
++                need(f in self.families and n<len(order) and name==order[n] and
++                     rect(row["box"])==grid[name] and row["status"]=="VISITED" and
++                     self.enclosure_policy.get(proof)=="shape","root sweep order or receipt mismatch")
++                self.value(proof,f,grid[name])
++                visited[f] += 1
++            elif row["record"]=="trace_budget":
++                f = row["quantity"]
++                need(f in self.families and f not in receipt and visited[f]==len(order) and
++                     row["formula_calls"]==self.trace_cells[f],"trace phase does not match recorded panels")
++                receipt.add(f)
++        for f in self.families:
++            nodes = box_rows[f]
++            depths = [r["depth"] for r in nodes]
++            need(depths==sorted(depths),"shape refinement is not breadth first")
++            done = set(order[:visited[f]])
++            need(all(r["root"] in done for r in nodes),"box decision before its root sweep visit")
++            need((not self.trials[f] and not self.trace_cells[f] and not any(depths)) or
++                 visited[f]==len(order),"trace or refinement before the full root sweep")
++        return {f:visited[f] for f in self.families}
++
+     def check(self):
+         self.read_integrals()
+         self.read_enclosures()
+-        self.read_charts()
+         edge_rows = defaultdict(list)
+         box_rows = defaultdict(list)
+         for r in rows(self.folder,"edges"):
+             self.read_edges(r)
+             if r["record"]=="node":
+                 edge_rows[r["quantity"]].append(r)
++        self.read_charts()
+         for r in rows(self.folder,"boxes"):
+             need(r["quantity"] in self.families and r["record"]=="node","unknown box row")
+             box_rows[r["quantity"]].append(r)
+@@ -740,11 +864,13 @@
+             families[f] = self.assemble_family(f,box_rows[f],edge_rows[f])
+         pair = self.review_intersections()
+         pilot = self.review_pilot()
++        schedule = self.review_schedule(box_rows)
+         done = (pilot and not self.failures and all(x["arc_conditions"] for x in families.values())
+                 and all(x["conditions_met"] for x in pair.values()))
+         return dict(status="CONDITIONS_CHECKED" if done else "PARTIAL",
+                     diagnostic_only=True,quantities=families,intersections=pair,
+-                    pilot_eligible=pilot,run_errors=self.failures)
++                    pilot_eligible=pilot,root_visits=schedule,trace_formula_calls=dict(self.trace_cells),
++                    run_errors=self.failures)
+ 
+ 
+ def verify_hashes(folder):
+--- /dev/null
++++ b/smoke_policy_v2.py
+@@ -0,0 +1,243 @@
++"""Small artificial policy checks. No MPFR kernel or production runner is opened."""
++
++from copy import deepcopy
++import json
++from pathlib import Path
++from tempfile import TemporaryDirectory
++import time
++from unittest.mock import patch
++
++from crossings import Crossings
++from engine import Budget, Encloser, INPUTS, Journal, Q, pack, point, roots, spread_roots
++from shape import Family, Task
++from trace_bands import Trace
++from verify_ledgers import Invalid, Review
++
++
++class ToyTree:
++    """Staged rational intervals with the same tree-accounting shape as MPFR."""
++
++    def __init__(self,e,f,d,b,bits):
++        self.e,self.f,self.d,self.b,self.bits = e,f,d,b,bits
++        e.tree_serial += 1
++        self.key = str(e.tree_serial)
++        self.previous = 0
++
++    def __enter__(self):
++        return self
++
++    def __exit__(self,*unused):
++        return None
++
++    def stage(self,cap):
++        is_point = self.b[0]==self.b[1] and self.b[2]==self.b[3]
++        reduced = (is_point and cap>=256 and self.e.synthetic_improvement)
++        radius = Q(1,1024) if reduced else Q(1)
++        value = (-radius,radius)
++        cumulative = 16+4*(cap-16)//3
++        used = cumulative-self.previous
++        row = self.e.journal.row(
++            "integrals",tree=self.key,quantity=self.f,derivative=self.d,box=pack(self.b),
++            precision=self.bits,target=cap,cells=cap,dimension=2,total_calls=cumulative,
++            formula_calls=used,status="COMPLETE",interval=pack(value),trace=False)
++        self.previous = cumulative
++        self.e.budget.cells += used
++        return row["id"],value
++
++
++def budget():
++    return Budget(time.monotonic_ns()+3_000_000_000,200000,lambda: False)
++
++
++def rejected(operation):
++    try:
++        operation()
++    except (Invalid,KeyError):
++        return
++    raise AssertionError("checker accepted the deliberately corrupted receipt")
++
++
++def midpoint_checks(tmp):
++    ident,box = next((r,b) for r,b in roots() if r=="B04.04")
++    for improves in (True,False):
++        here = tmp/f"angle-{improves}"
++        log = Journal(here,"main.Z1")
++        e = Encloser(None,log,budget())
++        e.synthetic_improvement = improves
++        with patch("engine.AngleTree",ToyTree):
++            evaluated = e.value("Z1",box,policy="shape")
++        family = Family("Z1",e)
++        children = family.shape_task(Task(ident,ident,box),evaluated)
++        log.close()
++        raw = json.loads((here/"enclosures.jsonl").read_text())
++        shape_row = json.loads((here/"boxes.jsonl").read_text())
++        targets = [s["target"] for s in raw["stages"]]
++        assert targets==([64,256] if improves else [64,256,1024,4096])
++        assert raw["split_ready"] is improves and bool(children) is improves
++        assert "mean" not in raw["stages"][0]
++        assert bool("mean" in raw["stages"][-1]) is improves
++        assert shape_row["status"]==("SPLIT" if improves else "UNRESOLVED")
++        reader = Review(here,INPUTS)
++        reader.read_integrals()
++        reader.read_enclosures()
++        reader.tree("Z1",[shape_row])
++        if improves:
++            reader.split_ready.clear()
++            rejected(lambda:reader.tree("Z1",[shape_row]))
++        else:
++            raw["split_ready"] = True
++            (here/"enclosures.jsonl").write_text(json.dumps(raw)+"\n")
++            rejected(reader.read_enclosures)
++    print("Artificial midpoint: 64→256 before split; 4096 wide is unresolved; falsified gates rejected.")
++
++
++class SignedToy:
++    """Exact range of y - (1/2 + slope*(z-1)) on any artificial rectangle."""
++
++    def __init__(self,log,reader,slope):
++        self.journal,self.reader,self.slope = log,reader,slope
++        self.budget = budget()
++        self.split_ready = set()
++
++    def value(self,f,b,d=0,**unused):
++        y0,y1,z0,z1 = b
++        l = y0-Q(1,2)-self.slope*(z1-1)
++        h = y1-Q(1,2)-self.slope*(z0-1)
++        value = (l,h) if not d else (Q(1),)*2 if d==1 else (-self.slope,)*2
++        ref = str(len(self.reader.proofs))
++        self.reader.proofs[ref] = (f,b,d,value)
++        return ref,value
++
++
++def trace_checks(tmp):
++    for gentle in (True,False):
++        here = tmp/f"trace-{gentle}"
++        log = Journal(here,"main.Z1")
++        reader = Review(here,INPUTS)
++        e = SignedToy(log,reader,Q(1,128) if gentle else Q(10000))
++        family = Family("Z1",e)
++        a,b,u = Q(1,2)-Q(1,256),Q(1,2)+Q(1,256),Q(1)
++        left = e.value("Z1",point(a,u))[0]
++        right = e.value("Z1",point(b,u))[0]
++        edge = (a,b,u,u)
++        root = log.row("edges",record="root_interval",quantity="Z1",edge="z_min",
++                       box=pack(edge),faces=[left,right],tangent=e.value("Z1",edge,1)[0],
++                       status="ROOT",direction=1)
++        reader.read_edges(root)
++        trace = Trace(family)
++        moved,outcome = trace.advance(trace.seed("z_min",root))
++        if gentle:
++            assert outcome=="EXTENDED" and moved is not None
++            moved,second = trace.advance(moved)
++            assert second=="EXTENDED" and moved is not None
++        else:
++            assert moved is None and outcome=="STEP_LIMIT" and not family.chart_rows
++        log.close()
++        reader.read_charts()
++        if gentle:
++            assert len(reader.charts)==2
++            for line in (here/"links.jsonl").read_text().splitlines():
++                reader.link(json.loads(line))
++            assert root["id"] in reader.edge_links and len(reader.links["Z1"])==1
++            corrupt = deepcopy(family.chart_rows[0])
++            corrupt["continuation"]["exit"]["evaluation"].reverse()
++            rejected(lambda:reader.trace_condition(corrupt))
++    print("Artificial trace: edge → two linked charts; out-of-gate branch starts no chart.")
++
++
++def schedule_checks(tmp):
++    roots_in_order = spread_roots()
++    assert len(roots_in_order)==len(dict(roots_in_order))==288
++    blocks = set()
++    for name,_ in roots_in_order[:24]:
++        i,j = map(int,name[1:].split("."))
++        blocks.add((i//3,j//4))
++    assert len(blocks)==24
++    here = tmp/"order"
++    log = Journal(here,"main.Z1")
++    reader = Review(here,INPUTS)
++    for i,(name,geometry) in enumerate(roots_in_order[:24]):
++        proof = str(i)
++        reader.proofs[proof] = ("Z1",geometry,0,(Q(1),Q(2)))
++        reader.enclosure_policy[proof] = "shape"
++        log.row("events",record="root_visit",quantity="Z1",node=name,
++                box=pack(geometry),evaluation=proof,status="VISITED")
++    log.close()
++    nodes = dict.fromkeys(INPUTS["quantities"],())
++    assert reader.review_schedule(nodes)["Z1"]==24
++    path = here/"events.jsonl"
++    lines = path.read_text().splitlines()
++    lines[0],lines[1] = lines[1],lines[0]
++    path.write_text("\n".join(lines)+"\n")
++    rejected(lambda:reader.review_schedule(nodes))
++    print("Initial sweep: first 24 roots touch every macroblock; swapped visit order rejected.")
++
++    here = tmp/"queue"
++    log = Journal(here,"main.Z1")
++    e = Encloser(None,log,budget())
++    root_pair = roots_in_order[:2]
++    root_ids = {box:name for name,box in root_pair}
++    evaluated = []
++
++    def evaluate(quantity,box,*,policy):
++        assert quantity=="Z1" and policy=="shape"
++        proof = f"toy-{len(evaluated)}"
++        evaluated.append(box)
++        if box in root_ids:
++            e.split_ready.add(proof)
++        return proof,(Q(-1),Q(1))
++
++    with (patch("shape.spread_roots",return_value=root_pair),
++          patch("shape.edge_roots",return_value=[]),
++          patch.object(Family,"prepare_edges"),
++          patch.object(e,"value",side_effect=evaluate)):
++        assert Family("Z1",e).run()=="RECORDED"
++    log.close()
++    rows = [json.loads(s) for s in (here/"boxes.jsonl").read_text().splitlines()]
++    assert [r["depth"] for r in rows]==[0,0,1,1,1,1]
++    assert evaluated[:2]==[b for _,b in root_pair]
++    assert [r["root"] for r in rows]==[root_pair[i][0] for i in (0,1,0,0,1,1)]
++    print("Artificial scheduler: both initial visits precede any bisection; child queues stay breadth first.")
++
++
++def comparison_checks(tmp):
++    log = Journal(tmp/"comparison","compare")
++
++    class NoProbes:
++        journal = log
++        budget = budget()
++
++        def value(self,*args,**kwargs):
++            raise AssertionError("comparison tried to build an unseeded chart")
++
++    runner = Crossings(NoProbes(),[])
++    assert runner.compare(("Z1","D2"),"INTERIOR")== (None,[])
++    log.close()
++    row = json.loads((tmp/"comparison/intersections.jsonl").read_text())
++    assert row["status"]=="UNRESOLVED"
++    print("Comparison without traced support records unresolved without new probes.")
++
++
++def empty_receipt_checks(tmp):
++    here = tmp/"empty"
++    log = Journal(here,"main.Z1")
++    log.close()
++    report = dict(formula_calls=0,complete=False,allowed=False,p90_ns=None,
++                  forecast_cells=32000000,estimate_ns=None)
++    (here/"PILOT.json").write_text(json.dumps(report)+"\n")
++    result = Review(here,INPUTS).check()
++    assert result["status"]=="PARTIAL" and not result["pilot_eligible"]
++    report["forecast_cells"] -= 1
++    (here/"PILOT.json").write_text(json.dumps(report)+"\n")
++    rejected(lambda:Review(here,INPUTS).check())
++    print("Independent receipt audit: unstarted work stays partial; inconsistent forecast rejected.")
++
++
++if __name__=="__main__":
++    with TemporaryDirectory() as folder:
++        work = Path(folder)
++        midpoint_checks(work)
++        trace_checks(work)
++        schedule_checks(work)
++        comparison_checks(work)
++        empty_receipt_checks(work)

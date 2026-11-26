@@ -1,0 +1,18 @@
+DIAGNOSTIC_ONLY
+2026-11-26 JST
+Synthetic rational fixtures and source/invariant checks only.
+No MPFR integration, pilot, production computation or research PC connection.
+
+Artificial midpoint: 64→256 before split; 4096 wide is unresolved; falsified gates rejected.
+Artificial trace: edge → two linked charts; out-of-gate branch starts no chart.
+Initial sweep: first 24 roots touch every macroblock; swapped visit order rejected.
+Artificial scheduler: both initial visits precede any bisection; child queues stay breadth first.
+Comparison without traced support records unresolved without new probes.
+Independent receipt audit: unstarted work stays partial; inconsistent forecast rejected.
+
+Frozen files are byte-identical to f70b83b.
+86e76349bc8c661a30bb9630c429707c09bd5d3849132e08c973ae35f605abdc  build.sh
+ad241332c27cf8a862c34ca0f1d7af842b6575db4a21d94fb5279d0919d31e34  src/build_probe.c
+c386db4b92ae60892a5bbeb1e2eefad7d774940823a2bb4d9c831c3d6e9e01d3  src/candidate.c
+6f7035e6c3a8bd1d0919066d32fe5a1fa2d3181df00998c90d8b0707fc62c713  src/interval.h
+6b13da992ac7860750e13d71d4a84026e853eb284ada9fb003b8ccb87bd075a9  src/jets.h
