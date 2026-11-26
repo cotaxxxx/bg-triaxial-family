@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angle-energy map on triaxial ellipsoids — linked viewer</title>
+<style>
+:root{--bg:#fbfbf9;--fg:#1c2330;--mut:#5b6472;--line:#d5d9e0;--card:#fff;--z1:#0072B2;--z2:#56B4E9;--d1:#D55E00;--d2:#E69F00;--unc:#7a3fb5;--ok:#1b7f4d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif}
+header{padding:14px 16px 6px;display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+h1{font-size:19px;margin:0 0 2px;line-height:1.3}
+.sub{color:var(--mut);font-size:13px;max-width:70ch}
+button,select{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--fg);cursor:pointer}
+button[aria-pressed="true"]{background:#1c2330;color:#fff;border-color:#1c2330}
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:8px 16px 16px}
+@media(max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.card h2{font-size:14px;margin:0 0 6px;font-weight:600}
+#map{width:100%;height:auto;aspect-ratio:1/1.02;touch-action:none;display:block;border-radius:8px;background:#f1f2f4;cursor:crosshair}
+#view{width:100%;aspect-ratio:1/1.02;display:block;border-radius:8px;background:#f6f7f9;touch-action:none;cursor:grab}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.row label{font-size:13px;color:var(--mut)}
+input[type=range]{flex:1;min-width:120px}
+#status{font-variant-numeric:tabular-nums;font-size:14px;margin-top:8px}
+#event{margin-top:6px;padding:8px 10px;border-radius:8px;background:#f1f4f8;font-size:14px;min-height:3.2em}
+#event.on{background:#fff6e0;border:1px solid #f0d48a}
+.legend{display:grid;gap:6px;font-size:13px;margin-top:8px}
+.legend div{display:flex;gap:8px;align-items:flex-start}
+.sw{flex:0 0 26px;height:14px;margin-top:3px;border-radius:3px}
+.tag{font-size:11px;font-weight:700;padding:1px 6px;border-radius:999px;color:#fff;white-space:nowrap;margin-top:2px}
+.tag.a{background:var(--ok)}.tag.b{background:#6b7280}.tag.c{background:var(--unc)}
+.arcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:4px 12px;font-size:13px;margin-top:6px}
+.arcs span i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+footer{padding:4px 16px 24px;color:var(--mut);font-size:12px;max-width:110ch;overflow-wrap:anywhere}
+footer code{font-size:11px}
+.note{font-size:12.5px;color:var(--mut);margin-top:6px}
+svg text{font:12px system-ui,sans-serif;fill:#333}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1 data-t="title"></h1>
+    <div class="sub" data-t="sub"></div>
+  </div>
+  <div class="row" style="margin:0">
+    <button id="bEn" aria-pressed="true">English</button>
+    <button id="bJa" aria-pressed="false">日本語</button>
+  </div>
+</header>
+<main>
+  <section class="card">
+    <h2 data-t="mapTitle"></h2>
+    <svg id="map" role="img" aria-label="shape map"></svg>
+    <div class="row">
+      <label data-t="zoom"></label>
+      <button id="zOut">−</button><button id="zIn">+</button><button id="zReset" data-t="reset"></button>
+      <label data-t="path" style="margin-left:8px"></label>
+      <select id="path"></select>
+      <button id="play" data-t="play"></button>
+    </div>
+    <div class="row"><input id="slider" type="range" min="0" max="1000" value="0" aria-label="position on the path"></div>
+    <div class="arcs" id="arcs"></div>
+    <div class="legend">
+      <div><span class="tag a">A</span><span data-t="legA"></span></div>
+      <div><span class="tag b">B</span><span data-t="legB"></span></div>
+      <div id="legCrow"><span class="tag c">C</span><span data-t="legC"></span></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2 data-t="viewTitle"></h2>
+    <canvas id="view"></canvas>
+    <div id="status"></div>
+    <div id="event"></div>
+    <div class="row" id="uncRow"><label><input type="checkbox" id="unc" checked> <span data-t="uncToggle"></span></label></div>
+    <div class="note" data-t="uncNote" id="uncNote"></div>
+    <div class="note" data-t="scope"></div>
+  </section>
+</main>
+<footer>
+  <div data-t="foot1"></div>
+  <div id="foot2"></div>
+  <div data-t="foot3"></div>
+</footer>
+<script>
+"use strict";
+const DATA = __DATA__;
+const COL = {Z1:"#0072B2", Z2:"#56B4E9", D1:"#D55E00", D2:"#E69F00"};
+const Q = ["Z1","Z2","D1","D2"];
+const T = {
+en:{
+ title:"A Map of the Angle Energy on Triaxial Ellipsoids — linked viewer",
+ sub:"Companion to Paper II, Version 1.0. A tool for exploring the map of Theorem 1 and the local events of Theorem 2 by hand. It is an illustration and not part of any proof.",
+ mapTitle:"Shape map: semi-axes (1, y, z), y ≤ 1 ≤ z. Click or drag to choose a shape.",
+ viewTitle:"The ellipsoid with semi-axes (1, y, z) — drawn to fit the view; drag to rotate",
+ zoom:"Zoom", reset:"reset", path:"Path", play:"Play", pause:"Pause",
+ paths:["free (click the map)","oblate edge  z = 1","prolate edge  y = 1","through the crossing point","between Z₂ and ∂₂  (z = 3.5)"],
+ arc:{Z1:"Z₁:  A_y = 0  (centre, short axis)",Z2:"Z₂:  A_x = 0  (centre, middle axis)",D1:"∂₁:  T_y = 0  (poles ±e_y)",D2:"∂₂:  T_x = 0  (poles ±e_x)"},
+ legA:"Proved in Paper II: the strips (small boxes) that each arc passes through; the intervals of the end points on the edges; the box of the crossing point. Zoom in to see them.",
+ legB:"Illustration only: the line joining the centres of the strips, and the pale band on the side where the local pair exists (Theorem 2). The width of the band has no meaning.",
+ legC:"Uncertified numerics: hollow markers in the 3D view, positions of stationary points on the two axes computed in double precision without error bounds.",
+ outside:"outside R: no claim", rlabel:"R = [1/4, 1] × [1, 7]",
+ oblate:"oblate spheroids (z = 1)", prolate:"prolate spheroids (y = 1)", ball:"ball", cross:"(y*, z*)",
+ xl:"y  (short semi-axis; middle semi-axis = 1)", yl:"z  (long semi-axis)",
+ status:(y,z)=>`Selected shape:  y = ${y.toFixed(4)},  z = ${z.toFixed(4)}    (semi-axes 1, ${y.toFixed(3)}, ${z.toFixed(3)})`,
+ evNone:"This shape lies in no certified strip. Paper II makes no statement about the number of stationary points of a single shape.",
+ evZ:(n,ax,A)=>`In a certified strip of ${n}. The arc ${n} passes through this strip. When the shape crosses it, exactly one pair of stationary points on the ${ax} is born at the centre or absorbed by it; near the centre the pair exists on the side ${A} > 0 (Theorem 2, part 1).`,
+ evD:(n,ax,p,Tn)=>`In a certified strip of ${n}. The arc ${n} passes through this strip. When the shape crosses it, exactly one pair of stationary points on the ${ax} enters or leaves through the poles ${p}; near the poles it is inside on the side ${Tn} < 0 (Theorem 2, part 2).`,
+ short:"short axis (y)", mid:"middle axis (x)",
+ evCp:"Prolate threshold c_p on the edge y = 1 (certified interval). Along the edge, a stationary circle in the equatorial plane is born at the centre or absorbed by it (Theorem 2, part 3).",
+ evBp:"Prolate threshold b_p on the edge y = 1 (certified interval). Along the edge, a stationary circle in the equatorial plane enters or leaves through the boundary (Theorem 2, part 3).",
+ evX:"Inside the certified box of the crossing point (y*, z*). Two independent events for the same shape: one at the centre on the short axis, one at the poles of the middle axis (Theorem 2, part 4).",
+ uncToggle:"show uncertified stationary points on the axes",
+ uncNote:"Hollow markers are uncertified numerics. Paper II does not prove that a pair persists between its two arcs, does not count the stationary points of a shape, and does not determine their type.",
+ uncTxt:(a,b)=>`Uncertified: ${a}; ${b}.`, uncY:r=>`short-axis pair at ±${r.toFixed(3)}·y`, uncX:r=>`middle-axis pair at ±${r.toFixed(3)}`, uncC:r=>`stationary circle of radius ${r.toFixed(3)}`, uncNo:n=>`no interior zero found on the ${n}`,
+ scope:"Limits of the paper: only shapes in R are treated; outside R nothing is claimed. The marks on the ellipsoid are: centre (●), poles ±e_y and ±e_x (■), ends of the long axis (small grey).",
+ foot1:"Paper: K. Furuta, A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code, Version 1.0 (27 November 2026). DOI: to be added on publication.",
+ foot3:"This file is self-contained: no third-party code, no fonts, no network access. Code: MIT licence. Text: CC BY 4.0. © 2026 Katsushi Furuta (DAYBREAK)."
+},
+ja:{
+ title:"三軸楕円体の角度エネルギー地図 — 連動ビューア",
+ sub:"論文 II（Version 1.0）の付属物。定理 1 の地図と、定理 2 の局所的な出来事を、自分の手で動かして見るための道具です。説明用であり、証明の一部ではありません。",
+ mapTitle:"形の地図：半軸 (1, y, z)、y ≤ 1 ≤ z。クリックかドラッグで形を選びます。",
+ viewTitle:"半軸 (1, y, z) の楕円体 — 画面に収まるように描いています。ドラッグで回転",
+ zoom:"拡大", reset:"戻す", path:"道", play:"再生", pause:"停止",
+ paths:["自由（地図をクリック）","扁平の辺  z = 1","扁長の辺  y = 1","交点を通る道","Z₂ と ∂₂ のあいだ（z = 3.5）"],
+ arc:{Z1:"Z₁：A_y = 0（中心、短軸）",Z2:"Z₂：A_x = 0（中心、中間軸）",D1:"∂₁：T_y = 0（極 ±e_y）",D2:"∂₂：T_x = 0（極 ±e_x）"},
+ legA:"論文 II で証明済み：各弧が通る帯（小さな箱）、辺の上の端点の区間、交点の箱。拡大すると見えます。",
+ legB:"説明用：帯の中心を結んだ線と、局所的な対がある側を示す薄い帯（定理 2）。薄い帯の幅に意味はありません。",
+ legC:"保証のない数値：3D 表示の白抜きの印。二本の軸の上の停留点の位置を、倍精度・誤差評価なしで計算したものです。",
+ outside:"R の外：主張なし", rlabel:"R = [1/4, 1] × [1, 7]",
+ oblate:"扁平な回転楕円体（z = 1）", prolate:"扁長な回転楕円体（y = 1）", ball:"球", cross:"(y*, z*)",
+ xl:"y（短い半軸。中間の半軸 = 1）", yl:"z（長い半軸）",
+ status:(y,z)=>`選んだ形：y = ${y.toFixed(4)}、z = ${z.toFixed(4)}　（半軸 1, ${y.toFixed(3)}, ${z.toFixed(3)}）`,
+ evNone:"この形は、どの弧の証明済みの帯にも入っていません。論文 II は、一つひとつの形の停留点の個数については何も主張しません。",
+ evZ:(n,ax,A)=>`${n} の証明済みの帯の中です。弧 ${n} はこの帯を通ります。形がこの弧を横切るとき、${ax}の上の停留点がちょうど一対、中心で生まれるか中心に吸収されます。中心の近くで対があるのは ${A} > 0 の側です（定理 2 の 1）。`,
+ evD:(n,ax,p,Tn)=>`${n} の証明済みの帯の中です。弧 ${n} はこの帯を通ります。形がこの弧を横切るとき、${ax}の上の停留点がちょうど一対、極 ${p} を通って出入りします。極の近くで対が内部にあるのは ${Tn} < 0 の側です（定理 2 の 2）。`,
+ short:"短軸（y）", mid:"中間軸（x）",
+ evCp:"辺 y = 1 の上の扁長側の閾値 c_p（証明済みの区間）。形が辺に沿って動くとき、赤道面の停留円が中心で生まれるか中心に吸収されます（定理 2 の 3）。",
+ evBp:"辺 y = 1 の上の扁長側の閾値 b_p（証明済みの区間）。形が辺に沿って動くとき、赤道面の停留円が境界を通って出入りします（定理 2 の 3）。",
+ evX:"交点 (y*, z*) の証明済みの箱の中です。同じ形で二つの独立な出来事が起こります。中心での短軸の出来事と、中間軸の極での出来事です（定理 2 の 4）。",
+ uncToggle:"軸の上の停留点（保証のない数値）を表示する",
+ uncNote:"白抜きの印は保証のない数値です。論文 II は、対が二本の弧のあいだで存続することを証明していません。形ごとの停留点の個数も、停留点の種類も決めていません。",
+ uncTxt:(a,b)=>`保証のない数値：${a}、${b}。`, uncY:r=>`短軸の対 ±${r.toFixed(3)}·y`, uncX:r=>`中間軸の対 ±${r.toFixed(3)}`, uncC:r=>`半径 ${r.toFixed(3)} の停留円`, uncNo:n=>`${n}の上に内部の零点なし`,
+ scope:"論文の範囲：R の中の形だけを扱います。R の外については何も主張しません。楕円体の上の印は、中心（●）、極 ±e_y と ±e_x（■）、長軸の端（小さな灰色）です。",
+ foot1:"論文：古田 勝士（K. Furuta）, A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code, Version 1.0（2026年11月27日）。DOI：公開後に記入。",
+ foot3:"このファイルは単体で完結しています。第三者のコード、フォント、外部への通信はありません。コード：MIT ライセンス。文章：CC BY 4.0。© 2026 古田 勝士（DAYBREAK）。"
+}};
+let lang = "en";
+const S = {y:0.8, z:1.6, zoom:1, path:0, t:0, playing:false, yaw:0.62, pitch:0.36};
+const $ = id => document.getElementById(id);
+const NS = "http://www.w3.org/2000/svg";
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+// ---------- map geometry: user units X = 800*y, Y = 100*(7.2 - z)
+const MX = y => 800*y, MY = z => 100*(7.2 - z);
+const VB0 = {x:MX(0.165), y:MY(7.3), w:MX(1.105)-MX(0.165), h:MY(0.5)-MY(7.3)};
+function el(n, a, parent){ const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (parent) parent.appendChild(e); return e; }
+const map = $("map"); let gStatic, gSel, gText;
+function buildMap(){
+  map.innerHTML = "";
+  const defs = el("defs", {}, map);
+  const pat = el("pattern", {id:"hatch", width:10, height:10, patternUnits:"userSpaceOnUse", patternTransform:"rotate(45)"}, defs);
+  el("rect", {width:10, height:10, fill:"#e6e8ec"}, pat); el("line", {x1:0, y1:0, x2:0, y2:10, stroke:"#cfd3da", "stroke-width":4}, pat);
+  el("rect", {x:-4000, y:-4000, width:9000, height:9000, fill:"url(#hatch)"}, map);
+  el("rect", {x:MX(0.25), y:MY(7), width:MX(1)-MX(0.25), height:MY(1)-MY(7), fill:"#fff", stroke:"#555", "stroke-width":1, "vector-effect":"non-scaling-stroke"}, map);
+  gStatic = el("g", {}, map);
+  for (const q of Q) {            // (B) side band and centre line
+    const L = DATA.line[q], off = DATA.side[q], P = L.map(p => [MX(p[0]), MY(p[1])]);
+    const O = L.map(p => off.axis === 0 ? [MX(clamp(p[0] + off.d, 0.25, 1)), MY(p[1])] : [MX(p[0]), MY(clamp(p[1] + off.d, 1, 7))]).reverse();
+    el("polygon", {points:P.concat(O).map(p => p.join(",")).join(" "), fill:COL[q], "fill-opacity":0.2, stroke:"none"}, gStatic);
+    el("polyline", {points:P.map(p => p.join(",")).join(" "), fill:"none", stroke:COL[q], "stroke-opacity":0.55, "stroke-width":1.2, "stroke-dasharray":"5 3", "vector-effect":"non-scaling-stroke"}, gStatic);
+  }
+  for (const q of Q) for (const s of DATA.strips[q])   // (A) certified strips
+    el("rect", {x:MX(s[0]), y:MY(s[3]), width:MX(s[1])-MX(s[0]), height:MY(s[2])-MY(s[3]), fill:COL[q], "fill-opacity":0.55, stroke:COL[q], "stroke-width":1.6, "vector-effect":"non-scaling-stroke"}, gStatic);
+  for (const e of DATA.ends) {       // (A) end-point intervals on the edges
+    el("line", {x1:MX(e.box[0]), y1:MY(e.box[2]), x2:MX(e.box[1]), y2:MY(e.box[3]), stroke:"#111", "stroke-width":5, "stroke-linecap":"butt", "vector-effect":"non-scaling-stroke"}, gStatic);
+  }
+  const c = DATA.cross;             // (A) crossing box
+  el("rect", {x:MX(c.y[0]), y:MY(c.z[1]), width:MX(c.y[1])-MX(c.y[0]), height:MY(c.z[0])-MY(c.z[1]), fill:"none", stroke:"#111", "stroke-width":2.2, "vector-effect":"non-scaling-stroke"}, gStatic);
+  gText = el("g", {}, map); gSel = el("g", {}, map);
+}
+function viewBox(){
+  const w = VB0.w/S.zoom, h = VB0.h/S.zoom;
+  let x = S.zoom === 1 ? VB0.x : MX(S.y) - w/2, y = S.zoom === 1 ? VB0.y : MY(S.z) - h/2;
+  return {x, y, w, h};
+}
+function drawMapOverlay(){
+  const vb = viewBox(); map.setAttribute("viewBox", `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+  const u = vb.w/560;               // one "label unit" in user units, so labels keep their size on screen
+  gText.innerHTML = ""; gSel.innerHTML = "";
+  // text is drawn at a fixed font size and scaled by a transform (very small font sizes are not rendered reliably)
+  const tx = (x, y, s, a, rot) => { a = Object.assign({}, a||{}); const k = (a["font-size"] || 12*u)/12; delete a["font-size"];
+    const t = el("text", Object.assign({x:0, y:0, "font-size":12, transform:`translate(${x} ${y})` + (rot ? ` rotate(${rot})` : "") + ` scale(${k})`}, a), gText); t.textContent = s; return t; };
+  const t = T[lang];
+  for (const m of DATA.marks) {
+    const X = MX(m.y), Y = MY(m.z);
+    if (m.kind === "cross") el("circle", {cx:X, cy:Y, r:7*u, fill:"none", stroke:"#111", "stroke-width":1.4, "vector-effect":"non-scaling-stroke"}, gText);
+    else el("rect", {x:X-3.5*u, y:Y-3.5*u, width:7*u, height:7*u, fill:m.kind === "ball" ? "#666" : "#111"}, gText);
+    const lab = m.kind === "cross" ? t.cross : m.kind === "ball" ? t.ball : m.label;
+    if (m.at === "right") tx(X + 8*u, Y + 4*u, lab); else if (m.at === "below") tx(X, Y + 17*u, lab, {"text-anchor":"middle"}); else if (m.at === "left") tx(X - 9*u, Y + 4*u, lab, {"text-anchor":"end"}); else tx(X - 10*u, Y - 9*u, lab, {"text-anchor":"end"});
+  }
+  if (S.zoom === 1) {
+    tx(MX(0.625), MY(0.58), t.xl, {"text-anchor":"middle"});
+    tx(MX(0.19), MY(4), t.yl, {"text-anchor":"middle"}, -90);
+    tx(MX(0.99), MY(1.08), t.oblate, {"text-anchor":"end", fill:"#666", "font-size":10.5*u});
+    tx(MX(1.06), MY(5.9), t.prolate, {"text-anchor":"middle", fill:"#666", "font-size":10.5*u}, -90);
+    tx(MX(0.26), MY(7.12), t.rlabel, {fill:"#444", "font-size":11*u}); tx(MX(0.625), MY(7.12), t.outside, {fill:"#777", "font-size":11*u});
+    for (const v of [0.25, 0.5, 0.75, 1]) tx(MX(v), MY(0.78), String(v), {"text-anchor":"middle", fill:"#666", "font-size":10.5*u});
+    for (const v of [1, 2, 3, 4, 5, 6, 7]) tx(MX(0.235), MY(v) + 4*u, String(v), {"text-anchor":"end", fill:"#666", "font-size":10.5*u});
+  }
+  if (S.path > 0) { const P = pathPoints(S.path); el("polyline", {points:P.map(p => MX(p[0]) + "," + MY(p[1])).join(" "), fill:"none", stroke:"#222", "stroke-opacity":0.35, "stroke-width":1.2, "vector-effect":"non-scaling-stroke"}, gSel); }
+  const X = MX(S.y), Y = MY(S.z);
+  el("circle", {cx:X, cy:Y, r:9*u, fill:"none", stroke:"#c0182b", "stroke-width":2, "vector-effect":"non-scaling-stroke"}, gSel);
+  el("circle", {cx:X, cy:Y, r:2.2*u, fill:"#c0182b"}, gSel);
+}
+function pathPoints(k){
+  const c = DATA.cross, ys = (c.y[0] + c.y[1])/2, zs = (c.z[0] + c.z[1])/2;
+  if (k === 1) return [[1, 1], [0.25, 1]];
+  if (k === 2) return [[1, 1], [1, 7]];
+  if (k === 3) { const t1 = (0.25 - 1)/(ys - 1); return [[1, 1], [ys, zs], [0.25, 1 + t1*(zs - 1)]]; }
+  return [[1, 3.5], [0.25, 3.5]];
+}
+function onPath(k, t){
+  const P = pathPoints(k); let len = [], tot = 0;
+  for (let i = 0; i < P.length - 1; i++) { const d = Math.hypot((P[i+1][0]-P[i][0])*8, P[i+1][1]-P[i][1]); len.push(d); tot += d; }
+  let s = t*tot;
+  for (let i = 0; i < len.length; i++) { if (s <= len[i] || i === len.length - 1) { const f = clamp(s/len[i], 0, 1); return [P[i][0] + f*(P[i+1][0]-P[i][0]), P[i][1] + f*(P[i+1][1]-P[i][1])]; } s -= len[i]; }
+}
+// ---------- which certified boxes contain the selected shape
+function inStrips(q, y, z){ for (const s of DATA.strips[q]) if (y >= s[0] && y <= s[1] && z >= s[2] && z <= s[3]) return true; return false; }
+function events(){
+  const y = S.y, z = S.z, ev = {Z1:inStrips("Z1", y, z), Z2:inStrips("Z2", y, z), D1:inStrips("D1", y, z), D2:inStrips("D2", y, z), cp:false, bp:false, x:false};
+  const c = DATA.cross; ev.x = y >= c.y[0] && y <= c.y[1] && z >= c.z[0] && z <= c.z[1];
+  if (y >= 1 - 1e-12) { const a = DATA.edgeEnds.cp, b = DATA.edgeEnds.bp; ev.cp = z >= a[0] && z <= a[1]; ev.bp = z >= b[0] && z <= b[1]; }
+  return ev;
+}
+// ---------- uncertified table lookup (bilinear where all four neighbours have a value, else nearest node)
+function unc(tab, y, z){
+  const U = DATA.unc; if (!U) return null;
+  const fy = (y - U.ys[0])/(U.ys[1] - U.ys[0]), fz = (z - U.zs[0])/(U.zs[1] - U.zs[0]);
+  const i = clamp(Math.floor(fy), 0, U.ys.length - 2), j = clamp(Math.floor(fz), 0, U.zs.length - 2), a = fy - i, b = fz - j;
+  const v = [tab[i][j], tab[i+1][j], tab[i][j+1], tab[i+1][j+1]];
+  if (v.every(x => x !== null)) return v[0]*(1-a)*(1-b) + v[1]*a*(1-b) + v[2]*(1-a)*b + v[3]*a*b;
+  return tab[a < 0.5 ? i : i+1][b < 0.5 ? j : j+1];
+}
+// ---------- 3D view (orthographic, painter's algorithm, no library)
+const cv = $("view"), ctx = cv.getContext("2d");
+function proj(p, sc, cx, cy){
+  const cf = Math.cos(S.yaw), sf = Math.sin(S.yaw), ct = Math.cos(S.pitch), st = Math.sin(S.pitch);
+  const x1 = p[0]*cf - p[1]*sf, y1 = p[0]*sf + p[1]*cf, z1 = p[2];
+  return [cx + sc*x1, cy - sc*(y1*st + z1*ct), y1*ct - z1*st];
+}
+function drawView(time){
+  const dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
+  if (cv.width !== Math.round(W*dpr) || cv.height !== Math.round(H*dpr)) { cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr); }
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+  const a = 1, b = S.y, c = S.z, sc = 0.43*Math.min(W, H)/Math.max(a, b, c), cx = W/2, cy = H/2;
+  const P = p => proj(p, sc, cx, cy), ev = events(), pulse = 0.5 + 0.5*Math.sin(time/260);
+  const NU = 36, NV = 18, quads = [];
+  for (let i = 0; i < NV; i++) for (let j = 0; j < NU; j++) {
+    const pts = [[i, j], [i+1, j], [i+1, j+1], [i, j+1]].map(([ii, jj]) => { const th = Math.PI*ii/NV, ph = 2*Math.PI*jj/NU; return [a*Math.sin(th)*Math.cos(ph), b*Math.sin(th)*Math.sin(ph), c*Math.cos(th)]; });
+    const th = Math.PI*(i+0.5)/NV, ph = 2*Math.PI*(j+0.5)/NU, n = [Math.sin(th)*Math.cos(ph)/a, Math.sin(th)*Math.sin(ph)/b, Math.cos(th)/c], nl = Math.hypot(n[0], n[1], n[2]);
+    const nv = proj([n[0]/nl, n[1]/nl, n[2]/nl], 1, 0, 0), q = pts.map(P);
+    quads.push({q, d:(q[0][2]+q[1][2]+q[2][2]+q[3][2])/4, front:nv[2] < 0, sh:clamp(0.55 - 0.35*nv[0] + 0.35*(-nv[1]), 0.15, 1)});
+  }
+  quads.sort((u, v) => v.d - u.d);
+  const fillQ = (k, col) => { ctx.beginPath(); ctx.moveTo(k.q[0][0], k.q[0][1]); for (let m = 1; m < 4; m++) ctx.lineTo(k.q[m][0], k.q[m][1]); ctx.closePath(); ctx.fillStyle = col; ctx.fill(); };
+  for (const k of quads) if (!k.front) fillQ(k, `rgba(${Math.round(150*k.sh+60)},${Math.round(165*k.sh+60)},${Math.round(190*k.sh+50)},0.5)`);
+  const line = (p, q, col, w, dash) => { const A = P(p), B = P(q); ctx.beginPath(); ctx.setLineDash(dash || []); ctx.moveTo(A[0], A[1]); ctx.lineTo(B[0], B[1]); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.stroke(); ctx.setLineDash([]); };
+  const hiY = ev.Z1 || ev.D1, hiX = ev.Z2 || ev.D2;
+  line([-a,0,0], [a,0,0], hiX ? COL[ev.Z2 ? "Z2" : "D2"] : "#667", hiX ? 3 : 1.2);
+  line([0,-b,0], [0,b,0], hiY ? COL[ev.Z1 ? "Z1" : "D1"] : "#667", hiY ? 3 : 1.2);
+  line([0,0,-c], [0,0,c], "#99a", 1, [4, 3]);
+  const ring = (rad, col, w, dash) => { ctx.beginPath(); ctx.setLineDash(dash || []); for (let m = 0; m <= 72; m++) { const ph = 2*Math.PI*m/72, p = P([rad*Math.cos(ph), rad*b*Math.sin(ph), 0]); m ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); } ctx.strokeStyle = col; ctx.lineWidth = w; ctx.stroke(); ctx.setLineDash([]); };
+  if (ev.cp) ring(0.10 + 0.05*pulse, "#c0182b", 3);
+  if (ev.bp) ring(0.985, "#c0182b", 3 + 2*pulse);
+  const dot = (p, r, fill, stroke, sq) => { const A = P(p); ctx.beginPath(); if (sq) ctx.rect(A[0]-r, A[1]-r, 2*r, 2*r); else ctx.arc(A[0], A[1], r, 0, 7); if (fill) { ctx.fillStyle = fill; ctx.fill(); } if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 2; ctx.stroke(); } };
+  const halo = (p, col) => { const A = P(p); ctx.beginPath(); ctx.arc(A[0], A[1], 9 + 7*pulse, 0, 7); ctx.strokeStyle = col; ctx.lineWidth = 3; ctx.globalAlpha = 0.9 - 0.5*pulse; ctx.stroke(); ctx.globalAlpha = 1; };
+  // uncertified points (C)
+  let ut = "";
+  if (DATA.unc && $("unc").checked) {
+    const ry = unc(DATA.unc.ry, S.y, S.z), rx = unc(DATA.unc.rx, S.y, S.z), t = T[lang], col = "#7a3fb5";
+    if (S.y >= 1 - 1e-9 && ry !== null) { ring(ry, col, 2, [5, 4]); ut = (lang === "en" ? "Uncertified: " : "保証のない数値：") + t.uncC(ry) + (lang === "en" ? "." : "。"); }
+    else {
+      if (ry !== null) for (const s of [-1, 1]) dot([0, s*ry*b, 0], 5.5, "#fff", col);
+      if (rx !== null) for (const s of [-1, 1]) dot([s*rx, 0, 0], 5.5, "#fff", col);
+      ut = t.uncTxt(ry !== null ? t.uncY(ry) : t.uncNo(t.short), rx !== null ? t.uncX(rx) : t.uncNo(t.mid));
+    }
+  }
+  dot([0,0,0], 5, "#111"); if (ev.Z1) halo([0,0,0], COL.Z1); if (ev.Z2) halo([0,0,0], COL.Z2); if (ev.x) halo([0,0,0], "#c0182b");
+  const poles = [[[0,b,0], ev.D1, COL.D1], [[0,-b,0], ev.D1, COL.D1], [[a,0,0], ev.D2, COL.D2], [[-a,0,0], ev.D2, COL.D2]];
+  for (const [p, on, col] of poles) { dot(p, 4.5, "#111", null, true); if (on) halo(p, col); }
+  dot([0,0,c], 3, "#99a"); dot([0,0,-c], 3, "#99a");
+  for (const k of quads) if (k.front) { fillQ(k, `rgba(${Math.round(120*k.sh+110)},${Math.round(140*k.sh+100)},${Math.round(175*k.sh+75)},0.26)`); }
+  ctx.strokeStyle = "rgba(40,60,90,0.16)"; ctx.lineWidth = 0.6;
+  for (const k of quads) if (k.front) { ctx.beginPath(); ctx.moveTo(k.q[0][0], k.q[0][1]); ctx.lineTo(k.q[1][0], k.q[1][1]); ctx.lineTo(k.q[2][0], k.q[2][1]); ctx.stroke(); }
+  ctx.fillStyle = "#333"; ctx.font = "12px system-ui,sans-serif";
+  const lab = (p, s) => { const A = P(p); ctx.fillText(s, A[0] + 8, A[1] - 6); };
+  lab([a,0,0], "e_x"); lab([0,b,0], "e_y"); lab([0,0,c], "e_z");
+  return ut;
+}
+// ---------- text
+function updateText(){
+  const t = T[lang], ev = events(), out = [];
+  $("status").textContent = t.status(S.y, S.z);
+  if (ev.x) out.push(t.evX);
+  if (ev.cp) out.push(t.evCp); if (ev.bp) out.push(t.evBp);
+  if (!ev.cp && !ev.bp && !ev.x) {
+    if (ev.Z1) out.push(t.evZ("Z₁", t.short, "A_y")); if (ev.Z2) out.push(t.evZ("Z₂", t.mid, "A_x"));
+    if (ev.D1) out.push(t.evD("∂₁", t.short, "±e_y", "T_y")); if (ev.D2) out.push(t.evD("∂₂", t.mid, "±e_x", "T_x"));
+  }
+  const E = $("event"); E.className = out.length ? "on" : ""; E.textContent = out.length ? out.join("  ") : t.evNone;
+  if (lastUnc) { const d = document.createElement("div"); d.style.cssText = "margin-top:6px;color:#7a3fb5;font-size:13px"; d.textContent = lastUnc; E.appendChild(d); }
+}
+let lastUnc = "";
+function applyLang(){
+  document.documentElement.lang = lang; const t = T[lang];
+  document.querySelectorAll("[data-t]").forEach(e => { e.textContent = t[e.dataset.t]; });
+  $("bEn").setAttribute("aria-pressed", lang === "en"); $("bJa").setAttribute("aria-pressed", lang === "ja");
+  const sel = $("path"); sel.innerHTML = ""; t.paths.forEach((s, i) => { const o = document.createElement("option"); o.value = i; o.textContent = s; sel.appendChild(o); }); sel.value = S.path;
+  $("arcs").innerHTML = ""; for (const q of Q) { const s = document.createElement("span"); s.innerHTML = `<i style="background:${COL[q]}"></i>`; s.appendChild(document.createTextNode(t.arc[q])); $("arcs").appendChild(s); }
+  $("play").textContent = S.playing ? t.pause : t.play;
+  const m = DATA.meta; $("foot2").textContent = (lang === "en" ? "Inputs: " : "入力：") + `${m.repo} @ ${m.ledger_commit} — charts.jsonl SHA-256 ${m.charts_sha256}; edges.jsonl SHA-256 ${m.edges_sha256}. ` + (lang === "en" ? "Crossing box: Theorem 1 of the paper (ruling " : "交点の箱：論文の定理 1（裁定 ") + m.crossing_ruling + (lang === "en" ? "). " : "）。") + (DATA.unc ? (lang === "en" ? "Uncertified table: " : "保証のない数値の表：") + m.unc_source + ". " : "") + (lang === "en" ? "Built by build_viewer.py (deterministic)." : "build_viewer.py で生成（決定的）。");
+  if (!DATA.unc) { $("uncRow").style.display = "none"; $("legCrow").style.display = "none"; $("uncNote").style.display = "none"; }
+  drawMapOverlay(); updateText();
+}
+// ---------- interaction
+function setShape(y, z){ S.y = clamp(y, 0.25, 1); S.z = clamp(z, 1, 7); drawMapOverlay(); updateText(); }
+function mapPoint(e){ const pt = map.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const p = pt.matrixTransform(map.getScreenCTM().inverse()); return [p.x/800, 7.2 - p.y/100]; }
+let dragMap = false;
+map.addEventListener("pointerdown", e => { dragMap = true; map.setPointerCapture(e.pointerId); stop(); S.path = 0; $("path").value = 0; const p = mapPoint(e); setShape(p[0], p[1]); });
+map.addEventListener("pointermove", e => { if (dragMap && S.zoom === 1) { const p = mapPoint(e); setShape(p[0], p[1]); } });
+map.addEventListener("pointerup", () => { dragMap = false; }); map.addEventListener("pointercancel", () => { dragMap = false; });
+let dragV = null;
+cv.addEventListener("pointerdown", e => { dragV = [e.clientX, e.clientY]; cv.setPointerCapture(e.pointerId); cv.style.cursor = "grabbing"; });
+cv.addEventListener("pointermove", e => { if (dragV) { S.yaw += (e.clientX - dragV[0])*0.01; S.pitch = clamp(S.pitch + (e.clientY - dragV[1])*0.01, -1.5, 1.5); dragV = [e.clientX, e.clientY]; } });
+const endV = () => { dragV = null; cv.style.cursor = "grab"; }; cv.addEventListener("pointerup", endV); cv.addEventListener("pointercancel", endV);
+$("zIn").onclick = () => { S.zoom = Math.min(256, S.zoom*4); drawMapOverlay(); };
+$("zOut").onclick = () => { S.zoom = Math.max(1, S.zoom/4); drawMapOverlay(); };
+$("zReset").onclick = () => { S.zoom = 1; drawMapOverlay(); };
+$("path").onchange = e => { S.path = +e.target.value; S.t = 0; $("slider").value = 0; if (S.path > 0) { const p = onPath(S.path, 0); setShape(p[0], p[1]); } else { stop(); drawMapOverlay(); } };
+$("slider").oninput = e => { if (S.path === 0) { S.path = 1; $("path").value = 1; } S.t = e.target.value/1000; const p = onPath(S.path, S.t); setShape(p[0], p[1]); };
+function stop(){ S.playing = false; $("play").textContent = T[lang].play; }
+$("play").onclick = () => { if (S.playing) return stop(); if (S.path === 0) { S.path = 3; $("path").value = 3; } if (S.t >= 1) S.t = 0; S.playing = true; $("play").textContent = T[lang].pause; };
+$("bEn").onclick = () => { lang = "en"; applyLang(); }; $("bJa").onclick = () => { lang = "ja"; applyLang(); };
+$("unc").onchange = () => updateText();
+let last = 0;
+function frame(time){
+  if (S.playing) { S.t = Math.min(1, S.t + (time - last)/16000); $("slider").value = Math.round(S.t*1000); const p = onPath(S.path, S.t); S.y = p[0]; S.z = p[1]; drawMapOverlay(); if (S.t >= 1) stop(); }
+  last = time; const u = drawView(time); if (u !== lastUnc || S.playing) { lastUnc = u; updateText(); }
+  requestAnimationFrame(frame);
+}
+buildMap(); applyLang(); requestAnimationFrame(frame);
+window.__viewer = {S, events, setShape, DATA};
+</script>
+</body>
+</html>

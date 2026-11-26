@@ -1,0 +1,94 @@
+{
+ "consecutive_strips_touch_or_overlap": {
+  "D1": {
+   "not_touching": 0,
+   "pairs": 110
+  },
+  "D2": {
+   "not_touching": 0,
+   "pairs": 70
+  },
+  "Z1": {
+   "not_touching": 0,
+   "pairs": 275
+  },
+  "Z2": {
+   "not_touching": 0,
+   "pairs": 153
+  }
+ },
+ "crossing_box_inside_a_Z1_strip_and_a_D2_strip": [
+  true,
+  true
+ ],
+ "crossing_mark_inside_theorem_interval": true,
+ "end_marks_inside_certified_intervals": {
+  "D1": [
+   true,
+   true
+  ],
+  "D2": [
+   true,
+   true
+  ],
+  "Z1": [
+   true,
+   true
+  ],
+  "Z2": [
+   true,
+   true
+  ]
+ },
+ "external_references_in_html": [],
+ "first_and_last_strip_meet_the_end_intervals": {
+  "D1": [
+   true,
+   true
+  ],
+  "D2": [
+   true,
+   true
+  ],
+  "Z1": [
+   true,
+   true
+  ],
+  "Z2": [
+   true,
+   true
+  ]
+ },
+ "html_bytes": 106906,
+ "html_sha256": "4234393889aefe8bec2a0c2eb5c05f8ad959e2ed61bcb850a920c9128450d00c",
+ "line_vertex_inside_every_strip": {
+  "D1": true,
+  "D2": true,
+  "Z1": true,
+  "Z2": true
+ },
+ "paper_I_values_inside_end_intervals": {
+  "bo": true,
+  "bp": true,
+  "co": true,
+  "cp": true
+ },
+ "side_band_agrees_with_ledger": {
+  "disagreements": 0,
+  "ids": [],
+  "strips_tested": 612
+ },
+ "side_band_as_in_figure_2": true,
+ "strip_counts": {
+  "D1": 111,
+  "D2": 71,
+  "Z1": 276,
+  "Z2": 154
+ },
+ "strip_counts_as_in_paper": true,
+ "uncertified_table": {
+  "more_than_one_sign_change": 0,
+  "sha256": "3a44142436fba71568aee4f30810d4fbc086bc873fbcbd047a4c28d3d0897489",
+  "shapes": 2806
+ }
+}

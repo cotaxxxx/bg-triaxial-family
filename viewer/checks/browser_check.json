@@ -1,0 +1,44 @@
+{
+ "requests_other_than_the_file": [],
+ "console_errors": [],
+ "functional": {
+  "strip_centres_flag_Z1": "276/276",
+  "strip_centres_flag_Z2": "154/154",
+  "strip_centres_flag_D1": "111/111",
+  "strip_centres_flag_D2": "71/71",
+  "crossing": {
+   "x": true,
+   "Z1": true,
+   "D2": true,
+   "Z2": false,
+   "D1": false,
+   "text_on": "on"
+  },
+  "cp": {
+   "cp": true,
+   "bp": false
+  },
+  "bp": {
+   "cp": false,
+   "bp": true
+  },
+  "generic_point": {
+   "any": false,
+   "text": "This shape lies in no certified strip. Paper II makes no sta"
+  },
+  "clamped_to_R": [
+   0.25,
+   7
+  ],
+  "strip_rects_in_svg": 620
+ },
+ "screens": [
+  "desktop_en.png",
+  "desktop_ja.png",
+  "desktop_en_zoom64_crossing.png",
+  "phone_en.png",
+  "phone_ja.png"
+ ],
+ "horizontal_scroll_desktop": false,
+ "horizontal_scroll_phone": false
+}

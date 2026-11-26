@@ -1,0 +1,11 @@
+{
+ "tested": 2640,
+ "skipped_near_a_line": 166,
+ "agree": 2640,
+ "disagree": [],
+ "pairs_in_table": {
+  "short": 480,
+  "middle": 1412
+ },
+ "disagree_count": 0
+}
