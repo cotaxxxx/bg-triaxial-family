@@ -1,0 +1,22 @@
+{
+  "started": "2026-11-27T04:44:57.190444+09:00",
+  "finished": "2026-11-27T04:54:33.042643+09:00",
+  "elapsed_seconds": 575.8521878109314,
+  "reason": "ISOLATE_FINISHED",
+  "scan": {
+    "started": "2026-11-27T04:44:57.190557+09:00",
+    "finished": "2026-11-27T04:46:03.151270+09:00",
+    "elapsed_seconds": 65.96074083307758,
+    "exit_status": 0,
+    "outer_timeout": false,
+    "remaining_process_group_members": []
+  },
+  "isolate": {
+    "started": "2026-11-27T04:46:03.164482+09:00",
+    "finished": "2026-11-27T04:54:33.042411+09:00",
+    "elapsed_seconds": 509.87795035913587,
+    "exit_status": 0,
+    "outer_timeout": false,
+    "remaining_process_group_members": []
+  }
+}

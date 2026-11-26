@@ -1,0 +1,51 @@
+{
+  "tasks": 1412,
+  "completed": 1412,
+  "missing": 0,
+  "counts": {
+    "EXPECTED": 1110,
+    "UNRESOLVED": 302
+  },
+  "by_quantity": {
+    "Z1/Az": {
+      "EXPECTED": 276
+    },
+    "Z2/Az": {
+      "EXPECTED": 126,
+      "UNRESOLVED": 28
+    },
+    "D1/Jyx": {
+      "EXPECTED": 112
+    },
+    "D1/Jyz": {
+      "EXPECTED": 112
+    },
+    "Z1/By": {
+      "EXPECTED": 137,
+      "UNRESOLVED": 139
+    },
+    "D2/Jxy": {
+      "EXPECTED": 38,
+      "UNRESOLVED": 34
+    },
+    "Z2/Bx": {
+      "EXPECTED": 53,
+      "UNRESOLVED": 101
+    },
+    "D2/Nx": {
+      "EXPECTED": 72
+    },
+    "D2/Jxz": {
+      "EXPECTED": 72
+    },
+    "D1/Ny": {
+      "EXPECTED": 112
+    }
+  },
+  "unresolved": 302,
+  "threshold": 706,
+  "threshold_exceeded": false,
+  "scan_exit_status": 0,
+  "isolate_minutes": 357,
+  "decision": "ISOLATE_AUTHORIZED"
+}

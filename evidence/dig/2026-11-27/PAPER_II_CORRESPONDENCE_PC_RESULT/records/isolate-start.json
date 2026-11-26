@@ -1,0 +1,24 @@
+{
+  "started": "2026-11-27T04:46:03.164482+09:00",
+  "pid": 1930807,
+  "process_group": 1930807,
+  "command": [
+    "python3",
+    "-B",
+    "run.py",
+    "isolate",
+    "--repo",
+    "/home/daybreak/e2ref/repo",
+    "--out",
+    "/home/daybreak/paper-ii-correspondence-pc-20261127/RESULT",
+    "--chat-audit",
+    "c3042489ee3b4bb425d95d9ba0d257d683c3eba1",
+    "--judge-approval",
+    "f9dd5c54d9e45a3d28c9c7e3d8318599a0ab3f9a",
+    "--workers",
+    "4",
+    "--minutes",
+    "357"
+  ],
+  "wall_limit_seconds": 21529.02598986635
+}

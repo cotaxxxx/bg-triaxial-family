@@ -1,0 +1,13 @@
+{
+  "started": "2026-11-27T04:44:57.190444+09:00",
+  "bundle_commit": "04051b610bd1ada9992e8912a3bdad4954ae929c",
+  "bundle_sha256": "3e655bb2d907bf5c641fa9a38fd7256438f49cda636400331b7e5dab47fad8cf",
+  "audit": "c3042489ee3b4bb425d95d9ba0d257d683c3eba1",
+  "approval": "f9dd5c54d9e45a3d28c9c7e3d8318599a0ab3f9a",
+  "workers": 4,
+  "scan_minutes": 59,
+  "scan_wall_limit_seconds": 3600,
+  "total_wall_limit_seconds": 21600,
+  "unresolved_stop_threshold": 706,
+  "withdrawn_old_bundle": "3accf27"
+}

@@ -1,0 +1,15 @@
+{
+  "grade": "DIAGNOSTIC_ONLY",
+  "receipt": "CHECKS_RECORDED",
+  "tasks": 1412,
+  "completed_tasks": 1412,
+  "missing_scan": 0,
+  "missing_or_pending": 0,
+  "leaves": {
+    "EXPECTED": 1751
+  },
+  "unresolved": [],
+  "zero_brackets": [],
+  "reversed": [],
+  "note": "Per-chart brackets; overlapping witnesses are not distinct-zero counts."
+}

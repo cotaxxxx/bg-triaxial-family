@@ -1,0 +1,19 @@
+{
+  "v2": {
+    "work/main/D1/charts.jsonl": "c37bef0c0f7110f7965d4e36361bf6c040f455e71fa0f4c845b000345b5159b6",
+    "work/main/D1/enclosures.jsonl": "00ddc66e378dc16df7f96e201d62c9f3663217c0d20935849272223a0c39e902",
+    "work/main/D2/charts.jsonl": "af6d18772b782d2469b88afd832fe7563d440c6cbb9b20b77da2d7b0f7923fb6",
+    "work/main/D2/enclosures.jsonl": "3a5e75a925f96957cb64dec64dc659bde82a8df5e16bd0ff6d89e598aa3cc64c",
+    "work/main/Z1/charts.jsonl": "425f3baeddcfbefbd11138c908a58047bac92ebc601fa2cd90e3b1c53c2b251f",
+    "work/main/Z1/enclosures.jsonl": "eecb6095beaabad9580c0702ab467c6bf3a0a74ce67d5fd5aaa875c7a5b09878",
+    "work/main/Z2/charts.jsonl": "983a0bac14a12a0dbab3dc6635f31d27a891b5ef8187b9f5c337f6d1aa253d82",
+    "work/main/Z2/enclosures.jsonl": "54d05b31b74edabb7ba40a2725218a58f9b494d9941f988258473cc0fddf2316"
+  },
+  "v3": {
+    "work/local/proof/integrals.jsonl": "33696919b68ceb3aa92bea774035c34a4a0449c0fbab9b60e1f8116b5a122a7e",
+    "work/local/proof/intersections.jsonl": "dbcebeae667e1e940f42baaa1e59ce7d1b616b7ee7cc98728a30677132e24b9c"
+  },
+  "v4": {
+    "LEDGER_INSPECTION.json": "9f00ff65f2f562d5ee27251e9021faafd1d55e5e8051868fac30a3a5091c08ce"
+  }
+}

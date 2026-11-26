@@ -1,0 +1,21 @@
+DERIVATION.md BYTE_MATCH
+PLAN.md BYTE_MATCH
+PROVENANCE.json BYTE_MATCH
+README.md BYTE_MATCH
+SHA256SUMS.txt BYTE_MATCH
+SOURCE_FILES.json BYTE_MATCH
+SUPPORT.jsonl BYTE_MATCH
+base/INPUTS.json BYTE_MATCH
+base/build_probe.c BYTE_MATCH
+base/candidate.c BYTE_MATCH
+base/engine.py BYTE_MATCH
+base/interval.h BYTE_MATCH
+base/jets.h BYTE_MATCH
+build.sh BYTE_MATCH
+frozen.py BYTE_MATCH
+method.py BYTE_MATCH
+prepare_kernel.py BYTE_MATCH
+quantities.inc BYTE_MATCH
+run.py BYTE_MATCH
+smoke.py BYTE_MATCH
+20 archive files equal pinned Git originals; safe paths
