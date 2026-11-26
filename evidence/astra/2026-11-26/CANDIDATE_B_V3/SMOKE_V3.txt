@@ -1,0 +1,17 @@
+2026-11-26 JST | DIAGNOSTIC_ONLY | work-machine checks
+
+No v3 pilot, shape integral or research-PC operation was performed.
+The checks below used synthetic rational functions and frozen v2 geometry.
+
+bash -n build.sh, Python AST parsing, both CLI help entry points completed.
+Static plan: 50,100,000 additional panels; v2 p90 forecasts 15657.435 s.
+Artificial shared roots: factored D, both reconstructed face signs, and tamper check.
+Artificial crossing: eight graph seams, strict Krawczyk image and tamper check.
+Artificial residuals: chart widening at depth 18, Z2 early sign at 16 cells, and global gate.
+Artificial receipts: omitted overlap and premature Jacobi timestamp rejected.
+V2 kernel files, engine, v2 inputs, build and inherited verifier match byte for byte.
+
+The v2 coordinate files and chart boxes have dyadic endpoints. The planning
+coverage counts use exact integer-scaled coordinate comparisons only.
+These counts measure geometric containment by the proposed rectangles.
+Derivative signs for the padded rectangles are conditions for the Dig run.
