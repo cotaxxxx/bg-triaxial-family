@@ -1,0 +1,19 @@
+2026-11-27 JST | DIAGNOSTIC_ONLY | preregistration checks
+
+cc (Debian 14.2.0-19) 14.2.0
+Header/link probe: MPFR 4.2.2, GMP 6.3.0, 64-bit GMP limbs.
+The local smoke build used the upstream MPFR 4.2.2 header and the matching runtime.
+The upstream archive SHA-256 was b67ba0383ef7e8a8563734e2e889ef5ec3c3b898a01d00fa0a6869ad81c6ce01.
+
+Artificial angular coefficient: rotation of two rational forms agrees exactly.
+Artificial checks: full bisection, monotone graph zero, Krawczyk and tamper rejection.
+Native MPFR analytic sphere: 10 inclusions, 800 panels, including F order 9.
+
+Analytic sphere references are 4/3 (AZ), -16/3 (KY/KX),
+-3*pi^2/16 - 1/2 (MY/MX), 9*pi^2/64 - 1/2 (four C modes),
+and -416/105 (the y derivative of KY). Pi bounds use the rational
+Machin reader from Candidate B. The last derivative exercises the ninth
+series order in the angular remainder.
+
+Python/shell syntax, original-source bytes, and archive-member bytes checked.
+No new shape-chart case or research-PC command was run.

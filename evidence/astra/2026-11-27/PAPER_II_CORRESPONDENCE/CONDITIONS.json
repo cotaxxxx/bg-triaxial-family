@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "grade": "DIAGNOSTIC_ONLY",
+  "scope_ruling": "105a5c10fad8657ed654ff48abbffa2a10a59000",
+  "adoption": "2d2576ee43f07a3cb94df28d63051f52649e3c81",
+  "v2_result": "862220cc03f8044ab770548d865a76ed56fc612c",
+  "v3_result": "7c6cd7ecb21d7d4465e2140c5465412e4f3a4720",
+  "v4_result": "f58ca0c871bc075c89f09aa1df5a2e4ec4b702b7",
+  "claude_code_report": "evidence/source-snapshots/claude-first-map/REPORT.md",
+  "claude_code_review": "0854cd3e3de0fc5e2f87da2000cf1b39a14ff3a4",
+  "region": ["1/4", "1", "1", "7"],
+  "families": {
+    "Z1": {"charts": 276, "active_axis": "y", "channels": ["AZ","KY"]},
+    "Z2": {"charts": 154, "active_axis": "x", "channels": ["AZ","KX"]},
+    "D1": {"charts": 112, "active_axis": "y", "channels": ["MY","CYX","CYZ"]},
+    "D2": {"charts": 72, "active_axis": "x", "channels": ["MX","CXY","CXZ"]}
+  },
+  "native_ids": ["Z1","Z2","D1","D2","AZ","KY","KX","MY","MX","CYX","CXY","CYZ","CXZ"],
+  "expected_sign": {"AZ": 1, "KY": -1, "KX": -1, "MY": -1, "MX": -1,
+                    "CYX": 1, "CXY": 1, "CYZ": 1, "CXZ": 1},
+  "shared": {
+    "cp": {"id": "v3.local.proof.intersections.2", "pair": ["Z1","Z2"]},
+    "bp": {"id": "v3.local.proof.intersections.1", "pair": ["D1","D2"]}
+  },
+  "precision": 128,
+  "stages": [64, 256, 1024],
+  "exception_stages": [256, 1024, 4096],
+  "max_base_depth": 4,
+  "max_formula_calls": 2400000,
+  "evaluation_seconds": 7200,
+  "inspection_seconds": 300
+}

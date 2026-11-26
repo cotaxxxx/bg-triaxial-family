@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "status": "DIAGNOSTIC_ONLY",
+  "date_jst": "2026-11-27",
+  "stage": "PREREGISTERED_NOT_EXECUTED",
+  "repository": "cotaxxxx/bg-triaxial-family",
+  "branch": "evidence/triaxial-chat",
+  "path": "evidence/astra/2026-11-27/PAPER_II_CORRESPONDENCE",
+  "archive_root": "PAPER_II_CORRESPONDENCE_PC_BUNDLE",
+  "scope": "Local correspondence tests on the four accepted zero curves only",
+  "parents": {
+    "scope_ruling": "105a5c10fad8657ed654ff48abbffa2a10a59000",
+    "adoption": "2d2576ee43f07a3cb94df28d63051f52649e3c81",
+    "v2_result": "862220cc03f8044ab770548d865a76ed56fc612c",
+    "v3_result": "7c6cd7ecb21d7d4465e2140c5465412e4f3a4720",
+    "v4_result": "f58ca0c871bc075c89f09aa1df5a2e4ec4b702b7"
+  },
+  "fixed_sources": {
+    "src/build_probe.c": "ad241332c27cf8a862c34ca0f1d7af842b6575db4a21d94fb5279d0919d31e34",
+    "src/candidate.c": "c386db4b92ae60892a5bbeb1e2eefad7d774940823a2bb4d9c831c3d6e9e01d3",
+    "src/jets.h": "6b13da992ac7860750e13d71d4a84026e853eb284ada9fb003b8ccb87bd075a9",
+    "src/interval.h": "6f7035e6c3a8bd1d0919066d32fe5a1fa2d3181df00998c90d8b0707fc62c713",
+    "engine.py": "4b90a2323b51c5376aaf3c44c94bc6fed6aa677f31e89a8f94a386ed8dd2804e",
+    "INPUTS.json": "02a4893bee07bf954063896db171396fd15cc0bfa1c110a154e0366d2fb44fc7",
+    "verify_v2.py": "70e328ae3c11eeadae8467fb44bba8462428485699719339cd2fff7ee7e186de",
+    "v2_lock.py": "e5c83d03c5ec577e42175c396c9f8e708c6aa11aed781c63c5e0107105b3d259",
+    "V2_RESULT_SHA256SUMS.txt": "6662fcafa787fd55017deb79b3c0072bc217fbc53860005701304f39724420c4",
+    "V3_RESULT_SHA256SUMS.txt": "282a1c3c19dcc81a920b0530689026c3842e23bcfc9227ae9a5e15201152118e"
+  },
+  "generated_sources": {
+    "candidate.c": "71f976c3f55e7a4419b593743415a935bc702a2bb491f2f4cb35e5d2e8a6a41c",
+    "interval.h": "6f7035e6c3a8bd1d0919066d32fe5a1fa2d3181df00998c90d8b0707fc62c713",
+    "jets.h": "c42cefddccecc3abe5f195d530dab88e0e5f740b70da297ea6c5a5271c31d949",
+    "new_integrands.h": "3093360ac55d6d8e0b5a6d0625aa7611da1b5047774ad05950a033e61b4453f2"
+  },
+  "generation_diff": "GENERATED_KERNEL.patch",
+  "execution_requires": [
+    "chat plan and code audit",
+    "separate Judge approval",
+    "Dig on research PC"
+  ],
+  "files": {
+    "CONDITIONS.json": "090f9bfb691990a1426f16460c77818301d557de91cd570c4b7932688d71f315",
+    "DERIVATION.md": "7147045152a1125322cc9085b76e5ef44b073f6d0520e3bdbd35cd52603726c5",
+    "GENERATED_KERNEL.patch": "dcdd37244e109dad513f16158c7228249d724b71af62637459e9327e1212421b",
+    "INPUTS.json": "02a4893bee07bf954063896db171396fd15cc0bfa1c110a154e0366d2fb44fc7",
+    "PLAN.md": "9b24daef92cd91c7b1a76d68c2f826da88e4632f843cabd6cfa292e41c34b2cd",
+    "README_RUN.md": "fd41042582bc05329e1977a25cc9703ec7c365948544f70272a5b575d1c1208a",
+    "SMOKE.txt": "00c242ba0660ce5b9ac9b4ad6afcde2ed9b2904ab6e54eb0960615e5587c2999",
+    "V2_RESULT_SHA256SUMS.txt": "6662fcafa787fd55017deb79b3c0072bc217fbc53860005701304f39724420c4",
+    "V3_RESULT_SHA256SUMS.txt": "282a1c3c19dcc81a920b0530689026c3842e23bcfc9227ae9a5e15201152118e",
+    "V4_RESULT_SHA256SUMS.txt": "8a7fa7820118103727440bcab0a639c9a64230659c93607a922ba99b39aa80b6",
+    "build.sh": "462c6c90d4131bab5d664cc3ac2cad33c6be20d87eba546b25cfdc450dec970d",
+    "engine.py": "4b90a2323b51c5376aaf3c44c94bc6fed6aa677f31e89a8f94a386ed8dd2804e",
+    "inheritance.py": "654da024e55600daded31afe552f64e6f61ab626892eaebe4114710b84fde6c5",
+    "prepare_kernel.py": "49caa9f14ad022f6216e0860082783d0656848bfbdc1ff9b1c7a65897decd6cc",
+    "proof_rules.py": "5722e15c6071ec1a6923ab0aabcdb38408e76098fa93f425c0db092b303a7ed4",
+    "run_correspondence.py": "edf7dcd74f8b2bd7deec480b7aebe247106dee0553b0159ccab4044dfa71e231",
+    "smoke.py": "a4af6296dedf7d512a97017ddcfc0ebe81089bcafb4e7e8701e0846ee2f8e799",
+    "src/build_probe.c": "ad241332c27cf8a862c34ca0f1d7af842b6575db4a21d94fb5279d0919d31e34",
+    "src/candidate.c": "c386db4b92ae60892a5bbeb1e2eefad7d774940823a2bb4d9c831c3d6e9e01d3",
+    "src/interval.h": "6f7035e6c3a8bd1d0919066d32fe5a1fa2d3181df00998c90d8b0707fc62c713",
+    "src/jets.h": "6b13da992ac7860750e13d71d4a84026e853eb284ada9fb003b8ccb87bd075a9",
+    "src/new_integrands.h": "3093360ac55d6d8e0b5a6d0625aa7611da1b5047774ad05950a033e61b4453f2",
+    "v2_lock.py": "e5c83d03c5ec577e42175c396c9f8e708c6aa11aed781c63c5e0107105b3d259",
+    "verify_correspondence.py": "8c860c3ee7ac94300faa47a1db71453e5767bc78d841378e6ab7a5604fe858c5",
+    "verify_v2.py": "70e328ae3c11eeadae8467fb44bba8462428485699719339cd2fff7ee7e186de"
+  }
+}

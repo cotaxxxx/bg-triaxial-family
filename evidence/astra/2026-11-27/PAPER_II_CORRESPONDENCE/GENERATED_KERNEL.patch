@@ -1,0 +1,42 @@
+--- a/src/candidate.c
++++ b/build/generated/candidate.c
+@@ -102,7 +102,10 @@
+     return jplus(jplus(a,b),c);
+ }
+ 
++#include "new_integrands.h"
++
+ static I integrand(const Tree *tree, I u, I w, int angular) {
++    if (tree->quantity >= AZ) return correspondence_integrand(tree,u,w,angular);
+     layout(0, tree->derivative != 0, angular < 0 ? 0 : 4);
+     int i = tree->quantity % 2 == 0 ? 1 : 0;
+     int m = (i + 1) % 3, n = (i + 2) % 3;
+@@ -278,7 +281,7 @@
+     if (setjmp(error_jump)) return NULL;
+     int y_one = 0, z_one = 0;
+     const char *args[] = {y0,y1,z0,z1};
+-    if (quantity < 0 || quantity > 3 || derivative < 0 || derivative > 2 ||
++    if (quantity < 0 || quantity >= CORR_COUNT || derivative < 0 || derivative > 2 ||
+         (bits != 128 && bits != 256) || !exact_box(args,&y_one,&z_one))
+         fail("invalid candidate B shape, quantity or precision");
+     init(bits);
+--- a/src/jets.h
++++ b/build/generated/jets.h
+@@ -47,7 +47,7 @@
+  return o;
+ }
+ static J jdiv(J x,J y){return jmul(x,invroot(y,0));}
+-static I fact[9],coeff[9][98],pifact[5],halfints[15];
++static I fact[9],coeff[10][98],pifact[5],halfints[15];
+ static void tables(void){
+  iz=integer(0);one=integer(1);pii=(I){circle(DOWN),circle(UP)};
+  fact[0]=one;pifact[0]=one;
+@@ -57,7 +57,7 @@
+  I c=integer(2);
+  for(int n=1;n<=97;n++){
+   I b=one;
+-  for(int j=0;j<=8&&j<=n;j++){coeff[j][n]=times(c,b);b=quotient(times(b,integer(n-j)),integer(j+1));}
++  for(int j=0;j<=9&&j<=n;j++){coeff[j][n]=times(c,b);b=quotient(times(b,integer(n-j)),integer(j+1));}
+   c=quotient(times(c,integer(n*n)),integer((n+1)*(2*n+1)));
+  }
+ }
