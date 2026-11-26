@@ -1,0 +1,53 @@
+DERIVATION.md: OK
+INPUTS.json: OK
+MANIFEST.json: OK
+PLAN.md: OK
+README_RUN_CANDIDATE_B_V4.md: OK
+SMOKE_V4.txt: OK
+V2_RESULT_SHA256SUMS.txt: OK
+V3_RESULT_SHA256SUMS.txt: OK
+V4_INPUTS.json: OK
+ancestors.py: OK
+build.sh: OK
+engine.py: OK
+run_candidate_b_v4.py: OK
+smoke_v4.py: OK
+src/build_probe.c: OK
+src/candidate.c: OK
+src/interval.h: OK
+src/jets.h: OK
+v2_lock.py: OK
+verify_v2.py: OK
+verify_v4.py: OK
+{
+  "mpfr": "4.2.2",
+  "gmp": "6.3.0",
+  "gmp_limb_bits": 64,
+  "compiler": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "switches": [
+    "-O2",
+    "-std=c11",
+    "-D_POSIX_C_SOURCE=200809L",
+    "-Wall",
+    "-Wextra",
+    "-Werror=implicit-function-declaration",
+    "-Werror=incompatible-pointer-types",
+    "-Werror=int-conversion",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "-include",
+    "mpfr.h",
+    "-fPIC",
+    "-shared",
+    "-lmpfr",
+    "-lgmp"
+  ],
+  "library_sha256": "b2019cada59c29d9cfa45c9ef812b1274e64cb61bff0d4fc2e16be51dd7b7dd1",
+  "bundle_manifest_sha256": "4fea5c5792504e9d19673a90ecc54b99bde341dddfee87a037907ceab3414405",
+  "k1_sha256": "367570732a5927dbd73d309b953178ea5b4e316288c70fd910e9ad469eb15523",
+  "compile_log_sha256": "8c858f85b50ce406c8e64378a9a11790049fd008bcf40df659f63367cb893f5a",
+  "os": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+  "cpu": "AMD Ryzen 9 9900X 12-Core Processor",
+  "logical_cpus": 24,
+  "python": "3.14.4"
+}

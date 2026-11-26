@@ -1,0 +1,114 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "started_utc": "2026-11-26T15:43:33.095490+00:00",
+  "bundle_commit": "e7c039ee315162a9d3e001734128023bba3ac00f",
+  "bundle_audit": "5c27aa720a0f8aa39323c0d8c351ac8a55df3a32",
+  "judge_execution": "cf375fb123ac1ec86adf5d6d32ef94ef532e65f8",
+  "bundle": {
+    "schema": 4,
+    "grade": "DIAGNOSTIC_ONLY",
+    "stage": "PREREGISTERED_NOT_EXECUTED",
+    "date_jst": "2026-11-27",
+    "repository": "cotaxxxx/bg-triaxial-family",
+    "branch": "evidence/triaxial-chat",
+    "path": "evidence/astra/2026-11-27/CANDIDATE_B_V4",
+    "packaged_root": "CANDIDATE_B_PC_BUNDLE_V4",
+    "scope": "Z1+D2 local intersection only",
+    "parent": {
+      "v2_result": "862220cc03f8044ab770548d865a76ed56fc612c",
+      "v3_bundle": "cdd885b5ff0fa31408f08a97c382f230f24bab04",
+      "v3_result": "7c6cd7ecb21d7d4465e2140c5465412e4f3a4720",
+      "v3_audit": "c1f465b8f0ac4b3e63ead0ace3ac44fac29d3939"
+    },
+    "v2_bundle": "bb50c85c1bff93e3e04b54c5cbd218dcb3768a96",
+    "parent_seals": {
+      "V2_RESULT_SHA256SUMS.txt": "6662fcafa787fd55017deb79b3c0072bc217fbc53860005701304f39724420c4",
+      "V3_RESULT_SHA256SUMS.txt": "282a1c3c19dcc81a920b0530689026c3842e23bcfc9227ae9a5e15201152118e"
+    },
+    "fixed_sources": {
+      "src/candidate.c": "c386db4b92ae60892a5bbeb1e2eefad7d774940823a2bb4d9c831c3d6e9e01d3",
+      "src/interval.h": "6f7035e6c3a8bd1d0919066d32fe5a1fa2d3181df00998c90d8b0707fc62c713",
+      "src/jets.h": "6b13da992ac7860750e13d71d4a84026e853eb284ada9fb003b8ccb87bd075a9",
+      "src/build_probe.c": "ad241332c27cf8a862c34ca0f1d7af842b6575db4a21d94fb5279d0919d31e34",
+      "build.sh": "86e76349bc8c661a30bb9630c429707c09bd5d3849132e08c973ae35f605abdc",
+      "engine.py": "4b90a2323b51c5376aaf3c44c94bc6fed6aa677f31e89a8f94a386ed8dd2804e",
+      "INPUTS.json": "02a4893bee07bf954063896db171396fd15cc0bfa1c110a154e0366d2fb44fc7",
+      "verify_v2.py": "70e328ae3c11eeadae8467fb44bba8462428485699719339cd2fff7ee7e186de",
+      "v2_lock.py": "e5c83d03c5ec577e42175c396c9f8e708c6aa11aed781c63c5e0107105b3d259",
+      "V2_RESULT_SHA256SUMS.txt": "6662fcafa787fd55017deb79b3c0072bc217fbc53860005701304f39724420c4"
+    },
+    "kernel_byte_diff": {
+      "src/candidate.c": 0,
+      "src/interval.h": 0,
+      "src/jets.h": 0
+    },
+    "execution_requires": [
+      "chat bundle audit",
+      "separate Judge execution approval"
+    ],
+    "files": {
+      "DERIVATION.md": "7d16797588fad231896f83a04214589935e6ee28cf102951741b917a01bad8d3",
+      "INPUTS.json": "02a4893bee07bf954063896db171396fd15cc0bfa1c110a154e0366d2fb44fc7",
+      "PLAN.md": "0b787f5b6156e829b76bf96bb79fe166abcc2f2cb3074c1c798fa787f20111b4",
+      "README_RUN_CANDIDATE_B_V4.md": "444ae345b4ef548ce3281de825da946a2fafdb65d428c9a995e76c6ceeff4be9",
+      "SMOKE_V4.txt": "1accdd95cfb8383810940e347275d47441b3c4d8a07859efaa159e46e2325eb9",
+      "V2_RESULT_SHA256SUMS.txt": "6662fcafa787fd55017deb79b3c0072bc217fbc53860005701304f39724420c4",
+      "V3_RESULT_SHA256SUMS.txt": "282a1c3c19dcc81a920b0530689026c3842e23bcfc9227ae9a5e15201152118e",
+      "V4_INPUTS.json": "72999d89a07a332d681991dbf2b61a275339f82c5d16108a9d53ab24f249bb56",
+      "ancestors.py": "bbec3c2020fe48804e9e832f470bd1e0d371d6015702bb30c0a256ad44a3eeb1",
+      "build.sh": "86e76349bc8c661a30bb9630c429707c09bd5d3849132e08c973ae35f605abdc",
+      "engine.py": "4b90a2323b51c5376aaf3c44c94bc6fed6aa677f31e89a8f94a386ed8dd2804e",
+      "run_candidate_b_v4.py": "cf5d752bb8c23d5d8205bbca0d791fa93746f1cbe284b2f5763249d6345cf2d3",
+      "smoke_v4.py": "00d5cb98e26aa036f3770e9b6d90c90d15e484408bbfb68d3712c9d680456821",
+      "src/build_probe.c": "ad241332c27cf8a862c34ca0f1d7af842b6575db4a21d94fb5279d0919d31e34",
+      "src/candidate.c": "c386db4b92ae60892a5bbeb1e2eefad7d774940823a2bb4d9c831c3d6e9e01d3",
+      "src/interval.h": "6f7035e6c3a8bd1d0919066d32fe5a1fa2d3181df00998c90d8b0707fc62c713",
+      "src/jets.h": "6b13da992ac7860750e13d71d4a84026e853eb284ada9fb003b8ccb87bd075a9",
+      "v2_lock.py": "e5c83d03c5ec577e42175c396c9f8e708c6aa11aed781c63c5e0107105b3d259",
+      "verify_v2.py": "70e328ae3c11eeadae8467fb44bba8462428485699719339cd2fff7ee7e186de",
+      "verify_v4.py": "cdac8681cc4ff7a6b08728cb82c0d4d98c22a3a155f73406e651cb6cb1082f66"
+    }
+  },
+  "bundle_manifest_sha256": "4fea5c5792504e9d19673a90ecc54b99bde341dddfee87a037907ceab3414405",
+  "build": {
+    "mpfr": "4.2.2",
+    "gmp": "6.3.0",
+    "gmp_limb_bits": 64,
+    "compiler": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+    "switches": [
+      "-O2",
+      "-std=c11",
+      "-D_POSIX_C_SOURCE=200809L",
+      "-Wall",
+      "-Wextra",
+      "-Werror=implicit-function-declaration",
+      "-Werror=incompatible-pointer-types",
+      "-Werror=int-conversion",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-include",
+      "mpfr.h",
+      "-fPIC",
+      "-shared",
+      "-lmpfr",
+      "-lgmp"
+    ],
+    "library_sha256": "b2019cada59c29d9cfa45c9ef812b1274e64cb61bff0d4fc2e16be51dd7b7dd1",
+    "bundle_manifest_sha256": "4fea5c5792504e9d19673a90ecc54b99bde341dddfee87a037907ceab3414405",
+    "k1_sha256": "367570732a5927dbd73d309b953178ea5b4e316288c70fd910e9ad469eb15523",
+    "compile_log_sha256": "8c858f85b50ce406c8e64378a9a11790049fd008bcf40df659f63367cb893f5a",
+    "os": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "cpu": "AMD Ryzen 9 9900X 12-Core Processor",
+    "logical_cpus": 24,
+    "python": "3.14.4"
+  },
+  "parent_results": {
+    "v2_result": "862220cc03f8044ab770548d865a76ed56fc612c",
+    "v3_result": "7c6cd7ecb21d7d4465e2140c5465412e4f3a4720",
+    "v3_audit": "c1f465b8f0ac4b3e63ead0ace3ac44fac29d3939"
+  },
+  "parent_seals": {
+    "v2": "6662fcafa787fd55017deb79b3c0072bc217fbc53860005701304f39724420c4",
+    "v3": "282a1c3c19dcc81a920b0530689026c3842e23bcfc9227ae9a5e15201152118e"
+  }
+}

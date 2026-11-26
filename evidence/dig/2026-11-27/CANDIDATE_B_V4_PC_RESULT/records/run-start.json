@@ -1,0 +1,24 @@
+{
+  "started": "2026-11-27T00:43:32.759022+09:00",
+  "pid": 1927628,
+  "process_group": 1927628,
+  "command": [
+    "python3",
+    "-B",
+    "run_candidate_b_v4.py",
+    "--bundle-commit",
+    "e7c039ee315162a9d3e001734128023bba3ac00f",
+    "--chat-audit",
+    "5c27aa720a0f8aa39323c0d8c351ac8a55df3a32",
+    "--judge-execution",
+    "cf375fb123ac1ec86adf5d6d32ef94ef532e65f8",
+    "--v2-result",
+    "/home/daybreak/candidate-b-v2-pc-20261126/RESULT",
+    "--v3-result",
+    "/home/daybreak/candidate-b-v3-pc-20261126/RESULT",
+    "/home/daybreak/candidate-b-v4-pc-20261127/RESULT"
+  ],
+  "numerical_limit_seconds": 300,
+  "max_formula_calls": 76384,
+  "internal_inspection_limit_seconds": 120
+}
