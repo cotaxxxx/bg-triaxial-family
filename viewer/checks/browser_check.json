@@ -30,11 +30,23 @@
    0.25,
    7
   ],
-  "strip_rects_in_svg": 620
+  "strip_rects_in_svg": 620,
+  "uncertified_default": {
+   "checked": false,
+   "legend_C_visible": false,
+   "note_visible": false,
+   "event_text_has_uncertified_line": false
+  },
+  "uncertified_checked": {
+   "legend_C_visible": true,
+   "note_visible": true,
+   "event_text_has_uncertified_line": true
+  }
  },
  "screens": [
   "desktop_en.png",
   "desktop_ja.png",
+  "desktop_en_uncertified_on.png",
   "desktop_en_zoom64_crossing.png",
   "phone_en.png",
   "phone_ja.png"

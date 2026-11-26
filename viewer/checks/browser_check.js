@@ -27,6 +27,9 @@ const path = require('path'), fs = require('fs');
         V.setShape(0.8, 1.6); e = V.events(); r.generic_point = { any: Object.values(e).some(Boolean), text: document.getElementById('event').textContent.slice(0, 60) };
         V.setShape(0.1, 9); r.clamped_to_R = [V.S.y, V.S.z];
         r.strip_rects_in_svg = document.querySelectorAll('#map g rect').length;
+        const box = document.getElementById('unc'), vis = id => getComputedStyle(document.getElementById(id)).display !== 'none';
+        V.setShape(0.6, 2.05);
+        r.uncertified_default = { checked: box.checked, legend_C_visible: vis('legCrow'), note_visible: vis('uncNote') };
         return r;
       });
     }
@@ -37,7 +40,12 @@ const path = require('path'), fs = require('fs');
       const f = `${name}_${lang}.png`; await page.screenshot({ path: path.join(out, f), fullPage: true }); report.screens.push(f);
     }
     if (name === 'desktop') {
-      await page.click('#bEn');
+      await page.click('#bEn'); await page.waitForTimeout(200);
+      report.functional.uncertified_default.event_text_has_uncertified_line = await page.evaluate(() => /Uncertified/.test(document.getElementById('event').textContent));
+      await page.check('#unc'); await page.waitForTimeout(300);
+      report.functional.uncertified_checked = await page.evaluate(() => ({ legend_C_visible: getComputedStyle(document.getElementById('legCrow')).display !== 'none', note_visible: getComputedStyle(document.getElementById('uncNote')).display !== 'none', event_text_has_uncertified_line: /Uncertified/.test(document.getElementById('event').textContent) }));
+      await page.screenshot({ path: path.join(out, 'desktop_en_uncertified_on.png'), fullPage: true }); report.screens.push('desktop_en_uncertified_on.png');
+      await page.uncheck('#unc'); await page.waitForTimeout(200);
       await page.evaluate(() => { const D = window.__viewer.DATA; window.__viewer.setShape((D.cross.y[0] + D.cross.y[1]) / 2, (D.cross.z[0] + D.cross.z[1]) / 2); });
       await page.click('#zIn'); await page.click('#zIn'); await page.click('#zIn'); await page.waitForTimeout(250);
       await page.screenshot({ path: path.join(out, 'desktop_en_zoom64_crossing.png'), fullPage: true }); report.screens.push('desktop_en_zoom64_crossing.png');
