@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "status": "DIAGNOSTIC_ONLY",
+  "registry": "cotaxxxx/bg-triaxial-family",
+  "branch": "evidence/triaxial-chat",
+  "directory": "evidence/astra/2026-11-26/CANDIDATE_B_BUNDLE",
+  "date_jst": "2026-11-26",
+  "commits": {
+    "scope": "a17d23e9d001a7716ae8cbb663eb377b58c23152",
+    "plan": "f8c809f2e2cfdc32da04aba120e7e8fd1001de7e",
+    "plan_audit": "6349d6dcb944ec15e48d66bb1e9302305b44d9d7"
+  },
+  "plan_sha256": {
+    "PLAN_CANDIDATE_B.md": "248306d3d82e9949535a440313895b00b0e051ca782f58b36993370398bfbc71",
+    "DERIVATION_CANDIDATE_B.md": "78a6186bf29f609c2382953c92bfca17c28cb4fde0d4eae72dad53058bbeec36"
+  },
+  "paper_I": {
+    "version": "1.0",
+    "doi": "10.5281/zenodo.24495446"
+  },
+  "angle_tools": {
+    "revision": "a17d23e9d001a7716ae8cbb663eb377b58c23152",
+    "directory": "evidence/astra/2026-11-22/PRODUCTION_KERNEL_I_II/equator/src",
+    "interval.h": "988d94c67cfb72b8c47bbb1acab048d197364930",
+    "jets.h": "5d0d66b3bc77bf9cbd723439d7ba1be8a87a003c",
+    "signed_panel_source": "056fde6738a826dcd2533560a2fb819527f18215"
+  },
+  "files": {
+    "INPUTS.json": "54a65e3bbf432b8c9e4e045d8a2b632dbecd4652109923d0f6c6ac36aae9cebd",
+    "README_RUN_CANDIDATE_B.md": "b2eb46b4990b76a32ae6f9b92ffe46eb2604f8670bf6c2689b11a8c982f3af21",
+    "SMOKE_CHECKS.txt": "5084f623048264df8cb0572e20c7c228b1672085c4537b1cf41f16eb1960586a",
+    "build.sh": "86e76349bc8c661a30bb9630c429707c09bd5d3849132e08c973ae35f605abdc",
+    "crossings.py": "8b8b42e7d8e359e87d20ba054ed5e2328028aef895a205e7c1dead77c8daccc9",
+    "engine.py": "ca617bce3744308a1185b22eee6aa202daa1f65eaf3cf598f0b903e0f2036a15",
+    "run_candidate_b.py": "6463713cf5210963df7dc128a0593e48581ea278ea227c70fec8e02b738d0ab2",
+    "shape.py": "2f9ca9cb579086755ad3ed7ca7c274eba5f1bb7b6a2c03f37df2d587352370e5",
+    "smoke_candidate_b.py": "4de60c8066fd20fcbe86a3455b8c703a6cbb55737ef87dc276f093dc5f344e87",
+    "src/build_probe.c": "ad241332c27cf8a862c34ca0f1d7af842b6575db4a21d94fb5279d0919d31e34",
+    "src/candidate.c": "c386db4b92ae60892a5bbeb1e2eefad7d774940823a2bb4d9c831c3d6e9e01d3",
+    "src/interval.h": "6f7035e6c3a8bd1d0919066d32fe5a1fa2d3181df00998c90d8b0707fc62c713",
+    "src/jets.h": "6b13da992ac7860750e13d71d4a84026e853eb284ada9fb003b8ccb87bd075a9",
+    "verify_ledgers.py": "ebcd2ca68f1f0de4d234e428202011fa3bae779424aab531f2839c66de7c97a2"
+  },
+  "checks": "SMOKE_CHECKS.txt",
+  "execution_requires_separate_judge_approval": true
+}

@@ -1,0 +1,219 @@
+{
+  "status": "PARTIAL",
+  "diagnostic_only": true,
+  "quantities": {
+    "Z1": {
+      "boxes": {
+        "PENDING": 250,
+        "SPLIT": 343,
+        "SIGN_NEG": 381
+      },
+      "edges": {
+        "y_min": {
+          "SIGN_NEG": 24
+        },
+        "y_max": {
+          "SIGN_NEG": 10,
+          "SPLIT": 4,
+          "IN_ROOT": 1,
+          "SIGN_POS": 17
+        },
+        "z_min": {
+          "SIGN_POS": 12,
+          "SPLIT": 7,
+          "IN_ROOT": 1,
+          "SIGN_NEG": 6
+        },
+        "z_max": {
+          "SIGN_NEG": 12
+        }
+      },
+      "roots": {
+        "y_min": 0,
+        "y_max": 1,
+        "z_min": 1,
+        "z_max": 0
+      },
+      "components": 0,
+      "open": 250,
+      "signed_area": "198661/262144",
+      "expected_edge_counts": true,
+      "anchor_signs": true,
+      "all_corners_nonzero": true,
+      "linked_edge_roots": 0,
+      "arc_conditions": false
+    },
+    "Z2": {
+      "boxes": {
+        "PENDING": 276,
+        "SPLIT": 82,
+        "SIGN_POS": 94
+      },
+      "edges": {
+        "y_min": {
+          "SIGN_NEG": 6,
+          "SPLIT": 4,
+          "IN_ROOT": 1,
+          "SIGN_POS": 21
+        },
+        "y_max": {
+          "SIGN_NEG": 10,
+          "SPLIT": 4,
+          "IN_ROOT": 1,
+          "SIGN_POS": 17
+        },
+        "z_min": {
+          "SIGN_POS": 12
+        },
+        "z_max": {
+          "SIGN_NEG": 13,
+          "SPLIT": 1
+        }
+      },
+      "roots": {
+        "y_min": 1,
+        "y_max": 1,
+        "z_min": 0,
+        "z_max": 0
+      },
+      "components": 0,
+      "open": 276,
+      "signed_area": "609/2048",
+      "expected_edge_counts": true,
+      "anchor_signs": true,
+      "all_corners_nonzero": true,
+      "linked_edge_roots": 0,
+      "arc_conditions": false
+    },
+    "D1": {
+      "boxes": {
+        "PENDING": 270,
+        "SPLIT": 302,
+        "SIGN_NEG": 320
+      },
+      "edges": {
+        "y_min": {
+          "SIGN_NEG": 24
+        },
+        "y_max": {
+          "SIGN_NEG": 21,
+          "SPLIT": 5,
+          "IN_ROOT": 1,
+          "SIGN_POS": 7
+        },
+        "z_min": {
+          "SIGN_POS": 8,
+          "SPLIT": 6,
+          "IN_ROOT": 1,
+          "SIGN_NEG": 9
+        },
+        "z_max": {
+          "SIGN_NEG": 12
+        }
+      },
+      "roots": {
+        "y_min": 0,
+        "y_max": 1,
+        "z_min": 1,
+        "z_max": 0
+      },
+      "components": 0,
+      "open": 270,
+      "signed_area": "81/256",
+      "expected_edge_counts": true,
+      "anchor_signs": true,
+      "all_corners_nonzero": true,
+      "linked_edge_roots": 0,
+      "arc_conditions": false
+    },
+    "D2": {
+      "boxes": {
+        "PENDING": 286,
+        "SPLIT": 57,
+        "IN_CHART_UNION": 7,
+        "SIGN_POS": 50,
+        "SIGN_NEG": 2
+      },
+      "edges": {
+        "y_min": {
+          "SIGN_NEG": 22,
+          "SPLIT": 5,
+          "IN_ROOT": 1,
+          "SIGN_POS": 6
+        },
+        "y_max": {
+          "SIGN_NEG": 21,
+          "SPLIT": 5,
+          "IN_ROOT": 1,
+          "SIGN_POS": 7
+        },
+        "z_min": {
+          "SIGN_POS": 12
+        },
+        "z_max": {
+          "SIGN_NEG": 12
+        }
+      },
+      "roots": {
+        "y_min": 1,
+        "y_max": 1,
+        "z_min": 0,
+        "z_max": 0
+      },
+      "components": 7,
+      "open": 286,
+      "signed_area": "539/8192",
+      "expected_edge_counts": true,
+      "anchor_signs": true,
+      "all_corners_nonzero": true,
+      "linked_edge_roots": 0,
+      "arc_conditions": false
+    }
+  },
+  "intersections": {
+    "Z1+Z2": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": true,
+      "graph_comparison": false,
+      "conditions_met": false
+    },
+    "Z1+D1": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": false,
+      "graph_comparison": false,
+      "conditions_met": true
+    },
+    "Z1+D2": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": true,
+      "graph_comparison": false,
+      "conditions_met": false
+    },
+    "Z2+D1": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": false,
+      "graph_comparison": false,
+      "conditions_met": true
+    },
+    "Z2+D2": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": false,
+      "graph_comparison": false,
+      "conditions_met": true
+    },
+    "D1+D2": {
+      "overlaps": 0,
+      "accounted": 0,
+      "comparison_required": true,
+      "graph_comparison": false,
+      "conditions_met": false
+    }
+  },
+  "pilot_eligible": true,
+  "run_errors": []
+}

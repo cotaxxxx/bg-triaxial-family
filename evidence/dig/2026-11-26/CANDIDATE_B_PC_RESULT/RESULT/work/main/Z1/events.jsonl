@@ -1,0 +1,1 @@
+{"id":"main.Z1.events.1","record":"worker_outcome","phase":"main","quantity":"Z1","status":"STOPPED","detail":null,"formula_calls":900000,"wall_ns":296768984005,"cpu_ns":296718276612,"peak_rss_kib":32672,"reuse":45,"shape_trials":827,"chart_trials":68}

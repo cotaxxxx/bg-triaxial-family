@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "quantities": ["Z1", "Z2", "D1", "D2"],
+  "axes": {"Z1": "y", "Z2": "x", "D1": "y", "D2": "x"},
+  "region": ["1/4", "1", "1", "7"],
+  "shape_grid": [12, 24],
+  "transverse_width": ["1/128", "1/32"],
+  "expected_edges": {
+    "Z1": {"y_max": "cp", "z_min": "co"},
+    "Z2": {"y_min": null, "y_max": "cp"},
+    "D1": {"y_max": "bp", "z_min": "bo"},
+    "D2": {"y_min": null, "y_max": "bp"}
+  },
+  "anchors": {
+    "co": {"edge": "z_min", "interval": ["2/5", "83/200"], "signs": [-1, 1],
+      "paper": ["407958860300/1000000000000", "407958860301/1000000000000"]},
+    "bo": {"edge": "z_min", "interval": ["5/8", "21/32"], "signs": [-1, 1],
+      "paper": ["674802/1048576", "674811/1048576"]},
+    "bp": {"edge": "y_max", "interval": ["2", "17/8"], "signs": [1, -1],
+      "paper": ["34651360/16777216", "34651369/16777216"]},
+    "cp": {"edge": "y_max", "interval": ["75/16", "19/4"], "signs": [1, -1],
+      "paper": ["79261996/16777216", "79262005/16777216"]}
+  },
+  "interior_crossing": {"pair": ["Z1", "D2"], "window": ["5/8", "21/32", "2", "5/2"]},
+  "shared_end": {"pairs": [["Z1", "Z2"], ["D1", "D2"]], "y": ["31/32", "1"]},
+  "pilot": [
+    ["1", "1", "1", "1"],
+    ["2/5", "83/200", "1", "1"],
+    ["5/8", "21/32", "1", "1"],
+    ["1", "1", "2", "17/8"],
+    ["1", "1", "75/16", "19/4"],
+    ["5/8", "21/32", "2", "5/2"],
+    ["5/16", "3/8", "23/4", "6"],
+    ["1/4", "5/16", "27/4", "7"]
+  ],
+  "angular": {
+    "precision": 128, "stages": [64, 256, 1024],
+    "edge_precision": 256, "edge_stage": 4096,
+    "initial_cells": 16
+  },
+  "budget": {
+    "shape_depth": 18, "edge_depth": 24, "boxes_per_quantity": 10000,
+    "chart_trials_per_quantity": 4096,
+    "cells_per_quantity": 900000, "cells_other": 400000, "cells_total": 4000000,
+    "pilot_stage": 256, "pilot_seconds": 1800, "total_seconds": 21600,
+    "pilot_estimate_cells": 3000000, "pilot_estimate_cores": 3,
+    "pilot_estimate_max_seconds": 18000, "processes": 4
+  }
+}

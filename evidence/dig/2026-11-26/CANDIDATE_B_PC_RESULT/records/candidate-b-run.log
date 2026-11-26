@@ -1,0 +1,403 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "main_started": true,
+  "child_exit": {
+    "Z2": 0,
+    "D1": 0,
+    "D2": 0
+  },
+  "operator_stop": false,
+  "deadline_reached": false,
+  "elapsed_ns": 544817317066,
+  "rows": {
+    "boxes": 1638,
+    "edges": 400,
+    "charts": 183,
+    "links": 0,
+    "intersections": 0,
+    "pending": 1087,
+    "enclosures": 2464,
+    "integrals": 13361,
+    "events": 105
+  },
+  "comparison": "STOPPED",
+  "finalization_errors": [],
+  "formula_calls": 4000000,
+  "journal_totals": {
+    "counts": {
+      "Z1": {
+        "SPLIT": 343,
+        "SIGN_NEG": 381
+      },
+      "Z2": {
+        "SPLIT": 82,
+        "SIGN_POS": 94
+      },
+      "D1": {
+        "SPLIT": 302,
+        "SIGN_NEG": 320
+      },
+      "D2": {
+        "SPLIT": 57,
+        "SIGN_POS": 50,
+        "IN_CHART_UNION": 7,
+        "SIGN_NEG": 2
+      }
+    },
+    "signed_area": {
+      "Z1": "198661/262144",
+      "Z2": "609/2048",
+      "D1": "81/256",
+      "D2": "539/8192"
+    },
+    "workers": [
+      {
+        "id": "pilot.Z1.events.25",
+        "record": "worker_outcome",
+        "phase": "pilot",
+        "quantity": "Z1",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 9824,
+        "wall_ns": 3233561569,
+        "cpu_ns": 3233504377,
+        "peak_rss_kib": 28420,
+        "reuse": 0,
+        "shape_trials": 0,
+        "chart_trials": 0
+      },
+      {
+        "id": "pilot.Z2.events.25",
+        "record": "worker_outcome",
+        "phase": "pilot",
+        "quantity": "Z2",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 9824,
+        "wall_ns": 3269471095,
+        "cpu_ns": 3268365039,
+        "peak_rss_kib": 21444,
+        "reuse": 0,
+        "shape_trials": 0,
+        "chart_trials": 0
+      },
+      {
+        "id": "pilot.D1.events.25",
+        "record": "worker_outcome",
+        "phase": "pilot",
+        "quantity": "D1",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 9024,
+        "wall_ns": 3191937109,
+        "cpu_ns": 3188794752,
+        "peak_rss_kib": 21312,
+        "reuse": 0,
+        "shape_trials": 0,
+        "chart_trials": 0
+      },
+      {
+        "id": "pilot.D2.events.25",
+        "record": "worker_outcome",
+        "phase": "pilot",
+        "quantity": "D2",
+        "status": "RECORDED",
+        "detail": null,
+        "formula_calls": 8064,
+        "wall_ns": 3622450384,
+        "cpu_ns": 3622403432,
+        "peak_rss_kib": 21312,
+        "reuse": 0,
+        "shape_trials": 0,
+        "chart_trials": 0
+      },
+      {
+        "id": "main.Z1.events.1",
+        "record": "worker_outcome",
+        "phase": "main",
+        "quantity": "Z1",
+        "status": "STOPPED",
+        "detail": null,
+        "formula_calls": 900000,
+        "wall_ns": 296768984005,
+        "cpu_ns": 296718276612,
+        "peak_rss_kib": 32672,
+        "reuse": 45,
+        "shape_trials": 827,
+        "chart_trials": 68
+      },
+      {
+        "id": "main.Z2.events.1",
+        "record": "worker_outcome",
+        "phase": "main",
+        "quantity": "Z2",
+        "status": "STOPPED",
+        "detail": null,
+        "formula_calls": 900000,
+        "wall_ns": 388026325964,
+        "cpu_ns": 387989899997,
+        "peak_rss_kib": 26572,
+        "reuse": 7,
+        "shape_trials": 273,
+        "chart_trials": 12
+      },
+      {
+        "id": "main.D1.events.1",
+        "record": "worker_outcome",
+        "phase": "main",
+        "quantity": "D1",
+        "status": "STOPPED",
+        "detail": null,
+        "formula_calls": 900000,
+        "wall_ns": 306949900224,
+        "cpu_ns": 306889254575,
+        "peak_rss_kib": 25328,
+        "reuse": 22,
+        "shape_trials": 725,
+        "chart_trials": 44
+      },
+      {
+        "id": "main.D2.events.1",
+        "record": "worker_outcome",
+        "phase": "main",
+        "quantity": "D2",
+        "status": "STOPPED",
+        "detail": null,
+        "formula_calls": 900000,
+        "wall_ns": 381809709854,
+        "cpu_ns": 381764140540,
+        "peak_rss_kib": 26712,
+        "reuse": 43,
+        "shape_trials": 215,
+        "chart_trials": 53
+      },
+      {
+        "id": "compare.events.1",
+        "record": "comparison_outcome",
+        "status": "STOPPED",
+        "formula_calls": 363264,
+        "detail": null,
+        "wall_ns": 153154795519,
+        "cpu_ns": 153083687875,
+        "peak_rss_kib": 32672
+      }
+    ]
+  },
+  "inspection": "PARTIAL",
+  "verified_conditions": {
+    "quantities": {
+      "Z1": {
+        "boxes": {
+          "PENDING": 250,
+          "SPLIT": 343,
+          "SIGN_NEG": 381
+        },
+        "edges": {
+          "y_min": {
+            "SIGN_NEG": 24
+          },
+          "y_max": {
+            "SIGN_NEG": 10,
+            "SPLIT": 4,
+            "IN_ROOT": 1,
+            "SIGN_POS": 17
+          },
+          "z_min": {
+            "SIGN_POS": 12,
+            "SPLIT": 7,
+            "IN_ROOT": 1,
+            "SIGN_NEG": 6
+          },
+          "z_max": {
+            "SIGN_NEG": 12
+          }
+        },
+        "roots": {
+          "y_min": 0,
+          "y_max": 1,
+          "z_min": 1,
+          "z_max": 0
+        },
+        "components": 0,
+        "open": 250,
+        "signed_area": "198661/262144",
+        "expected_edge_counts": true,
+        "anchor_signs": true,
+        "all_corners_nonzero": true,
+        "linked_edge_roots": 0,
+        "arc_conditions": false
+      },
+      "Z2": {
+        "boxes": {
+          "PENDING": 276,
+          "SPLIT": 82,
+          "SIGN_POS": 94
+        },
+        "edges": {
+          "y_min": {
+            "SIGN_NEG": 6,
+            "SPLIT": 4,
+            "IN_ROOT": 1,
+            "SIGN_POS": 21
+          },
+          "y_max": {
+            "SIGN_NEG": 10,
+            "SPLIT": 4,
+            "IN_ROOT": 1,
+            "SIGN_POS": 17
+          },
+          "z_min": {
+            "SIGN_POS": 12
+          },
+          "z_max": {
+            "SIGN_NEG": 13,
+            "SPLIT": 1
+          }
+        },
+        "roots": {
+          "y_min": 1,
+          "y_max": 1,
+          "z_min": 0,
+          "z_max": 0
+        },
+        "components": 0,
+        "open": 276,
+        "signed_area": "609/2048",
+        "expected_edge_counts": true,
+        "anchor_signs": true,
+        "all_corners_nonzero": true,
+        "linked_edge_roots": 0,
+        "arc_conditions": false
+      },
+      "D1": {
+        "boxes": {
+          "PENDING": 270,
+          "SPLIT": 302,
+          "SIGN_NEG": 320
+        },
+        "edges": {
+          "y_min": {
+            "SIGN_NEG": 24
+          },
+          "y_max": {
+            "SIGN_NEG": 21,
+            "SPLIT": 5,
+            "IN_ROOT": 1,
+            "SIGN_POS": 7
+          },
+          "z_min": {
+            "SIGN_POS": 8,
+            "SPLIT": 6,
+            "IN_ROOT": 1,
+            "SIGN_NEG": 9
+          },
+          "z_max": {
+            "SIGN_NEG": 12
+          }
+        },
+        "roots": {
+          "y_min": 0,
+          "y_max": 1,
+          "z_min": 1,
+          "z_max": 0
+        },
+        "components": 0,
+        "open": 270,
+        "signed_area": "81/256",
+        "expected_edge_counts": true,
+        "anchor_signs": true,
+        "all_corners_nonzero": true,
+        "linked_edge_roots": 0,
+        "arc_conditions": false
+      },
+      "D2": {
+        "boxes": {
+          "PENDING": 286,
+          "SPLIT": 57,
+          "IN_CHART_UNION": 7,
+          "SIGN_POS": 50,
+          "SIGN_NEG": 2
+        },
+        "edges": {
+          "y_min": {
+            "SIGN_NEG": 22,
+            "SPLIT": 5,
+            "IN_ROOT": 1,
+            "SIGN_POS": 6
+          },
+          "y_max": {
+            "SIGN_NEG": 21,
+            "SPLIT": 5,
+            "IN_ROOT": 1,
+            "SIGN_POS": 7
+          },
+          "z_min": {
+            "SIGN_POS": 12
+          },
+          "z_max": {
+            "SIGN_NEG": 12
+          }
+        },
+        "roots": {
+          "y_min": 1,
+          "y_max": 1,
+          "z_min": 0,
+          "z_max": 0
+        },
+        "components": 7,
+        "open": 286,
+        "signed_area": "539/8192",
+        "expected_edge_counts": true,
+        "anchor_signs": true,
+        "all_corners_nonzero": true,
+        "linked_edge_roots": 0,
+        "arc_conditions": false
+      }
+    },
+    "intersections": {
+      "Z1+Z2": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": true,
+        "graph_comparison": false,
+        "conditions_met": false
+      },
+      "Z1+D1": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": false,
+        "graph_comparison": false,
+        "conditions_met": true
+      },
+      "Z1+D2": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": true,
+        "graph_comparison": false,
+        "conditions_met": false
+      },
+      "Z2+D1": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": false,
+        "graph_comparison": false,
+        "conditions_met": true
+      },
+      "Z2+D2": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": false,
+        "graph_comparison": false,
+        "conditions_met": true
+      },
+      "D1+D2": {
+        "overlaps": 0,
+        "accounted": 0,
+        "comparison_required": true,
+        "graph_comparison": false,
+        "conditions_met": false
+      }
+    }
+  },
+  "elapsed_through_inspection_ns": 545418952952
+}
