@@ -1,11 +1,11 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>論文II 日本語通読用 v0.6</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>論文II 日本語通読用 v0.7</title><style>
 body{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;line-height:1.9;max-width:44em;margin:0 auto;padding:24px 16px;color:#1a1a1a;background:#fff}
 h1{font-size:1.5em;line-height:1.4}h2{font-size:1.2em;margin-top:2.2em;border-bottom:1px solid #ccc;padding-bottom:.2em}
 table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0;font-size:.93em}th,td{border:1px solid #bbb;padding:.35em .6em;vertical-align:top}th{background:#f2f2f2}
 figure{margin:1.5em 0;text-align:center}img{max-width:100%;height:auto}li{margin:.3em 0}
 @media(prefers-color-scheme:dark){body{background:#fff;color:#1a1a1a}}
 </style></head><body><h1>三軸楕円体の角度エネルギー地図 ― 停留点が出入りする四本の境目</h1>
-<p>日本語の通読用の訳。正本は英語草稿 v0.6（ファイル CHAT_DRAFT_PAPER_II_v0_6_EN.md、SHA-256 d27c30c36387cc079133bae0d3832e9981c79c2673bf56e346f7400ebcd9cc8a。同じコミットに登録）。この通読用では、文献は略記、付録 A は式を省いた要約である。著者：古田勝士（DAYBREAK）。著者の通読・承認の前。</p>
+<p>日本語の通読用の訳。正本は英語草稿 v0.7（ファイル CHAT_DRAFT_PAPER_II_v0_7_EN.md、SHA-256 2a06f0f13f64511db19920047771cc9ba7bcd5e4c7de08413c81995003d764f5。同じコミットに登録）。この通読用では、文献は略記、付録 A は式を省いた要約である。著者：古田勝士（DAYBREAK）。著者の通読・承認の前。</p>
 <h2>要旨</h2>
 <p>凸体とその内部の一点に対して、角度エネルギーを次のように定める。その点から境界の点を見る向きと、そこでの外向き法線とがなす角の二乗を、錐体積の重みで平均したものである。回転楕円体でのこのエネルギーの停留点は、この連作の第一論文（古田勝士『Saddle pairs, a saddle circle, and nothing else: stationary points of an angle energy across all spheroid shapes』2026 年、doi:10.5281/zenodo.24495446。以下「論文 I」）で分類した（そこに述べた六つの計算主張を条件とする）。そこには四つの閾値の形が現れた。本論文は、三本の軸がすべて違う楕円体を扱う。半軸を y ≤ 1 ≤ z と書き、形の長方形 R = [1/4, 1] × [1, 7] の上で、四つの量を考える。最長軸以外の二本の軸それぞれについて、中心でのエネルギーの二階微分と、その軸の端でのエネルギーの動径方向の微分である。</p>
 <p>次のことを証明する。R の中で、四つの量それぞれの零集合は一本の弧である。四本の弧が出会うのは、辺 y = 1 の上の二つの扁長側の閾値の形と、もう一点だけである。その一点は内部にあり、二本の弧が横断的に交わる（y ≈ 0.6382、z ≈ 2.2966）。回転楕円体の四つの閾値は、これらの弧の端点である。残る二つの端は辺 y = 1/4 の上にある。次に、各弧が次の局所的な意味で境目であることを証明する。形が弧を横切るとき、エネルギーの停留点がちょうど一対、中心を通って、または向かい合う一対の極を通って、出入りする。どちら側に対があるかも決める。これは、二つの扁長側の閾値の形を除く、弧の上のすべての点で成り立つ。その二つの形では、形が辺 y = 1 に沿って動くとき、対の代わりに一つの停留円が出入りする。</p>
@@ -305,7 +305,7 @@ figure{margin:1.5em 0;text-align:center}img{max-width:100%;height:auto}li{margin
 <p>三つの所見。</p>
 <ol>
 <li><strong>計算を増やしても証明は閉じなかった。</strong> v2 は v1 の約 23 倍のセル評価を使い、それでも 8,674 箱を未決のまま残した。これらはすべて、あとで、拡張した帯と共通の帯によって覆われた（第 5 節の段階 5）。つまり別の命題によってである。零集合に触れる箱の上では、どれだけ細かくしても厳密な符号は得られない。</li>
-<li><strong>どの隙間も、精度ではなく命題を変えることで閉じた。</strong> 共有端点では、二つの量が辺 y = 1 の上で恒等的に一致するので、問いを D（因子 1 − y を解析的に外した差）の符号に変えた。帯の隣では、問いを、箱の上の符号から、拡張した帯の面の上の符号に変えた。最後の組では、問いを、交わらないことから、一つの交点の存在と一意性に変えた。変えるたびに、核はすぐに答えた。v3 と v4 を合わせても、セルの数は v2 の約 0.4% である。</li>
+<li><strong>どの隙間も、精度ではなく命題を変えることで閉じた。</strong> 共有端点では、二つの量が辺 y = 1 の上で恒等的に一致するので、問いを D（因子 1 − y を解析的に外した差）の符号に変えた。帯の隣では、問いを、箱の上での量の符号から、拡張した帯の上での横断方向の微分の符号に変えた。拡張した帯の全体でその微分が厳密に同じ符号を保てば、元の帯の面ですでに得ていた符号が外側へ引き継がれる。最後の組では、問いを、交わらないことから、一つの交点の存在と一意性に変えた。変えるたびに、核はすぐに答えた。v3 と v4 を合わせても、セルの数は v2 の約 0.4% である。</li>
 <li><strong>失敗した試みを記録に残した。</strong> v3 では、交点への二つの試みが失敗した。v3 の補助の帯は z を横断方向にとったもので、最初の Z₁ の区間で面の符号が確定せず、そこで止まった。v4 は代わりに Z₁ をグラフ y = φ(z) として扱う。Krawczyk の判定は、三つの箱について、それぞれ三段階の格子で試した。二つの箱では収縮率が 1 を超え、三つ目では 1 を下回ったが、像が箱の厳密な内側に入らなかった。失敗、その診断、直した計画は、すべて公開の台帳にある。</li>
 </ol>
 <p>限界も同じくはっきりしている。核が証明するのは箱の上の厳密な不等式だけである。本論文の位相の結論はすべて、第 5・6 節に手で書き、台帳と照合した議論から来る。領域 R、帯の選び方、窓は、人と機械が、まず保証のない図を見て選んだ。</p>
