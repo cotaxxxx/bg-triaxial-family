@@ -1,6 +1,6 @@
 """Build Paper II v1.0 (markdown master and PDF) from the Claude Docs export v0.9."""
 import re,subprocess,sys
-src=open('../../evidence/chat/2026-11-27/CHAT_DRAFT_PAPER_II_v0_9_EN.md').read()
+src=open('../../evidence/chat/2026-11-27/CHAT_DRAFT_PAPER_II_v0_10_EN.md').read()
 s=src
 # strip the export's title block (title, date line, draft line)
 i=s.index('## Abstract'); s=s[i:]
@@ -25,6 +25,7 @@ blk=blk.replace('adoption of Theorem 1 at 2d2576e, of Theorem 2 at 8f9fe35','ado
 m=re.search(r'\[A reproduction archive.*?\]',blk,flags=re.S); assert m
 blk=blk.replace(m.group(0),'A reproduction archive (the four bundles with their code and plans, the result ledgers, the checkers, the independent audit scripts and the figure script, with SHA-256 sums and instructions) is attached to the Zenodo record of this paper.')
 s=s[:a]+blk+s[b:]
+rep('it read the ledgers and did not recompute any interval.','it read the ledgers and did not recompute any interval. It also built the interactive viewer, which Claude audited against the ledger and the text of this paper.')
 rep('adopted by the author\'s rulings 2d2576e (Theorem 1) and 8f9fe35 (Theorem 2) after the audits.','adopted by the author\'s rulings 2d2576e (Theorem 1; one end point corrected in d6dc12b) and 8f9fe35 (Theorem 2) after the audits.')
 rep('Each plan, audit, approval and ruling is a dated commit in the public repositories. No AI system is an author.','Each plan, audit, approval and ruling is a dated commit in the public repositories. No AI system is an author. The author read the complete manuscript in a Japanese translation of this text and approved it on 27 November 2026.')
 s=s.replace('- Repository of this paper: <https://github.com/cotaxxxx/bg-triaxial-family>\n  -','- Repository of this paper: <https://github.com/cotaxxxx/bg-triaxial-family>\n\n  -') if False else s
@@ -51,12 +52,15 @@ All material is public and pinned by commit. Repository of this paper: <https://
 | Adoption of Theorem 1 | `2d2576ee43f07a3cb94df28d63051f52649e3c81` |
 | Correction of one end point | `d6dc12b24a3a1b7575350cdd8bed7e24494eaa89` |
 | Adoption of Theorem 2 | `8f9fe35af8675f3e043d7849ba2ab065efcf6634` |
+| Interactive viewer | `202744a3074910df1b9e0bf9759144f24493ba56` |
 
-Bundle C is on the branch codex/paper-ii-correspondence-20261127 and is not reachable from the other branches. The audits, the rulings, the external audits, the reviews and the responses to them are on the branch evidence/triaxial-chat.
+Bundle C is on the branch codex/paper-ii-correspondence-20261127 and the viewer on the branch claude/paper-ii-viewer-20261127; they are not reachable from the other branches. The audits, the rulings, the external audits, the reviews and the responses to them are on the branch evidence/triaxial-chat.
 
 Record of the method as a worked example: <https://github.com/cotaxxxx/GeoEnclosure>, directory examples/triaxial-four-curves. Process records: <https://github.com/cotaxxxx/experimental-mathematics-ai-collaboration>
 
-A reproduction archive (the four bundles with their code and plans, the result ledgers, the checkers, the independent audit scripts and the figure script, with SHA-256 sums and instructions) is attached to the Zenodo record of this paper.
+A reproduction archive (the four bundles with their code and plans, the result ledgers, the checkers, the independent audit scripts, the figure script and the sources of the viewer, with SHA-256 sums and instructions) is attached to the Zenodo record of this paper.
+
+**Interactive viewer.** The Zenodo record also contains a linked viewer of the map: one self-contained HTML file with no network access, in English and Japanese. Choosing a shape on the map of Figure 1 shows the corresponding ellipsoid and, when the shape lies in a certified strip, the local event of Theorem 2. The viewer is built from the ledger of run v2 by a script in the archive. It is an illustration and not part of any proof. It can also display uncertified floating-point positions of stationary points on the axes; this layer is off by default and is labelled as not proved here.
 
 """%(F['f8c809f'],F['bb50c85'],F['cdd885b'],F['e7c039e'],F['e5456d8'],F['862220c'],F['7c6cd7e'])
 s=s[:a]+avail+s[b:]
@@ -78,18 +82,18 @@ s=s.replace('$\\partial^2_{q_j}$','$\\partial^2_{q_j}$')
 ja='''
 ## Appendix B. Title and abstract in Japanese
 
-**三軸楕円体の角度エネルギー地図 ― 停留点が出入りする四本の境目（再現コード付き）**
+**三軸楕円体の角度エネルギー地図 ― 停留点が出入りする四本の境目（再現コード・ビューア付き）**
 
 凸体とその内部の一点に対して、その点から境界の点を見る向きと、そこでの外向き法線とがなす角の二乗を、錐体積の重みで平均したものを角度エネルギーと呼ぶ。回転楕円体でのこのエネルギーの停留点は、この連作の第一論文（論文 I、doi:10.5281/zenodo.24495446）で、そこに述べた六つの計算主張を条件として分類した。そこには四つの閾値の形が現れた。本論文は、三本の軸がすべて違う楕円体を扱う。半軸を y ≤ 1 ≤ z と書き、形の長方形 R = [1/4, 1] × [1, 7] の上で、最長軸以外の二本の軸それぞれについて、中心でのエネルギーの二階微分と、その軸の端でのエネルギーの動径方向の微分という、四つの量を考える。
 
 R の中で、四つの量それぞれの零集合は一本の弧である。四本の弧が出会うのは、辺 y = 1 の上の二つの扁長側の閾値の形と、内部のただ一点（横断的な交わり、y ≈ 0.6382、z ≈ 2.2966）だけである。回転楕円体の四つの閾値はこれらの弧の端点で、残る二つの端は辺 y = 1/4 の上にある。さらに、各弧は次の局所的な意味で境目である。形が弧を横切るとき、エネルギーの停留点がちょうど一対、中心を通って、または向かい合う一対の極を通って出入りし、どちら側に対があるかも決まる。二つの扁長側の閾値の形では、形が辺 y = 1 に沿って動くとき、対の代わりに一つの停留円が出入りする。
 
-証明は計算機を使い、GeoEnclosure の方法論（doi:10.5281/zenodo.24421364）に従う。面積分を MPFR の区間演算で囲み、有理数の台帳に記録し、数値のコードとは独立の検査器で確かめる。第一の主張の証明に至る四回の実行（v1〜v4）を、数値の核を変えないまま GeoEnclosure の実例として記録する。この種の証明は、精度を上げることによってではなく、確かめる命題を変えることによって閉じる。地図の各領域にある停留点の個数は、本論文では決めない。
+証明は計算機を使い、GeoEnclosure の方法論（doi:10.5281/zenodo.24421364）に従う。面積分を MPFR の区間演算で囲み、有理数の台帳に記録し、数値のコードとは独立の検査器で確かめる。第一の主張の証明に至る四回の実行（v1〜v4）を、数値の核を変えないまま、GeoEnclosure の一つの実例として記録する。この場合、証明は、精度を上げることによってではなく、確かめる命題を変えることによって閉じた。地図の各領域にある停留点の個数は、本論文では決めない。
 '''
 ja=ja.replace('## Appendix B. Title and abstract in Japanese\n','## Appendix B. Title and abstract in Japanese\n\n\\begingroup\\jafont\\XeTeXlinebreaklocale "ja"\\XeTeXlinebreakskip=0pt plus 1pt\n')+'\n\\endgroup\n'
 s=s.rstrip()+'\n'+ja
 head='''---
-title: "A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code"
+title: "A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code and an Interactive Viewer"
 author: "Katsushi Furuta (DAYBREAK) · ORCID 0009-0005-3129-8043"
 date: "Version 1.0 · 27 November 2026"
 ---

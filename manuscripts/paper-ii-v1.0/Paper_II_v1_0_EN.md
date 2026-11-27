@@ -1,5 +1,5 @@
 ---
-title: "A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code"
+title: "A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code and an Interactive Viewer"
 author: "Katsushi Furuta (DAYBREAK) · ORCID 0009-0005-3129-8043"
 date: "Version 1.0 · 27 November 2026"
 ---
@@ -10,7 +10,7 @@ For a convex body and a point inside it, the angle energy is the mean square, wi
 
 We prove that in R the zero set of each quantity is a single arc; that the four arcs meet only at the two prolate threshold shapes on the edge y = 1 and at exactly one further point, an interior transversal crossing at y ≈ 0.6382, z ≈ 2.2966; and that the four thresholds of the spheroid case are end points of these arcs, the other two ends lying on the edge y = 1/4. We then prove that each arc is a threshold in the following local sense: when the shape crosses it, exactly one pair of stationary points of the energy enters or leaves through the centre, or through a pair of opposite poles, and we determine on which side. This holds at every point of the arcs except the two prolate threshold shapes; there, as the shape moves along the edge y = 1, one stationary circle enters or leaves instead of a pair.
 
-The proofs are computer-assisted and follow the GeoEnclosure methodology (doi:10.5281/zenodo.24421364). They use interval enclosures of surface integrals in MPFR arithmetic, exact rational ledgers, and checkers independent of the numerical code. We also record the four successive runs (v1 to v4) that led to the proof of the first statement, with an unchanged numerical kernel, as a worked example of GeoEnclosure: it shows how such a proof is closed by changing the statement to be certified and not by adding precision. The number of stationary points in each region of the map is not determined here.
+The proofs are computer-assisted and follow the GeoEnclosure methodology (doi:10.5281/zenodo.24421364). They use interval enclosures of surface integrals in MPFR arithmetic, exact rational ledgers, and checkers independent of the numerical code. We also record the four successive runs (v1 to v4) that led to the proof of the first statement, with an unchanged numerical kernel, as one worked example of GeoEnclosure: in this case the proof was closed by changing the statement to be certified and not by adding precision. The number of stationary points in each region of the map is not determined here.
 
 ## 1 Introduction
 
@@ -275,7 +275,7 @@ Three observations.
 2. **Each gap was closed by a change of statement, not of precision.** At the shared end points the two quantities agree identically on the edge y = 1, so the question was changed to the sign of D, the difference with the factor 1 − y taken out analytically. Next to the strips the question was changed from the sign of the quantity on a box to the sign of its transverse derivative on an extended strip: once that derivative keeps a strict sign on the whole extended strip, the signs already obtained on the faces of the original strip carry outwards. For the last pair the question was changed from disjointness to existence and uniqueness of one crossing. After each change the kernel answered at once: v3 and v4 together cost about 0.4 % of the cells of v2.
 3. **A failed attempt was kept in the record.** In v3 two attempts at the crossing failed. The auxiliary strips of v3 were taken with z as the transverse direction, and in the first Z₁ interval their face signs could not be settled, so the attempt stopped there; v4 treats Z₁ as a graph y = φ(z) instead. The Krawczyk test was tried on three boxes at three grid stages each: on two boxes the contraction factor exceeded 1, and on the third it fell below 1 but the image was not strictly inside the box. The failure, its diagnosis and the corrected plan are all in the public ledgers.
 
-The limits are equally plain. The kernel proves strict inequalities on boxes and nothing else; every topological conclusion in this paper comes from an argument written by hand in Sections 5 and 6 and checked against the ledgers. The region R, the choice of strips and the windows were chosen by people and machines looking at uncertified pictures first.
+The limits are equally plain. The kernel proves strict inequalities on boxes and nothing else; every topological conclusion in this paper comes from an argument written by hand in Sections 5 and 6 and checked against the ledgers. The region R, the choice of strips and the windows were chosen by people and machines looking at uncertified pictures first. GeoEnclosure is in this sense a heuristic methodology for finding a proof: it does not tell which statement to certify, and it gives no guarantee that a proof will close. What is guaranteed is only the conclusion once it has closed. This section records one case; it is not a claim of general effectiveness, and no comparison with other methods of rigorous computation has been made.
 
 ## 9 Relation to earlier work
 
@@ -316,7 +316,7 @@ This work was carried out by one human author together with several AI systems, 
 - **ChatGPT (OpenAI)** operated the research computer, ran the fixed bundles and registered the results.
 - **ChatGPT Work (Astra, Codex)** wrote the plans, the derivations of the integrands and the code of the kernel, the producers and the checkers. It also reviewed draft v0.1 against the derivations and the code.
 - **Claude (Anthropic)** audited each derivation and bundle before the run and each result after it, with independent scripts, and drafted this manuscript.
-- **Claude Code (Anthropic)** reviewed the survey of earlier work and formulated the global conditions mentioned in Section 10. It reviewed draft v0.1 of this manuscript against the ledgers, the published version of [1], the references and the cited commits; it read the ledgers and did not recompute any interval.
+- **Claude Code (Anthropic)** reviewed the survey of earlier work and formulated the global conditions mentioned in Section 10. It reviewed draft v0.1 of this manuscript against the ledgers, the published version of [1], the references and the cited commits; it read the ledgers and did not recompute any interval. It also built the interactive viewer, which Claude audited against the ledger and the text of this paper.
 - **Muse** (Meta), which took no part in the work, audited draft v0.1 of this manuscript for gaps in the line of proof and for overstatement. It found no gap in the proofs and asked for corrections of presentation, which are incorporated. It then audited the parts of Sections 4 to 6 that had changed in draft v0.5, including the argument for the connection of strips added after the review by Astra, and found nothing further to correct. It did not recompute anything.
 
 Each plan, audit, approval and ruling is a dated commit in the public repositories. No AI system is an author. The author read the complete manuscript in a Japanese translation of this text and approved it on 27 November 2026.
@@ -340,12 +340,15 @@ All material is public and pinned by commit. Repository of this paper: <https://
 | Adoption of Theorem 1 | `2d2576ee43f07a3cb94df28d63051f52649e3c81` |
 | Correction of one end point | `d6dc12b24a3a1b7575350cdd8bed7e24494eaa89` |
 | Adoption of Theorem 2 | `8f9fe35af8675f3e043d7849ba2ab065efcf6634` |
+| Interactive viewer | `202744a3074910df1b9e0bf9759144f24493ba56` |
 
-Bundle C is on the branch codex/paper-ii-correspondence-20261127 and is not reachable from the other branches. The audits, the rulings, the external audits, the reviews and the responses to them are on the branch evidence/triaxial-chat.
+Bundle C is on the branch codex/paper-ii-correspondence-20261127 and the viewer on the branch claude/paper-ii-viewer-20261127; they are not reachable from the other branches. The audits, the rulings, the external audits, the reviews and the responses to them are on the branch evidence/triaxial-chat.
 
 Record of the method as a worked example: <https://github.com/cotaxxxx/GeoEnclosure>, directory examples/triaxial-four-curves. Process records: <https://github.com/cotaxxxx/experimental-mathematics-ai-collaboration>
 
-A reproduction archive (the four bundles with their code and plans, the result ledgers, the checkers, the independent audit scripts and the figure script, with SHA-256 sums and instructions) is attached to the Zenodo record of this paper.
+A reproduction archive (the four bundles with their code and plans, the result ledgers, the checkers, the independent audit scripts, the figure script and the sources of the viewer, with SHA-256 sums and instructions) is attached to the Zenodo record of this paper.
+
+**Interactive viewer.** The Zenodo record also contains a linked viewer of the map: one self-contained HTML file with no network access, in English and Japanese. Choosing a shape on the map of Figure 1 shows the corresponding ellipsoid and, when the shape lies in a certified strip, the local event of Theorem 2. The viewer is built from the ledger of run v2 by a script in the archive. It is an illustration and not part of any proof. It can also display uncertified floating-point positions of stationary points on the axes; this layer is off by default and is labelled as not proved here.
 
 ## References
 
@@ -484,12 +487,12 @@ On an angular cell with sides d₁, d₂ the two-point Gauss rule is exact for c
 
 \begingroup\jafont\XeTeXlinebreaklocale "ja"\XeTeXlinebreakskip=0pt plus 1pt
 
-**三軸楕円体の角度エネルギー地図 ― 停留点が出入りする四本の境目（再現コード付き）**
+**三軸楕円体の角度エネルギー地図 ― 停留点が出入りする四本の境目（再現コード・ビューア付き）**
 
 凸体とその内部の一点に対して、その点から境界の点を見る向きと、そこでの外向き法線とがなす角の二乗を、錐体積の重みで平均したものを角度エネルギーと呼ぶ。回転楕円体でのこのエネルギーの停留点は、この連作の第一論文（論文 I、doi:10.5281/zenodo.24495446）で、そこに述べた六つの計算主張を条件として分類した。そこには四つの閾値の形が現れた。本論文は、三本の軸がすべて違う楕円体を扱う。半軸を y ≤ 1 ≤ z と書き、形の長方形 R = [1/4, 1] × [1, 7] の上で、最長軸以外の二本の軸それぞれについて、中心でのエネルギーの二階微分と、その軸の端でのエネルギーの動径方向の微分という、四つの量を考える。
 
 R の中で、四つの量それぞれの零集合は一本の弧である。四本の弧が出会うのは、辺 y = 1 の上の二つの扁長側の閾値の形と、内部のただ一点（横断的な交わり、y ≈ 0.6382、z ≈ 2.2966）だけである。回転楕円体の四つの閾値はこれらの弧の端点で、残る二つの端は辺 y = 1/4 の上にある。さらに、各弧は次の局所的な意味で境目である。形が弧を横切るとき、エネルギーの停留点がちょうど一対、中心を通って、または向かい合う一対の極を通って出入りし、どちら側に対があるかも決まる。二つの扁長側の閾値の形では、形が辺 y = 1 に沿って動くとき、対の代わりに一つの停留円が出入りする。
 
-証明は計算機を使い、GeoEnclosure の方法論（doi:10.5281/zenodo.24421364）に従う。面積分を MPFR の区間演算で囲み、有理数の台帳に記録し、数値のコードとは独立の検査器で確かめる。第一の主張の証明に至る四回の実行（v1〜v4）を、数値の核を変えないまま GeoEnclosure の実例として記録する。この種の証明は、精度を上げることによってではなく、確かめる命題を変えることによって閉じる。地図の各領域にある停留点の個数は、本論文では決めない。
+証明は計算機を使い、GeoEnclosure の方法論（doi:10.5281/zenodo.24421364）に従う。面積分を MPFR の区間演算で囲み、有理数の台帳に記録し、数値のコードとは独立の検査器で確かめる。第一の主張の証明に至る四回の実行（v1〜v4）を、数値の核を変えないまま、GeoEnclosure の一つの実例として記録する。この場合、証明は、精度を上げることによってではなく、確かめる命題を変えることによって閉じた。地図の各領域にある停留点の個数は、本論文では決めない。
 
 \endgroup

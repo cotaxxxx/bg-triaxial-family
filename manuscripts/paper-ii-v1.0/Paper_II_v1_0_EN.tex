@@ -80,7 +80,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code},
+  pdftitle={A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code and an Interactive Viewer},
   pdfauthor={Katsushi Furuta (DAYBREAK) · ORCID 0009-0005-3129-8043},
   colorlinks=true,
   linkcolor={black},
@@ -90,7 +90,8 @@
   pdfcreator={LaTeX via pandoc}}
 
 \title{A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold
-Curves of Stationary Points, with Reproduction Code}
+Curves of Stationary Points, with Reproduction Code and an Interactive
+Viewer}
 \author{Katsushi Furuta (DAYBREAK) · ORCID 0009-0005-3129-8043}
 \date{Version 1.0 · 27 November 2026}
 
@@ -137,10 +138,10 @@ The proofs are computer-assisted and follow the GeoEnclosure methodology
 integrals in MPFR arithmetic, exact rational ledgers, and checkers
 independent of the numerical code. We also record the four successive
 runs (v1 to v4) that led to the proof of the first statement, with an
-unchanged numerical kernel, as a worked example of GeoEnclosure: it
-shows how such a proof is closed by changing the statement to be
-certified and not by adding precision. The number of stationary points
-in each region of the map is not determined here.
+unchanged numerical kernel, as one worked example of GeoEnclosure: in
+this case the proof was closed by changing the statement to be certified
+and not by adding precision. The number of stationary points in each
+region of the map is not determined here.
 
 \subsection{1 Introduction}
 
@@ -920,6 +921,12 @@ boxes and nothing else; every topological conclusion in this paper comes
 from an argument written by hand in Sections 5 and 6 and checked against
 the ledgers. The region R, the choice of strips and the windows were
 chosen by people and machines looking at uncertified pictures first.
+GeoEnclosure is in this sense a heuristic methodology for finding a
+proof: it does not tell which statement to certify, and it gives no
+guarantee that a proof will close. What is guaranteed is only the
+conclusion once it has closed. This section records one case; it is not
+a claim of general effectiveness, and no comparison with other methods
+of rigorous computation has been made.
 
 \subsection{9 Relation to earlier work}
 
@@ -1049,7 +1056,9 @@ result, and is responsible for the content.
   and formulated the global conditions mentioned in Section 10. It
   reviewed draft v0.1 of this manuscript against the ledgers, the
   published version of {[}1{]}, the references and the cited commits; it
-  read the ledgers and did not recompute any interval.
+  read the ledgers and did not recompute any interval. It also built the
+  interactive viewer, which Claude audited against the ledger and the
+  text of this paper.
 \item
   \textbf{Muse} (Meta), which took no part in the work, audited draft
   v0.1 of this manuscript for gaps in the line of proof and for
@@ -1101,11 +1110,14 @@ Correction of one end point &
 \texttt{d6dc12b24a3a1b7575350cdd8bed7e24494eaa89} \\
 Adoption of Theorem 2 &
 \texttt{8f9fe35af8675f3e043d7849ba2ab065efcf6634} \\
+Interactive viewer &
+\texttt{202744a3074910df1b9e0bf9759144f24493ba56} \\
 \end{longtable}
 
-Bundle C is on the branch codex/paper-ii-correspondence-20261127 and is
-not reachable from the other branches. The audits, the rulings, the
-external audits, the reviews and the responses to them are on the branch
+Bundle C is on the branch codex/paper-ii-correspondence-20261127 and the
+viewer on the branch claude/paper-ii-viewer-20261127; they are not
+reachable from the other branches. The audits, the rulings, the external
+audits, the reviews and the responses to them are on the branch
 evidence/triaxial-chat.
 
 Record of the method as a worked example:
@@ -1114,9 +1126,19 @@ examples/triaxial-four-curves. Process records:
 \url{https://github.com/cotaxxxx/experimental-mathematics-ai-collaboration}
 
 A reproduction archive (the four bundles with their code and plans, the
-result ledgers, the checkers, the independent audit scripts and the
-figure script, with SHA-256 sums and instructions) is attached to the
-Zenodo record of this paper.
+result ledgers, the checkers, the independent audit scripts, the figure
+script and the sources of the viewer, with SHA-256 sums and
+instructions) is attached to the Zenodo record of this paper.
+
+\textbf{Interactive viewer.} The Zenodo record also contains a linked
+viewer of the map: one self-contained HTML file with no network access,
+in English and Japanese. Choosing a shape on the map of Figure 1 shows
+the corresponding ellipsoid and, when the shape lies in a certified
+strip, the local event of Theorem 2. The viewer is built from the ledger
+of run v2 by a script in the archive. It is an illustration and not part
+of any proof. It can also display uncertified floating-point positions
+of stationary points on the axes; this layer is off by default and is
+labelled as not proved here.
 
 \subsection{References}
 
@@ -1306,7 +1328,7 @@ continuous, so they equal the derivatives of the integrals.
 plus 1pt
 
 \textbf{三軸楕円体の角度エネルギー地図 ―
-停留点が出入りする四本の境目（再現コード付き）}
+停留点が出入りする四本の境目（再現コード・ビューア付き）}
 
 凸体とその内部の一点に対して、その点から境界の点を見る向きと、そこでの外向き法線とがなす角の二乗を、錐体積の重みで平均したものを角度エネルギーと呼ぶ。回転楕円体でのこのエネルギーの停留点は、この連作の第一論文（論文
 I、doi:10.5281/zenodo.24495446）で、そこに述べた六つの計算主張を条件として分類した。そこには四つの閾値の形が現れた。本論文は、三本の軸がすべて違う楕円体を扱う。半軸を
@@ -1324,9 +1346,8 @@ y = 1 に沿って動くとき、対の代わりに一つの停留円が出入�
 
 証明は計算機を使い、GeoEnclosure
 の方法論（doi:10.5281/zenodo.24421364）に従う。面積分を MPFR
-の区間演算で囲み、有理数の台帳に記録し、数値のコードとは独立の検査器で確かめる。第一の主張の証明に至る四回の実行（v1〜v4）を、数値の核を変えないまま
-GeoEnclosure
-の実例として記録する。この種の証明は、精度を上げることによってではなく、確かめる命題を変えることによって閉じる。地図の各領域にある停留点の個数は、本論文では決めない。
+の区間演算で囲み、有理数の台帳に記録し、数値のコードとは独立の検査器で確かめる。第一の主張の証明に至る四回の実行（v1〜v4）を、数値の核を変えないまま、GeoEnclosure
+の一つの実例として記録する。この場合、証明は、精度を上げることによってではなく、確かめる命題を変えることによって閉じた。地図の各領域にある停留点の個数は、本論文では決めない。
 
 \endgroup
 
