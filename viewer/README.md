@@ -35,16 +35,16 @@
 - 帯と端点：`cotaxxxx/bg-triaxial-family`、commit `862220cc03f8044ab770548d865a76ed56fc612c`、`evidence/dig/2026-11-26/CANDIDATE_B_V2_PC_RESULT/RESULT/`
   - `charts.jsonl`　SHA-256 `95e1f773faf4c184cec4c953724c8a88a7c1e4c80874c061ed9bd7da3c973906`
   - `edges.jsonl`　SHA-256 `0d19458192597d424915afa4bd253a4c9c0052c439850aab29b5ce2904bf32a2`
-- 交点の箱：論文 II v1.0（commit `69ff74e5f578ece718fd87ee0548d723f91a78d0`）の定理 1 の 4。y* ∈ [0.63813109, 0.63821937]、z* ∈ [2.29643023, 2.29674050]。
+- 交点の箱：論文 II v1.0（doi:10.5281/zenodo.24581453。ソースは commit `ae8d73b5aefba2870ca6ded76eb53851c5cb4fdb`）の定理 1 の 4。y* ∈ [0.63813109, 0.63821937]、z* ∈ [2.29643023, 2.29674050]。
 - 論文 I の閾値の参考小数（印の位置）：c_o 0.40795886、b_o 0.64354577、b_p 2.06538229、c_p 4.72438340。
 - 保証のない数値の表：`data/uncertified_axis_points.json`。計算に使ったのは、最初の三軸の地図の求積コード（`cotaxxxx/basepoint-geometry`、commit `f3170e6`、`diagnostics/triaxial_map_20261120/code`）。作る側のコードとは別の実装である。研究用 PC は使っていない（46 × 61 = 2,806 形、数分）。
 
 ビルドは 2 つの入力の SHA-256 を照合してから書き出す。入力のコミットと SHA-256 は、画面の下にも出る。
 
-公開のときに差し替える所：
+論文の DOI と参照先（2026-11-27 に確定）：
 
-- **DOI と題名**：`template.html` の中の `foot1` の 2 か所（`T.en` の `foot1:` と `T.ja` の `foot1:`）。いまは「DOI: to be added on publication.」「DOI：公開後に記入。」としてある。
-- **論文の参照先コミット**：`build_viewer.py` の `meta=dict(...)` の中の `paper="Paper II v1.0 (69ff74e5…)"` の 1 か所。この値は HTML に埋め込まれるデータ（`DATA.meta.paper`）に入るが、画面には出していない。組み直し後の番号に書き換えてビルドし直せば差し替わる。
+- **DOI**：`doi:10.5281/zenodo.24581453`（Judge が Zenodo で予約したもの）。`template.html` の中の `foot1` の 2 か所（`T.en` の `foot1:` と `T.ja` の `foot1:`）に入れてあり、画面の下に出る。
+- **論文の参照先コミット**：`ae8d73b5aefba2870ca6ded76eb53851c5cb4fdb`（枝 `evidence/triaxial-chat`、`manuscripts/paper-ii-v1.0/`。論文 v1.0 の最終版のソース）。`build_viewer.py` の `meta=dict(...)` の中の `paper=` の 1 か所で、HTML に埋め込まれるデータ（`DATA.meta.paper`）に入る。画面には出していない。
 - 画面の下に出る入力のコミット（台帳の `862220c…`）は `build_viewer.py` の `LEDGER_COMMIT`、交点の裁定番号は同じ `meta` の `crossing_ruling` である。
 
 ## 作り直し方

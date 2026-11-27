@@ -119,7 +119,7 @@ data = dict(
            dict(kind="ball", label="", y=1, z=1, at="right"), dict(kind="cross", label="", y=fl(cm[0]), z=fl(cm[1]), at="upleft")],
     unc=None,
     meta=dict(repo="cotaxxxx/bg-triaxial-family", ledger_commit=LEDGER_COMMIT, charts_sha256=shas["charts"], edges_sha256=shas["edges"], crossing_ruling="d6dc12b",
-              paper="Paper II v1.0 (69ff74e5f578ece718fd87ee0548d723f91a78d0)", unc_source=""))
+              paper="Paper II v1.0 (ae8d73b5aefba2870ca6ded76eb53851c5cb4fdb)", unc_source=""))
 if unc_path:
     u = json.load(open(unc_path)); data["unc"] = dict(ys=u["ys"], zs=u["zs"], ry=u["ry"], rx=u["rx"])
     data["meta"]["unc_source"] = u["source"] + ", SHA-256 of the table " + sha(unc_path)
