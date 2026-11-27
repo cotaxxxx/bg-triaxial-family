@@ -1,7 +1,7 @@
 ---
 title: "A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code and an Interactive Viewer"
 author: "Katsushi Furuta (DAYBREAK) · ORCID 0009-0005-3129-8043"
-date: "Version 1.0 · 27 November 2026"
+date: "Version 1.0 · 27 November 2026 · doi:10.5281/zenodo.24581453"
 ---
 
 ## Abstract
@@ -346,7 +346,7 @@ Bundle C is on the branch codex/paper-ii-correspondence-20261127 and the viewer 
 
 Record of the method as a worked example: <https://github.com/cotaxxxx/GeoEnclosure>, directory examples/triaxial-four-curves. Process records: <https://github.com/cotaxxxx/experimental-mathematics-ai-collaboration>
 
-A reproduction archive (the four bundles with their code and plans, the result ledgers, the checkers, the independent audit scripts, the figure script and the sources of the viewer, with SHA-256 sums and instructions) is attached to the Zenodo record of this paper.
+A reproduction archive (the four bundles with their code and plans, the result ledgers, the checkers, the independent audit scripts, the figure script and the sources of the viewer, with SHA-256 sums and instructions) is attached to the Zenodo record of this paper (doi:10.5281/zenodo.24581453).
 
 **Interactive viewer.** The Zenodo record also contains a linked viewer of the map: one self-contained HTML file with no network access, in English and Japanese. Choosing a shape on the map of Figure 1 shows the corresponding ellipsoid and, when the shape lies in a certified strip, the local event of Theorem 2. The viewer is built from the ledger of run v2 by a script in the archive. It is an illustration and not part of any proof. It can also display uncertified floating-point positions of stationary points on the axes; this layer is off by default and is labelled as not proved here.
 
