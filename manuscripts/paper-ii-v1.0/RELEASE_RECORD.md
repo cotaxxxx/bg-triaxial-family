@@ -1,51 +1,47 @@
-# 論文 II v1.0 公開候補の記録（2026-11-27 JST、chat）
+# 論文 II v1.0 公開候補の記録（第 2 版、2026-11-27 JST、chat）
 
-## ファイルとハッシュ
+第 1 版（コミット `69ff74e`）の PDF と zip は、ビューアの同時掲載と題名の変更により公開版ではなくなった。以下が現在の候補。
 
-| ファイル | 大きさ | SHA-256 | MD5 |
+## Zenodo に入れる 3 ファイル
+
+| ファイル | 大きさ（バイト） | SHA-256 | MD5 |
 |---|---:|---|---|
-| `Paper_II_v1_0_EN.pdf`（21 ページ） | 約 250 KB | `2d8b95bdc0603c76e3e5195fc53009b49625e6a3d50fead0b1d07199d42042f3` | `b1236c6df61264840184188dc8e1c40d` |
-| `Paper_II_v1_0_reproduction.zip`（2,384 ファイル） | 53,008,476 バイト | `df0fcbb768e018cafca40df2831bf1f377017eb9d73a343da6027e57a5c196d1` | `a76201654cca8c8a28f0d341796a7959` |
+| `Paper_II_v1_0_EN.pdf`（22 ページ） | 263,850 | `d44bf9c806506060c6d4f7b3f97a35d340696698ce85070b81e3a71e77852b12` | `3a84cd3aac20deb8c0fb6a6eb38b81bf` |
+| `Paper_II_v1_0_reproduction.zip`（2,421 ファイル） | 56,317,019 | `8ac659039ae998638d55537d1214b98ecedabe7f32537e1099d4dd00f637d383` | `10f9bafdce19b1a1a0676c702e7fea3c` |
+| `paper2_viewer.html` | 107,950 | `c97bbb970c543fd3641f203e469b154e34c0cb2e671e4f64d00841b77bfbe42a` | `b2bdcc234627ff55741fb3656b6ba751` |
 
-PDF はこのディレクトリにある。zip は大きいので repo には置かず、Judge に直接渡した。zip の中身はすべて、README に書いた固定コミットからの写しで、`SHA256SUMS.txt`（2,383 行）で照合できる。zip の中の PDF は上の PDF と同一。
+- PDF はこのディレクトリ（コミット `3f290f2ef712cb20452b6f494120d3ea03250e99`）。zip の中の PDF・ビューアは上と同一。
+- zip は大きいので repo に置かない。中身は README の固定コミットからの写しで、`SHA256SUMS.txt`（2,420 行）で照合できる。
+- ビューアは Claude Code の `202744a`（chat 監査 PASS）。
+
+**DOI について：** ビューアのフッターは「DOI：公開後に記入」のまま。PDF にも自分の DOI は入っていない。Zenodo の下書きで DOI を予約してから入れ直すかどうかは Judge の判断（入れ直すと 3 つともハッシュが変わる）。
+
+## v0.10（査読・監査済みの草稿）からの追加
+
+題名（裁定 `83aa382`、`c775274`）、著者の承認の一文、訂正裁定 d6dc12b の併記、「データとコード」の表、ビューアの段落と AI 開示の一文、付録 B。「発見的な方法論」の一文（裁定 `83e76d0`）は v0.10 に入っている。
 
 ## Zenodo の入力案
 
 - Resource type：Publication / Preprint（論文 I と同じにする）
-- Title：A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code
+- Title：A Map of the Angle Energy on Triaxial Ellipsoids: Four Threshold Curves of Stationary Points, with Reproduction Code and an Interactive Viewer
 - Creator：Furuta, Katsushi／Affiliation：DAYBREAK／ORCID：0009-0005-3129-8043
-- DOI：「No, I need one」
-- Version：v1.0／Publication date：公開日／Language：English
-- Keywords：angle energy; triaxial ellipsoid; stationary points; bifurcation; computer-assisted proof; interval arithmetic; GeoEnclosure; reproducibility
-- Related works：
-  - Continues / Is supplement to … 論文 I `10.5281/zenodo.24495446`（論文 I と同じ関係の種類を選ぶ）
-  - References … GeoEnclosure `10.5281/zenodo.24421364`
-  - Is supplemented by … https://github.com/cotaxxxx/bg-triaxial-family
-- Description（英）：PDF の Abstract の三段落。
-- Description（日）：PDF の付録 B の題名と三段落。
-- Files：上の PDF と zip の二つ。PDF をプレビューに。ファイル名に "-1" が付いていないこと。
+- Version：v1.0／Language：English
+- Keywords：angle energy; triaxial ellipsoid; stationary points; bifurcation; computer-assisted proof; interval arithmetic; GeoEnclosure; reproducibility; interactive viewer
+- Related works：論文 I `10.5281/zenodo.24495446`（論文 I と同じ関係の種類）／GeoEnclosure `10.5281/zenodo.24421364`（References）／https://github.com/cotaxxxx/bg-triaxial-family（Is supplemented by）
+- Description（英）：PDF の Abstract の三段落＋「Files: the paper (PDF), a reproduction archive (zip), and an interactive viewer (one self-contained HTML file; open it in a browser).」
+- Description（日）：PDF の付録 B。
+- License：文書 CC BY 4.0、コード MIT（GeoEnclosure の登録と同じ書き方）。
+- Files：上の 3 つ。PDF をプレビューに。ファイル名に "-1" が付いていないこと。
 
-## 公開前の確認表（PAPER_II_RELEASE_CHECKLIST）の状況
+## 確認表の状況
 
 | 項目 | 状況 |
 |---|---|
-| A 定理の文面が裁定と一致 | 済（2d2576e＋訂正 d6dc12b、8f9fe35）。Astra・Claude Code・Muse が確認 |
-| A 数値・区間が台帳と一致 | 済（Claude Code が全件、chat が交点・D・ヤコビアンを有理数で引き直し） |
-| A 範囲・前提の書き方が要旨・序論・結論で同じ | 済（Muse の監査 2 回） |
-| B 文献 [3][4][5][6][7][9] | 済（[3][4][5][9] は Claude Code、[6][7] は chat が原典・書誌ページで確認） |
-| B 文献 [1][2]（自著の DOI ページ） | **未**。chat と Claude Code の環境から Zenodo が開けない。Judge が投稿時に二つの DOI を開いて題名を確認 |
-| C 目次のページ番号 | 済（16 項目を PDF の実ページと機械的に照合） |
-| C 参照切れ・はみ出し・欠け字 | 済（LaTeX のログで欠け字 0、はみ出し 0、未定義参照 0） |
-| C フォント埋め込み | 済（pdffonts で全フォント埋め込み）。日本語は付録 B のみ |
-| C リンクは 40 桁固定 | 済（「データとコード」の表）。§6・§7 の本文中の短い番号 04051b6、2d2576e、d6dc12b、8f9fe35 は表の 40 桁と対応 |
-| D コミット番号が実物と一致 | 済（Claude Code が 14 個、chat が表の 13 個を `git rev-parse` で確認） |
-| D zip の中身一覧と SHA-256・MD5 | 済（上の表） |
-| D 等級と採用裁定の関係 | 済（§7 末尾） |
-| D AI 開示 | 済（各担当の実際の範囲で記載） |
-| D 著者の通読・承認の文 | 済（実際の通読のあとに確定、本ディレクトリの PDF に記載） |
-| E Zenodo 入力 | **Judge の作業**。公開ボタンの前に PDF の SHA-256 をもう一度照合（公開後は変えられない） |
-| F 公開後（DOI を README・STATE・実例一覧へ） | 公開後に chat と Dig |
-
-## 体裁について（正直な注記）
-
-PDF は Markdown から pandoc と XeLaTeX で組んだ。本文は DejaVu Serif、数式は Computer Modern で、添字つきの記号だけを数式として組んでいるため、本文中の記号は立体と斜体が混じる。読むのに支障はないが、学術誌の組版の水準ではない。
+| 定理の文面と裁定、数値と台帳 | 済（Astra・Claude Code・Muse、訂正 d6dc12b） |
+| 文献 [3]〜[9] | 済。[1][2] は **Judge が投稿時に DOI ページで題名を確認** |
+| 目次（16 項目）、欠け字 0、はみ出し 0、未定義参照 0、フォント埋め込み | 済（組み直し後に再確認） |
+| コミット番号（表の 14 個） | 済（`git rev-parse`） |
+| zip の展開と、Python だけの再確認の例 | 済（組み直し後に再実行、`faces_and_miranda: True`） |
+| ビューア | 済（監査 2 回）。Safari・Firefox・実機は未確認 |
+| v1.0 の PDF を査読者が見たか | **見ていない**（見たのは v0.1〜v0.6 の本文）。v0.6 以後の本文の変更は、§8 の二文、要旨の一文、AI 開示、題名、ビューアの段落 |
+| Zenodo 入力、公開前の SHA-256 の再照合 | **Judge の作業** |
