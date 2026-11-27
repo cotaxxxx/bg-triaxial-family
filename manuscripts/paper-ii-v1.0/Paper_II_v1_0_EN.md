@@ -340,7 +340,7 @@ All material is public and pinned by commit. Repository of this paper: <https://
 | Adoption of Theorem 1 | `2d2576ee43f07a3cb94df28d63051f52649e3c81` |
 | Correction of one end point | `d6dc12b24a3a1b7575350cdd8bed7e24494eaa89` |
 | Adoption of Theorem 2 | `8f9fe35af8675f3e043d7849ba2ab065efcf6634` |
-| Interactive viewer | `202744a3074910df1b9e0bf9759144f24493ba56` |
+| Interactive viewer | `b79b8e4b2efecd1327baa2d674e970f889d385a8` |
 
 Bundle C is on the branch codex/paper-ii-correspondence-20261127 and the viewer on the branch claude/paper-ii-viewer-20261127; they are not reachable from the other branches. The audits, the rulings, the external audits, the reviews and the responses to them are on the branch evidence/triaxial-chat.
 
